@@ -6,11 +6,9 @@ Created on 29 June 2021
 
 INM363 Individual Project
 
-MAKE SURE ADDED TO GITHUB
-UPDATE TO MATCH TEST_dATA.CSV
 UPDATE TO WRITE CSV OUTPUT FROM SPARQL_EXAMPLES
 AMEND TO RETURN METRIC TYPE/SCANNER MODEL LABELS W/O FULL URI PATH?
-AMEND TO PIVOT RESULTS TO SHOW METRIC TYPES AS SEPARATE COLUMNS
+AMEND TO PIVOT RESULTS TO SHOW METRIC TYPES AS SEPARATE COLUMNS (see query_temp - needs group by)
 
 
 This code loads the (inferred ontology) and created triples data and executes
@@ -58,7 +56,30 @@ def query_all(g):
     for row in qres:
         print(row.patient_label,row.visit_label,row.age,row.sex,row.bmi,row.metric_value,row.metric_type,row.scanner,row.fieldsstr)    
         
-         
+def query_temp(g):
+    
+    '''
+    Query to return all the CSV columns that were converted to RDF
+    To be used as part of a test plan
+    '''    
+    qres = g.query(
+    """SELECT DISTINCT  ?patient_label ?metric_value ?metric_type WHERE
+                {
+                 ?patient a ?Patient .
+                 ?patient rdfs:label ?patient_label .
+                 ?metric psp:isMetricForPatient  ?patient  .
+                 ?metric psp:MetricValue ?metric_value .
+                 ?metric a  ?metric_type . 
+    FILTER(!CONTAINS(LCASE(STR(?metric_type)),"namedindividual"))} 
+    ORDER BY ASC(?patient_label)  ASC(?metric_type)""") 
+    
+    #    FILTER regex(?metric_type, "Named", "i" )
+
+    print("Show all Data")   
+    print("PatientID","Visit ID","Metric Value","Metric Type")   
+    for row in qres:
+        print(row.patient_label,row.metric_value,row.metric_type)    
+        
 def main():
     
     print("\nStarting SPARQLqueries")
@@ -82,6 +103,7 @@ def main():
 
     # run SPARQL queries against the loaded graph
     query_all(g)
+    query_temp(g)
     #query2(g,outFile)   
     
     print("\nFinished SPARQLqueries")
