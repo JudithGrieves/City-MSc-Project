@@ -15,26 +15,7 @@ import csv
 import os
 from os.path import dirname, abspath
 
-
-def write_results(outfile,header,qres,todisp,tofile):
-    '''
-    Write the results of a SPARQL query 'qres', with comma-delimited 
-    'header' string to file 'outFile'
-    '''
-    with open(outfile, 'w', newline='', encoding='utf-8') as file:
-        if todisp:
-            print(header) # dynamically written csv row 
-        if tofile:
-            file.write(header+"\n") # dynamically written csv row 
-        for row in qres:
-            printstr=""
-            for x in range(len(row)):
-                printstr= printstr + "%s,"
-            if todisp:
-                print(printstr % row)
-            if tofile:
-                file.write(printstr % row) # dynamically written csv row
-                file.write('\n')
+from write_sparql_file import write_sparql
 
 def query1(g,outfile):
     
@@ -66,7 +47,7 @@ def query1(g,outfile):
     print("outfile",outfile)
     #outfile=str(outfile)
     outfile=outfile.replace("x", "1")       
-    write_results(outfile,header,qres,1,1)
+    write_sparql(outfile,header,qres,1,1)
             
         
 def query2(g,outfile):
@@ -102,7 +83,7 @@ def query2(g,outfile):
        
     header='"Visit","Patient","Sex","Age","BMI","Metric Value","Type","Scanner","Field Strength"'  
     outfile=outfile.replace("x", "2")       
-    write_results(outfile,header,qres,1,1)  
+    write_sparql(outfile,header,qres,1,1)  
         
 
 def query3(g,outfile):
@@ -138,7 +119,7 @@ def query3(g,outfile):
     
     header='"Visit","Patient","Sex","Age","BMI","Metric Value","Type"'  
     outfile=outfile.replace("x", "3")       
-    write_results(outfile,header,qres,1,1)   
+    write_sparql(outfile,header,qres,1,1)   
         
 
         

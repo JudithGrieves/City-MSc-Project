@@ -8,7 +8,6 @@ INM363 Individual Project
 
 UPDATE TO WRITE CSV OUTPUT FROM SPARQL_EXAMPLES
 AMEND TO RETURN METRIC TYPE/SCANNER MODEL LABELS W/O FULL URI PATH?
-AMEND TO PIVOT RESULTS TO SHOW METRIC TYPES AS SEPARATE COLUMNS (see query_temp - needs group by)
 
 
 This code loads the (inferred ontology) and created triples data and executes
@@ -24,72 +23,60 @@ import csv
 import os
 from os.path import dirname, abspath
 
+from write_sparql_file import write_sparql
 
 
-def query_all(g):
+
+def query_all(g,outfile):
     
     '''
     Query to return all the CSV columns that were converted to RDF
     To be used as part of a test plan
-    '''    
+    ''' 
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?visit_label ?sex ?age ?bmi  ?metric_value ?metric_type ?scanner ?fieldsstr WHERE
-                {?visit a ?ScanVisit .
+    """SELECT DISTINCT  ?patient_label   ?visit_label  ?sex ?age ?bmi ?liver_cT1   ?liver_PDFF ?liver_T2Star ?scanner_label ?fieldsstr  WHERE
+                {
+                 ?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
                  ?visit psp:isAttendedBy ?patient .  
+                 ?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient psp:PatientSex ?sex .  
                  ?patient psp:PatientAge ?age . 
                  ?patient psp:PatientBMI ?bmi . 
-                 ?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?metric_value .
-                 ?metric a  ?metric_type . 
                  ?scanner psp:usedInVisit ?visit .
+                 ?scanner rdfs:label ?scanner_label .
                  ?scanner psp:FieldStrength ?fieldsstr
-    FILTER(!CONTAINS(LCASE(STR(?metric_type)),"namedindividual"))} 
-    ORDER BY ASC(?visit_label) ASC(?patient_label)  ASC(?metric_type)""") 
+                 {?metric1 psp:isMetricForPatient  ?patient  .
+                 ?metric1 psp:MetricValue ?liver_cT1 .
+                 ?metric1 a <http://www.perspectum.com/resources/liver_cT1> .}
+                 UNION
+                 {?metric2 psp:isMetricForPatient  ?patient  .
+                 ?metric2 psp:MetricValue ?liver_PDFF .
+                 ?metric2 a <http://www.perspectum.com/resources/liver_PDFF> .}
+                 UNION
+                 {?metric3 psp:isMetricForPatient  ?patient  .
+                 ?metric3 psp:MetricValue ?liver_T2Star .
+                 ?metric3 a <http://www.perspectum.com/resources/liver_T2Star> .}
+} GROUP BY ?patient_label 
+    ORDER BY ASC(?patient_label) """) 
     
     #    FILTER regex(?metric_type, "Named", "i" )
 
     print("Show all Data")   
-    print("PatientID","Visit ID","Age","Sex","BMI","Metric Value","Metric Type")   
-    for row in qres:
-        print(row.patient_label,row.visit_label,row.age,row.sex,row.bmi,row.metric_value,row.metric_type,row.scanner,row.fieldsstr)    
-        
-def query_temp(g):
+    header='"PatientID","Visit","Age","Sex","BMI","liver_cT1","liver_PDFF","liver_T2Star","Scanner","Field Strength"'  
+    write_sparql(outfile,header,qres,1,1)  
     
-    '''
-    Query to return all the CSV columns that were converted to RDF
-    To be used as part of a test plan
-    '''    
-    qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?metric_value ?metric_type WHERE
-                {
-                 ?patient a ?Patient .
-                 ?patient rdfs:label ?patient_label .
-                 ?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?metric_value .
-                 ?metric a  ?metric_type . 
-    FILTER(!CONTAINS(LCASE(STR(?metric_type)),"namedindividual"))} 
-    ORDER BY ASC(?patient_label)  ASC(?metric_type)""") 
-    
-    #    FILTER regex(?metric_type, "Named", "i" )
-
-    print("Show all Data")   
-    print("PatientID","Visit ID","Metric Value","Metric Type")   
-    for row in qres:
-        print(row.patient_label,row.metric_value,row.metric_type)    
-        
 def main():
     
     print("\nStarting SPARQLqueries")
     
     data_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')
-    output_dir = os.path.join(dirname(dirname(abspath(__file__))), 'SPARQLresults')
+    output_dir = data_dir
         
         
     inFile="test_data14.ttl" 
-    outFile=inFile.replace(".ttl", "-")+"-results.csv"  
+    outFile=inFile.replace(".ttl", "-")+"replicate.csv"  
     
     inFile = os.path.join(data_dir,inFile)
     outFile = os.path.join(output_dir,outFile)
@@ -102,9 +89,7 @@ def main():
     print("Loaded '" + str(len(g)) + "' triples.\n")    
 
     # run SPARQL queries against the loaded graph
-    query_all(g)
-    query_temp(g)
-    #query2(g,outFile)   
+    query_all(g,outFile)   
     
     print("\nFinished SPARQLqueries")
           

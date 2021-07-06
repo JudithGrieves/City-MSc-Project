@@ -151,7 +151,7 @@ def get_mapping():
                ,["ScanVisit", "Scan visit", "Scan visit"
                      ,[] # no data properties
                      ,[["isAttendedBy", "Patient_ID"]] ]
-               ,["LiverT2Star", "URI", "liver_T2star"
+               ,["liver_T2Star", "URI", "liver_T2star"
                  ,[["MetricValue","liver_T2star","float"]]
                  ,[["isMetricForPatient", "Patient_ID"]
                  ,["isMetricForVisit", "Scan visit"]]]
