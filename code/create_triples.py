@@ -42,7 +42,7 @@ def add_dataprop_triples(g,URI,predicate,literal):
 
     g.add((URI,predicate,literal))          
         
-def createTriples(df,g):  
+def create_triples(df,g):  
     
     # function to read dataframe df and write as RDF triples on a graph 'g'. 
         
@@ -61,11 +61,13 @@ def createTriples(df,g):
     if Display:
         print(df)
         
-    mapping=get_mapping()
+    #mapping=get_mapping_metric()
+    mapping=get_mapping_scan()
     
     # Process each mapping. 
-    for subj_class, subj_uri_col,label_col, dataprops ,objprops in mapping:            
-        print("Process mapping: ", subj_class, subj_uri_col,label_col, dataprops, objprops)
+    for subj_class, subj_uri_col,label_col, dataprops ,objprops in mapping: 
+        if Display:           
+            print("Process mapping: ", subj_class, subj_uri_col,label_col, dataprops, objprops)
         
         # Add subject triples.
         for subj_uri,label_val in  zip(df[subj_uri_col], df[label_col]):
@@ -125,10 +127,9 @@ def CSVtoRDF(infile="test_data.csv"):
      
     # create a graph, g, and load triples from CSV    
     g = Graph()    
-    createTriples(df,g) 
+    create_triples(df,g) 
     
-    # write completed graph to .ttl file        
-    #outfile = "test_data.ttl"          
+    # write completed graph to .ttl file   
     outfile=infile.replace("csv", "ttl")       
     outfile = os.path.join(data_dir,outfile)    
     print("Writing file: ",outfile)
@@ -137,7 +138,7 @@ def CSVtoRDF(infile="test_data.csv"):
     print("Finished CSVtoRDF ....")
     
 
-def get_mapping():        
+def get_mapping_metric():        
     """
     A function to define/retrieve the CSV to RDF mapping.
     Currently hardcoded here but may be read from a file later.
@@ -168,29 +169,45 @@ def get_mapping():
                      ,[["usedInVisit", "Scan visit"]] ]]
     return mapping
 
+def get_mapping_scan():        
+    """
+    A function to define/retrieve the CSV to RDF mapping.
+    Currently hardcoded here but may be read from a file later.
+    """
+    # mapping: [subject class,uri col,label col, [data props], [object props]]
+    mapping = [["MRIScannerModel", "Scanner Model", "Scanner Model",
+                    [["FieldStrength","Scanner Field Strength","double"]
+                    ,["FieldStrengthUnit","Unit","string"]]
+                    ,[]] # no object properties
+               ,["ScannerManufacturer", "Scanner Manufacturer", "Scanner Manufacturer"
+                     ,[] # no data properties
+                     ,[["isMakerOf", "Scanner Model"]] ] ]
+    return mapping
+
                
 def main():
     
     print("\nStarting main() ....")   
+    
     # set up variables
+    global ns
+    global xsd
+    ns= "http://www.perspectum.com/resources/"
+    xsd = "http://www.w3.org/2001/XMLSchema#"    
+    
     global data_dir
     data_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')
-    infile="test_data14.csv"    
-    global ns
-    ns= "http://www.perspectum.com/resources/"
-    global xsd
-    xsd = "http://www.w3.org/2001/XMLSchema#"
-    
-    print("Data dir: ", data_dir)
+    #infile="test_data14.csv"   
+    infile="scanner_data.csv"   
+    infile = os.path.join(data_dir,infile)
+    print("infile: ", infile) 
     #externalURI=True
     global Display
-    Display=True
+    Display=False
     
-    # read in CSV file and convert to a dataframe
-    infile = os.path.join(data_dir,infile)
-    print("infile: ", infile)
-
+    # read in CSV file and convert to RDF triples
     CSVtoRDF(infile)
+    
     print("\nFinished main() ....")      
 
 
