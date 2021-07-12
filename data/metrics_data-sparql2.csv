@@ -1,0 +1,3 @@
+"Visit","Patient","Sex","Age","BMI","liver_PDFF","Scanner"            ,"Field Strength","Units","Manufacturer"
+2,P278,M,43,35.5,2.2,Philips_ModelA,1.5,Tesla,Philips,
+2,P279,F,44,37.0,1.5,Philips_ModelA,1.5,Tesla,Philips,
