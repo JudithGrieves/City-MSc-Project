@@ -1,6 +1,0 @@
-"Visit","Patient","Sex","Age","BMI","Metric Value","Type","Scanner","Field Strength"
-1,P276,F,41,32.5,3.6,http://www.perspectum.com/resources/liver_PDFF,http://www.perspectum.com/resources/URI_Scanner_Siemens_ModelA,1.5,
-1,P277,F,42,34.0,2.9,http://www.perspectum.com/resources/liver_PDFF,http://www.perspectum.com/resources/URI_Scanner_Siemens_ModelA,1.5,
-1,P275,M,40,31.0,4.3,http://www.perspectum.com/resources/liver_PDFF,http://www.perspectum.com/resources/URI_Scanner_Siemens_ModelA,1.5,
-2,P279,F,44,37.0,1.5,http://www.perspectum.com/resources/liver_PDFF,http://www.perspectum.com/resources/URI_Scanner_Siemens_ModelA,1.5,
-2,P278,M,43,35.5,2.2,http://www.perspectum.com/resources/liver_PDFF,http://www.perspectum.com/resources/URI_Scanner_Siemens_ModelA,1.5,
