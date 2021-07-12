@@ -9,15 +9,16 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.perspectum.com/ontology">
         <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/1.0"/>
-        <rdfs:comment>Versions
+        <owl:versionInfo>Versions
 
 25/6/2021 1.0  First version
+12/7/2021 1.1  Remove Manufacturer; now in Scanner ontology
 
 An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
 
 Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
 
-Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</rdfs:comment>
+Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</owl:versionInfo>
     </owl:Ontology>
     
 
