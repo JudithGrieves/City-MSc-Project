@@ -5,8 +5,8 @@ Created on 29 June 2021
 
 INM363 Individual Project
 
-This code loads the Perspectum Knowledge Graph triples and executes the 
-Iteration 1 example queries over the graph.
+This code loads the Perspectum Knowledge Graph triples (metrics and scanner)
+and executes the Iteration 1 example queries over the graph.
 
 '''
 from rdflib import Graph
@@ -25,25 +25,25 @@ def query1(g,outfile):
     '''    
 
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?sex ?age ?bmi ?value ?metric_type WHERE
+    """SELECT DISTINCT  ?patient_label ?sex ?age ?bmi ?liver_cT1  WHERE
                 {?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient psp:PatientSex ?sex .  
                  ?patient psp:PatientAge ?age .
-                 ?patient psp:PatientBMI ?bmi .  
-                 ?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?value .
-                 ?metric a  ?metric_type . 
+                 ?patient psp:PatientBMI ?bmi .   
+                 {?metric psp:isMetricForPatient  ?patient  .
+                 ?metric psp:MetricValue ?liver_cT1 .
+                 ?metric a psp:liver_cT1  .}
     FILTER(?age > 40 
            && ?sex = "F" 
            && ?bmi  > 25 
-           && ?value > 800 
-           && CONTAINS(STR(?metric_type),"liver_cT1"))} """)    
+           && ?liver_cT1 > 800 )} 
+    ORDER BY ASC(?patient_label)  """)    
 
     print("Query 1 - Females with age above 40 and BMI above 25 that  \
             have liver cT1 above 800 ms:\n")   
        
-    header='"Patient","Sex","Age","BMI","Metric Value","Type"'  
+    header='"Patient","Sex","Age","BMI","liver_cT1"'  
     print("outfile",outfile)
     #outfile=str(outfile)
     outfile=outfile.replace("x", "1")       
@@ -55,49 +55,53 @@ def query2(g,outfile):
     '''
     Example Query2: 
     Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%
+    
+    !!! using Philips as test data has no rows matching above - to change !!!
     '''    
 
     qres = g.query(
     """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
-                        ?metric_value ?metric_type ?scanner ?field_strength 
+                        ?liver_PDFF ?scanner_label ?fs  ?fsunit  ?manf_label 
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
-                 ?visit psp:isAttendedBy ?patient .  
-                 ?patient a ?Patient .
+                 ?visit psp:isAttendedBy ?patient . 
                  ?patient rdfs:label ?patient_label .
                  ?patient psp:PatientSex ?sex .  
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .  
-                 ?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?metric_value .
-                 ?metric a  ?metric_type .
+                 {?metric psp:isMetricForPatient  ?patient  .
+                 ?metric psp:MetricValue ?liver_PDFF .
+                 ?metric a psp:liver_PDFF  .}
                  ?scanner psp:usedInVisit ?visit .
-                 ?scanner psp:FieldStrength ?field_strength
-    FILTER(?field_strength = 1.5
-           && ?metric_value < 5
-           && CONTAINS(STR(?metric_type),"liver_PDFF")
-           && CONTAINS(STR(?scanner),"Siemens")) } """)    
+                 ?scanner rdfs:label ?scanner_label .
+                 ?scanner a scn:MRIScannerModel .
+                 ?scanner scn:FieldStrength ?fs .
+                 ?scanner scn:FieldStrengthUnit  ?fsunit .
+                 ?manf a scn:ScannerManufacturer .
+                 ?manf rdfs:label ?manf_label .
+                 ?manf scn:isMakerOf ?scanner.
+    FILTER(?liver_PDFF < 5
+           && ?fs = 1.5
+           && CONTAINS(STR(?manf_label),"Philips")) } 
+    ORDER BY ASC(?patient_label)  """)   
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
        
-    header='"Visit","Patient","Sex","Age","BMI","Metric Value","Type","Scanner","Field Strength"'  
+    header='"Visit","Patient","Sex","Age","BMI","liver_PDFF","Scanner"\
+            ,"Field Strength","Units","Manufacturer"'  
     outfile=outfile.replace("x", "2")       
     write_sparql(outfile,header,qres,1,1)  
         
-
 def query3(g,outfile):
     
     '''
     Example Query3: 
     cases where cT1 is above 800 ms but PDFF is below 10%
     '''    
-    # this is currently returning all rows where either condition holds
-    # need to expand the SPARQL to 'pivot' to show both metrics before filtering
-    # on both conditions
     qres = g.query(
     """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
-                        ?metric_value ?metric_type 
+                        ?liver_cT1 ?liver_PDFF 
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
@@ -106,18 +110,20 @@ def query3(g,outfile):
                  ?patient rdfs:label ?patient_label .
                  ?patient psp:PatientSex ?sex .  
                  ?patient psp:PatientAge ?age .
-                 ?patient psp:PatientBMI ?bmi .  
-                 ?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?metric_value .
-                 ?metric a  ?metric_type .
-    FILTER(
-            (?metric_value > 800  && CONTAINS(STR(?metric_type),"liver_cT1"))
-            || (?metric_value < 10   && CONTAINS(STR(?metric_type),"liver_PDFF"))
-           ) } """)    
+                 ?patient psp:PatientBMI ?bmi .   
+                 {?metric_PDFF psp:isMetricForPatient  ?patient  .
+                 ?metric_PDFF psp:MetricValue ?liver_PDFF .
+                 ?metric_PDFF a psp:liver_PDFF  .}
+                 {?metric_cT1 psp:isMetricForPatient  ?patient  .
+                 ?metric_cT1 psp:MetricValue ?liver_cT1 .
+                 ?metric_cT1 a psp:liver_cT1  .}
+    FILTER(?liver_PDFF < 10
+           && ?liver_cT1 > 800) } 
+    ORDER BY ASC(?patient_label)  """)    
        
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
-    header='"Visit","Patient","Sex","Age","BMI","Metric Value","Type"'  
+    header='"Visit","Patient","Sex","Age","BMI","liver_cT1","liver_PDFF"'  
     outfile=outfile.replace("x", "3")       
     write_sparql(outfile,header,qres,1,1)   
         
@@ -130,16 +136,20 @@ def main():
     data_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')
     output_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')        
         
-    inFile="test_data14.ttl" 
-    outfile=inFile.replace(".ttl", "-")+"sparqlx.csv"  
+    inFile1="metrics_data.ttl" 
+    inFile2="scanner_data.ttl" 
+    outfile=inFile1.replace(".ttl", "-")+"sparqlx.csv"  
     
-    inFile = os.path.join(data_dir,inFile)
+    inFile1 = os.path.join(data_dir,inFile1)
+    inFile2 = os.path.join(data_dir,inFile2)
     outfile = os.path.join(output_dir,outfile)
     
-    print("Load a graph from input file: ", inFile)
+    print("Load a graph from input file: ", inFile1)
     g = Graph()    
-    g.parse(inFile, format="ttl")         
-    print("Loaded '" + str(len(g)) + "' triples.\n")    
+    g.parse(inFile1, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n")   
+    g.parse(inFile2, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n")     
 
     # run SPARQL queries against the loaded graph
     query1(g,outfile)
