@@ -1,41 +1,41 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix psp: <http://www.perspectum.com/resources/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scn: <http://www.perspectum.com/resources/scanner/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-psp:URI_ScannerManufacturer_Philips a psp:ScannerManufacturer,
+scn:URI_scn_ScannerManufacturer_Philips a scn:ScannerManufacturer,
         owl:NamedIndividual ;
     rdfs:label "Philips"^^xsd:string ;
-    psp:isMakerOf psp:URI_MRIScannerModel_Philips_ModelA,
-        psp:URI_MRIScannerModel_Philips_ModelB .
+    scn:isMakerOf scn:URI_scn_MRIScannerModel_Philips_ModelA,
+        scn:URI_scn_MRIScannerModel_Philips_ModelB .
 
-psp:URI_ScannerManufacturer_Siemens a psp:ScannerManufacturer,
+scn:URI_scn_ScannerManufacturer_Siemens a scn:ScannerManufacturer,
         owl:NamedIndividual ;
     rdfs:label "Siemens"^^xsd:string ;
-    psp:isMakerOf psp:URI_MRIScannerModel_Siemens_ModelA,
-        psp:URI_MRIScannerModel_Siemens_ModelB .
+    scn:isMakerOf scn:URI_scn_MRIScannerModel_Siemens_ModelA,
+        scn:URI_scn_MRIScannerModel_Siemens_ModelB .
 
-psp:URI_MRIScannerModel_Philips_ModelA a psp:MRIScannerModel,
+scn:URI_scn_MRIScannerModel_Philips_ModelA a scn:MRIScannerModel,
         owl:NamedIndividual ;
     rdfs:label "Philips_ModelA"^^xsd:string ;
-    psp:FieldStrength 1.5e+00 ;
-    psp:FieldStrengthUnit "Tesla"^^xsd:string .
+    scn:FieldStrength 1.5e+00 ;
+    scn:FieldStrengthUnit "Tesla"^^xsd:string .
 
-psp:URI_MRIScannerModel_Philips_ModelB a psp:MRIScannerModel,
+scn:URI_scn_MRIScannerModel_Philips_ModelB a scn:MRIScannerModel,
         owl:NamedIndividual ;
     rdfs:label "Philips_ModelB"^^xsd:string ;
-    psp:FieldStrength 5e+00 ;
-    psp:FieldStrengthUnit "Tesla"^^xsd:string .
+    scn:FieldStrength 5e+00 ;
+    scn:FieldStrengthUnit "Tesla"^^xsd:string .
 
-psp:URI_MRIScannerModel_Siemens_ModelA a psp:MRIScannerModel,
+scn:URI_scn_MRIScannerModel_Siemens_ModelA a scn:MRIScannerModel,
         owl:NamedIndividual ;
     rdfs:label "Siemens_ModelA"^^xsd:string ;
-    psp:FieldStrength 1.5e+00 ;
-    psp:FieldStrengthUnit "Tesla"^^xsd:string .
+    scn:FieldStrength 1.5e+00 ;
+    scn:FieldStrengthUnit "Tesla"^^xsd:string .
 
-psp:URI_MRIScannerModel_Siemens_ModelB a psp:MRIScannerModel,
+scn:URI_scn_MRIScannerModel_Siemens_ModelB a scn:MRIScannerModel,
         owl:NamedIndividual ;
     rdfs:label "Siemens_ModelB"^^xsd:string ;
-    psp:FieldStrength 3e+00 ;
-    psp:FieldStrengthUnit "Tesla"^^xsd:string .
+    scn:FieldStrength 3e+00 ;
+    scn:FieldStrengthUnit "Tesla"^^xsd:string .
 
