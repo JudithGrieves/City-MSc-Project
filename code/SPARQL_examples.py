@@ -10,7 +10,6 @@ and executes the Iteration 1 example queries over the graph.
 
 '''
 from rdflib import Graph
-import csv
 
 import os
 from os.path import dirname, abspath
@@ -32,7 +31,7 @@ def query1(g,outfile):
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .   
                  {?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?liver_cT1 .
+                 ?metric qudt:value ?liver_cT1 .
                  ?metric a psp:liver_cT1  .}
     FILTER(?age > 40 
            && ?sex = "F" 
@@ -61,7 +60,7 @@ def query2(g,outfile):
 
     qres = g.query(
     """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
-                        ?liver_PDFF ?scanner_label ?fs  ?fsunit  ?manf_label 
+                        ?liver_PDFF ?scanner_label ?fsval ?fsunitlabel ?manf_label 
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
@@ -71,19 +70,21 @@ def query2(g,outfile):
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .  
                  {?metric psp:isMetricForPatient  ?patient  .
-                 ?metric psp:MetricValue ?liver_PDFF .
+                 ?metric qudt:value ?liver_PDFF .
                  ?metric a psp:liver_PDFF  .}
                  ?scanner psp:usedInVisit ?visit .
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a scn:MRIScannerModel .
-                 ?scanner scn:FieldStrength ?fs .
-                 ?scanner scn:FieldStrengthUnit  ?fsunit .
                  ?manf a scn:ScannerManufacturer .
                  ?manf rdfs:label ?manf_label .
                  ?manf scn:isMakerOf ?scanner.
+                 OPTIONAL {?fs scn:isFieldStrengthForScanner ?scanner .
+                           ?fs qudt:value ?fsval .
+                           ?fs qudt:unit ?fsunit . 
+                           ?fsunit rdfs:label ?fsunitlabel .  }
     FILTER(?liver_PDFF < 5
-           && ?fs = 1.5
-           && CONTAINS(STR(?manf_label),"Philips")) } 
+           && ?fsval = 1.5 
+           && ?manf_label = "Philips" ) } 
     ORDER BY ASC(?patient_label)  """)   
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
@@ -92,6 +93,19 @@ def query2(g,outfile):
             ,"Field Strength","Units","Manufacturer"'  
     outfile=outfile.replace("x", "2")       
     write_sparql(outfile,header,qres,1,1)  
+    '''
+    
+                 ?scanner a scn:MRIScannerModel .
+                 ?scanner scn:FieldStrength ?fs .
+                 ?scanner scn:FieldStrengthUnit  ?fsunit .
+                 ?manf a scn:ScannerManufacturer .
+                 ?manf rdfs:label ?manf_label .
+                 ?manf scn:isMakerOf ?scanner.
+                 ?fs  ?fsunit  ?manf_label 
+                 
+           && CONTAINS(STR(?manf_label),"Philips")
+           && ?fs = 1.5
+                 '''
         
 def query3(g,outfile):
     
@@ -112,10 +126,10 @@ def query3(g,outfile):
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .   
                  {?metric_PDFF psp:isMetricForPatient  ?patient  .
-                 ?metric_PDFF psp:MetricValue ?liver_PDFF .
+                 ?metric_PDFF qudt:value ?liver_PDFF .
                  ?metric_PDFF a psp:liver_PDFF  .}
                  {?metric_cT1 psp:isMetricForPatient  ?patient  .
-                 ?metric_cT1 psp:MetricValue ?liver_cT1 .
+                 ?metric_cT1 qudt:value ?liver_cT1 .
                  ?metric_cT1 a psp:liver_cT1  .}
     FILTER(?liver_PDFF < 10
            && ?liver_cT1 > 800) } 
@@ -142,6 +156,7 @@ def main():
     
     inFile1 = os.path.join(data_dir,inFile1)
     inFile2 = os.path.join(data_dir,inFile2)
+    inFile3="http://qudt.org/2.1/vocab/unit"
     outfile = os.path.join(output_dir,outfile)
     
     print("Load a graph from input file: ", inFile1)
@@ -149,7 +164,9 @@ def main():
     g.parse(inFile1, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n")   
     g.parse(inFile2, format="ttl")         
-    print("Loaded '" + str(len(g)) + "' triples.\n")     
+    print("Loaded '" + str(len(g)) + "' triples.\n")  
+    g.parse(inFile3, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)       
 
     # run SPARQL queries against the loaded graph
     query1(g,outfile)

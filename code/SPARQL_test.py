@@ -18,7 +18,6 @@ to be made for testing purposes.
 
 '''
 from rdflib import Graph
-import csv
 
 import os
 from os.path import dirname, abspath
@@ -26,6 +25,23 @@ from os.path import dirname, abspath
 from write_sparql_file import write_sparql
 
 
+def debug_query_all(g,outfile):
+    
+    '''
+    Query to return all the CSV columns that were converted to RDF
+    To be used as part of a test plan
+    ''' 
+    # ?fsunit not in original TabularData sheet but included here to show 
+    # that the scanner data is being picked up from a separate KG
+    qres = g.query(
+    """SELECT DISTINCT  ?fs ?scanner   WHERE
+                { 
+                 ?fs scn:isFieldStrengthForScanner ?scanner .}
+                """) 
+
+    print("Show all Data")   
+    for row in qres:
+        print(row.fs, row.scanner)
 
 def query_all(g,outfile):
     
@@ -37,8 +53,8 @@ def query_all(g,outfile):
     # that the scanner data is being picked up from a separate KG
     qres = g.query(
     """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?bmi  \
-                        ?liver_cT1   ?liver_PDFF ?liver_T2Star ?scanner_label \
-                        ?fs ?fsunit ?manf_label WHERE
+                        ?liver_cT1   ?liver_PDFF ?liver_T2Star ?scanner_label?fsval ?fsunitlabel  ?manf_label \
+                       WHERE
                 {
                  ?visit a psp:ScanVisit .
                  ?visit rdfs:label ?visit_label .
@@ -51,30 +67,34 @@ def query_all(g,outfile):
                  ?scanner psp:usedInVisit ?visit .
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a scn:MRIScannerModel .
-                 ?scanner scn:FieldStrength ?fs .
-                 ?scanner scn:FieldStrengthUnit  ?fsunit .
                  ?manf a scn:ScannerManufacturer .
                  ?manf rdfs:label ?manf_label .
                  ?manf scn:isMakerOf ?scanner.
+                 OPTIONAL {?fs scn:isFieldStrengthForScanner ?scanner .
+                           ?fs qudt:value ?fsval .
+                           ?fs qudt:unit ?fsunit . 
+                           ?fsunit rdfs:label ?fsunitlabel .  }
+                 
                  
                  {?metric1 psp:isMetricForPatient  ?patient  .
-                 ?metric1 psp:MetricValue ?liver_cT1 .
+                 ?metric1 qudt:value ?liver_cT1 .
                  ?metric1 a psp:liver_cT1  .}
                  UNION
                  {?metric2 psp:isMetricForPatient  ?patient  .
-                 ?metric2 psp:MetricValue ?liver_PDFF .
+                 ?metric2 qudt:value ?liver_PDFF .
                  ?metric2 a psp:liver_PDFF .}
                  UNION
                  {?metric3 psp:isMetricForPatient  ?patient  .
-                 ?metric3 psp:MetricValue ?liver_T2Star .
+                 ?metric3 qudt:value ?liver_T2Star .
                  ?metric3 a psp:liver_T2Star .}
 } GROUP BY ?patient_label 
     ORDER BY ASC(?visit_label) ASC(?patient_label) """) 
 
     print("Show all Data")   
-    header='"PatientID","Visit","Age","Sex","BMI","liver_cT1","liver_PDFF",\
-            "liver_T2Star","Scanner","Field Strength","Unit","Manufacturer"'  
+    header='"PatientID","Visit","Age","Sex","BMI","liver_cT1","liver_PDFF","liver_T2Star","Scanner","Field Strength","Unit","Manufacturer"'  
+            
     write_sparql(outfile,header,qres,1,1)  
+ 
     
 def main():
     
@@ -92,17 +112,20 @@ def main():
     inFile2 = os.path.join(data_dir,inFile2)
     outFile = os.path.join(output_dir,outFile)
     
-
-    
-    print("Load a graph from input file: ", inFile1)
     g = Graph()    
     g.parse(inFile1, format="ttl")         
-    print("Loaded '" + str(len(g)) + "' triples.\n")  
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile1)  
     g.parse(inFile2, format="ttl")         
-    print("Loaded '" + str(len(g)) + "' triples.\n")    
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile2)    
+    
+    inFile3="http://qudt.org/2.1/vocab/unit"
+    g.parse(inFile3, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)    
 
     # run SPARQL queries against the loaded graph
     query_all(g,outFile)   
+    
+    #debug_query_all(g,outFile) 
     
     print("\nFinished SPARQLqueries")
           

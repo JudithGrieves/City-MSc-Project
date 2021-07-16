@@ -9,9 +9,12 @@
      versionIRI="http://www.perspectum.com/ontology/scanner/1.0">
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="scn" IRI="http://www.perspectum.com/ontology/scanner#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="qudt" IRI="http://qudt.org/schema/qudt#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="unit" IRI="http://qudt.org/vocab/unit#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <Literal>An Ontology to model MRI Scanner information.  To be used in support of an ontology of metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
@@ -34,7 +37,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#MRIScannerModel"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ScannerFieldStrength"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ScannerManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFieldStrength"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFieldStrengthForScanner"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMadeBy"/>
@@ -48,25 +60,49 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <Declaration>
         <DataProperty IRI="#FieldStrengthUnit"/>
     </Declaration>
+    <DisjointClasses>
+        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#ScannerFieldStrength"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#ScannerManufacturer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ScannerFieldStrength"/>
+        <Class IRI="#ScannerManufacturer"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFieldStrength"/>
+        <ObjectProperty IRI="#isFieldStrengthForScanner"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isMadeBy"/>
         <ObjectProperty IRI="#isMakerOf"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFieldStrength"/>
+        <Class IRI="#MRIScannerModel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMakerOf"/>
         <Class IRI="#ScannerManufacturer"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFieldStrength"/>
+        <Class IRI="#ScannerFieldStrength"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMakerOf"/>
         <Class IRI="#MRIScannerModel"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#FieldStrength"/>
-        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#ScannerFieldStrength"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#FieldStrengthUnit"/>
-        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#ScannerFieldStrength"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#FieldStrength"/>
@@ -93,8 +129,23 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ScannerFieldStrength</IRI>
+        <Literal>scanner field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ScannerManufacturer</IRI>
         <Literal>scanner manufacturer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasFieldStrength</IRI>
+        <Literal>has field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isFieldStrengthForScanner</IRI>
+        <Literal>is field strength for scanner</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

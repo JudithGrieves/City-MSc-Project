@@ -21,15 +21,19 @@ def get_mapping():
     Currently hardcoded here but may be read from a file later.
     """
     # mapping: [subject class,uri col,label col, externalURI?, [data props], [object props]]
-    mapping = [["MRIScannerModel", "Scanner Model", "Scanner Model","",""
-                    ,[["FieldStrength","Scanner Field Strength","double"]
-                    ,["FieldStrengthUnit","Unit","string"]]
-                    ,[]] # no object properties
+    mapping = [
+                     ["MRIScannerModel", "Scanner Model", "Scanner Model","",""
+                     ,[] # no data properties
+                    ,[] ] # no object properties
                ,["ScannerManufacturer", "Scanner Manufacturer", "Scanner Manufacturer","",""
                      ,[] # no data properties
-                     ,[["isMakerOf", "Scanner Model"]] ] ]
+                     ,[["isMakerOf", "Scanner Model","MRIScannerModel"]] ] #  object properties
+               ,["ScannerFieldStrength", "Scanner Model", "Scanner Model","Field Strength",""
+                     ,[["qudt:value","Scanner Field Strength","float"]] #  data properties
+                     ,[["isFieldStrengthForScanner", "Scanner Model","MRIScannerModel"]
+                       ,["qudt:unit", "unit:T","unit"]] ] #  object properties
+               ]
     return mapping
-
           
 def main():
     

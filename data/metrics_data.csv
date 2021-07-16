@@ -1,11 +1,11 @@
 ﻿Patient_ID,Scan visit,Age,Sex,BMI,liver_cT1,liver_PDFF,liver_T2star,Scanner,Field Strength,URI
-P135,1,25,F,22,712,5.7,24.2,Siemens_ModelB,3,998
-P272,1,37,M,28,789,9.2,27.5,Siemens_ModelB,3,999
-P273,1,38,F,28,754,5.7,30.8,Siemens_ModelB,3,1000
-P274,1,39,F,29.5,801,5,34.1,Siemens_ModelB,3,1001
-P275,1,40,M,31,810,4.3,37.4,Siemens_ModelB,3,1002
-P276,1,41,F,32.5,819,3.6,40.7,Siemens_ModelB,3,1003
-P277,1,42,F,34,828,2.9,44,Siemens_ModelB,3,1004
+P135,1,25,F,22,712,5.7,24.2,Siemens_ModelA,1.5,998
+P272,1,37,M,28,789,9.2,27.5,Siemens_ModelA,1.5,999
+P273,1,38,F,28,754,5.7,30.8,Siemens_ModelA,1.5,1000
+P274,1,39,F,29.5,801,5,34.1,Siemens_ModelA,1.5,1001
+P275,1,40,M,31,810,4.3,37.4,Siemens_ModelA,1.5,1002
+P276,1,41,F,32.5,819,3.6,40.7,Siemens_ModelA,1.5,1003
+P277,1,42,F,34,828,2.9,44,Siemens_ModelA,1.5,1004
 P005,2,58,F,25,803,6.3,32.4,Philips_ModelA,1.5,997
 P278,2,43,M,35.5,837,2.2,47.3,Philips_ModelA,1.5,1005
 P279,2,44,F,37,846,1.5,50.6,Philips_ModelA,1.5,1006

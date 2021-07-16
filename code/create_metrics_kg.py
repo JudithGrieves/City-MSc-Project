@@ -23,6 +23,7 @@ def get_mapping():
     # mapping: [subject class,uri col,label col,label const, external URI?
     #          [data props: predicate,column,dataType], 
     #          [object props: predicate, column] ]
+    # if no prefix in predicate mapping value, then use default (psp)
     mapping = [["Patient", "Patient_ID", "Patient_ID","",""
                     ,[["PatientSex","Sex","string"]
                     ,["PatientAge","Age","int"]
@@ -30,22 +31,26 @@ def get_mapping():
                     ,[]] # no object properties
                ,["ScanVisit", "Scan visit", "Scan visit","",""
                      ,[] # no data properties
-                     ,[["isAttendedBy", "Patient_ID"] ] ]
+                     ,[["isAttendedBy", "Patient_ID","Patient"] ] ]
                ,["liver_T2Star", "URI", "Patient_ID","liver_T2Star",""
-                 ,[["MetricValue","liver_T2star","float"]]
-                 ,[["isMetricForPatient", "Patient_ID"]
-                 ,["isMetricForVisit", "Scan visit"]]]
+                 ,[["qudt:value","liver_T2star","float"]]
+                 ,[["isMetricForPatient", "Patient_ID","Patient"]
+                 ,["isMetricForVisit", "Scan visit","ScanVisit"]
+                 ,["qudt:unit", "unit:MilliSEC","unit"]]]
                ,["liver_cT1", "URI", "Patient_ID","liver_cT1",""
-                 ,[["MetricValue","liver_cT1","float"]]
-                 ,[["isMetricForPatient", "Patient_ID"]
-                 ,["isMetricForVisit", "Scan visit"]]]
+                 ,[["qudt:value","liver_cT1","float"]]
+                 ,[["isMetricForPatient", "Patient_ID","Patient"]
+                 ,["isMetricForVisit", "Scan visit","ScanVisit"]
+                 ,["qudt:unit", "unit:MilliSEC","unit"]]]
                ,["liver_PDFF", "URI", "Patient_ID","liver_PDFF",""
-                 ,[["MetricValue","liver_PDFF","float"]]
-                 ,[["isMetricForPatient", "Patient_ID"]
-                 ,["isMetricForVisit", "Scan visit"]]]
+                 ,[["qudt:value","liver_PDFF","float"]]
+                 ,[["isMetricForPatient", "Patient_ID","Patient"]
+                 ,["isMetricForVisit", "Scan visit","ScanVisit"]
+                 ,["qudt:unit", "unit:PERCENT","unit"]]]
                ,["Scanner", "Scanner", "Scanner","","EXT"
-                     ,[] # no data properties - will import from scanner KG
-                     ,[["usedInVisit", "Scan visit"]] ]]
+                     ,[] # no data properties
+                     ,[["usedInVisit", "Scan visit","ScanVisit"]] ]]
+               
     return mapping
 
 

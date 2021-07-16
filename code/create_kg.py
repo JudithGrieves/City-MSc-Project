@@ -19,7 +19,6 @@ Currently tested for metrics and scanner KGs.
 import os
 from os.path import dirname, abspath
 import pandas as pd
-import string
 
 from rdflib import Graph
 from rdflib import Namespace
@@ -42,11 +41,27 @@ def add_subject_triples(g,URI,subj_class,label):
 
     g.add((URI, RDF.type, OWL.NamedIndividual)) 
     g.add((URI, RDF.type, subj_class)) 
-    g.add((URI, RDFS.label, Literal(label,datatype=xsd + "string")) )   
+    g.add((URI, RDFS.label, Literal(label,datatype=XSD.string)) )   
 
 def add_dataprop_triples(g,URI,predicate,literal):
 
-    g.add((URI,predicate,literal))          
+    g.add((URI,predicate,literal))     
+
+
+def get_prefix(string_to_split='psp:classType'):
+    '''
+    Function to parse the mapping predicate and return any prefix found
+    '''
+    prefix=''
+    string_split = string_to_split.split(":")
+    if len(string_split)==1:
+        predicate=string_split[0]
+    else:
+        predicate=string_split[1]
+        prefix=string_split[0]
+                        
+    return prefix,predicate
+
         
 def create_triples(df,mapping,ns,prefix):  
     
@@ -55,20 +70,23 @@ def create_triples(df,mapping,ns,prefix):
     if Display:           
         print("create_triples: ", ns,prefix)
     # set up KG variables
-    global xsd
-    xsd = "http://www.w3.org/2001/XMLSchema#"  
     g = Graph()          
                    
     scn = Namespace("http://www.perspectum.com/resources/scanner/")
-    g.bind("scn", scn)   
-    
     psp = Namespace("http://www.perspectum.com/resources/metric/")
-    g.bind("psp", psp)     
+    qudt = Namespace("http://qudt.org/schema/qudt/")
+    unit = Namespace("http://qudt.org/vocab/unit/")
     
     # Prefixes for the serialization,
+    # these prefixes will be used in the resulting TTL file
     g.bind("owl", OWL) 
     g.bind("rdfs", RDFS) 
     g.bind("xsd", XSD) 
+    
+    g.bind("scn", scn)   
+    g.bind("psp", psp)    
+    g.bind("qudt", qudt)   
+    g.bind("unit", unit)    
     
     # Dictionary to hold the URIs.
     stringToURI = dict()
@@ -87,16 +105,16 @@ def create_triples(df,mapping,ns,prefix):
             if pd.notnull(label_val):
                 label_val=str(label_val)  
                 subj_uri=str(subj_uri)                               
-                stringToURI[subj_uri] = ns + "URI_" + subj_class + "_" + subj_uri.replace(" ", "_")
+                stringToURI[subj_class+subj_uri] = ns + "URI_" + subj_class + "_" + subj_uri.replace(" ", "_")
                 if ext_uri=='EXT':
                     if Display:
                         print("Find External URI")                    
                     uri = get_scanner_uri(label_val)
                     if uri:                              
-                        stringToURI[subj_uri] = uri
+                        stringToURI[subj_class+subj_uri] = uri
                 if Display:
                     print("subj_uri: ",subj_uri,"subj_label: ",label_val)     
-                add_subject_triples(g,URIRef(stringToURI[subj_uri]),URIRef(ns + subj_class),label_const+label_val)
+                add_subject_triples(g,URIRef(stringToURI[subj_class+subj_uri]),URIRef(ns + subj_class),label_const+label_val)
 
  
         # Add data property triples, if specified.     
@@ -111,31 +129,52 @@ def create_triples(df,mapping,ns,prefix):
                             print("create dataProps for subject: ",subj_uri \
                                   ," : with attr col/type: ",dataprop \
                                   , dataprop_lit, dataprop_type)
-                        subject_URI = URIRef(stringToURI[str(subj_uri)])  
-                        literal=Literal(dataprop_lit ,datatype=xsd + dataprop_type)
-                        predicate=URIRef(ns + dataprop)
+                        subject_URI = URIRef(stringToURI[subj_class+str(subj_uri)])  
+                        literal=Literal(dataprop_lit ,datatype=XSD + dataprop_type)
+                        
+                        # if dataprop mapping value has prefix: 
+                        # lookup namespace and prefix to dataprop, otherwise use default ns
+                        dp_namesspace=ns
+                        prefix,predicate=get_prefix(dataprop)   
+                        if prefix=='qudt':
+                            dp_namesspace=qudt               
+                        predicate=URIRef(dp_namesspace + predicate)
                         add_dataprop_triples(g,subject_URI,predicate,literal)
                         
         # Add object property triples, if specified.  
         # this code assumes that a class already exists for the object
         # ie. that classes and object properties are created in order
         # correctly determined by the mapping
-        for objprop, objprop_col in objprops:
+        for objprop, objprop_col,objprop_class in objprops:
             if Display:
-                print(subj_uri_col, objprop, objprop_col )
+                print("subj_uri_col, objprop, objprop_col: ",subj_uri_col, objprop, objprop_col )
+            prefix,predicate=get_prefix(objprop_col)  
+            if prefix=='unit': # object given
+                object_URI=URIRef(unit + predicate) 
+                objprop_col=subj_uri_col # no column given so just use subject
             # get a distinct list of values for subject and object properties 
-            for subj_uri, Object in zip(df[subj_uri_col], df[objprop_col]):    
-                Object=str(Object)
+            for subj_uri, objprop_val in zip(df[subj_uri_col], df[objprop_col]):    
+                objprop_val=str(objprop_val)
                 subj_uri=str(subj_uri)
-                if Object: 
+                if objprop_val: 
                     if Display:
                         print("create objectProps for subject: ",subj_uri \
-                              ," : with object: ",Object \
+                              ," : with object: ",objprop_val \
                               , " : with verb: ", objprop)
-                    subject_URI = URIRef(stringToURI[subj_uri])  
-                    object_URI = URIRef(stringToURI[Object])                 
-                    g.add((subject_URI, URIRef(ns + objprop)\
-                           ,object_URI ))
+                        print("**",objprop_col,subj_uri_col)
+                    if not(prefix): # object given
+                        object_URI = URIRef(stringToURI[objprop_class+objprop_val])  # just looking up (scanner model val, same as sub)                      
+                    subject_URI = URIRef(stringToURI[subj_class+subj_uri])  
+                    #print("OBJECT URI: ", object_URI,prefix)
+                    
+                    prefix,predicate=get_prefix(objprop)    
+                    if prefix=='qudt':
+                        predicate=URIRef(qudt + predicate) # works qudt:unit
+                    else:
+                        predicate=URIRef(ns + predicate)
+                        
+                    g.add((subject_URI, predicate,object_URI ))
+    #print(stringToURI)
     return g
             
 def CSVtoRDF(infile,mapping,ns,prefix):   
@@ -173,6 +212,7 @@ def get_mapping_metric():
     # mapping: [subject class,uri col,label col,label const, external URI?
     #          [data props: predicate,column,dataType], 
     #          [object props: predicate, column] ]
+    # if no prefix in predicate mapping value, then use default (psp)
     mapping = [["Patient", "Patient_ID", "Patient_ID","",""
                     ,[["PatientSex","Sex","string"]
                     ,["PatientAge","Age","int"]
@@ -180,22 +220,25 @@ def get_mapping_metric():
                     ,[]] # no object properties
                ,["ScanVisit", "Scan visit", "Scan visit","",""
                      ,[] # no data properties
-                     ,[["isAttendedBy", "Patient_ID"] ] ]
+                     ,[["isAttendedBy", "Patient_ID","Patient"] ] ]
                ,["liver_T2Star", "URI", "Patient_ID","liver_T2Star",""
-                 ,[["MetricValue","liver_T2star","float"]]
-                 ,[["isMetricForPatient", "Patient_ID"]
-                 ,["isMetricForVisit", "Scan visit"]]]
+                 ,[["qudt:value","liver_T2star","float"]]
+                 ,[["isMetricForPatient", "Patient_ID","Patient"]
+                 ,["isMetricForVisit", "Scan visit","ScanVisit"]
+                 ,["qudt:unit", "unit:MilliSEC","unit"]]]
                ,["liver_cT1", "URI", "Patient_ID","liver_cT1",""
-                 ,[["MetricValue","liver_cT1","float"]]
-                 ,[["isMetricForPatient", "Patient_ID"]
-                 ,["isMetricForVisit", "Scan visit"]]]
+                 ,[["qudt:value","liver_cT1","float"]]
+                 ,[["isMetricForPatient", "Patient_ID","Patient"]
+                 ,["isMetricForVisit", "Scan visit","ScanVisit"]
+                 ,["qudt:unit", "unit:MilliSEC","unit"]]]
                ,["liver_PDFF", "URI", "Patient_ID","liver_PDFF",""
-                 ,[["MetricValue","liver_PDFF","float"]]
-                 ,[["isMetricForPatient", "Patient_ID"]
-                 ,["isMetricForVisit", "Scan visit"]]]
+                 ,[["qudt:value","liver_PDFF","float"]]
+                 ,[["isMetricForPatient", "Patient_ID","Patient"]
+                 ,["isMetricForVisit", "Scan visit","ScanVisit"]
+                 ,["qudt:unit", "unit:PERCENT","unit"]]]
                ,["Scanner", "Scanner", "Scanner","","EXT"
                      ,[] # no data properties
-                     ,[["usedInVisit", "Scan visit"]] ]]
+                     ,[["usedInVisit", "Scan visit","ScanVisit"]] ]]
                
     return mapping
                
@@ -211,11 +254,11 @@ def main():
     mapping=get_mapping_metric()
     ns= "http://www.perspectum.com/resources/metric/"
     prefix="psp"
-    print("infile: ", infile,"Namespace",ns,prefix) 
+    print("infile: ", infile,"default Namespace",ns,prefix) 
     
     # read in CSV file and convert to RDF triples
     CSVtoRDF(infile,mapping,ns,prefix)
-    
+        
     print("\nFinished main() ....")      
 
 

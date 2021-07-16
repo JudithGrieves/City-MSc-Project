@@ -38,13 +38,9 @@ def get_uri_lit(g):
         
 def get_scanner_sparql(search_term):
        
-    sparql1='SELECT DISTINCT ?urimod ?model ?manf ?fs ?unit WHERE \
+    sparql1='SELECT DISTINCT ?urimod ?model WHERE \
         { ?urimod rdf:type scn:MRIScannerModel . \
-          ?urimod scn:FieldStrength ?fs  . \
-          ?urimod  scn:FieldStrengthUnit ?unit  . \
           ?urimod  rdfs:label ?model  . \
-          ?urimanf   scn:isMakerOf ?urimod . \
-          ?urimanf  rdfs:label ?manf  . \
     FILTER(CONTAINS(STR(?model),'
     
     
