@@ -19,7 +19,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:seeAlso>http://www.perspectum.com/ontology/metrics</rdfs:seeAlso>
         <owl:versionInfo>Versions
 
-7/7/2021 1.0  First version</owl:versionInfo>
+7/7/2021 1.0  First version
+19/7/2021 1.1 Add ScannerFieldStrength entity</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -84,22 +85,22 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/scanner#FieldStrength -->
-
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/scanner#FieldStrength">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrength"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:label>field strength</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.perspectum.com/ontology/scanner#FieldStrengthUnit -->
 
     <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/scanner#FieldStrengthUnit">
         <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrength"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label>field strength unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/scanner#FieldStrengthValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/scanner#FieldStrengthValue">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrength"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>field strength value</rdfs:label>
     </owl:DatatypeProperty>
     
 

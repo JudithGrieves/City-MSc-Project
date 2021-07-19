@@ -7,6 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.perspectum.com/ontology/scanner"
      versionIRI="http://www.perspectum.com/ontology/scanner/1.0">
+    <Prefix name="" IRI="http://www.perspectum.com/ontology/scanner#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="scn" IRI="http://www.perspectum.com/ontology/scanner#"/>
@@ -31,7 +32,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
         <Literal>Versions
 
-7/7/2021 1.0  First version</Literal>
+7/7/2021 1.0  First version
+19/7/2021 1.1 Add ScannerFieldStrength entity</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#MRIScannerModel"/>
@@ -55,10 +57,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#isMakerOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#FieldStrength"/>
+        <DataProperty IRI="#FieldStrengthUnit"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#FieldStrengthUnit"/>
+        <DataProperty IRI="#FieldStrengthValue"/>
     </Declaration>
     <DisjointClasses>
         <Class IRI="#MRIScannerModel"/>
@@ -97,30 +99,30 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#MRIScannerModel"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
-        <DataProperty IRI="#FieldStrength"/>
-        <Class IRI="#ScannerFieldStrength"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#FieldStrengthUnit"/>
         <Class IRI="#ScannerFieldStrength"/>
     </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#FieldStrength"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FieldStrengthValue"/>
+        <Class IRI="#ScannerFieldStrength"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#FieldStrengthUnit"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#FieldStrength</IRI>
-        <Literal>field strength</Literal>
-    </AnnotationAssertion>
+    <DataPropertyRange>
+        <DataProperty IRI="#FieldStrengthValue"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#FieldStrengthUnit</IRI>
         <Literal>field strength unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FieldStrengthValue</IRI>
+        <Literal>field strength value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
