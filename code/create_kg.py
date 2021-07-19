@@ -236,7 +236,7 @@ def get_mapping_metric():
                  ,[["isMetricForPatient", "Patient_ID","Patient"]
                  ,["isMetricForVisit", "Scan visit","ScanVisit"]
                  ,["qudt:unit", "unit:PERCENT","unit"]]]
-               ,["Scanner", "Scanner", "Scanner","","EXT"
+               ,["MRIScannerModel", "Scanner", "Scanner","","EXT"
                      ,[] # no data properties
                      ,[["usedInVisit", "Scan visit","ScanVisit"]] ]]
                
