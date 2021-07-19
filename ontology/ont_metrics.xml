@@ -13,6 +13,7 @@
 
 25/6/2021 1.0  First version
 12/7/2021 1.1  Remove Manufacturer; now in Scanner ontology
+19/7/2021 1.2  Remove FieldStrengthValue/Unit &amp; isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 
 An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
 
@@ -70,25 +71,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://www.perspectum.com/ontology#isAttendedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#isAttendedBy">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#Patient"/>
         <rdfs:label>is attended by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.perspectum.com/ontology#isMadeBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#isMadeBy">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology#isMakerOf"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
-        <rdfs:label>is made by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.perspectum.com/ontology#isMakerOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#isMakerOf">
-        <rdfs:label>is maker of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -113,7 +98,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#usedInVisit">
         <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology#usesScannerType"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#MRIScannerModel"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
         <rdfs:label>used in visit</rdfs:label>
     </owl:ObjectProperty>
@@ -194,26 +179,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology#ScannerFieldStrength -->
-
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology#ScannerFieldStrength">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:label>scanner field strength</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.perspectum.com/ontology#ScannerFieldUnit -->
-
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology#ScannerFieldUnit">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>scanner field unit</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -252,12 +217,22 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
+    <!-- http://www.perspectum.com/ontology#MRIScannerModel -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology#MRIScannerModel">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+        <rdfs:label>scanner</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.perspectum.com/ontology#Patient -->
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology#Patient">
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
         <rdfs:label>patient</rdfs:label>
     </owl:Class>
     
@@ -267,7 +242,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology#QuantitativeMetric">
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
         <rdfs:label>quantitative metric</rdfs:label>
     </owl:Class>
     
@@ -285,16 +259,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://www.perspectum.com/ontology#ScanVisit -->
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology#ScanVisit">
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#Scanner"/>
         <rdfs:label>scan visit</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.perspectum.com/ontology#Scanner -->
-
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#Scanner">
-        <rdfs:label>scanner</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

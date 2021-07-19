@@ -20,6 +20,7 @@
 
 25/6/2021 1.0  First version
 12/7/2021 1.1  Remove Manufacturer; now in Scanner ontology
+19/7/2021 1.2  Remove FieldStrengthValue/Unit &amp; isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 
 An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
 
@@ -37,6 +38,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#Liver_cT1"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MRIScannerModel"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Patient"/>
     </Declaration>
     <Declaration>
@@ -49,9 +53,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Scanner"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#attendsVisit"/>
     </Declaration>
     <Declaration>
@@ -62,12 +63,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isAttendedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isMadeBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isMakerOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMetricForPatient"/>
@@ -92,12 +87,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <DataProperty IRI="#PatientSex"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ScannerFieldStrength"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ScannerFieldUnit"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#LiverPDFF"/>
@@ -116,6 +105,18 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#QuantitativeMetric"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#Patient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#QuantitativeMetric"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#ScanVisit"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Patient"/>
         <Class IRI="#QuantitativeMetric"/>
     </DisjointClasses>
@@ -124,20 +125,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Patient"/>
-        <Class IRI="#Scanner"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#QuantitativeMetric"/>
         <Class IRI="#ScanVisit"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#QuantitativeMetric"/>
-        <Class IRI="#Scanner"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ScanVisit"/>
-        <Class IRI="#Scanner"/>
     </DisjointClasses>
     <InverseObjectProperties>
         <ObjectProperty IRI="#attendsVisit"/>
@@ -150,10 +139,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasVisitMetric"/>
         <ObjectProperty IRI="#isMetricForVisit"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <ObjectProperty IRI="#isMakerOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#usedInVisit"/>
@@ -172,12 +157,12 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMadeBy"/>
-        <Class IRI="#Scanner"/>
+        <ObjectProperty IRI="#isAttendedBy"/>
+        <Class IRI="#ScanVisit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedInVisit"/>
-        <Class IRI="#Scanner"/>
+        <Class IRI="#MRIScannerModel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#attendsVisit"/>
@@ -190,6 +175,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasVisitMetric"/>
         <Class IRI="#QuantitativeMetric"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAttendedBy"/>
+        <Class IRI="#Patient"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usedInVisit"/>
@@ -210,14 +199,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <DataPropertyDomain>
         <DataProperty IRI="#PatientSex"/>
         <Class IRI="#Patient"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#ScannerFieldStrength"/>
-        <Class IRI="#Scanner"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#ScannerFieldUnit"/>
-        <Class IRI="#Scanner"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#MetricValue"/>
@@ -238,14 +219,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
             <Literal>Male</Literal>
         </DataOneOf>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#ScannerFieldStrength"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#ScannerFieldUnit"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverPDFF</IRI>
@@ -260,6 +233,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Liver_cT1</IRI>
         <Literal>liver cT1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MRIScannerModel</IRI>
+        <Literal>scanner</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -298,21 +276,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Scanner</IRI>
-        <Literal>scanner</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ScannerFieldStrength</IRI>
-        <Literal>scanner field strength</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ScannerFieldUnit</IRI>
-        <Literal>scanner field unit</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#attendsVisit</IRI>
         <Literal>attends visit</Literal>
     </AnnotationAssertion>
@@ -330,16 +293,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isAttendedBy</IRI>
         <Literal>is attended by</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isMadeBy</IRI>
-        <Literal>is made by</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isMakerOf</IRI>
-        <Literal>is maker of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
