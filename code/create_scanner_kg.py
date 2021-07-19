@@ -15,7 +15,7 @@ from os.path import dirname, abspath
 
 from create_kg import CSVtoRDF
 
-def get_mapping():        
+def get_map_scan():        
     """
     A function to define/retrieve the CSV to RDF mapping.
     Currently hardcoded here but may be read from a file later.
@@ -44,7 +44,7 @@ def main():
     data_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')
     infile="scanner_data.csv"   
     infile = os.path.join(data_dir,infile)
-    mapping=get_mapping()
+    mapping=get_map_scan()
     ns= "http://www.perspectum.com/resources/scanner/"
     prefix="scn"
     print("infile: ", infile,"Namespace",ns,prefix) 

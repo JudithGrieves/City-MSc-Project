@@ -15,7 +15,7 @@ from os.path import dirname, abspath
 
 from create_kg import CSVtoRDF
 
-def get_mapping():      
+def get_map_metric():      
     """
     A function to define/retrieve the CSV to RDF mapping.
     Currently hardcoded here but may be read from a file later.
@@ -64,7 +64,7 @@ def main():
     data_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')
     infile="metrics_data.csv"   
     infile = os.path.join(data_dir,infile)
-    mapping=get_mapping()
+    mapping=get_map_metric()
     print("infile: ", infile) 
     
     ns= "http://www.perspectum.com/resources/metric/"
