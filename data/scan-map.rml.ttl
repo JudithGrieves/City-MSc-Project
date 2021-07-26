@@ -1,0 +1,128 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/rules/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix scn: <http://www.perspectum.com/resources/scanner/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+:field_strength a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source [
+      a csvw:Table;
+      csvw:url "../data/scanner_data.csv";
+      csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ","
+      ]
+    ];
+    rml:referenceFormulation ql:CSV
+  ].
+
+:field_strength 
+  rr:subjectMap [
+    rr:template "http://www.perspectum.com/resources/scanner/URI_FS_{Scanner Model}";
+    rr:class scn:ScannerFieldStrength;
+    rr:class owl:NamedIndividual 
+  ];
+  rr:predicateObjectMap [
+    rr:predicate qudt:unit;
+    rr:objectMap [
+      rr:constant unit:T
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate qudt:value;
+    rr:objectMap [
+      rml:reference "Scanner Field Strength";
+      rr:datatype xsd:float
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate scn:isFieldStrengthForScanner ;
+    rr:objectMap [
+      rr:parentTriplesMap :scanner;
+      rr:joinCondition [
+        rr:child "Scanner Model";
+        rr:parent "Scanner Model"
+      ]
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "Scanner Field Strength";
+      rr:datatype xsd:string
+      ]
+  ].
+
+:scanner a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source [
+      a csvw:Table;
+      csvw:url "../data/scanner_data.csv";
+      csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ","
+      ]
+    ];
+    rml:referenceFormulation ql:CSV
+  ].
+
+:scanner 
+  rr:subjectMap [
+    rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner Model}";
+    rr:class scn:MRIScannerModel;
+    rr:class owl:NamedIndividual 
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "Scanner Model";
+      rr:datatype xsd:string
+      ]
+  ].
+
+:manufacturer  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source [
+      a csvw:Table;
+      csvw:url "../data/scanner_data.csv";
+      csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ","
+      ]
+    ];
+    rml:referenceFormulation ql:CSV
+  ].
+
+:manufacturer  
+  rr:subjectMap [
+    rr:template "http://www.perspectum.com/resources/scanner/URI_Manufacturer_{Scanner Manufacturer}";
+    rr:class scn:ScannerManufacturer;
+    rr:class owl:NamedIndividual 
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "Scanner Manufacturer";
+      rr:datatype xsd:string
+      ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate scn:isMakerOf ;
+    rr:objectMap [
+      rr:parentTriplesMap :scanner;
+      rr:joinCondition [
+        rr:child "Scanner Model";
+        rr:parent "Scanner Model"
+      ]
+    ]
+  ].
