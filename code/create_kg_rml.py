@@ -11,8 +11,11 @@ Code to run the RMLmapper command for a specified RML mapping file and
 RDF triples output file.
 
 ISSUES:
+    the current scan-map.rml.ttl files have ../data/*.csv hardcoded in them
+    !!! an dummy first csv column of 'tmp' has been added to metrics_data.csv to fix an error of 'PAtient_ID' not found!!!!
     metric units of measure should be retrieved from a lookup - currently hard-coded
     this code should run the rmlmapper command based on input file parameters - currently hard-coded
+    THE HARDCODED RUN OF THE MAPPER IS READING DATA FROM /CODE INSTEAD OF /DATA
 """
 import subprocess
 import os
@@ -37,8 +40,8 @@ def run_rmlmapper(map_file,rdf_outfile):
     #print(cmdline)
     #subprocess.call(['java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ', map_file, ' -o  ', rdf_outfile])
     #subprocess.call([rmlmapper_cmd])
-    os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m scan-man-map.rml.ttl -o  scan-man.rdf.ttl "')
-    os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m metric-man-map.rml.ttl -o  metric-man.rdf.ttl "')
+    os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ../data/scan-map.rml.ttl -o  ../data/scanner_data.ttl "')
+    os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ../data/metric-map.rml.ttl -o  ../data/metrics_data.ttl "')
     #subprocess.run(["ls -l"])
     
 def run_rmlmapper_fixed(map_file,rdf_outfile):
@@ -79,10 +82,10 @@ def main():
     data_dir = dirname(abspath(__file__))
     print("DIR ",data_dir)
     
-    map_file="scan-man-map.rml.ttl"
+    map_file="scan-map.rml.ttl"
     map_file = os.path.join(data_dir,map_file)
     print(map_file)
-    rdf_outfile="scan-man.rdf.ttl"   
+    rdf_outfile="scanner-data.ttl"   
     rdf_outfile = os.path.join(data_dir,rdf_outfile)
     
     run_rmlmapper(map_file,rdf_outfile)
