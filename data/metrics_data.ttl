@@ -1,442 +1,425 @@
+@prefix : <http://example.org/rules/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix psp: <http://www.perspectum.com/resources/metric/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix schema: <http://schema.org/> .
 @prefix scn: <http://www.perspectum.com/resources/scanner/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-psp:URI_liver_PDFF_1000 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P273"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "5.7"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P273 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Patient_P005 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "58"^^xsd:int;
+  psp:PatientBMI "25"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P005" .
 
-psp:URI_liver_PDFF_1001 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P274"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "5.0"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P274 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Patient_P935 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "25"^^xsd:int;
+  psp:PatientBMI "22"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P935" .
 
-psp:URI_liver_PDFF_1002 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P275"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "4.3"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P275 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Patient_P973 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "38"^^xsd:int;
+  psp:PatientBMI "28"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P973" .
 
-psp:URI_liver_PDFF_1003 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P276"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "3.6"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P276 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Patient_P974 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "39"^^xsd:int;
+  psp:PatientBMI "29.5"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P974" .
 
-psp:URI_liver_PDFF_1004 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P277"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "2.9"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P277 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Patient_P975 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "40"^^xsd:int;
+  psp:PatientBMI "31"^^xsd:float;
+  psp:PatientSex "M";
+  rdfs:label "P975" .
 
-psp:URI_liver_PDFF_1005 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P278"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "2.2"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P278 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Patient_P976 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "41"^^xsd:int;
+  psp:PatientBMI "32.5"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P976" .
 
-psp:URI_liver_PDFF_1006 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P279"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "1.5"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P279 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Patient_P977 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "42"^^xsd:int;
+  psp:PatientBMI "34"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P977" .
 
-psp:URI_liver_PDFF_1007 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P280"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "12.0"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P280 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Patient_P978 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "43"^^xsd:int;
+  psp:PatientBMI "35.5"^^xsd:float;
+  psp:PatientSex "M";
+  rdfs:label "P978" .
 
-psp:URI_liver_PDFF_1008 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P281"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "5.0"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P281 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Patient_P979 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "44"^^xsd:int;
+  psp:PatientBMI "37"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P979" .
 
-psp:URI_liver_PDFF_1009 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P282"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "13.0"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P282 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Patient_P980 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "45"^^xsd:int;
+  psp:PatientBMI "38.5"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P980" .
 
-psp:URI_liver_PDFF_997 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P005"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "6.3"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P005 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Patient_P981 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "46"^^xsd:int;
+  psp:PatientBMI "40"^^xsd:float;
+  psp:PatientSex "M";
+  rdfs:label "P981" .
 
-psp:URI_liver_PDFF_998 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P135"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "5.7"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P135 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Patient_P989 a psp:Patient, owl:NamedIndividual;
+  psp:PatientAge "47"^^xsd:int;
+  psp:PatientBMI "41.5"^^xsd:float;
+  psp:PatientSex "F";
+  rdfs:label "P989" .
 
-psp:URI_liver_PDFF_999 a psp:liver_PDFF,
-        owl:NamedIndividual ;
-    rdfs:label "liver_PDFF P272"^^xsd:string ;
-    qudt:unit unit:PERCENT ;
-    qudt:value "9.2"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P272 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P005_2 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P005;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:label "P005/2" .
 
-psp:URI_liver_T2Star_1000 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P273"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "30.8"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P273 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P935_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P935;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:label "P935/1" .
 
-psp:URI_liver_T2Star_1001 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P274"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "34.1"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P274 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P973_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P973;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:label "P973/1" .
 
-psp:URI_liver_T2Star_1002 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P275"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "37.4"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P275 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P974_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P974;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P974/1" .
 
-psp:URI_liver_T2Star_1003 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P276"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "40.7"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P276 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P975_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P975;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P975/1" .
 
-psp:URI_liver_T2Star_1004 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P277"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "44.0"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P277 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P976_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P976;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P976/1" .
 
-psp:URI_liver_T2Star_1005 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P278"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "47.3"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P278 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Visit_P977_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P977;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P977/1" .
 
-psp:URI_liver_T2Star_1006 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P279"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "50.6"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P279 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Visit_P978_2 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P978;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:label "P978/2" .
 
-psp:URI_liver_T2Star_1007 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P280"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "53.9"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P280 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Visit_P979_1 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P979;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:label "P979/1" .
 
-psp:URI_liver_T2Star_1008 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P281"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "57.2"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P281 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Visit_P979_2 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P979;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:label "P979/2" .
 
-psp:URI_liver_T2Star_1009 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P282"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "60.5"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P282 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Visit_P980_2 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P980;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:label "P980/2" .
 
-psp:URI_liver_T2Star_997 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P005"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "32.4"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P005 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_Visit_P981_2 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P981;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:label "P981/2" .
 
-psp:URI_liver_T2Star_998 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P135"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "24.2"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P135 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_Visit_P989_2 a psp:ScanVisit, owl:NamedIndividual;
+  psp:isAttendedBy psp:URI_Patient_P989;
+  psp:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:label "P989/2" .
 
-psp:URI_liver_T2Star_999 a psp:liver_T2Star,
-        owl:NamedIndividual ;
-    rdfs:label "liver_T2Star P272"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "27.5"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P272 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P005_2 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "6.3"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P005;
+  psp:isMetricForVisit psp:URI_Visit_P005_2;
+  rdfs:label "liver PDFF P005/2" .
 
-psp:URI_liver_cT1_1000 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P273"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "754"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P273 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P935_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "4.9"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P935;
+  psp:isMetricForVisit psp:URI_Visit_P935_1;
+  rdfs:label "liver PDFF P935/1" .
 
-psp:URI_liver_cT1_1001 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P274"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "801"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P274 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P973_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "5.7"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P973;
+  psp:isMetricForVisit psp:URI_Visit_P973_1;
+  rdfs:label "liver PDFF P973/1" .
 
-psp:URI_liver_cT1_1002 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P275"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "810"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P275 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P974_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "5"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P974;
+  psp:isMetricForVisit psp:URI_Visit_P974_1;
+  rdfs:label "liver PDFF P974/1" .
 
-psp:URI_liver_cT1_1003 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P276"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "819"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P276 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P975_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "4.3"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P975;
+  psp:isMetricForVisit psp:URI_Visit_P975_1;
+  rdfs:label "liver PDFF P975/1" .
 
-psp:URI_liver_cT1_1004 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P277"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "828"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P277 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P976_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "3.6"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P976;
+  psp:isMetricForVisit psp:URI_Visit_P976_1;
+  rdfs:label "liver PDFF P976/1" .
 
-psp:URI_liver_cT1_1005 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P278"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "837"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P278 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_PDFF_P977_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "2.9"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P977;
+  psp:isMetricForVisit psp:URI_Visit_P977_1;
+  rdfs:label "liver PDFF P977/1" .
 
-psp:URI_liver_cT1_1006 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P279"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "846"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P279 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_PDFF_P978_2 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "12.2"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P978;
+  psp:isMetricForVisit psp:URI_Visit_P978_2;
+  rdfs:label "liver PDFF P978/2" .
 
-psp:URI_liver_cT1_1007 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P280"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "855"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P280 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_PDFF_P979_1 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "6"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P979;
+  psp:isMetricForVisit psp:URI_Visit_P979_1;
+  rdfs:label "liver PDFF P979/1" .
 
-psp:URI_liver_cT1_1008 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P281"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "864"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P281 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_PDFF_P979_2 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "4"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P979;
+  psp:isMetricForVisit psp:URI_Visit_P979_2;
+  rdfs:label "liver PDFF P979/2" .
 
-psp:URI_liver_cT1_1009 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P282"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "873"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P282 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_PDFF_P980_2 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "12"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P980;
+  psp:isMetricForVisit psp:URI_Visit_P980_2;
+  rdfs:label "liver PDFF P980/2" .
 
-psp:URI_liver_cT1_997 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P005"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "803"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P005 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_PDFF_P981_2 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "5"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P981;
+  psp:isMetricForVisit psp:URI_Visit_P981_2;
+  rdfs:label "liver PDFF P981/2" .
 
-psp:URI_liver_cT1_998 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P135"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "712"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P135 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_PDFF_P989_2 a psp:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "13"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P989;
+  psp:isMetricForVisit psp:URI_Visit_P989_2;
+  rdfs:label "liver PDFF P989/2" .
 
-psp:URI_liver_cT1_999 a psp:liver_cT1,
-        owl:NamedIndividual ;
-    rdfs:label "liver_cT1 P272"^^xsd:string ;
-    qudt:unit unit:MilliSEC ;
-    qudt:value "789"^^xsd:float ;
-    psp:isMetricForPatient psp:URI_Patient_P272 ;
-    psp:isMetricForVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_T2Star_P005_2 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "32.4"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P005;
+  psp:isMetricForVisit psp:URI_Visit_P005_2;
+  rdfs:label "liver T2Star P005/2" .
 
-scn:URI_MRIScannerModel_Philips_ModelA a psp:Scanner,
-        owl:NamedIndividual ;
-    rdfs:label "Philips_ModelA"^^xsd:string ;
-    psp:usedInVisit psp:URI_ScanVisit_2 .
+psp:URI_liver_T2Star_P935_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "24.2"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P935;
+  psp:isMetricForVisit psp:URI_Visit_P935_1;
+  rdfs:label "liver T2Star P935/1" .
 
-scn:URI_MRIScannerModel_Siemens_ModelA a psp:Scanner,
-        owl:NamedIndividual ;
-    rdfs:label "Siemens_ModelA"^^xsd:string ;
-    psp:usedInVisit psp:URI_ScanVisit_1 .
+psp:URI_liver_T2Star_P973_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "30.8"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P973;
+  psp:isMetricForVisit psp:URI_Visit_P973_1;
+  rdfs:label "liver T2Star P973/1" .
 
-psp:URI_Patient_P005 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P005"^^xsd:string ;
-    psp:PatientAge "58"^^xsd:int ;
-    psp:PatientBMI "25.0"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P974_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "34.1"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P974;
+  psp:isMetricForVisit psp:URI_Visit_P974_1;
+  rdfs:label "liver T2Star P974/1" .
 
-psp:URI_Patient_P135 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P135"^^xsd:string ;
-    psp:PatientAge "25"^^xsd:int ;
-    psp:PatientBMI "22.0"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P975_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "37.4"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P975;
+  psp:isMetricForVisit psp:URI_Visit_P975_1;
+  rdfs:label "liver T2Star P975/1" .
 
-psp:URI_Patient_P272 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P272"^^xsd:string ;
-    psp:PatientAge "37"^^xsd:int ;
-    psp:PatientBMI "28.0"^^xsd:float ;
-    psp:PatientSex "M"^^xsd:string .
+psp:URI_liver_T2Star_P976_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "40.7"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P976;
+  psp:isMetricForVisit psp:URI_Visit_P976_1;
+  rdfs:label "liver T2Star P976/1" .
 
-psp:URI_Patient_P273 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P273"^^xsd:string ;
-    psp:PatientAge "38"^^xsd:int ;
-    psp:PatientBMI "28.0"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P977_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "44"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P977;
+  psp:isMetricForVisit psp:URI_Visit_P977_1;
+  rdfs:label "liver T2Star P977/1" .
 
-psp:URI_Patient_P274 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P274"^^xsd:string ;
-    psp:PatientAge "39"^^xsd:int ;
-    psp:PatientBMI "29.5"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P978_2 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "47.3"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P978;
+  psp:isMetricForVisit psp:URI_Visit_P978_2;
+  rdfs:label "liver T2Star P978/2" .
 
-psp:URI_Patient_P275 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P275"^^xsd:string ;
-    psp:PatientAge "40"^^xsd:int ;
-    psp:PatientBMI "31.0"^^xsd:float ;
-    psp:PatientSex "M"^^xsd:string .
+psp:URI_liver_T2Star_P979_1 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "27.5"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P979;
+  psp:isMetricForVisit psp:URI_Visit_P979_1;
+  rdfs:label "liver T2Star P979/1" .
 
-psp:URI_Patient_P276 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P276"^^xsd:string ;
-    psp:PatientAge "41"^^xsd:int ;
-    psp:PatientBMI "32.5"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P979_2 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "50.6"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P979;
+  psp:isMetricForVisit psp:URI_Visit_P979_2;
+  rdfs:label "liver T2Star P979/2" .
 
-psp:URI_Patient_P277 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P277"^^xsd:string ;
-    psp:PatientAge "42"^^xsd:int ;
-    psp:PatientBMI "34.0"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P980_2 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "53.9"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P980;
+  psp:isMetricForVisit psp:URI_Visit_P980_2;
+  rdfs:label "liver T2Star P980/2" .
 
-psp:URI_Patient_P278 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P278"^^xsd:string ;
-    psp:PatientAge "43"^^xsd:int ;
-    psp:PatientBMI "35.5"^^xsd:float ;
-    psp:PatientSex "M"^^xsd:string .
+psp:URI_liver_T2Star_P981_2 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "57.2"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P981;
+  psp:isMetricForVisit psp:URI_Visit_P981_2;
+  rdfs:label "liver T2Star P981/2" .
 
-psp:URI_Patient_P279 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P279"^^xsd:string ;
-    psp:PatientAge "44"^^xsd:int ;
-    psp:PatientBMI "37.0"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_T2Star_P989_2 a psp:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "60.5"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P989;
+  psp:isMetricForVisit psp:URI_Visit_P989_2;
+  rdfs:label "liver T2Star P989/2" .
 
-psp:URI_Patient_P280 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P280"^^xsd:string ;
-    psp:PatientAge "45"^^xsd:int ;
-    psp:PatientBMI "38.5"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_cT1_P005_2 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "799"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P005;
+  psp:isMetricForVisit psp:URI_Visit_P005_2;
+  rdfs:label "liver cT1 P005/2" .
 
-psp:URI_Patient_P281 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P281"^^xsd:string ;
-    psp:PatientAge "46"^^xsd:int ;
-    psp:PatientBMI "40.0"^^xsd:float ;
-    psp:PatientSex "M"^^xsd:string .
+psp:URI_liver_cT1_P935_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "712"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P935;
+  psp:isMetricForVisit psp:URI_Visit_P935_1;
+  rdfs:label "liver cT1 P935/1" .
 
-psp:URI_Patient_P282 a psp:Patient,
-        owl:NamedIndividual ;
-    rdfs:label "P282"^^xsd:string ;
-    psp:PatientAge "47"^^xsd:int ;
-    psp:PatientBMI "41.5"^^xsd:float ;
-    psp:PatientSex "F"^^xsd:string .
+psp:URI_liver_cT1_P973_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "754"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P973;
+  psp:isMetricForVisit psp:URI_Visit_P973_1;
+  rdfs:label "liver cT1 P973/1" .
 
-psp:URI_ScanVisit_2 a psp:ScanVisit,
-        owl:NamedIndividual ;
-    rdfs:label "2"^^xsd:string ;
-    psp:isAttendedBy psp:URI_Patient_P005,
-        psp:URI_Patient_P278,
-        psp:URI_Patient_P279,
-        psp:URI_Patient_P280,
-        psp:URI_Patient_P281,
-        psp:URI_Patient_P282 .
+psp:URI_liver_cT1_P974_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "801"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P974;
+  psp:isMetricForVisit psp:URI_Visit_P974_1;
+  rdfs:label "liver cT1 P974/1" .
 
-psp:URI_ScanVisit_1 a psp:ScanVisit,
-        owl:NamedIndividual ;
-    rdfs:label "1"^^xsd:string ;
-    psp:isAttendedBy psp:URI_Patient_P135,
-        psp:URI_Patient_P272,
-        psp:URI_Patient_P273,
-        psp:URI_Patient_P274,
-        psp:URI_Patient_P275,
-        psp:URI_Patient_P276,
-        psp:URI_Patient_P277 .
+psp:URI_liver_cT1_P975_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "810"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P975;
+  psp:isMetricForVisit psp:URI_Visit_P975_1;
+  rdfs:label "liver cT1 P975/1" .
 
+psp:URI_liver_cT1_P976_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "819"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P976;
+  psp:isMetricForVisit psp:URI_Visit_P976_1;
+  rdfs:label "liver cT1 P976/1" .
+
+psp:URI_liver_cT1_P977_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "828"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P977;
+  psp:isMetricForVisit psp:URI_Visit_P977_1;
+  rdfs:label "liver cT1 P977/1" .
+
+psp:URI_liver_cT1_P978_2 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "837"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P978;
+  psp:isMetricForVisit psp:URI_Visit_P978_2;
+  rdfs:label "liver cT1 P978/2" .
+
+psp:URI_liver_cT1_P979_1 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "789"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P979;
+  psp:isMetricForVisit psp:URI_Visit_P979_1;
+  rdfs:label "liver cT1 P979/1" .
+
+psp:URI_liver_cT1_P979_2 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "846"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P979;
+  psp:isMetricForVisit psp:URI_Visit_P979_2;
+  rdfs:label "liver cT1 P979/2" .
+
+psp:URI_liver_cT1_P980_2 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "788"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P980;
+  psp:isMetricForVisit psp:URI_Visit_P980_2;
+  rdfs:label "liver cT1 P980/2" .
+
+psp:URI_liver_cT1_P981_2 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "864"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P981;
+  psp:isMetricForVisit psp:URI_Visit_P981_2;
+  rdfs:label "liver cT1 P981/2" .
+
+psp:URI_liver_cT1_P989_2 a psp:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "873"^^xsd:float;
+  psp:isMetricForPatient psp:URI_Patient_P989;
+  psp:isMetricForVisit psp:URI_Visit_P989_2;
+  rdfs:label "liver cT1 P989/2" .
