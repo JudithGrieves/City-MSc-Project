@@ -74,7 +74,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#usedInVisit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesScannerType"/>
+        <ObjectProperty IRI="#usesScannerModel"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#MetricValue"/>
@@ -142,7 +142,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#usedInVisit"/>
-        <ObjectProperty IRI="#usesScannerType"/>
+        <ObjectProperty IRI="#usesScannerModel"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#attendsVisit"/>
@@ -308,11 +308,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#usedInVisit</IRI>
         <Literal>used in visit</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#usesScannerType</IRI>
-        <Literal>uses scanner type</Literal>
     </AnnotationAssertion>
 </Ontology>
 

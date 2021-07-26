@@ -68,15 +68,14 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
 ###  http://www.perspectum.com/ontology#usedInVisit
 :usedInVisit rdf:type owl:ObjectProperty ;
-             owl:inverseOf :usesScannerType ;
+             owl:inverseOf :usesScannerModel ;
              rdfs:domain :MRIScannerModel ;
              rdfs:range :ScanVisit ;
              rdfs:label "used in visit" .
 
 
-###  http://www.perspectum.com/ontology#usesScannerType
-:usesScannerType rdf:type owl:ObjectProperty ;
-                 rdfs:label "uses scanner type" .
+###  http://www.perspectum.com/ontology#usesScannerModel
+:usesScannerModel rdf:type owl:ObjectProperty .
 
 
 #################################################################
