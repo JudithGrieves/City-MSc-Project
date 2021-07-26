@@ -16,6 +16,10 @@ SPARQL queries over the graph.
 SPARQL to create output results to mimic the input test data CSV to allow a comparison
 to be made for testing purposes.
 
+ISSUES:
+    metrics should also be metrics for visit (as well as patient) - add multiple patient visits to test data to test this
+    using this triple in query ?visit psp:usesScannerModel  ?scanner  . instead of ?scanner psp:usedInVisit ?visit .
+
 '''
 from rdflib import Graph
 
@@ -64,7 +68,7 @@ def query_all(g,outfile):
                  ?patient psp:PatientSex ?sex .  
                  ?patient psp:PatientAge ?age . 
                  ?patient psp:PatientBMI ?bmi . 
-                 ?scanner psp:usedInVisit ?visit .
+                 ?visit psp:usesScannerModel  ?scanner  .
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a scn:MRIScannerModel .
                  ?manf a scn:ScannerManufacturer .
@@ -77,23 +81,30 @@ def query_all(g,outfile):
                  
                  
                  {?metric1 psp:isMetricForPatient  ?patient  .
+                  ?metric1 psp:isMetricForVisit  ?visit  .
                  ?metric1 qudt:value ?liver_cT1 .
                  ?metric1 a psp:liver_cT1  .}
                  UNION
                  {?metric2 psp:isMetricForPatient  ?patient  .
+                  ?metric2 psp:isMetricForVisit  ?visit  .
                  ?metric2 qudt:value ?liver_PDFF .
                  ?metric2 a psp:liver_PDFF .}
                  UNION
                  {?metric3 psp:isMetricForPatient  ?patient  .
+                  ?metric3 psp:isMetricForVisit  ?visit  .
                  ?metric3 qudt:value ?liver_T2Star .
                  ?metric3 a psp:liver_T2Star .}
-} GROUP BY ?patient_label 
-    ORDER BY ASC(?visit_label) ASC(?patient_label) """) 
+} GROUP BY ?patient_label ?visit_label 
+    ORDER BY ASC(?patient_label)  ASC(?visit_label) """) 
 
     print("Show all Data")   
     header='"PatientID","Visit","Age","Sex","BMI","liver_cT1","liver_PDFF","liver_T2Star","Scanner","Field Strength","Unit","Manufacturer"'  
             
     write_sparql(outfile,header,qres,1,1)  
+    '''
+    
+                 ?scanner psp:usedInVisit ?visit .
+    '''
  
     
 def main():

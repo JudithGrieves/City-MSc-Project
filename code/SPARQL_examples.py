@@ -8,6 +8,10 @@ INM363 Individual Project
 This code loads the Perspectum Knowledge Graph triples (metrics and scanner)
 and executes the Iteration 1 example queries over the graph.
 
+ISSUES:
+    
+    using this triple in query ?visit psp:usesScannerModel  ?scanner  . instead of ?scanner psp:usedInVisit ?visit .
+
 '''
 from rdflib import Graph
 
@@ -31,6 +35,7 @@ def query1(g,outfile):
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .   
                  {?metric psp:isMetricForPatient  ?patient  .
+                  ?metric psp:isMetricForVisit  ?visit  .
                  ?metric qudt:value ?liver_cT1 .
                  ?metric a psp:liver_cT1  .}
     FILTER(?age > 40 
@@ -55,7 +60,6 @@ def query2(g,outfile):
     Example Query2: 
     Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%
     
-    !!! using Philips as test data has no rows matching above - to change !!!
     '''    
 
     qres = g.query(
@@ -70,9 +74,10 @@ def query2(g,outfile):
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .  
                  {?metric psp:isMetricForPatient  ?patient  .
+                  ?metric psp:isMetricForVisit  ?visit  .
                  ?metric qudt:value ?liver_PDFF .
                  ?metric a psp:liver_PDFF  .}
-                 ?scanner psp:usedInVisit ?visit .
+                 ?visit psp:usesScannerModel  ?scanner  . 
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a scn:MRIScannerModel .
                  ?manf a scn:ScannerManufacturer .
@@ -84,7 +89,7 @@ def query2(g,outfile):
                            ?fsunit rdfs:label ?fsunitlabel .  }
     FILTER(?liver_PDFF < 5
            && ?fsval = 1.5 
-           && ?manf_label = "Philips" ) } 
+           && ?manf_label = "Siemens" ) } 
     ORDER BY ASC(?patient_label)  """)   
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
@@ -126,9 +131,11 @@ def query3(g,outfile):
                  ?patient psp:PatientAge ?age .
                  ?patient psp:PatientBMI ?bmi .   
                  {?metric_PDFF psp:isMetricForPatient  ?patient  .
+                  ?metric_PDFF psp:isMetricForVisit  ?visit  .
                  ?metric_PDFF qudt:value ?liver_PDFF .
                  ?metric_PDFF a psp:liver_PDFF  .}
                  {?metric_cT1 psp:isMetricForPatient  ?patient  .
+                  ?metric_cT1 psp:isMetricForVisit  ?visit  .
                  ?metric_cT1 qudt:value ?liver_cT1 .
                  ?metric_cT1 a psp:liver_cT1  .}
     FILTER(?liver_PDFF < 10
