@@ -204,7 +204,7 @@
   rr:predicateObjectMap [
     rr:predicate qudt:unit;
     rr:objectMap [
-      rr:constant unit:PERCENT
+      rr:constant unit:MilliSEC
     ]
   ];
   rr:predicateObjectMap [
@@ -268,7 +268,7 @@
   rr:predicateObjectMap [
     rr:predicate qudt:unit;
     rr:objectMap [
-      rr:constant unit:PERCENT
+      rr:constant unit:MilliSEC
     ]
   ];
   rr:predicateObjectMap [
