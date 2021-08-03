@@ -11,17 +11,17 @@ Code to run the RMLmapper command for a specified RML mapping file and
 RDF triples output file.
 
 ISSUES:
-    the current scan-map.rml.ttl files have ../data/*.csv hardcoded in them
-    !!! an dummy first csv column of 'tmp' has been added to metrics_data.csv to fix an error of 'PAtient_ID' not found!!!!
+    subprocess.run not working with full file paths - to be investigated.
+    the current run_rmlmapper function has ../data hardcoded in them
+    !!! an dummy first csv column of 'tmp' has been added to metrics_data.csv to fix an error of 'Patient_ID' not found!!!!
     metric units of measure should be retrieved from a lookup - currently hard-coded
-    this code should run the rmlmapper command based on input file parameters - currently hard-coded
-    THE HARDCODED RUN OF THE MAPPER IS READING DATA FROM /CODE INSTEAD OF /DATA
 """
 import subprocess
+from subprocess import check_output
 import os
 from os.path import dirname, abspath
 
-def run_rmlmapper(map_file,rdf_outfile):
+def run_rmlmapper_hardcoded(map_file,rdf_outfile):
     '''
     Function runs rmlmapper.jar to create RDF triples for a given mapping
     Parameters:
@@ -44,53 +44,35 @@ def run_rmlmapper(map_file,rdf_outfile):
     os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ../data/metric-map.rml.ttl -o  ../data/metrics_data.ttl "')
     #subprocess.run(["ls -l"])
     
-def run_rmlmapper_fixed(map_file,rdf_outfile):
+def run_rmlmapper(map_file,rdf_outfile):
     '''
     Function runs rmlmapper.jar to create RDF triples for a given mapping
     Parameters:
         map_file:   the RML mapping file containing the mapping rules
         rdf_outfile: the file to write RDF triples output
-    NOT CURRENTLY RUNNING THE CMDLINE CODE        
+    
+    EXPECTS code to be running in code/ directory and output to be written to data/       
     '''
-    
-    rmlmapper1="java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m "
-    
-    rmlmapper2=" -o "
-    rmlmapper3=""
-    rmlmapper_cmd = rmlmapper1 + map_file + rmlmapper2 + rdf_outfile + rmlmapper3
+    data_sub="../data/"
+    map_file=data_sub + map_file
+    rdf_outfile=data_sub + rdf_outfile
     rmlmapper_cmd = str.format(
-        "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m {0} -o  {1} ",map_file,rdf_outfile)
-    print("Running ... ",rmlmapper_cmd)
-    #cmdline="cmd /c "+rmlmapper_cmd
-    #print(cmdline)
-    #os.system(cmdline)
-
-def another_func():
-    '''
-    Testing string concatenation
-    '''
-    p1="one"
-    p2="two"
-    person_string = str.format(
-        "Hello, my name is {0}, my siblings are {1} ",p1,p2)
-    print(person_string)
+        "java -jar rmlmapper.jar  -d -s turtle -m {0} -o  {1} ", \
+            map_file,rdf_outfile)
+    print("Running rmlmapper_param function ... ",rmlmapper_cmd)
+    subprocess.run(rmlmapper_cmd,  check=True)
 
 def main():
     
-    print("\nStarting test.py")
-    
-    data_dir = dirname(abspath(__file__))
-    print("DIR ",data_dir)
+    print("\nStarting create_kg_rml.py")
     
     map_file="scan-map.rml.ttl"
-    map_file = os.path.join(data_dir,map_file)
-    print(map_file)
-    rdf_outfile="scanner-data.ttl"   
-    rdf_outfile = os.path.join(data_dir,rdf_outfile)
-    
+    rdf_outfile="scanner_data.ttl"
     run_rmlmapper(map_file,rdf_outfile)
-    #run_rmlmapper_fixed(map_file,rdf_outfile)
-    #another_func()
+    
+    map_file="metric-map.rml.ttl"
+    rdf_outfile="metrics_data.ttl"
+    run_rmlmapper(map_file,rdf_outfile)
 
 
 if __name__ == "__main__":
