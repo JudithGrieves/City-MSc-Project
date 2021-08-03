@@ -115,7 +115,7 @@ def main():
     output_dir = data_dir
         
         
-    inFile1="metrics_data.ttl" 
+    inFile1="metric_data.ttl" 
     inFile2="scanner_data.ttl" 
     outFile=inFile1.replace(".ttl", "-")+"replicate.csv"  
     

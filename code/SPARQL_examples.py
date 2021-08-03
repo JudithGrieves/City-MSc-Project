@@ -157,7 +157,7 @@ def main():
     data_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')
     output_dir = os.path.join(dirname(dirname(abspath(__file__))), 'data')        
         
-    inFile1="metrics_data.ttl" 
+    inFile1="metric_data.ttl" 
     inFile2="scanner_data.ttl" 
     outfile=inFile1.replace(".ttl", "-")+"sparqlx.csv"  
     
