@@ -1,0 +1,5 @@
+﻿temp,Metric name,Unit,Metric URI,QUDT URI
+1,Liver PDFF,percentage ,Liver_PDFF,PERCENT
+2,Liver cT1,milliseconds,Liver_cT1,MilliSEC
+3,Liver T2star,milliseconds,Liver_T2star,MilliSEC
+4,BMI,kg/m^2,BMI,KiloGM-PER-M2
