@@ -13,6 +13,7 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="qudt" IRI="http://qudt.org/schema/qudt"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
@@ -53,6 +54,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#attendsVisit"/>
     </Declaration>
     <Declaration>
@@ -77,7 +81,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#usesScannerModel"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#MetricValue"/>
+        <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#PatientAge"/>
@@ -145,6 +149,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#usesScannerModel"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+        <Class IRI="#QuantitativeMetric"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#attendsVisit"/>
         <Class IRI="#Patient"/>
     </ObjectPropertyDomain>
@@ -184,8 +192,20 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#usedInVisit"/>
         <Class IRI="#ScanVisit"/>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#PatientAge"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#PatientBMI"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#PatientSex"/>
+    </FunctionalDataProperty>
     <DataPropertyDomain>
-        <DataProperty IRI="#MetricValue"/>
+        <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
         <Class IRI="#QuantitativeMetric"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -201,7 +221,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#Patient"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#MetricValue"/>
+        <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -219,6 +239,26 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
             <Literal>Male</Literal>
         </DataOneOf>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://qudt.org/schema/qudt/Unit</IRI>
+        <Literal>unit of measure class from QUDT ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://qudt.org/schema/qudt/Unit</IRI>
+        <Literal>unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://qudt.org/schema/qudt/value</IRI>
+        <Literal>A numerical value.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://qudt.org/schema/qudt/value</IRI>
+        <Literal>value</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverPDFF</IRI>
@@ -238,11 +278,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MRIScannerModel</IRI>
         <Literal>scanner</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MetricValue</IRI>
-        <Literal>metric value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

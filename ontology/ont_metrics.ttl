@@ -4,6 +4,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.perspectum.com/ontology> .
 
@@ -24,6 +25,13 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :QuantitativeMetric ;
+                                   rdfs:comment "unit of measure class from QUDT ontology." ;
+                                   rdfs:label "unit of measure" .
+
 
 ###  http://www.perspectum.com/ontology#attendsVisit
 :attendsVisit rdf:type owl:ObjectProperty ;
@@ -82,28 +90,33 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #    Data properties
 #################################################################
 
-###  http://www.perspectum.com/ontology#MetricValue
-:MetricValue rdf:type owl:DatatypeProperty ;
-             rdfs:domain :QuantitativeMetric ;
-             rdfs:range xsd:float ;
-             rdfs:label "metric value" .
+###  http://qudt.org/schema/qudt/value
+<http://qudt.org/schema/qudt/value> rdf:type owl:DatatypeProperty ,
+                                             owl:FunctionalProperty ;
+                                    rdfs:domain :QuantitativeMetric ;
+                                    rdfs:range xsd:float ;
+                                    rdfs:comment "A numerical value." ;
+                                    rdfs:label "value" .
 
 
 ###  http://www.perspectum.com/ontology#PatientAge
-:PatientAge rdf:type owl:DatatypeProperty ;
+:PatientAge rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Patient ;
             rdfs:range xsd:int .
 
 
 ###  http://www.perspectum.com/ontology#PatientBMI
-:PatientBMI rdf:type owl:DatatypeProperty ;
+:PatientBMI rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Patient ;
             rdfs:range xsd:float ;
             rdfs:label "patient BMI" .
 
 
 ###  http://www.perspectum.com/ontology#PatientSex
-:PatientSex rdf:type owl:DatatypeProperty ;
+:PatientSex rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Patient ;
             rdfs:range [ rdf:type rdfs:Datatype ;
                          owl:oneOf [ rdf:type rdf:List ;
