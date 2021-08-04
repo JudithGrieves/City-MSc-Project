@@ -45,6 +45,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#Patient"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PatientSex"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#QuantitativeMetric"/>
     </Declaration>
     <Declaration>
@@ -61,6 +64,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPatientMetric"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPatientSex"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasVisitMetric"/>
@@ -90,8 +96,18 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <DataProperty IRI="#PatientBMI"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#PatientSex"/>
+        <NamedIndividual IRI="#Female"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Male"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#PatientSex"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Female"/>
+            <NamedIndividual IRI="#Male"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#LiverPDFF"/>
         <Class IRI="#ScanMetric"/>
@@ -114,6 +130,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#MRIScannerModel"/>
+        <Class IRI="#PatientSex"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MRIScannerModel"/>
         <Class IRI="#QuantitativeMetric"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -122,10 +142,22 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Patient"/>
+        <Class IRI="#PatientSex"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Patient"/>
         <Class IRI="#QuantitativeMetric"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Patient"/>
+        <Class IRI="#ScanVisit"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PatientSex"/>
+        <Class IRI="#QuantitativeMetric"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PatientSex"/>
         <Class IRI="#ScanVisit"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -161,6 +193,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#Patient"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPatientSex"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasVisitMetric"/>
         <Class IRI="#ScanVisit"/>
     </ObjectPropertyDomain>
@@ -181,6 +217,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#QuantitativeMetric"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPatientSex"/>
+        <Class IRI="#PatientSex"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasVisitMetric"/>
         <Class IRI="#QuantitativeMetric"/>
     </ObjectPropertyRange>
@@ -201,9 +241,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <FunctionalDataProperty>
         <DataProperty IRI="#PatientBMI"/>
     </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#PatientSex"/>
-    </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
         <Class IRI="#QuantitativeMetric"/>
@@ -214,10 +251,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#PatientBMI"/>
-        <Class IRI="#Patient"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#PatientSex"/>
         <Class IRI="#Patient"/>
     </DataPropertyDomain>
     <DataPropertyRange>
@@ -231,13 +264,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <DataPropertyRange>
         <DataProperty IRI="#PatientBMI"/>
         <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#PatientSex"/>
-        <DataOneOf>
-            <Literal>Female</Literal>
-            <Literal>Male</Literal>
-        </DataOneOf>
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -261,6 +287,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Female</IRI>
+        <Literal>F</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Female</IRI>
+        <Literal>Female</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverPDFF</IRI>
         <Literal>liver PDFF</Literal>
     </AnnotationAssertion>
@@ -281,6 +317,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Male</IRI>
+        <Literal>M</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Male</IRI>
+        <Literal>Male</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Patient</IRI>
         <Literal>patient</Literal>
     </AnnotationAssertion>
@@ -288,11 +334,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#PatientBMI</IRI>
         <Literal>patient BMI</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PatientSex</IRI>
-        <Literal>patient sex</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
