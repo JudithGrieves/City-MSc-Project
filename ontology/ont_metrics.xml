@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.perspectum.com/ontology#"
-     xml:base="http://www.perspectum.com/ontology"
+<rdf:RDF xmlns="http://www.perspectum.com/ontology/metric#"
+     xml:base="http://www.perspectum.com/ontology/metric"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:psp="http://www.perspectum.com/ontology"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:omet="http://www.perspectum.com/ontology/metric"
      xmlns:qudt="http://qudt.org/schema/qudt"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.perspectum.com/ontology">
-        <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/1.0"/>
+    <owl:Ontology rdf:about="http://www.perspectum.com/ontology/metric">
+        <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/metric/1.0"/>
         <owl:versionInfo>Versions
 
 25/6/2021 1.0  First version
@@ -39,95 +39,95 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://qudt.org/schema/qudt/Unit -->
 
     <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/Unit">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
         <rdfs:comment>unit of measure class from QUDT ontology.</rdfs:comment>
         <rdfs:label>unit of measure</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#attendsVisit -->
+    <!-- http://www.perspectum.com/ontology/metric#attendsVisit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#attendsVisit">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology#isAttendedBy"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Patient"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#attendsVisit">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#isAttendedBy"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
         <rdfs:label>attends visit</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#hasPatientMetric -->
+    <!-- http://www.perspectum.com/ontology/metric#hasPatientMetric -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#hasPatientMetric">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology#isMetricForPatient"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Patient"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasPatientMetric">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#isMetricForPatient"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
         <rdfs:label>has patient metric</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#hasPatientSex -->
+    <!-- http://www.perspectum.com/ontology/metric#hasPatientSex -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#hasPatientSex">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Patient"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#PatientSex"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasPatientSex">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#PatientSex"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#hasVisitMetric -->
+    <!-- http://www.perspectum.com/ontology/metric#hasVisitMetric -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#hasVisitMetric">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology#isMetricForVisit"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasVisitMetric">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#isMetricForVisit"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
         <rdfs:label>has visit metric</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#isAttendedBy -->
+    <!-- http://www.perspectum.com/ontology/metric#isAttendedBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#isAttendedBy">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#Patient"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#isAttendedBy">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
         <rdfs:label>is attended by</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#isMetricForPatient -->
+    <!-- http://www.perspectum.com/ontology/metric#isMetricForPatient -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#isMetricForPatient">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#isMetricForPatient">
         <rdfs:label>is metric for patient</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#isMetricForVisit -->
+    <!-- http://www.perspectum.com/ontology/metric#isMetricForVisit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#isMetricForVisit">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#isMetricForVisit">
         <rdfs:label>is metric for visit</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#usedInVisit -->
+    <!-- http://www.perspectum.com/ontology/metric#usedInVisit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#usedInVisit">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology#usesScannerModel"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#MRIScannerModel"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#usedInVisit">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#usesScannerModel"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#MRIScannerModel"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
         <rdfs:label>used in visit</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#usesScannerModel -->
+    <!-- http://www.perspectum.com/ontology/metric#usesScannerModel -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology#usesScannerModel"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#usesScannerModel"/>
     
 
 
@@ -146,7 +146,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt/value">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>A numerical value.</rdfs:comment>
         <rdfs:label>value</rdfs:label>
@@ -154,21 +154,21 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology#PatientAge -->
+    <!-- http://www.perspectum.com/ontology/metric#PatientAge -->
 
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology#PatientAge">
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#PatientAge">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Patient"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology#PatientBMI -->
+    <!-- http://www.perspectum.com/ontology/metric#PatientBMI -->
 
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology#PatientBMI">
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#PatientBMI">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology#Patient"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>patient BMI</rdfs:label>
     </owl:DatatypeProperty>
@@ -186,94 +186,94 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology#LiverPDFF -->
+    <!-- http://www.perspectum.com/ontology/metric#LiverPDFF -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#LiverPDFF">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology#ScanMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#LiverPDFF">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#ScanMetric"/>
         <rdfs:label>liver PDFF</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#LiverT2Star -->
+    <!-- http://www.perspectum.com/ontology/metric#LiverT2Star -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#LiverT2Star">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology#ScanMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#LiverT2Star">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#ScanMetric"/>
         <rdfs:label>liver T2star</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#Liver_cT1 -->
+    <!-- http://www.perspectum.com/ontology/metric#Liver_cT1 -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#Liver_cT1">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology#ScanMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#Liver_cT1">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#ScanMetric"/>
         <rdfs:label>liver cT1</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#MRIScannerModel -->
+    <!-- http://www.perspectum.com/ontology/metric#MRIScannerModel -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#MRIScannerModel">
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#Patient"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#PatientSex"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#MRIScannerModel">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#PatientSex"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
         <rdfs:label>scanner</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#Patient -->
+    <!-- http://www.perspectum.com/ontology/metric#Patient -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#Patient">
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#PatientSex"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#Patient">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#PatientSex"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
         <rdfs:label>patient</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#PatientSex -->
+    <!-- http://www.perspectum.com/ontology/metric#PatientSex -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#PatientSex">
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#PatientSex">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.perspectum.com/ontology#Female"/>
-                    <rdf:Description rdf:about="http://www.perspectum.com/ontology#Male"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric#Female"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric#Male"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#QuantitativeMetric -->
+    <!-- http://www.perspectum.com/ontology/metric#QuantitativeMetric -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#QuantitativeMetric">
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology#ScanVisit"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#QuantitativeMetric">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
         <rdfs:label>quantitative metric</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#ScanMetric -->
+    <!-- http://www.perspectum.com/ontology/metric#ScanMetric -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#ScanMetric">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology#QuantitativeMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#ScanMetric">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
         <rdfs:label>scan metric</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.perspectum.com/ontology#ScanVisit -->
+    <!-- http://www.perspectum.com/ontology/metric#ScanVisit -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology#ScanVisit">
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#ScanVisit">
         <rdfs:label>scan visit</rdfs:label>
     </owl:Class>
     
@@ -290,18 +290,18 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology#Female -->
+    <!-- http://www.perspectum.com/ontology/metric#Female -->
 
-    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology#Female">
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric#Female">
         <rdfs:label>F</rdfs:label>
         <rdfs:label>Female</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.perspectum.com/ontology#Male -->
+    <!-- http://www.perspectum.com/ontology/metric#Male -->
 
-    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology#Male">
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric#Male">
         <rdfs:label>M</rdfs:label>
         <rdfs:label>Male</rdfs:label>
     </owl:NamedIndividual>

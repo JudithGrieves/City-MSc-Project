@@ -6,8 +6,7 @@ Created on 29 June 2021
 
 INM363 Individual Project
 
-UPDATE TO WRITE CSV OUTPUT FROM SPARQL_EXAMPLES
-AMEND TO RETURN METRIC TYPE/SCANNER MODEL LABELS W/O FULL URI PATH?
+NEEDS TO RETURN :FEMALE/MALE ENUMERATED TYPES W/O FULL URI PATH?
 
 
 This code loads the (inferred ontology) and created triples data and executes
@@ -18,7 +17,7 @@ to be made for testing purposes.
 
 ISSUES:
     metrics should also be metrics for visit (as well as patient) - add multiple patient visits to test data to test this
-    using this triple in query ?visit psp:usesScannerModel  ?scanner  . instead of ?scanner psp:usedInVisit ?visit .
+    using this triple in query ?visit omet:usesScannerModel  ?scanner  . instead of ?scanner omet:usedInVisit ?visit .
 
 '''
 from rdflib import Graph
@@ -38,37 +37,48 @@ def debug_query_all(g,outfile):
     # ?fsunit not in original TabularData sheet but included here to show 
     # that the scanner data is being picked up from a separate KG
     qres = g.query(
-    """SELECT DISTINCT  ?fs ?scanner   WHERE
+    """SELECT DISTINCT  ?a ?b ?c ?d ?e ?f ?g WHERE
                 { 
-                 ?fs scn:isFieldStrengthForScanner ?scanner .}
+                 ?a owl:equivalentClass ?stub .
+                 ?stub ?d ?e .
+                 ?e ?f ?g .
+                 }
+    ORDER BY ASC(?a)  ASC(?b)
                 """) 
 
     print("Show all Data")   
     for row in qres:
-        print(row.fs, row.scanner)
+        print(row.a,  row.b, row.c,  row.d, row.e, row.f, row.g)
+        
+    '''
+    ?a a owl:NamedIndividual .
+                 ?a omet:hasPatientSex ?c .
+    '''
 
 def query_all(g,outfile):
     
     '''
     Query to return all the CSV columns that were converted to RDF
     To be used as part of a test plan
+    RDFS:LABEL FOR SEX ENUMERATED TYPE NOT WORKING
     ''' 
     # ?fsunit not in original TabularData sheet but included here to show 
     # that the scanner data is being picked up from a separate KG
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?bmi  \
+    """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?label ?bmi  \
                         ?liver_cT1   ?liver_PDFF ?liver_T2Star ?scanner_label?fsval ?fsunitlabel  ?manf_label \
                        WHERE
                 {
-                 ?visit a psp:ScanVisit .
+                 ?visit a omet:ScanVisit .
                  ?visit rdfs:label ?visit_label .
-                 ?visit psp:isAttendedBy ?patient .  
-                 ?patient a psp:Patient .
+                 ?visit omet:isAttendedBy ?patient .  
+                 ?patient a omet:Patient .
                  ?patient rdfs:label ?patient_label .
-                 ?patient psp:PatientSex ?sex .  
-                 ?patient psp:PatientAge ?age . 
-                 ?patient psp:PatientBMI ?bmi . 
-                 ?visit psp:usesScannerModel  ?scanner  .
+                 ?patient omet:hasPatientSex ?sex . 
+                  OPTIONAL {?sex  rdfs:label ?label . }
+                 ?patient omet:PatientAge ?age . 
+                 ?patient omet:PatientBMI ?bmi . 
+                 ?visit omet:usesScannerModel  ?scanner  .
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a scn:MRIScannerModel .
                  ?manf a scn:ScannerManufacturer .
@@ -80,20 +90,20 @@ def query_all(g,outfile):
                            ?fsunit rdfs:label ?fsunitlabel .  }
                  
                  
-                 {?metric1 psp:isMetricForPatient  ?patient  .
-                  ?metric1 psp:isMetricForVisit  ?visit  .
+                 {?metric1 omet:isMetricForPatient  ?patient  .
+                  ?metric1 omet:isMetricForVisit  ?visit  .
                  ?metric1 qudt:value ?liver_cT1 .
-                 ?metric1 a psp:liver_cT1  .}
+                 ?metric1 a omet:liver_cT1  .}
                  UNION
-                 {?metric2 psp:isMetricForPatient  ?patient  .
-                  ?metric2 psp:isMetricForVisit  ?visit  .
+                 {?metric2 omet:isMetricForPatient  ?patient  .
+                  ?metric2 omet:isMetricForVisit  ?visit  .
                  ?metric2 qudt:value ?liver_PDFF .
-                 ?metric2 a psp:liver_PDFF .}
+                 ?metric2 a omet:liver_PDFF .}
                  UNION
-                 {?metric3 psp:isMetricForPatient  ?patient  .
-                  ?metric3 psp:isMetricForVisit  ?visit  .
+                 {?metric3 omet:isMetricForPatient  ?patient  .
+                  ?metric3 omet:isMetricForVisit  ?visit  .
                  ?metric3 qudt:value ?liver_T2Star .
-                 ?metric3 a psp:liver_T2Star .}
+                 ?metric3 a omet:liver_T2Star .}
 } GROUP BY ?patient_label ?visit_label 
     ORDER BY ASC(?patient_label)  ASC(?visit_label) """) 
 
@@ -103,7 +113,8 @@ def query_all(g,outfile):
     write_sparql(outfile,header,qres,1,1)  
     '''
     
-                 ?scanner psp:usedInVisit ?visit .
+                 ?scanner omet:usedInVisit ?visit .
+                 ?sex  rdfs:label ?sex_label . 
     '''
  
     
@@ -130,8 +141,17 @@ def main():
     print("Loaded '" + str(len(g)) + "' triples.\n",inFile2)    
     
     inFile3="http://qudt.org/2.1/vocab/unit"
+    # suppressed to save time in testing
     g.parse(inFile3, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)    
+    
+    
+    
+    ont_dir = os.path.join(dirname(dirname(abspath(__file__))), 'ontology')
+    inFile4="ont_metrics.ttl" 
+    inFile4 = os.path.join(ont_dir,inFile4)
+    g.parse(inFile4, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile4)    
 
     # run SPARQL queries against the loaded graph
     query_all(g,outFile)   

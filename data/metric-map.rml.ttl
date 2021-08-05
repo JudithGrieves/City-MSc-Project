@@ -10,7 +10,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix scn: <http://www.perspectum.com/resources/scanner/> .
+@prefix omet: <http://www.perspectum.com/ontology/metric/> .
 @prefix psp: <http://www.perspectum.com/resources/metric/> .
+@prefix muom: <http://www.perspectum.com/resources/metricuom/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
@@ -30,7 +32,7 @@
 :patient
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_Patient_{Patient_ID}";
-    rr:class psp:Patient;
+    rr:class omet:Patient;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -41,24 +43,23 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:PatientAge;
+    rr:predicate omet:PatientAge;
     rr:objectMap [
       rml:reference "Age";
       rr:datatype xsd:int
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:PatientSex;
-    rr:objectMap [
-      rml:reference "Sex";
-      rr:datatype xsd:string
-    ]
-  ];
-  rr:predicateObjectMap [
-    rr:predicate psp:PatientBMI;
+    rr:predicate omet:PatientBMI;
     rr:objectMap [
       rml:reference "BMI";
       rr:datatype xsd:float
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate omet:hasPatientSex;
+    rr:objectMap [
+      rr:template "http://www.perspectum.com/ontology/metric/{Sex}"
     ]
   ].
 
@@ -78,7 +79,7 @@
 
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_Visit_{Patient_ID}_{Scan visit}";
-    rr:class psp:ScanVisit;
+    rr:class omet:ScanVisit;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -89,7 +90,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isAttendedBy;
+    rr:predicate omet:isAttendedBy;
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
@@ -99,7 +100,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:usesScannerModel;
+    rr:predicate omet:usesScannerModel;
     rr:objectMap [
       rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner}"    ]
   ].
@@ -120,7 +121,7 @@
 
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_PDFF_{Patient_ID}_{Scan visit}";
-    rr:class psp:liver_PDFF;
+    rr:class omet:liver_PDFF;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -144,7 +145,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isMetricForPatient;
+    rr:predicate omet:isMetricForPatient;
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
@@ -154,7 +155,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isMetricForVisit;
+    rr:predicate omet:isMetricForVisit;
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
@@ -184,7 +185,7 @@
 
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_T2Star_{Patient_ID}_{Scan visit}";
-    rr:class psp:liver_T2Star;
+    rr:class omet:liver_T2Star;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -208,7 +209,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isMetricForPatient;
+    rr:predicate omet:isMetricForPatient;
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
@@ -218,7 +219,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isMetricForVisit;
+    rr:predicate omet:isMetricForVisit;
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
@@ -248,7 +249,7 @@
 
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_cT1_{Patient_ID}_{Scan visit}";
-    rr:class psp:liver_cT1;
+    rr:class omet:liver_cT1;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -272,7 +273,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isMetricForPatient;
+    rr:predicate omet:isMetricForPatient;
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
@@ -282,7 +283,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate psp:isMetricForVisit;
+    rr:predicate omet:isMetricForVisit;
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [

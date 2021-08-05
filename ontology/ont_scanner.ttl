@@ -1,9 +1,9 @@
 @prefix : <http://www.perspectum.com/ontology/scanner#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix scn: <http://www.perspectum.com/ontology/scanner#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix oscn: <http://www.perspectum.com/ontology/scanner#> .
 @prefix qudt: <http://qudt.org/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix unit: <http://qudt.org/vocab/unit#> .
@@ -27,29 +27,29 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #################################################################
 
 ###  http://www.perspectum.com/ontology/scanner#hasFieldStrength
-scn:hasFieldStrength rdf:type owl:ObjectProperty ;
-                     owl:inverseOf scn:isFieldStrengthForScanner ;
-                     rdfs:domain scn:MRIScannerModel ;
-                     rdfs:range scn:ScannerFieldStrength ;
-                     rdfs:label "has field strength" .
+oscn:hasFieldStrength rdf:type owl:ObjectProperty ;
+                      owl:inverseOf oscn:isFieldStrengthForScanner ;
+                      rdfs:domain oscn:MRIScannerModel ;
+                      rdfs:range oscn:ScannerFieldStrength ;
+                      rdfs:label "has field strength" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isFieldStrengthForScanner
-scn:isFieldStrengthForScanner rdf:type owl:ObjectProperty ;
-                              rdfs:label "is field strength for scanner" .
+oscn:isFieldStrengthForScanner rdf:type owl:ObjectProperty ;
+                               rdfs:label "is field strength for scanner" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMadeBy
-scn:isMadeBy rdf:type owl:ObjectProperty ;
-             owl:inverseOf scn:isMakerOf ;
-             rdfs:label "is made by" .
+oscn:isMadeBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf oscn:isMakerOf ;
+              rdfs:label "is made by" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMakerOf
-scn:isMakerOf rdf:type owl:ObjectProperty ;
-              rdfs:domain scn:ScannerManufacturer ;
-              rdfs:range scn:MRIScannerModel ;
-              rdfs:label "is maker of" .
+oscn:isMakerOf rdf:type owl:ObjectProperty ;
+               rdfs:domain oscn:ScannerManufacturer ;
+               rdfs:range oscn:MRIScannerModel ;
+               rdfs:label "is maker of" .
 
 
 #################################################################
@@ -57,17 +57,17 @@ scn:isMakerOf rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://www.perspectum.com/ontology/scanner#FieldStrengthUnit
-scn:FieldStrengthUnit rdf:type owl:DatatypeProperty ;
-                      rdfs:domain scn:ScannerFieldStrength ;
-                      rdfs:range xsd:string ;
-                      rdfs:label "field strength unit" .
+oscn:FieldStrengthUnit rdf:type owl:DatatypeProperty ;
+                       rdfs:domain oscn:ScannerFieldStrength ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "field strength unit" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#FieldStrengthValue
-scn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
-                       rdfs:domain scn:ScannerFieldStrength ;
-                       rdfs:range xsd:double ;
-                       rdfs:label "field strength value" .
+oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
+                        rdfs:domain oscn:ScannerFieldStrength ;
+                        rdfs:range xsd:double ;
+                        rdfs:label "field strength value" .
 
 
 #################################################################
@@ -75,21 +75,21 @@ scn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
-scn:MRIScannerModel rdf:type owl:Class ;
-                    owl:disjointWith scn:ScannerFieldStrength ,
-                                     scn:ScannerManufacturer ;
-                    rdfs:label "MRI scanner model" .
+oscn:MRIScannerModel rdf:type owl:Class ;
+                     owl:disjointWith oscn:ScannerFieldStrength ,
+                                      oscn:ScannerManufacturer ;
+                     rdfs:label "MRI scanner model" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrength
-scn:ScannerFieldStrength rdf:type owl:Class ;
-                         owl:disjointWith scn:ScannerManufacturer ;
-                         rdfs:label "scanner field strength" .
+oscn:ScannerFieldStrength rdf:type owl:Class ;
+                          owl:disjointWith oscn:ScannerManufacturer ;
+                          rdfs:label "scanner field strength" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerManufacturer
-scn:ScannerManufacturer rdf:type owl:Class ;
-                        rdfs:label "scanner manufacturer" .
+oscn:ScannerManufacturer rdf:type owl:Class ;
+                         rdfs:label "scanner manufacturer" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

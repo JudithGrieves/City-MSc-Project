@@ -10,7 +10,8 @@ and executes the Iteration 1 example queries over the graph.
 
 ISSUES:
     
-    using this triple in query ?visit psp:usesScannerModel  ?scanner  . instead of ?scanner psp:usedInVisit ?visit .
+    NEEDS TO RETURN :FEMALE/MALE ENUMERATED TYPES W/O FULL URI PATH?
+    using this triple in query ?visit omet:usesScannerModel  ?scanner  . instead of ?scanner omet:usedInVisit ?visit .
 
 '''
 from rdflib import Graph
@@ -25,24 +26,28 @@ def query1(g,outfile):
     '''
     Example Query 1: 
     Give me all the Females with age above 40 and BMI above 25 that have liver cT1 above 800 ms
+    NOT FILTERING FOR SEX UNTIL ENUMERATED TYPES QUERY IS WORKING
     '''    
 
     qres = g.query(
     """SELECT DISTINCT  ?patient_label ?sex ?age ?bmi ?liver_cT1  WHERE
                 {?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
-                 ?patient psp:PatientSex ?sex .  
-                 ?patient psp:PatientAge ?age .
-                 ?patient psp:PatientBMI ?bmi .   
-                 {?metric psp:isMetricForPatient  ?patient  .
-                  ?metric psp:isMetricForVisit  ?visit  .
+                 ?patient omet:hasPatientSex ?sex . 
+                 ?patient omet:PatientAge ?age .
+                 ?patient omet:PatientBMI ?bmi .   
+                 {?metric omet:isMetricForPatient  ?patient  .
+                  ?metric omet:isMetricForVisit  ?visit  .
                  ?metric qudt:value ?liver_cT1 .
-                 ?metric a psp:liver_cT1  .}
+                 ?metric a omet:liver_cT1  .}
     FILTER(?age > 40 
-           && ?sex = "F" 
            && ?bmi  > 25 
            && ?liver_cT1 > 800 )} 
     ORDER BY ASC(?patient_label)  """)    
+    '''
+    
+           && ?sex = "F" 
+    '''
 
     print("Query 1 - Females with age above 40 and BMI above 25 that  \
             have liver cT1 above 800 ms:\n")   
@@ -68,16 +73,16 @@ def query2(g,outfile):
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
-                 ?visit psp:isAttendedBy ?patient . 
+                 ?visit omet:isAttendedBy ?patient . 
                  ?patient rdfs:label ?patient_label .
-                 ?patient psp:PatientSex ?sex .  
-                 ?patient psp:PatientAge ?age .
-                 ?patient psp:PatientBMI ?bmi .  
-                 {?metric psp:isMetricForPatient  ?patient  .
-                  ?metric psp:isMetricForVisit  ?visit  .
+                 ?patient omet:hasPatientSex ?sex . 
+                 ?patient omet:PatientAge ?age .
+                 ?patient omet:PatientBMI ?bmi .  
+                 {?metric omet:isMetricForPatient  ?patient  .
+                  ?metric omet:isMetricForVisit  ?visit  .
                  ?metric qudt:value ?liver_PDFF .
-                 ?metric a psp:liver_PDFF  .}
-                 ?visit psp:usesScannerModel  ?scanner  . 
+                 ?metric a omet:liver_PDFF  .}
+                 ?visit omet:usesScannerModel  ?scanner  . 
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a scn:MRIScannerModel .
                  ?manf a scn:ScannerManufacturer .
@@ -98,19 +103,6 @@ def query2(g,outfile):
             ,"Field Strength","Units","Manufacturer"'  
     outfile=outfile.replace("x", "2")       
     write_sparql(outfile,header,qres,1,1)  
-    '''
-    
-                 ?scanner a scn:MRIScannerModel .
-                 ?scanner scn:FieldStrength ?fs .
-                 ?scanner scn:FieldStrengthUnit  ?fsunit .
-                 ?manf a scn:ScannerManufacturer .
-                 ?manf rdfs:label ?manf_label .
-                 ?manf scn:isMakerOf ?scanner.
-                 ?fs  ?fsunit  ?manf_label 
-                 
-           && CONTAINS(STR(?manf_label),"Philips")
-           && ?fs = 1.5
-                 '''
         
 def query3(g,outfile):
     
@@ -124,20 +116,20 @@ def query3(g,outfile):
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
-                 ?visit psp:isAttendedBy ?patient .  
+                 ?visit omet:isAttendedBy ?patient .  
                  ?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
-                 ?patient psp:PatientSex ?sex .  
-                 ?patient psp:PatientAge ?age .
-                 ?patient psp:PatientBMI ?bmi .   
-                 {?metric_PDFF psp:isMetricForPatient  ?patient  .
-                  ?metric_PDFF psp:isMetricForVisit  ?visit  .
+                 ?patient omet:hasPatientSex ?sex . 
+                 ?patient omet:PatientAge ?age .
+                 ?patient omet:PatientBMI ?bmi .   
+                 {?metric_PDFF omet:isMetricForPatient  ?patient  .
+                  ?metric_PDFF omet:isMetricForVisit  ?visit  .
                  ?metric_PDFF qudt:value ?liver_PDFF .
-                 ?metric_PDFF a psp:liver_PDFF  .}
-                 {?metric_cT1 psp:isMetricForPatient  ?patient  .
-                  ?metric_cT1 psp:isMetricForVisit  ?visit  .
+                 ?metric_PDFF a omet:liver_PDFF  .}
+                 {?metric_cT1 omet:isMetricForPatient  ?patient  .
+                  ?metric_cT1 omet:isMetricForVisit  ?visit  .
                  ?metric_cT1 qudt:value ?liver_cT1 .
-                 ?metric_cT1 a psp:liver_cT1  .}
+                 ?metric_cT1 a omet:liver_cT1  .}
     FILTER(?liver_PDFF < 10
            && ?liver_cT1 > 800) } 
     ORDER BY ASC(?patient_label)  """)    
@@ -172,6 +164,7 @@ def main():
     print("Loaded '" + str(len(g)) + "' triples.\n")   
     g.parse(inFile2, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n")  
+    # SUPPRESS THIS WHILE TESTING
     g.parse(inFile3, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)       
 

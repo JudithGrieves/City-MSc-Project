@@ -1,16 +1,16 @@
-@prefix : <http://www.perspectum.com/ontology#> .
+@prefix : <http://www.perspectum.com/ontology/metric#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix psp: <http://www.perspectum.com/ontology> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix omet: <http://www.perspectum.com/ontology/metric> .
 @prefix qudt: <http://qudt.org/schema/qudt> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.perspectum.com/ontology> .
+@base <http://www.perspectum.com/ontology/metric> .
 
-<http://www.perspectum.com/ontology> rdf:type owl:Ontology ;
-                                      owl:versionIRI <http://www.perspectum.com/ontology/1.0> ;
-                                      owl:versionInfo """Versions
+<http://www.perspectum.com/ontology/metric> rdf:type owl:Ontology ;
+                                             owl:versionIRI <http://www.perspectum.com/ontology/metric/1.0> ;
+                                             owl:versionInfo """Versions
 
 25/6/2021 1.0  First version
 12/7/2021 1.1  Remove Manufacturer; now in Scanner ontology
@@ -33,7 +33,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                                    rdfs:label "unit of measure" .
 
 
-###  http://www.perspectum.com/ontology#attendsVisit
+###  http://www.perspectum.com/ontology/metric#attendsVisit
 :attendsVisit rdf:type owl:ObjectProperty ;
               owl:inverseOf :isAttendedBy ;
               rdfs:domain :Patient ;
@@ -41,7 +41,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
               rdfs:label "attends visit" .
 
 
-###  http://www.perspectum.com/ontology#hasPatientMetric
+###  http://www.perspectum.com/ontology/metric#hasPatientMetric
 :hasPatientMetric rdf:type owl:ObjectProperty ;
                   owl:inverseOf :isMetricForPatient ;
                   rdfs:domain :Patient ;
@@ -49,13 +49,13 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                   rdfs:label "has patient metric" .
 
 
-###  http://www.perspectum.com/ontology#hasPatientSex
+###  http://www.perspectum.com/ontology/metric#hasPatientSex
 :hasPatientSex rdf:type owl:ObjectProperty ;
                rdfs:domain :Patient ;
                rdfs:range :PatientSex .
 
 
-###  http://www.perspectum.com/ontology#hasVisitMetric
+###  http://www.perspectum.com/ontology/metric#hasVisitMetric
 :hasVisitMetric rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isMetricForVisit ;
                 rdfs:domain :ScanVisit ;
@@ -63,24 +63,24 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                 rdfs:label "has visit metric" .
 
 
-###  http://www.perspectum.com/ontology#isAttendedBy
+###  http://www.perspectum.com/ontology/metric#isAttendedBy
 :isAttendedBy rdf:type owl:ObjectProperty ;
               rdfs:domain :ScanVisit ;
               rdfs:range :Patient ;
               rdfs:label "is attended by" .
 
 
-###  http://www.perspectum.com/ontology#isMetricForPatient
+###  http://www.perspectum.com/ontology/metric#isMetricForPatient
 :isMetricForPatient rdf:type owl:ObjectProperty ;
                     rdfs:label "is metric for patient" .
 
 
-###  http://www.perspectum.com/ontology#isMetricForVisit
+###  http://www.perspectum.com/ontology/metric#isMetricForVisit
 :isMetricForVisit rdf:type owl:ObjectProperty ;
                   rdfs:label "is metric for visit" .
 
 
-###  http://www.perspectum.com/ontology#usedInVisit
+###  http://www.perspectum.com/ontology/metric#usedInVisit
 :usedInVisit rdf:type owl:ObjectProperty ;
              owl:inverseOf :usesScannerModel ;
              rdfs:domain :MRIScannerModel ;
@@ -88,7 +88,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
              rdfs:label "used in visit" .
 
 
-###  http://www.perspectum.com/ontology#usesScannerModel
+###  http://www.perspectum.com/ontology/metric#usesScannerModel
 :usesScannerModel rdf:type owl:ObjectProperty .
 
 
@@ -105,14 +105,14 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                                     rdfs:label "value" .
 
 
-###  http://www.perspectum.com/ontology#PatientAge
+###  http://www.perspectum.com/ontology/metric#PatientAge
 :PatientAge rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain :Patient ;
             rdfs:range xsd:int .
 
 
-###  http://www.perspectum.com/ontology#PatientBMI
+###  http://www.perspectum.com/ontology/metric#PatientBMI
 :PatientBMI rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain :Patient ;
@@ -124,25 +124,25 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #    Classes
 #################################################################
 
-###  http://www.perspectum.com/ontology#LiverPDFF
+###  http://www.perspectum.com/ontology/metric#LiverPDFF
 :LiverPDFF rdf:type owl:Class ;
            rdfs:subClassOf :ScanMetric ;
            rdfs:label "liver PDFF" .
 
 
-###  http://www.perspectum.com/ontology#LiverT2Star
+###  http://www.perspectum.com/ontology/metric#LiverT2Star
 :LiverT2Star rdf:type owl:Class ;
              rdfs:subClassOf :ScanMetric ;
              rdfs:label "liver T2star" .
 
 
-###  http://www.perspectum.com/ontology#Liver_cT1
+###  http://www.perspectum.com/ontology/metric#Liver_cT1
 :Liver_cT1 rdf:type owl:Class ;
            rdfs:subClassOf :ScanMetric ;
            rdfs:label "liver cT1" .
 
 
-###  http://www.perspectum.com/ontology#MRIScannerModel
+###  http://www.perspectum.com/ontology/metric#MRIScannerModel
 :MRIScannerModel rdf:type owl:Class ;
                  owl:disjointWith :Patient ,
                                   :PatientSex ,
@@ -151,7 +151,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                  rdfs:label "scanner" .
 
 
-###  http://www.perspectum.com/ontology#Patient
+###  http://www.perspectum.com/ontology/metric#Patient
 :Patient rdf:type owl:Class ;
          owl:disjointWith :PatientSex ,
                           :QuantitativeMetric ,
@@ -159,7 +159,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
          rdfs:label "patient" .
 
 
-###  http://www.perspectum.com/ontology#PatientSex
+###  http://www.perspectum.com/ontology/metric#PatientSex
 :PatientSex rdf:type owl:Class ;
             owl:equivalentClass [ rdf:type owl:Class ;
                                   owl:oneOf ( :Female
@@ -170,19 +170,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                              :ScanVisit .
 
 
-###  http://www.perspectum.com/ontology#QuantitativeMetric
+###  http://www.perspectum.com/ontology/metric#QuantitativeMetric
 :QuantitativeMetric rdf:type owl:Class ;
                     owl:disjointWith :ScanVisit ;
                     rdfs:label "quantitative metric" .
 
 
-###  http://www.perspectum.com/ontology#ScanMetric
+###  http://www.perspectum.com/ontology/metric#ScanMetric
 :ScanMetric rdf:type owl:Class ;
             rdfs:subClassOf :QuantitativeMetric ;
             rdfs:label "scan metric" .
 
 
-###  http://www.perspectum.com/ontology#ScanVisit
+###  http://www.perspectum.com/ontology/metric#ScanVisit
 :ScanVisit rdf:type owl:Class ;
            rdfs:label "scan visit" .
 
@@ -191,13 +191,13 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #    Individuals
 #################################################################
 
-###  http://www.perspectum.com/ontology#Female
+###  http://www.perspectum.com/ontology/metric#Female
 :Female rdf:type owl:NamedIndividual ;
         rdfs:label "F" ,
                    "Female" .
 
 
-###  http://www.perspectum.com/ontology#Male
+###  http://www.perspectum.com/ontology/metric#Male
 :Male rdf:type owl:NamedIndividual ;
       rdfs:label "M" ,
                  "Male" .

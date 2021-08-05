@@ -1,0 +1,427 @@
+@prefix : <http://example.org/rules/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix muom: <http://www.perspectum.com/resources/metricuom/> .
+@prefix omet: <http://www.perspectum.com/ontology/metric/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix psp: <http://www.perspectum.com/resources/metric/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix schema: <http://schema.org/> .
+@prefix scn: <http://www.perspectum.com/resources/scanner/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+psp:URI_Patient_P005 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "58"^^xsd:int;
+  omet:PatientBMI "25"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P005" .
+
+psp:URI_Patient_P935 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "25"^^xsd:int;
+  omet:PatientBMI "22"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P935" .
+
+psp:URI_Patient_P973 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "38"^^xsd:int;
+  omet:PatientBMI "28"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P973" .
+
+psp:URI_Patient_P974 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "39"^^xsd:int;
+  omet:PatientBMI "29.5"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P974" .
+
+psp:URI_Patient_P975 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "40"^^xsd:int;
+  omet:PatientBMI "31"^^xsd:float;
+  omet:hasPatientSex omet:Male;
+  rdfs:label "P975" .
+
+psp:URI_Patient_P976 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "41"^^xsd:int;
+  omet:PatientBMI "32.5"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P976" .
+
+psp:URI_Patient_P977 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "42"^^xsd:int;
+  omet:PatientBMI "34"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P977" .
+
+psp:URI_Patient_P978 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "43"^^xsd:int;
+  omet:PatientBMI "35.5"^^xsd:float;
+  omet:hasPatientSex omet:Male;
+  rdfs:label "P978" .
+
+psp:URI_Patient_P979 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "44"^^xsd:int;
+  omet:PatientBMI "37"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P979" .
+
+psp:URI_Patient_P980 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "45"^^xsd:int;
+  omet:PatientBMI "38.5"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P980" .
+
+psp:URI_Patient_P981 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "46"^^xsd:int;
+  omet:PatientBMI "40"^^xsd:float;
+  omet:hasPatientSex omet:Male;
+  rdfs:label "P981" .
+
+psp:URI_Patient_P989 a omet:Patient, owl:NamedIndividual;
+  omet:PatientAge "47"^^xsd:int;
+  omet:PatientBMI "41.5"^^xsd:float;
+  omet:hasPatientSex omet:Female;
+  rdfs:label "P989" .
+
+psp:URI_Visit_P005_2 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P005;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:label "P005/2" .
+
+psp:URI_Visit_P935_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P935;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:label "P935/1" .
+
+psp:URI_Visit_P973_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P973;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:label "P973/1" .
+
+psp:URI_Visit_P974_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P974;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P974/1" .
+
+psp:URI_Visit_P975_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P975;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P975/1" .
+
+psp:URI_Visit_P976_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P976;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P976/1" .
+
+psp:URI_Visit_P977_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P977;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:label "P977/1" .
+
+psp:URI_Visit_P978_2 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P978;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:label "P978/2" .
+
+psp:URI_Visit_P979_1 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P979;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:label "P979/1" .
+
+psp:URI_Visit_P979_2 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P979;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:label "P979/2" .
+
+psp:URI_Visit_P980_2 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P980;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:label "P980/2" .
+
+psp:URI_Visit_P981_2 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P981;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:label "P981/2" .
+
+psp:URI_Visit_P989_2 a omet:ScanVisit, owl:NamedIndividual;
+  omet:isAttendedBy psp:URI_Patient_P989;
+  omet:usesScannerModel scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:label "P989/2" .
+
+psp:URI_liver_PDFF_P005_2 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "6.3"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P005;
+  omet:isMetricForVisit psp:URI_Visit_P005_2;
+  rdfs:label "liver PDFF P005/2" .
+
+psp:URI_liver_PDFF_P935_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "4.9"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P935;
+  omet:isMetricForVisit psp:URI_Visit_P935_1;
+  rdfs:label "liver PDFF P935/1" .
+
+psp:URI_liver_PDFF_P973_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "5.7"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P973;
+  omet:isMetricForVisit psp:URI_Visit_P973_1;
+  rdfs:label "liver PDFF P973/1" .
+
+psp:URI_liver_PDFF_P974_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "5"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P974;
+  omet:isMetricForVisit psp:URI_Visit_P974_1;
+  rdfs:label "liver PDFF P974/1" .
+
+psp:URI_liver_PDFF_P975_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "4.3"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P975;
+  omet:isMetricForVisit psp:URI_Visit_P975_1;
+  rdfs:label "liver PDFF P975/1" .
+
+psp:URI_liver_PDFF_P976_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "3.6"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P976;
+  omet:isMetricForVisit psp:URI_Visit_P976_1;
+  rdfs:label "liver PDFF P976/1" .
+
+psp:URI_liver_PDFF_P977_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "2.9"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P977;
+  omet:isMetricForVisit psp:URI_Visit_P977_1;
+  rdfs:label "liver PDFF P977/1" .
+
+psp:URI_liver_PDFF_P978_2 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "12.2"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P978;
+  omet:isMetricForVisit psp:URI_Visit_P978_2;
+  rdfs:label "liver PDFF P978/2" .
+
+psp:URI_liver_PDFF_P979_1 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "6"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P979;
+  omet:isMetricForVisit psp:URI_Visit_P979_1;
+  rdfs:label "liver PDFF P979/1" .
+
+psp:URI_liver_PDFF_P979_2 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "4"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P979;
+  omet:isMetricForVisit psp:URI_Visit_P979_2;
+  rdfs:label "liver PDFF P979/2" .
+
+psp:URI_liver_PDFF_P980_2 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "12"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P980;
+  omet:isMetricForVisit psp:URI_Visit_P980_2;
+  rdfs:label "liver PDFF P980/2" .
+
+psp:URI_liver_PDFF_P981_2 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "5"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P981;
+  omet:isMetricForVisit psp:URI_Visit_P981_2;
+  rdfs:label "liver PDFF P981/2" .
+
+psp:URI_liver_PDFF_P989_2 a omet:liver_PDFF, owl:NamedIndividual;
+  qudt:unit unit:PERCENT;
+  qudt:value "13"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P989;
+  omet:isMetricForVisit psp:URI_Visit_P989_2;
+  rdfs:label "liver PDFF P989/2" .
+
+psp:URI_liver_T2Star_P005_2 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "32.4"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P005;
+  omet:isMetricForVisit psp:URI_Visit_P005_2;
+  rdfs:label "liver T2Star P005/2" .
+
+psp:URI_liver_T2Star_P935_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "24.2"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P935;
+  omet:isMetricForVisit psp:URI_Visit_P935_1;
+  rdfs:label "liver T2Star P935/1" .
+
+psp:URI_liver_T2Star_P973_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "30.8"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P973;
+  omet:isMetricForVisit psp:URI_Visit_P973_1;
+  rdfs:label "liver T2Star P973/1" .
+
+psp:URI_liver_T2Star_P974_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "34.1"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P974;
+  omet:isMetricForVisit psp:URI_Visit_P974_1;
+  rdfs:label "liver T2Star P974/1" .
+
+psp:URI_liver_T2Star_P975_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "37.4"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P975;
+  omet:isMetricForVisit psp:URI_Visit_P975_1;
+  rdfs:label "liver T2Star P975/1" .
+
+psp:URI_liver_T2Star_P976_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "40.7"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P976;
+  omet:isMetricForVisit psp:URI_Visit_P976_1;
+  rdfs:label "liver T2Star P976/1" .
+
+psp:URI_liver_T2Star_P977_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "44"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P977;
+  omet:isMetricForVisit psp:URI_Visit_P977_1;
+  rdfs:label "liver T2Star P977/1" .
+
+psp:URI_liver_T2Star_P978_2 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "47.3"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P978;
+  omet:isMetricForVisit psp:URI_Visit_P978_2;
+  rdfs:label "liver T2Star P978/2" .
+
+psp:URI_liver_T2Star_P979_1 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "27.5"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P979;
+  omet:isMetricForVisit psp:URI_Visit_P979_1;
+  rdfs:label "liver T2Star P979/1" .
+
+psp:URI_liver_T2Star_P979_2 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "50.6"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P979;
+  omet:isMetricForVisit psp:URI_Visit_P979_2;
+  rdfs:label "liver T2Star P979/2" .
+
+psp:URI_liver_T2Star_P980_2 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "53.9"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P980;
+  omet:isMetricForVisit psp:URI_Visit_P980_2;
+  rdfs:label "liver T2Star P980/2" .
+
+psp:URI_liver_T2Star_P981_2 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "57.2"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P981;
+  omet:isMetricForVisit psp:URI_Visit_P981_2;
+  rdfs:label "liver T2Star P981/2" .
+
+psp:URI_liver_T2Star_P989_2 a omet:liver_T2Star, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "60.5"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P989;
+  omet:isMetricForVisit psp:URI_Visit_P989_2;
+  rdfs:label "liver T2Star P989/2" .
+
+psp:URI_liver_cT1_P005_2 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "799"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P005;
+  omet:isMetricForVisit psp:URI_Visit_P005_2;
+  rdfs:label "liver cT1 P005/2" .
+
+psp:URI_liver_cT1_P935_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "712"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P935;
+  omet:isMetricForVisit psp:URI_Visit_P935_1;
+  rdfs:label "liver cT1 P935/1" .
+
+psp:URI_liver_cT1_P973_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "754"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P973;
+  omet:isMetricForVisit psp:URI_Visit_P973_1;
+  rdfs:label "liver cT1 P973/1" .
+
+psp:URI_liver_cT1_P974_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "801"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P974;
+  omet:isMetricForVisit psp:URI_Visit_P974_1;
+  rdfs:label "liver cT1 P974/1" .
+
+psp:URI_liver_cT1_P975_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "810"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P975;
+  omet:isMetricForVisit psp:URI_Visit_P975_1;
+  rdfs:label "liver cT1 P975/1" .
+
+psp:URI_liver_cT1_P976_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "819"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P976;
+  omet:isMetricForVisit psp:URI_Visit_P976_1;
+  rdfs:label "liver cT1 P976/1" .
+
+psp:URI_liver_cT1_P977_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "828"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P977;
+  omet:isMetricForVisit psp:URI_Visit_P977_1;
+  rdfs:label "liver cT1 P977/1" .
+
+psp:URI_liver_cT1_P978_2 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "837"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P978;
+  omet:isMetricForVisit psp:URI_Visit_P978_2;
+  rdfs:label "liver cT1 P978/2" .
+
+psp:URI_liver_cT1_P979_1 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "789"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P979;
+  omet:isMetricForVisit psp:URI_Visit_P979_1;
+  rdfs:label "liver cT1 P979/1" .
+
+psp:URI_liver_cT1_P979_2 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "846"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P979;
+  omet:isMetricForVisit psp:URI_Visit_P979_2;
+  rdfs:label "liver cT1 P979/2" .
+
+psp:URI_liver_cT1_P980_2 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "788"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P980;
+  omet:isMetricForVisit psp:URI_Visit_P980_2;
+  rdfs:label "liver cT1 P980/2" .
+
+psp:URI_liver_cT1_P981_2 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "864"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P981;
+  omet:isMetricForVisit psp:URI_Visit_P981_2;
+  rdfs:label "liver cT1 P981/2" .
+
+psp:URI_liver_cT1_P989_2 a omet:liver_cT1, owl:NamedIndividual;
+  qudt:unit unit:MilliSEC;
+  qudt:value "873"^^xsd:float;
+  omet:isMetricForPatient psp:URI_Patient_P989;
+  omet:isMetricForVisit psp:URI_Visit_P989_2;
+  rdfs:label "liver cT1 P989/2" .

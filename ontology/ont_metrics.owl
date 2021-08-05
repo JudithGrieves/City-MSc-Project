@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.perspectum.com/ontology"
+     xml:base="http://www.perspectum.com/ontology/metric"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.perspectum.com/ontology"
-     versionIRI="http://www.perspectum.com/ontology/1.0">
-    <Prefix name="" IRI="http://www.perspectum.com/ontology#"/>
+     ontologyIRI="http://www.perspectum.com/ontology/metric"
+     versionIRI="http://www.perspectum.com/ontology/metric/1.0">
+    <Prefix name="" IRI="http://www.perspectum.com/ontology/metric#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="psp" IRI="http://www.perspectum.com/ontology"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric"/>
     <Prefix name="qudt" IRI="http://qudt.org/schema/qudt"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Annotation>
