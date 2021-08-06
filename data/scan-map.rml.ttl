@@ -5,10 +5,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/rules/> .
-@prefix schema: <http://schema.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix oscn: <http://www.perspectum.com/ontology/scanner/> .
 @prefix scn: <http://www.perspectum.com/resources/scanner/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
@@ -29,7 +28,7 @@
 :field_strength 
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/scanner/URI_FS_{Scanner Model}";
-    rr:class scn:ScannerFieldStrength;
+    rr:class oscn:ScannerFieldStrength;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -46,7 +45,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate scn:isFieldStrengthForScanner ;
+    rr:predicate oscn:isFieldStrengthForScanner ;
     rr:objectMap [
       rr:parentTriplesMap :scanner;
       rr:joinCondition [
@@ -79,7 +78,7 @@
 :scanner 
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner Model}";
-    rr:class scn:MRIScannerModel;
+    rr:class oscn:MRIScannerModel;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -106,7 +105,7 @@
 :manufacturer  
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/scanner/URI_Manufacturer_{Scanner Manufacturer}";
-    rr:class scn:ScannerManufacturer;
+    rr:class oscn:ScannerManufacturer;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -117,7 +116,7 @@
       ]
   ];
   rr:predicateObjectMap [
-    rr:predicate scn:isMakerOf ;
+    rr:predicate oscn:isMakerOf ;
     rr:objectMap [
       rr:parentTriplesMap :scanner;
       rr:joinCondition [

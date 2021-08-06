@@ -1,3 +1,4 @@
+@prefix oscn: <http://www.perspectum.com/ontology/scanner/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -6,46 +7,46 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-scn:URI_FS_Philips_ModelA a scn:ScannerFieldStrength, owl:NamedIndividual;
+scn:URI_FS_Philips_ModelA a oscn:ScannerFieldStrength, owl:NamedIndividual;
   qudt:unit unit:T;
   qudt:value "1.5"^^xsd:float;
-  scn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Philips_ModelA;
+  oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Philips_ModelA;
   rdfs:label "1.5" .
 
-scn:URI_FS_Philips_ModelB a scn:ScannerFieldStrength, owl:NamedIndividual;
+scn:URI_FS_Philips_ModelB a oscn:ScannerFieldStrength, owl:NamedIndividual;
   qudt:unit unit:T;
   qudt:value "5"^^xsd:float;
-  scn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Philips_ModelB;
+  oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Philips_ModelB;
   rdfs:label "5" .
 
-scn:URI_FS_Siemens_ModelA a scn:ScannerFieldStrength, owl:NamedIndividual;
+scn:URI_FS_Siemens_ModelA a oscn:ScannerFieldStrength, owl:NamedIndividual;
   qudt:unit unit:T;
   qudt:value "1.5"^^xsd:float;
-  scn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Siemens_ModelA;
+  oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Siemens_ModelA;
   rdfs:label "1.5" .
 
-scn:URI_FS_Siemens_ModelB a scn:ScannerFieldStrength, owl:NamedIndividual;
+scn:URI_FS_Siemens_ModelB a oscn:ScannerFieldStrength, owl:NamedIndividual;
   qudt:unit unit:T;
   qudt:value "3"^^xsd:float;
-  scn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Siemens_ModelB;
+  oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Siemens_ModelB;
   rdfs:label "3" .
 
-scn:URI_MRIScannerModel_Philips_ModelA a scn:MRIScannerModel, owl:NamedIndividual;
+scn:URI_MRIScannerModel_Philips_ModelA a oscn:MRIScannerModel, owl:NamedIndividual;
   rdfs:label "Philips_ModelA" .
 
-scn:URI_MRIScannerModel_Philips_ModelB a scn:MRIScannerModel, owl:NamedIndividual;
+scn:URI_MRIScannerModel_Philips_ModelB a oscn:MRIScannerModel, owl:NamedIndividual;
   rdfs:label "Philips_ModelB" .
 
-scn:URI_MRIScannerModel_Siemens_ModelA a scn:MRIScannerModel, owl:NamedIndividual;
+scn:URI_MRIScannerModel_Siemens_ModelA a oscn:MRIScannerModel, owl:NamedIndividual;
   rdfs:label "Siemens_ModelA" .
 
-scn:URI_MRIScannerModel_Siemens_ModelB a scn:MRIScannerModel, owl:NamedIndividual;
+scn:URI_MRIScannerModel_Siemens_ModelB a oscn:MRIScannerModel, owl:NamedIndividual;
   rdfs:label "Siemens_ModelB" .
 
-scn:URI_Manufacturer_Philips a scn:ScannerManufacturer, owl:NamedIndividual;
-  scn:isMakerOf scn:URI_MRIScannerModel_Philips_ModelA, scn:URI_MRIScannerModel_Philips_ModelB;
+scn:URI_Manufacturer_Philips a oscn:ScannerManufacturer, owl:NamedIndividual;
+  oscn:isMakerOf scn:URI_MRIScannerModel_Philips_ModelA, scn:URI_MRIScannerModel_Philips_ModelB;
   rdfs:label "Philips" .
 
-scn:URI_Manufacturer_Siemens a scn:ScannerManufacturer, owl:NamedIndividual;
-  scn:isMakerOf scn:URI_MRIScannerModel_Siemens_ModelA, scn:URI_MRIScannerModel_Siemens_ModelB;
+scn:URI_Manufacturer_Siemens a oscn:ScannerManufacturer, owl:NamedIndividual;
+  oscn:isMakerOf scn:URI_MRIScannerModel_Siemens_ModelA, scn:URI_MRIScannerModel_Siemens_ModelB;
   rdfs:label "Siemens" .

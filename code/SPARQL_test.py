@@ -65,7 +65,7 @@ def query_all(g,outfile):
     # ?fsunit not in original TabularData sheet but included here to show 
     # that the scanner data is being picked up from a separate KG
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?label ?bmi  \
+    """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?bmi  \
                         ?liver_cT1   ?liver_PDFF ?liver_T2Star ?scanner_label?fsval ?fsunitlabel  ?manf_label \
                        WHERE
                 {
@@ -76,20 +76,28 @@ def query_all(g,outfile):
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
                   OPTIONAL {?sex  rdfs:label ?label . }
-                 ?patient omet:PatientAge ?age . 
-                 ?patient omet:PatientBMI ?bmi . 
                  ?visit omet:usesScannerModel  ?scanner  .
                  ?scanner rdfs:label ?scanner_label .
-                 ?scanner a scn:MRIScannerModel .
-                 ?manf a scn:ScannerManufacturer .
+                 ?scanner a oscn:MRIScannerModel .
+                 ?manf a oscn:ScannerManufacturer .
                  ?manf rdfs:label ?manf_label .
-                 ?manf scn:isMakerOf ?scanner.
-                 OPTIONAL {?fs scn:isFieldStrengthForScanner ?scanner .
+                 ?manf oscn:isMakerOf ?scanner.
+                 OPTIONAL {?fs oscn:isFieldStrengthForScanner ?scanner .
                            ?fs qudt:value ?fsval .
                            ?fs qudt:unit ?fsunit . 
                            ?fsunit rdfs:label ?fsunitlabel .  }
                  
                  
+                 {?PatientAge omet:isMetricForPatient  ?patient  .
+                  ?PatientAge omet:isMetricForVisit  ?visit  .
+                 ?PatientAge qudt:value ?age .
+                 ?PatientAge a omet:PatientAge  .}
+                 UNION
+                 {?PatientBMI omet:isMetricForPatient  ?patient  .
+                  ?PatientBMI omet:isMetricForVisit  ?visit  .
+                 ?PatientBMI qudt:value ?bmi .
+                 ?PatientBMI a omet:PatientBMI  .}
+                 UNION
                  {?metric1 omet:isMetricForPatient  ?patient  .
                   ?metric1 omet:isMetricForVisit  ?visit  .
                  ?metric1 qudt:value ?liver_cT1 .
@@ -143,12 +151,10 @@ def main():
     inFile3="http://qudt.org/2.1/vocab/unit"
     # suppressed to save time in testing
     g.parse(inFile3, format="ttl")         
-    print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)    
-    
-    
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)     
     
     ont_dir = os.path.join(dirname(dirname(abspath(__file__))), 'ontology')
-    inFile4="ont_metrics.ttl" 
+    inFile4="ont_metric.ttl" 
     inFile4 = os.path.join(ont_dir,inFile4)
     g.parse(inFile4, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n",inFile4)    

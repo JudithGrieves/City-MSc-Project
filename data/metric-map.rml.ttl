@@ -5,78 +5,28 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/rules/> .
-@prefix schema: <http://schema.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix scn: <http://www.perspectum.com/resources/scanner/> .
 @prefix omet: <http://www.perspectum.com/ontology/metric/> .
-@prefix psp: <http://www.perspectum.com/resources/metric/> .
-@prefix muom: <http://www.perspectum.com/resources/metricuom/> .
+@prefix met: <http://www.perspectum.com/resources/metric/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
-
-:patient a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source [
-      a csvw:Table;
-      csvw:url "../data/metrics_data.csv";
-      csvw:dialect [
-        a csvw:Dialect;
-        csvw:delimiter ","
-      ]
-    ];
-    rml:referenceFormulation ql:CSV
-  ].
-
-:patient
-  rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_Patient_{Patient_ID}";
-    rr:class omet:Patient;
-    rr:class owl:NamedIndividual 
-  ];
-  rr:predicateObjectMap [
-    rr:predicate rdfs:label;
-    rr:objectMap [
-      rml:reference "Patient_ID";
-      rr:datatype xsd:string
-    ]
-  ];
-  rr:predicateObjectMap [
-    rr:predicate omet:PatientAge;
-    rr:objectMap [
-      rml:reference "Age";
-      rr:datatype xsd:int
-    ]
-  ];
-  rr:predicateObjectMap [
-    rr:predicate omet:PatientBMI;
-    rr:objectMap [
-      rml:reference "BMI";
-      rr:datatype xsd:float
-    ]
-  ];
-  rr:predicateObjectMap [
-    rr:predicate omet:hasPatientSex;
-    rr:objectMap [
-      rr:template "http://www.perspectum.com/ontology/metric/{Sex}"
-    ]
-  ].
 
 :visit a rr:TriplesMap;
 
   rml:logicalSource [
     rml:source [
       a csvw:Table;
-      csvw:url "../data/metrics_data.csv";
+      csvw:url "../data/metric_data.csv";
       csvw:dialect [
         a csvw:Dialect;
         csvw:delimiter ","
       ]
     ];
     rml:referenceFormulation ql:CSV
-  ];
+  ].
 
+:visit
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_Visit_{Patient_ID}_{Scan visit}";
     rr:class omet:ScanVisit;
@@ -105,20 +55,184 @@
       rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner}"    ]
   ].
 
-:liver_PDFF a rr:TriplesMap;
-
+:patient a rr:TriplesMap;
   rml:logicalSource [
     rml:source [
       a csvw:Table;
-      csvw:url "../data/metrics_data.csv";
+      csvw:url "../data/metric_data.csv";
       csvw:dialect [
         a csvw:Dialect;
         csvw:delimiter ","
       ]
     ];
     rml:referenceFormulation ql:CSV
-  ];
+  ].
 
+:patient
+  rr:subjectMap [
+    rr:template "http://www.perspectum.com/resources/metric/URI_Patient_{Patient_ID}";
+    rr:class omet:Patient;
+    rr:class owl:NamedIndividual 
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "Patient_ID";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate omet:hasPatientSex;
+    rr:objectMap [
+      rr:template "http://www.perspectum.com/ontology/metric/{Sex}"
+    ]
+  ].
+
+:age a rr:TriplesMap;
+
+  rml:logicalSource [
+    rml:source [
+      a csvw:Table;
+      csvw:url "../data/metric_data.csv";
+      csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ","
+      ]
+    ];
+    rml:referenceFormulation ql:CSV
+  ].
+
+:age
+  rr:subjectMap [
+    rr:template "http://www.perspectum.com/resources/metric/URI_PatientAge_{Patient_ID}_{Scan visit}";
+    rr:class omet:PatientAge;
+    rr:class owl:NamedIndividual 
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rr:template "Age {Patient_ID}/{Scan visit}";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate qudt:value;
+    rr:objectMap [
+      rml:reference "Age";
+      rr:datatype xsd:int
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate qudt:unit;
+    rr:objectMap [
+      rr:constant unit:YR
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate omet:isMetricForPatient;
+    rr:objectMap [
+      rr:parentTriplesMap :patient;
+      rr:joinCondition [
+        rr:child "Patient_ID";
+        rr:parent "Patient_ID"
+      ]
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate omet:isMetricForVisit;
+    rr:objectMap [
+      rr:parentTriplesMap :visit;
+      rr:joinCondition [
+        rr:child "Scan visit";
+        rr:parent "Scan visit"
+      ];
+      rr:joinCondition [
+        rr:child "Patient_ID";
+        rr:parent "Patient_ID"
+      ]
+    ]
+  ].
+
+:bmi a rr:TriplesMap;
+
+  rml:logicalSource [
+    rml:source [
+      a csvw:Table;
+      csvw:url "../data/metric_data.csv";
+      csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ","
+      ]
+    ];
+    rml:referenceFormulation ql:CSV
+  ].
+
+:bmi
+  rr:subjectMap [
+    rr:template "http://www.perspectum.com/resources/metric/URI_PatientBMI_{Patient_ID}_{Scan visit}";
+    rr:class omet:PatientBMI;
+    rr:class owl:NamedIndividual 
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rr:template "BMI {Patient_ID}/{Scan visit}";
+      rr:datatype xsd:string
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate qudt:value;
+    rr:objectMap [
+      rml:reference "BMI";
+      rr:datatype xsd:float
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate qudt:unit;
+    rr:objectMap [
+      rr:constant unit:KiloGM-PER-M2
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate omet:isMetricForPatient;
+    rr:objectMap [
+      rr:parentTriplesMap :patient;
+      rr:joinCondition [
+        rr:child "Patient_ID";
+        rr:parent "Patient_ID"
+      ]
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate omet:isMetricForVisit;
+    rr:objectMap [
+      rr:parentTriplesMap :visit;
+      rr:joinCondition [
+        rr:child "Scan visit";
+        rr:parent "Scan visit"
+      ];
+      rr:joinCondition [
+        rr:child "Patient_ID";
+        rr:parent "Patient_ID"
+      ]
+    ]
+  ].
+
+:liver_PDFF a rr:TriplesMap;
+
+  rml:logicalSource [
+    rml:source [
+      a csvw:Table;
+      csvw:url "../data/metric_data.csv";
+      csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ","
+      ]
+    ];
+    rml:referenceFormulation ql:CSV
+  ].
+
+:liver_PDFF
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_PDFF_{Patient_ID}_{Scan visit}";
     rr:class omet:liver_PDFF;
@@ -174,15 +288,16 @@
   rml:logicalSource [
     rml:source [
       a csvw:Table;
-      csvw:url "../data/metrics_data.csv";
+      csvw:url "../data/metric_data.csv";
       csvw:dialect [
         a csvw:Dialect;
         csvw:delimiter ","
       ]
     ];
     rml:referenceFormulation ql:CSV
-  ];
+  ].
 
+:liver_T2Star
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_T2Star_{Patient_ID}_{Scan visit}";
     rr:class omet:liver_T2Star;
@@ -238,15 +353,16 @@
   rml:logicalSource [
     rml:source [
       a csvw:Table;
-      csvw:url "../data/metrics_data.csv";
+      csvw:url "../data/metric_data.csv";
       csvw:dialect [
         a csvw:Dialect;
         csvw:delimiter ","
       ]
     ];
     rml:referenceFormulation ql:CSV
-  ];
+  ].
 
+:liver_cT1
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_cT1_{Patient_ID}_{Scan visit}";
     rr:class omet:liver_cT1;

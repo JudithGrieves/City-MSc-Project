@@ -70,11 +70,11 @@ def main():
     map_file="metric-uom-map.rml.ttl"
     rdf_outfile="metric_uom_data.ttl"
     run_rmlmapper(map_file,rdf_outfile)
-    
+    '''
     map_file="scan-map.rml.ttl"
     rdf_outfile="scanner_data.ttl"
     run_rmlmapper(map_file,rdf_outfile)
-    '''
+    
     map_file="metric-map.rml.ttl"
     rdf_outfile="metric_data.ttl"
     run_rmlmapper(map_file,rdf_outfile)

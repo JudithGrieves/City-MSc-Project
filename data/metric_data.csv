@@ -1,0 +1,14 @@
+﻿tmp,Patient_ID,Scan visit,Age,Sex,BMI,liver_cT1,liver_PDFF,liver_T2star,Scanner,Field Strength
+1,P005,2,58,Female,25,799,6.3,32.4,Philips_ModelA,1.5
+1,P935,1,25,Female,22,712,4.9,24.2,Siemens_ModelA,1.5
+1,P973,1,38,Female,28,754,5.7,30.8,Siemens_ModelA,1.5
+1,P974,1,39,Female,29.5,801,5,34.1,Siemens_ModelB,3
+1,P975,1,40,Male,31,810,4.3,37.4,Siemens_ModelB,3
+1,P976,1,41,Female,32.5,819,3.6,40.7,Siemens_ModelB,3
+1,P977,1,42,Female,34,828,2.9,44,Siemens_ModelB,3
+1,P978,2,43,Male,35.5,837,12.2,47.3,Philips_ModelA,1.5
+1,P979,1,44,Female,37,789,6,27.5,Siemens_ModelA,1.5
+1,P979,2,44,Female,37,846,4,50.6,Philips_ModelA,1.5
+1,P980,2,45,Female,38.5,788,12,53.9,Philips_ModelB,5
+1,P981,2,46,Male,40,864,5,57.2,Philips_ModelB,5
+1,P989,2,47,Female,41.5,873,13,60.5,Philips_ModelB,5

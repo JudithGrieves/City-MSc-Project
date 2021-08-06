@@ -30,21 +30,38 @@ def query1(g,outfile):
     '''    
 
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?sex ?age ?bmi ?liver_cT1  WHERE
-                {?patient a ?Patient .
+    """SELECT DISTINCT  ?patient_label ?visit_label ?sex ?age ?bmi ?liver_cT1  WHERE
+                {
+                 ?visit a omet:ScanVisit .
+                 ?visit rdfs:label ?visit_label .
+                 ?visit omet:isAttendedBy ?patient .  
+                 ?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
-                 ?patient omet:PatientAge ?age .
-                 ?patient omet:PatientBMI ?bmi .   
+                 {?PatientAge omet:isMetricForPatient  ?patient  .
+                  ?PatientAge omet:isMetricForVisit  ?visit  .
+                 ?PatientAge qudt:value ?age .
+                 ?PatientAge a omet:PatientAge  .}
+                 UNION
+                 {?PatientBMI omet:isMetricForPatient  ?patient  .
+                  ?PatientBMI omet:isMetricForVisit  ?visit  .
+                 ?PatientBMI qudt:value ?bmi .
+                 ?PatientBMI a omet:PatientBMI  .}
+                 UNION  
                  {?metric omet:isMetricForPatient  ?patient  .
                   ?metric omet:isMetricForVisit  ?visit  .
                  ?metric qudt:value ?liver_cT1 .
                  ?metric a omet:liver_cT1  .}
-    FILTER(?age > 40 
-           && ?bmi  > 25 
-           && ?liver_cT1 > 800 )} 
+                 } 
+    GROUP BY ?patient_label ?visit_label 
     ORDER BY ASC(?patient_label)  """)    
     '''
+    FILTER(?age > 40 
+           && ?bmi  > 25 
+           && ?liver_cT1 > 800 )
+    HAVING(?age > 40 
+           && ?bmi  > 25 
+           && ?liver_cT1 > 800 ) 
     
            && ?sex = "F" 
     '''
@@ -52,7 +69,7 @@ def query1(g,outfile):
     print("Query 1 - Females with age above 40 and BMI above 25 that  \
             have liver cT1 above 800 ms:\n")   
        
-    header='"Patient","Sex","Age","BMI","liver_cT1"'  
+    header='"Patient","Visit","Sex","Age","BMI","liver_cT1"'  
     print("outfile",outfile)
     #outfile=str(outfile)
     outfile=outfile.replace("x", "1")       
@@ -65,6 +82,8 @@ def query2(g,outfile):
     Example Query2: 
     Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%
     
+    columns made optional for ease of debugging changes.
+    
     '''    
 
     qres = g.query(
@@ -76,26 +95,40 @@ def query2(g,outfile):
                  ?visit omet:isAttendedBy ?patient . 
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
-                 ?patient omet:PatientAge ?age .
-                 ?patient omet:PatientBMI ?bmi .  
+                 {?PatientAge omet:isMetricForPatient  ?patient  .
+                  ?PatientAge omet:isMetricForVisit  ?visit  .
+                 ?PatientAge qudt:value ?age .
+                 ?PatientAge a omet:PatientAge  .}
+                 UNION
+                 {?PatientBMI omet:isMetricForPatient  ?patient  .
+                  ?PatientBMI omet:isMetricForVisit  ?visit  .
+                 ?PatientBMI qudt:value ?bmi .
+                 ?PatientBMI a omet:PatientBMI  .}
+                 UNION   
                  {?metric omet:isMetricForPatient  ?patient  .
                   ?metric omet:isMetricForVisit  ?visit  .
                  ?metric qudt:value ?liver_PDFF .
                  ?metric a omet:liver_PDFF  .}
                  ?visit omet:usesScannerModel  ?scanner  . 
-                 ?scanner rdfs:label ?scanner_label .
-                 ?scanner a scn:MRIScannerModel .
-                 ?manf a scn:ScannerManufacturer .
-                 ?manf rdfs:label ?manf_label .
-                 ?manf scn:isMakerOf ?scanner.
-                 OPTIONAL {?fs scn:isFieldStrengthForScanner ?scanner .
-                           ?fs qudt:value ?fsval .
-                           ?fs qudt:unit ?fsunit . 
-                           ?fsunit rdfs:label ?fsunitlabel .  }
+                 OPTIONAL {
+                     ?scanner rdfs:label ?scanner_label .
+                     ?scanner a oscn:MRIScannerModel .
+                     ?manf a oscn:ScannerManufacturer .
+                     ?manf rdfs:label ?manf_label .
+                     ?manf oscn:isMakerOf ?scanner.}
+                 OPTIONAL {
+                     ?fs oscn:isFieldStrengthForScanner ?scanner .
+                     ?fs qudt:value ?fsval .
+                     ?fs qudt:unit ?fsunit . 
+                     ?fsunit rdfs:label ?fsunitlabel .  } } 
+    GROUP BY ?patient_label ?visit_label 
+    ORDER BY ASC(?patient_label)  """)   
+    '''
+    FILTER NOT WORKING !!
     FILTER(?liver_PDFF < 5
            && ?fsval = 1.5 
-           && ?manf_label = "Siemens" ) } 
-    ORDER BY ASC(?patient_label)  """)   
+           && ?manf_label = "Siemens" )
+    '''
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
        
@@ -120,8 +153,16 @@ def query3(g,outfile):
                  ?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
-                 ?patient omet:PatientAge ?age .
-                 ?patient omet:PatientBMI ?bmi .   
+                 {?PatientAge omet:isMetricForPatient  ?patient  .
+                  ?PatientAge omet:isMetricForVisit  ?visit  .
+                 ?PatientAge qudt:value ?age .
+                 ?PatientAge a omet:PatientAge  .}
+                 UNION
+                 {?PatientBMI omet:isMetricForPatient  ?patient  .
+                  ?PatientBMI omet:isMetricForVisit  ?visit  .
+                 ?PatientBMI qudt:value ?bmi .
+                 ?PatientBMI a omet:PatientBMI  .}
+                 UNION   
                  {?metric_PDFF omet:isMetricForPatient  ?patient  .
                   ?metric_PDFF omet:isMetricForVisit  ?visit  .
                  ?metric_PDFF qudt:value ?liver_PDFF .
@@ -129,10 +170,15 @@ def query3(g,outfile):
                  {?metric_cT1 omet:isMetricForPatient  ?patient  .
                   ?metric_cT1 omet:isMetricForVisit  ?visit  .
                  ?metric_cT1 qudt:value ?liver_cT1 .
-                 ?metric_cT1 a omet:liver_cT1  .}
-    FILTER(?liver_PDFF < 10
-           && ?liver_cT1 > 800) } 
+                 ?metric_cT1 a omet:liver_cT1  .} } 
+    GROUP BY ?patient_label ?visit_label 
     ORDER BY ASC(?patient_label)  """)    
+    
+    '''
+    
+    FILTER(?liver_PDFF < 10
+           && ?liver_cT1 > 800)
+    '''
        
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
