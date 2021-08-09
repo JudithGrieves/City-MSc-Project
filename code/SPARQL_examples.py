@@ -11,6 +11,7 @@ and executes the Iteration 1 example queries over the graph.
 ISSUES:
     
     NEEDS TO RETURN :FEMALE/MALE ENUMERATED TYPES W/O FULL URI PATH?
+    FIELD STRENGTH VALUES MISSING
     using this triple in query ?visit omet:usesScannerModel  ?scanner  . instead of ?scanner omet:usedInVisit ?visit .
 
 '''
@@ -28,7 +29,7 @@ def query1(g,outfile):
     all the Females with age above 40 and BMI above 25 that have liver cT1 above 800 ms    '''    
 
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?visit_label ?sex ?age ?bmi ?liver_cT1  WHERE
+    """SELECT DISTINCT  ?patient_label ?visit_label ?sex ?age ?bmi ?livercT1  WHERE
                 {
                  ?visit a omet:ScanVisit .
                  ?visit rdfs:label ?visit_label .
@@ -48,16 +49,16 @@ def query1(g,outfile):
                  FILTER( ?bmi  > 25  )
                  {?cT1 omet:isMetricForPatient  ?patient  .
                   ?cT1 omet:isMetricForVisit  ?visit  .
-                 ?cT1 qudt:value ?liver_cT1 .
-                 ?cT1 a omet:liver_cT1  .} 
-                 FILTER( ?liver_cT1 > 800 )
+                 ?cT1 qudt:value ?livercT1 .
+                 ?cT1 a omet:LivercT1  .} 
+                 FILTER( ?livercT1 > 800 )
                  } 
     ORDER BY ASC(?patient_label)  """)  
 
     print("Query 1 - Females with age above 40 and BMI above 25 that  \
             have liver cT1 above 800 ms:\n")   
        
-    header='"Patient","Visit","Sex","Age","BMI","liver_cT1"'  
+    header='"Patient","Visit","Sex","Age","BMI","livercT1"'  
     print("outfile",outfile)
     #outfile=str(outfile)
     outfile=outfile.replace("x", "1")       
@@ -72,7 +73,7 @@ def query2(g,outfile):
     '''    
     qres = g.query(
     """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
-                        ?liver_PDFF ?scanner_label ?fsval ?fsunitlabel ?manf_label
+                        ?liverPDFF ?scanner_label ?fsval ?fsunit_label ?manf_label
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
@@ -89,28 +90,30 @@ def query2(g,outfile):
                  ?PatientBMI a omet:PatientBMI  .}
                  {?metric omet:isMetricForPatient  ?patient  .
                   ?metric omet:isMetricForVisit  ?visit  .
-                 ?metric qudt:value ?liver_PDFF .
-                 ?metric a omet:liver_PDFF  .} 
-                 FILTER(?liver_PDFF < 5 )
+                 ?metric qudt:value ?liverPDFF .
+                 ?metric a omet:LiverPDFF  .} 
+                 FILTER(?liverPDFF < 5 )
                  ?visit omet:usesScannerModel  ?scanner  . 
                  OPTIONAL {
                      ?scanner rdfs:label ?scanner_label .
                      ?scanner a oscn:MRIScannerModel .
                      ?manf a oscn:ScannerManufacturer .
                      ?manf rdfs:label ?manf_label .
-                     ?manf oscn:isMakerOf ?scanner.}
+                     ?manf oscn:isMakerOfScanner ?scanner.  
+                     }                
                  FILTER( ?manf_label = "Siemens" )
                  OPTIONAL {
                      ?fs oscn:isFieldStrengthForScanner ?scanner .
-                     ?fs qudt:value ?fsval .
-                     ?fs qudt:unit ?fsunit . 
-                     ?fsunit rdfs:label ?fsunitlabel .  } 
-                 FILTER(?fsval = 1.5 )} 
+                     ?fs oscn:FieldStrengthValue ?fsval .
+                     ?fs oscn:FieldStrengthUnit ?fsunit .
+                     ?fsunit rdfs:label ?fsunit_label . } 
+                 FILTER(?fsval = 1.5 ) 
+                 } 
     ORDER BY ASC(?patient_label)  """)   
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
        
-    header='"Visit","Patient","Sex","Age","BMI","liver_PDFF","Scanner"\
+    header='"Visit","Patient","Sex","Age","BMI","liverPDFF","Scanner"\
             ,"Field Strength","Units","Manufacturer"'  
     outfile=outfile.replace("x", "2")       
     write_sparql(outfile,header,qres,1,1)  
@@ -123,7 +126,7 @@ def query3(g,outfile):
     '''    
     qres = g.query(
     """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
-                        ?liver_cT1 ?liver_PDFF 
+                        ?livercT1 ?liverPDFF 
             WHERE
                 {?visit a ?ScanVisit .
                  ?visit rdfs:label ?visit_label .
@@ -141,20 +144,20 @@ def query3(g,outfile):
                  ?PatientBMI a omet:PatientBMI  .}
                  {?metric_PDFF omet:isMetricForPatient  ?patient  .
                   ?metric_PDFF omet:isMetricForVisit  ?visit  .
-                 ?metric_PDFF qudt:value ?liver_PDFF .
-                 ?metric_PDFF a omet:liver_PDFF  .} 
-                 FILTER(?liver_PDFF < 10 )
+                 ?metric_PDFF qudt:value ?liverPDFF .
+                 ?metric_PDFF a omet:LiverPDFF  .} 
+                 FILTER(?liverPDFF < 10 )
                  {?metric_cT1 omet:isMetricForPatient  ?patient  .
                   ?metric_cT1 omet:isMetricForVisit  ?visit  .
-                 ?metric_cT1 qudt:value ?liver_cT1 .
-                 ?metric_cT1 a omet:liver_cT1  .} 
-                 FILTER(?liver_cT1 > 800 )
+                 ?metric_cT1 qudt:value ?livercT1 .
+                 ?metric_cT1 a omet:LivercT1  .} 
+                 FILTER(?livercT1 > 800 )
                  } 
     ORDER BY ASC(?patient_label)  """)    
            
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
-    header='"Visit","Patient","Sex","Age","BMI","liver_cT1","liver_PDFF"'  
+    header='"Visit","Patient","Sex","Age","BMI","livercT1","liverPDFF"'  
     outfile=outfile.replace("x", "3")       
     write_sparql(outfile,header,qres,1,1)   
         

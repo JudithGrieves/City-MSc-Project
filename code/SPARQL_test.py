@@ -39,9 +39,10 @@ def debug_query_all(g,outfile):
     qres = g.query(
     """SELECT DISTINCT  ?a ?b ?c ?d ?e ?f ?g WHERE
                 { 
-                 ?a owl:equivalentClass ?stub .
-                 ?stub ?d ?e .
-                 ?e ?f ?g .
+                 OPTIONAL {?a oscn:isFieldStrengthForScanner ?b .
+                           ?fs oscn:FieldStrengthValue ?fsval .
+                           ?fs oscn:FieldStrengthUnit ?fsunit . 
+                           ?fsunit rdfs:label ?fsunitlabel .  }.
                  }
     ORDER BY ASC(?a)  ASC(?b)
                 """) 
@@ -66,7 +67,8 @@ def query_all(g,outfile):
     # that the scanner data is being picked up from a separate KG
     qres = g.query(
     """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?bmi  \
-                        ?liver_cT1   ?liver_PDFF ?liver_T2Star ?scanner_label?fsval ?fsunitlabel  ?manf_label \
+                        ?livercT1   ?liverPDFF ?liverT2Star ?scanner_label \
+                          ?fsval ?fsunitlabel  ?manf_label \
                        WHERE
                 {
                  ?visit a omet:ScanVisit .
@@ -81,10 +83,10 @@ def query_all(g,outfile):
                  ?scanner a oscn:MRIScannerModel .
                  ?manf a oscn:ScannerManufacturer .
                  ?manf rdfs:label ?manf_label .
-                 ?manf oscn:isMakerOf ?scanner.
+                 ?manf oscn:isMakerOfScanner ?scanner.
                  OPTIONAL {?fs oscn:isFieldStrengthForScanner ?scanner .
-                           ?fs qudt:value ?fsval .
-                           ?fs qudt:unit ?fsunit . 
+                           ?fs oscn:FieldStrengthValue ?fsval .
+                           ?fs oscn:FieldStrengthUnit ?fsunit . 
                            ?fsunit rdfs:label ?fsunitlabel .  }
                  
                  
@@ -92,31 +94,31 @@ def query_all(g,outfile):
                   ?PatientAge omet:isMetricForVisit  ?visit  .
                  ?PatientAge qudt:value ?age .
                  ?PatientAge a omet:PatientAge  .}
-                 UNION
+                 
                  {?PatientBMI omet:isMetricForPatient  ?patient  .
                   ?PatientBMI omet:isMetricForVisit  ?visit  .
                  ?PatientBMI qudt:value ?bmi .
                  ?PatientBMI a omet:PatientBMI  .}
-                 UNION
+                 
                  {?metric1 omet:isMetricForPatient  ?patient  .
                   ?metric1 omet:isMetricForVisit  ?visit  .
-                 ?metric1 qudt:value ?liver_cT1 .
-                 ?metric1 a omet:liver_cT1  .}
-                 UNION
+                 ?metric1 qudt:value ?livercT1 .
+                 ?metric1 a omet:LivercT1  .}
+                 
                  {?metric2 omet:isMetricForPatient  ?patient  .
                   ?metric2 omet:isMetricForVisit  ?visit  .
-                 ?metric2 qudt:value ?liver_PDFF .
-                 ?metric2 a omet:liver_PDFF .}
-                 UNION
+                 ?metric2 qudt:value ?liverPDFF .
+                 ?metric2 a omet:LiverPDFF .}
+                 
                  {?metric3 omet:isMetricForPatient  ?patient  .
                   ?metric3 omet:isMetricForVisit  ?visit  .
-                 ?metric3 qudt:value ?liver_T2Star .
-                 ?metric3 a omet:liver_T2Star .}
-} GROUP BY ?patient_label ?visit_label 
+                 ?metric3 qudt:value ?liverT2Star .
+                 ?metric3 a omet:LiverT2Star .}
+} 
     ORDER BY ASC(?patient_label)  ASC(?visit_label) """) 
 
     print("Show all Data")   
-    header='"PatientID","Visit","Age","Sex","BMI","liver_cT1","liver_PDFF","liver_T2Star","Scanner","Field Strength","Unit","Manufacturer"'  
+    header='"PatientID","Visit","Age","Sex","BMI","livercT1","liverPDFF","liverT2Star","Scanner","Field Strength","Unit","Manufacturer"'  
             
     write_sparql(outfile,header,qres,1,1)  
     '''

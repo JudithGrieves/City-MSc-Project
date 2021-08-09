@@ -36,6 +36,12 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 19/7/2021 1.1 Add ScannerFieldStrength entity</Literal>
     </Annotation>
     <Declaration>
+        <Class abbreviatedIRI="qudt:quantity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="unit:T"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MRIScannerModel"/>
     </Declaration>
     <Declaration>
@@ -45,7 +51,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScannerManufacturer"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasFieldStrength"/>
+        <ObjectProperty abbreviatedIRI="qudt:unit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasScannerFieldStrength"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isFieldStrengthForScanner"/>
@@ -57,67 +66,166 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#isMakerOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#FieldStrengthUnit"/>
+        <ObjectProperty IRI="#isMakerOfScanner"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isScannerMadeBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="qudt:value"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#FieldStrengthValue"/>
     </Declaration>
-    <DisjointClasses>
-        <Class IRI="#MRIScannerModel"/>
+    <Declaration>
+        <ObjectProperty IRI="#FieldStrengthUnit"/>
+    </Declaration>
+    <SubClassOf>
         <Class IRI="#ScannerFieldStrength"/>
+        <Class abbreviatedIRI="qudt:quantity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class abbreviatedIRI="unit:T"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class IRI="#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class IRI="#ScannerManufacturer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="unit:T"/>
+        <Class IRI="#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="unit:T"/>
+        <Class IRI="#ScannerManufacturer"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#MRIScannerModel"/>
         <Class IRI="#ScannerManufacturer"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ScannerFieldStrength"/>
-        <Class IRI="#ScannerManufacturer"/>
-    </DisjointClasses>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasFieldStrength"/>
-        <ObjectProperty IRI="#isFieldStrengthForScanner"/>
-    </InverseObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#FieldStrengthUnit"/>
+        <ObjectProperty abbreviatedIRI="qudt:unit"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isMakerOfScanner"/>
+        <ObjectProperty IRI="#isMakerOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isScannerMadeBy"/>
+        <ObjectProperty IRI="#isMadeBy"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isMadeBy"/>
         <ObjectProperty IRI="#isMakerOf"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isMakerOfScanner"/>
+        <ObjectProperty IRI="#isScannerMadeBy"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasFieldStrength"/>
+        <ObjectProperty IRI="#FieldStrengthUnit"/>
+        <Class IRI="#ScannerFieldStrength"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasScannerFieldStrength"/>
         <Class IRI="#MRIScannerModel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMakerOf"/>
+        <ObjectProperty IRI="#isFieldStrengthForScanner"/>
+        <Class IRI="#ScannerFieldStrength"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isScannerMadeBy"/>
+        <Class IRI="#MRIScannerModel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FieldStrengthUnit"/>
+        <Class abbreviatedIRI="unit:T"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasScannerFieldStrength"/>
+        <Class IRI="#ScannerFieldStrength"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFieldStrengthForScanner"/>
+        <Class IRI="#MRIScannerModel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isScannerMadeBy"/>
         <Class IRI="#ScannerManufacturer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasFieldStrength"/>
-        <Class IRI="#ScannerFieldStrength"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMakerOf"/>
-        <Class IRI="#MRIScannerModel"/>
-    </ObjectPropertyRange>
-    <DataPropertyDomain>
-        <DataProperty IRI="#FieldStrengthUnit"/>
-        <Class IRI="#ScannerFieldStrength"/>
-    </DataPropertyDomain>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#FieldStrengthValue"/>
+        <DataProperty abbreviatedIRI="qudt:value"/>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#FieldStrengthValue"/>
         <Class IRI="#ScannerFieldStrength"/>
     </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#FieldStrengthUnit"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#FieldStrengthValue"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>qudt:quantity</AbbreviatedIRI>
+        <Literal>quantity class from QUDT ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>qudt:quantity</AbbreviatedIRI>
+        <Literal>quantity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
+        <Literal>unit property from QUDT ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
+        <Literal>unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>qudt:value</AbbreviatedIRI>
+        <Literal>value data property from QUDT ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>qudt:value</AbbreviatedIRI>
+        <Literal>value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>unit:T</AbbreviatedIRI>
+        <Literal>Unit of scanner field strength, Tesla, from vocabulary UNIT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>unit:T</AbbreviatedIRI>
+        <Literal>Tesla</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FieldStrengthUnit</IRI>
+        <Literal>field strength unit property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#FieldStrengthUnit</IRI>
         <Literal>field strength unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FieldStrengthValue</IRI>
+        <Literal>Field Strength of the MRI Scanner magnet(s)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -141,8 +249,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasFieldStrength</IRI>
-        <Literal>has field strength</Literal>
+        <IRI>#hasScannerFieldStrength</IRI>
+        <Literal>has scanner field strength</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -158,6 +266,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isMakerOf</IRI>
         <Literal>is maker of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMakerOfScanner</IRI>
+        <Literal>is maker of scanner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isScannerMadeBy</IRI>
+        <Literal>is scanner made by</Literal>
     </AnnotationAssertion>
 </Ontology>
 

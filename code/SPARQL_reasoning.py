@@ -86,7 +86,7 @@ def OWLRLReasoning():
     Infer=True
     #  apply reasoning and expand the graph with new triples 
     if Infer:        
-        owlrl.DeductiveClosure(owlrl.OWLRL_Semantics, axiomatic_triples=True, datatype_axioms=False).expand(g)
+        owlrl.DeductiveClosure(owlrl.OWLRL_Semantics, rdfs_closure=True, axiomatic_triples=True, datatype_axioms=False).expand(g)
         print("Triples after OWL 2 RL reasoning: '" + str(len(g)) + "'.")    
         print("Writing file: ",output_file+'.ttl')
         g.serialize(destination=output_file+'.ttl', format='ttl')      

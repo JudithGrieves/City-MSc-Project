@@ -32,16 +32,16 @@
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
-    rr:predicate qudt:unit;
+    rr:predicate oscn:FieldStrengthUnit;
     rr:objectMap [
       rr:constant unit:T
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate qudt:value;
+    rr:predicate oscn:FieldStrengthValue;
     rr:objectMap [
       rml:reference "Scanner Field Strength";
-      rr:datatype xsd:float
+      rr:datatype xsd:double
     ]
   ];
   rr:predicateObjectMap [
@@ -116,7 +116,7 @@
       ]
   ];
   rr:predicateObjectMap [
-    rr:predicate oscn:isMakerOf ;
+    rr:predicate oscn:isMakerOfScanner ;
     rr:objectMap [
       rr:parentTriplesMap :scanner;
       rr:joinCondition [

@@ -26,16 +26,32 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #    Object Properties
 #################################################################
 
-###  http://www.perspectum.com/ontology/scanner#hasFieldStrength
-oscn:hasFieldStrength rdf:type owl:ObjectProperty ;
-                      owl:inverseOf oscn:isFieldStrengthForScanner ;
-                      rdfs:domain oscn:MRIScannerModel ;
-                      rdfs:range oscn:ScannerFieldStrength ;
-                      rdfs:label "has field strength" .
+###  http://qudt.org/schema/qudt#unit
+qudt:unit rdf:type owl:ObjectProperty ;
+          rdfs:comment "unit property from QUDT ontology" ;
+          rdfs:label "unit" .
+
+
+###  http://www.perspectum.com/ontology/scanner#FieldStrengthUnit
+oscn:FieldStrengthUnit rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf qudt:unit ;
+                       rdfs:domain oscn:ScannerFieldStrength ;
+                       rdfs:range unit:T ;
+                       rdfs:comment "field strength unit property" ;
+                       rdfs:label "field strength unit" .
+
+
+###  http://www.perspectum.com/ontology/scanner#hasScannerFieldStrength
+oscn:hasScannerFieldStrength rdf:type owl:ObjectProperty ;
+                             rdfs:domain oscn:MRIScannerModel ;
+                             rdfs:range oscn:ScannerFieldStrength ;
+                             rdfs:label "has scanner field strength" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isFieldStrengthForScanner
 oscn:isFieldStrengthForScanner rdf:type owl:ObjectProperty ;
+                               rdfs:domain oscn:ScannerFieldStrength ;
+                               rdfs:range oscn:MRIScannerModel ;
                                rdfs:label "is field strength for scanner" .
 
 
@@ -47,26 +63,40 @@ oscn:isMadeBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.perspectum.com/ontology/scanner#isMakerOf
 oscn:isMakerOf rdf:type owl:ObjectProperty ;
-               rdfs:domain oscn:ScannerManufacturer ;
-               rdfs:range oscn:MRIScannerModel ;
                rdfs:label "is maker of" .
+
+
+###  http://www.perspectum.com/ontology/scanner#isMakerOfScanner
+oscn:isMakerOfScanner rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf oscn:isMakerOf ;
+                      owl:inverseOf oscn:isScannerMadeBy ;
+                      rdfs:label "is maker of scanner" .
+
+
+###  http://www.perspectum.com/ontology/scanner#isScannerMadeBy
+oscn:isScannerMadeBy rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf oscn:isMadeBy ;
+                     rdfs:domain oscn:MRIScannerModel ;
+                     rdfs:range oscn:ScannerManufacturer ;
+                     rdfs:label "is scanner made by" .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://www.perspectum.com/ontology/scanner#FieldStrengthUnit
-oscn:FieldStrengthUnit rdf:type owl:DatatypeProperty ;
-                       rdfs:domain oscn:ScannerFieldStrength ;
-                       rdfs:range xsd:string ;
-                       rdfs:label "field strength unit" .
+###  http://qudt.org/schema/qudt#value
+qudt:value rdf:type owl:DatatypeProperty ;
+           rdfs:comment "value data property from QUDT ontology" ;
+           rdfs:label "value" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#FieldStrengthValue
 oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf qudt:value ;
                         rdfs:domain oscn:ScannerFieldStrength ;
                         rdfs:range xsd:double ;
+                        rdfs:comment "Field Strength of the MRI Scanner magnet(s)" ;
                         rdfs:label "field strength value" .
 
 
@@ -74,16 +104,32 @@ oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://qudt.org/schema/qudt#quantity
+qudt:quantity rdf:type owl:Class ;
+              owl:disjointWith unit:T ,
+                               oscn:MRIScannerModel ,
+                               oscn:ScannerManufacturer ;
+              rdfs:comment "quantity class from QUDT ontology" ;
+              rdfs:label "quantity" .
+
+
+###  http://qudt.org/vocab/unit#T
+unit:T rdf:type owl:Class ;
+       owl:disjointWith oscn:MRIScannerModel ,
+                        oscn:ScannerManufacturer ;
+       rdfs:comment "Unit of scanner field strength, Tesla, from vocabulary UNIT." ;
+       rdfs:label "Tesla" .
+
+
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
 oscn:MRIScannerModel rdf:type owl:Class ;
-                     owl:disjointWith oscn:ScannerFieldStrength ,
-                                      oscn:ScannerManufacturer ;
+                     owl:disjointWith oscn:ScannerManufacturer ;
                      rdfs:label "MRI scanner model" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrength
 oscn:ScannerFieldStrength rdf:type owl:Class ;
-                          owl:disjointWith oscn:ScannerManufacturer ;
+                          rdfs:subClassOf qudt:quantity ;
                           rdfs:label "scanner field strength" .
 
 
