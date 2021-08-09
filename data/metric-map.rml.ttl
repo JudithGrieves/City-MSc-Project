@@ -235,7 +235,7 @@
 :liver_PDFF
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_PDFF_{Patient_ID}_{Scan visit}";
-    rr:class omet:liver_PDFF;
+    rr:class omet:LiverPDFF;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -300,7 +300,7 @@
 :liver_T2Star
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_T2Star_{Patient_ID}_{Scan visit}";
-    rr:class omet:liver_T2Star;
+    rr:class omet:LiverT2Star;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
@@ -365,7 +365,7 @@
 :liver_cT1
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_liver_cT1_{Patient_ID}_{Scan visit}";
-    rr:class omet:liver_cT1;
+    rr:class omet:LivercT1;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
