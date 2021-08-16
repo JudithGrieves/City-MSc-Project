@@ -1,4 +1,4 @@
-"Visit","Patient","Sex","Age","BMI","liver_cT1","liver_PDFF"
+"Visit","Patient","Sex","Age","BMI","livercT1","liverPDFF"
 P974/1,P974,http://www.perspectum.com/ontology/metric/Female,39,29.5,801.0,5.0,
 P975/1,P975,http://www.perspectum.com/ontology/metric/Male,40,31.0,810.0,4.3,
 P976/1,P976,http://www.perspectum.com/ontology/metric/Female,41,32.5,819.0,3.6,

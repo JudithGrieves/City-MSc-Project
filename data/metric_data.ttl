@@ -1,3 +1,5 @@
+@prefix : <http://example.org/rules/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix met: <http://www.perspectum.com/resources/metric/> .
 @prefix omet: <http://www.perspectum.com/ontology/metric/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

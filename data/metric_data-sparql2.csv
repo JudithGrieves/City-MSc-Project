@@ -1,2 +1,2 @@
-"Visit","Patient","Sex","Age","BMI","liver_PDFF","Scanner"            ,"Field Strength","Units","Manufacturer"
+"Visit","Patient","Sex","Age","BMI","liverPDFF","Scanner"            ,"Field Strength","Units","Manufacturer"
 P935/1,P935,http://www.perspectum.com/ontology/metric/Female,25,22.0,4.9,Siemens_ModelA,1.5,Tesla,Siemens,
