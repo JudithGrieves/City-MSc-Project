@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.perspectum.com/ontology/scanner"
      versionIRI="http://www.perspectum.com/ontology/scanner/1.0">
-    <Prefix name="" IRI="http://www.perspectum.com/ontology/scanner#"/>
+    <Prefix name="" IRI="http://www.perspectum.com/ontology/scanner"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -33,7 +33,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Versions
 
 7/7/2021 1.0  First version
-19/7/2021 1.1 Add ScannerFieldStrength entity</Literal>
+19/7/2021 1.1 Add ScannerFieldStrength entity
+25/8/2021 1.2 Add comment annotations</Literal>
     </Annotation>
     <Declaration>
         <Class abbreviatedIRI="qudt:quantity"/>
@@ -52,6 +53,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="qudt:unit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FieldStrengthUnit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasScannerFieldStrength"/>
@@ -76,9 +80,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <DataProperty IRI="#FieldStrengthValue"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#FieldStrengthUnit"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#ScannerFieldStrength"/>
@@ -233,14 +234,30 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>field strength value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MRIScannerModel</IRI>
+        <Literal>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
+(https://www.nhs.uk/conditions/mri-scan/)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MRIScannerModel</IRI>
         <Literal>MRI scanner model</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ScannerFieldStrength</IRI>
+        <Literal>The measure of the strength of the magnet used in an MRI Scanner.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ScannerFieldStrength</IRI>
         <Literal>scanner field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ScannerManufacturer</IRI>
+        <Literal>A company that manufactures and sells MR scanners for human diagnostic use.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

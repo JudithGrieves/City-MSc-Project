@@ -16,6 +16,18 @@
     <Prefix name="qudt" IRI="http://qudt.org/schema/qudt"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
+
+Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
+
+Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <Literal>http://www.perspectum.com/ontology/scanner</Literal>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
         <Literal>Versions
 
@@ -23,12 +35,7 @@
 12/7/2021 1.1  Remove Manufacturer; now in Scanner ontology
 19/7/2021 1.2  Remove FieldStrengthValue/Unit &amp; isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
-
-An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
-
-Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
-
-Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</Literal>
+25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#LiverPDFF"/>
@@ -38,9 +45,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <Class IRI="#LivercT1"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MRIScannerModel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Patient"/>
@@ -65,6 +69,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <Class IRI="#ScanVisit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
@@ -141,22 +148,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#QuantitativeMetric"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#MRIScannerModel"/>
-        <Class IRI="#Patient"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#MRIScannerModel"/>
-        <Class IRI="#PatientSex"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#MRIScannerModel"/>
-        <Class IRI="#QuantitativeMetric"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#MRIScannerModel"/>
-        <Class IRI="#ScanVisit"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#Patient"/>
         <Class IRI="#PatientSex"/>
     </DisjointClasses>
@@ -169,6 +160,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#Patient"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#PatientSex"/>
         <Class IRI="#QuantitativeMetric"/>
     </DisjointClasses>
@@ -177,8 +172,20 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#PatientSex"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#QuantitativeMetric"/>
         <Class IRI="#ScanVisit"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ScanVisit"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
     </DisjointClasses>
     <InverseObjectProperties>
         <ObjectProperty IRI="#attendsVisit"/>
@@ -222,7 +229,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedInVisit"/>
-        <Class IRI="#MRIScannerModel"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#attendsVisit"/>
@@ -290,9 +297,21 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Female</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverPDFF</IRI>
+        <Literal>Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
+(https://perspectum.com/media/1361/understanding-pdff.pdf)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverPDFF</IRI>
         <Literal>liver PDFF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverT2Star</IRI>
+        <Literal>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
+T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -300,14 +319,15 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>liver T2star</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#LivercT1</IRI>
-        <Literal>liver cT1</Literal>
+        <Literal>Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
+T1 measurements differ depending on magnetic field strength and MR manufacturer.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MRIScannerModel</IRI>
-        <Literal>scanner</Literal>
+        <IRI>#LivercT1</IRI>
+        <Literal>liver cT1</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -320,9 +340,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Male</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Patient</IRI>
+        <Literal>A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Patient</IRI>
         <Literal>patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PatientAge</IRI>
+        <Literal>The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -340,14 +370,50 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>patient BMI</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PatientMetric</IRI>
+        <Literal>A quantitative metric gathered for the study and related to a patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PatientMetric</IRI>
+        <Literal>patient metric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PatientSex</IRI>
+        <Literal>The biological sex of a patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PatientSex</IRI>
+        <Literal>patient sex</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#QuantitativeMetric</IRI>
+        <Literal>A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#QuantitativeMetric</IRI>
         <Literal>quantitative metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ScanMetric</IRI>
+        <Literal>A quantitative metric gathered for the study and derived from an MRI scan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ScanMetric</IRI>
         <Literal>scan metric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ScanVisit</IRI>
+        <Literal>A visit made by a patient for the purpose of taking part in an MRI scan to gather metrics for the study data.  A scan visit is defined as a single visit for a single patient and allows identification of multiple values of a single metric type for a single patient.
+A visit is currently identified by a sequential number currently given in the test data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -388,6 +454,17 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#usedInVisit</IRI>
         <Literal>used in visit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.perspectum.com/ontology/scanner#MRIScannerModel</IRI>
+        <Literal>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
+(https://www.nhs.uk/conditions/mri-scan/)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.perspectum.com/ontology/scanner#MRIScannerModel</IRI>
+        <Literal>scanner</Literal>
     </AnnotationAssertion>
 </Ontology>
 

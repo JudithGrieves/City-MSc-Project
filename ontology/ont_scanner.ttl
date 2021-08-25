@@ -1,4 +1,4 @@
-@prefix : <http://www.perspectum.com/ontology/scanner#> .
+@prefix : <http://www.perspectum.com/ontology/scanner> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -20,7 +20,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                                               owl:versionInfo """Versions
 
 7/7/2021 1.0  First version
-19/7/2021 1.1 Add ScannerFieldStrength entity""" .
+19/7/2021 1.1 Add ScannerFieldStrength entity
+25/8/2021 1.2 Add comment annotations""" .
 
 #################################################################
 #    Object Properties
@@ -124,17 +125,21 @@ unit:T rdf:type owl:Class ;
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
 oscn:MRIScannerModel rdf:type owl:Class ;
                      owl:disjointWith oscn:ScannerManufacturer ;
+                     rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
+(https://www.nhs.uk/conditions/mri-scan/)""" ;
                      rdfs:label "MRI scanner model" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrength
 oscn:ScannerFieldStrength rdf:type owl:Class ;
                           rdfs:subClassOf qudt:quantity ;
+                          rdfs:comment "The measure of the strength of the magnet used in an MRI Scanner." ;
                           rdfs:label "scanner field strength" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerManufacturer
 oscn:ScannerManufacturer rdf:type owl:Class ;
+                         rdfs:comment "A company that manufactures and sells MR scanners for human diagnostic use." ;
                          rdfs:label "scanner manufacturer" .
 
 
