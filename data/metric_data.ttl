@@ -17,6 +17,7 @@ met:URI_PatientAge_P005_2 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "58"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P005;
   omet:isMetricForVisit met:URI_Visit_P005_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P005/2" .
 
 met:URI_PatientAge_P935_1 a omet:PatientAge, owl:NamedIndividual;
@@ -24,6 +25,7 @@ met:URI_PatientAge_P935_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "25"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P935;
   omet:isMetricForVisit met:URI_Visit_P935_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P935/1" .
 
 met:URI_PatientAge_P973_1 a omet:PatientAge, owl:NamedIndividual;
@@ -31,6 +33,7 @@ met:URI_PatientAge_P973_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "38"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P973;
   omet:isMetricForVisit met:URI_Visit_P973_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P973/1" .
 
 met:URI_PatientAge_P974_1 a omet:PatientAge, owl:NamedIndividual;
@@ -38,6 +41,7 @@ met:URI_PatientAge_P974_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "39"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P974;
   omet:isMetricForVisit met:URI_Visit_P974_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P974/1" .
 
 met:URI_PatientAge_P975_1 a omet:PatientAge, owl:NamedIndividual;
@@ -45,6 +49,7 @@ met:URI_PatientAge_P975_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "40"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P975;
   omet:isMetricForVisit met:URI_Visit_P975_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P975/1" .
 
 met:URI_PatientAge_P976_1 a omet:PatientAge, owl:NamedIndividual;
@@ -52,6 +57,7 @@ met:URI_PatientAge_P976_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "41"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P976;
   omet:isMetricForVisit met:URI_Visit_P976_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P976/1" .
 
 met:URI_PatientAge_P977_1 a omet:PatientAge, owl:NamedIndividual;
@@ -59,6 +65,7 @@ met:URI_PatientAge_P977_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "42"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P977;
   omet:isMetricForVisit met:URI_Visit_P977_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P977/1" .
 
 met:URI_PatientAge_P978_2 a omet:PatientAge, owl:NamedIndividual;
@@ -66,6 +73,7 @@ met:URI_PatientAge_P978_2 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "43"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P978;
   omet:isMetricForVisit met:URI_Visit_P978_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P978/2" .
 
 met:URI_PatientAge_P979_1 a omet:PatientAge, owl:NamedIndividual;
@@ -73,6 +81,7 @@ met:URI_PatientAge_P979_1 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "44"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P979/1" .
 
 met:URI_PatientAge_P979_2 a omet:PatientAge, owl:NamedIndividual;
@@ -80,6 +89,7 @@ met:URI_PatientAge_P979_2 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "44"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P979/2" .
 
 met:URI_PatientAge_P980_2 a omet:PatientAge, owl:NamedIndividual;
@@ -87,6 +97,7 @@ met:URI_PatientAge_P980_2 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "45"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P980;
   omet:isMetricForVisit met:URI_Visit_P980_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P980/2" .
 
 met:URI_PatientAge_P981_2 a omet:PatientAge, owl:NamedIndividual;
@@ -94,6 +105,7 @@ met:URI_PatientAge_P981_2 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "46"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P981;
   omet:isMetricForVisit met:URI_Visit_P981_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P981/2" .
 
 met:URI_PatientAge_P989_2 a omet:PatientAge, owl:NamedIndividual;
@@ -101,6 +113,7 @@ met:URI_PatientAge_P989_2 a omet:PatientAge, owl:NamedIndividual;
   qudt:value "47"^^xsd:int;
   omet:isMetricForPatient met:URI_Patient_P989;
   omet:isMetricForVisit met:URI_Visit_P989_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "Age P989/2" .
 
 met:URI_PatientBMI_P005_2 a omet:PatientBMI, owl:NamedIndividual;
@@ -108,6 +121,7 @@ met:URI_PatientBMI_P005_2 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "25"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P005;
   omet:isMetricForVisit met:URI_Visit_P005_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P005/2" .
 
 met:URI_PatientBMI_P935_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -115,6 +129,7 @@ met:URI_PatientBMI_P935_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "22"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P935;
   omet:isMetricForVisit met:URI_Visit_P935_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P935/1" .
 
 met:URI_PatientBMI_P973_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -122,6 +137,7 @@ met:URI_PatientBMI_P973_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "28"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P973;
   omet:isMetricForVisit met:URI_Visit_P973_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P973/1" .
 
 met:URI_PatientBMI_P974_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -129,6 +145,7 @@ met:URI_PatientBMI_P974_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "29.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P974;
   omet:isMetricForVisit met:URI_Visit_P974_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P974/1" .
 
 met:URI_PatientBMI_P975_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -136,6 +153,7 @@ met:URI_PatientBMI_P975_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "31"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P975;
   omet:isMetricForVisit met:URI_Visit_P975_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P975/1" .
 
 met:URI_PatientBMI_P976_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -143,6 +161,7 @@ met:URI_PatientBMI_P976_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "32.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P976;
   omet:isMetricForVisit met:URI_Visit_P976_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P976/1" .
 
 met:URI_PatientBMI_P977_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -150,6 +169,7 @@ met:URI_PatientBMI_P977_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "34"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P977;
   omet:isMetricForVisit met:URI_Visit_P977_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P977/1" .
 
 met:URI_PatientBMI_P978_2 a omet:PatientBMI, owl:NamedIndividual;
@@ -157,6 +177,7 @@ met:URI_PatientBMI_P978_2 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "35.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P978;
   omet:isMetricForVisit met:URI_Visit_P978_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P978/2" .
 
 met:URI_PatientBMI_P979_1 a omet:PatientBMI, owl:NamedIndividual;
@@ -164,6 +185,7 @@ met:URI_PatientBMI_P979_1 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "37"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P979/1" .
 
 met:URI_PatientBMI_P979_2 a omet:PatientBMI, owl:NamedIndividual;
@@ -171,6 +193,7 @@ met:URI_PatientBMI_P979_2 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "37"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P979/2" .
 
 met:URI_PatientBMI_P980_2 a omet:PatientBMI, owl:NamedIndividual;
@@ -178,6 +201,7 @@ met:URI_PatientBMI_P980_2 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "38.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P980;
   omet:isMetricForVisit met:URI_Visit_P980_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P980/2" .
 
 met:URI_PatientBMI_P981_2 a omet:PatientBMI, owl:NamedIndividual;
@@ -185,6 +209,7 @@ met:URI_PatientBMI_P981_2 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "40"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P981;
   omet:isMetricForVisit met:URI_Visit_P981_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P981/2" .
 
 met:URI_PatientBMI_P989_2 a omet:PatientBMI, owl:NamedIndividual;
@@ -192,119 +217,145 @@ met:URI_PatientBMI_P989_2 a omet:PatientBMI, owl:NamedIndividual;
   qudt:value "41.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P989;
   omet:isMetricForVisit met:URI_Visit_P989_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "BMI P989/2" .
 
 met:URI_Patient_P005 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P005" .
 
 met:URI_Patient_P935 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P935" .
 
 met:URI_Patient_P973 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P973" .
 
 met:URI_Patient_P974 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P974" .
 
 met:URI_Patient_P975 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Male;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P975" .
 
 met:URI_Patient_P976 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P976" .
 
 met:URI_Patient_P977 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P977" .
 
 met:URI_Patient_P978 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Male;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P978" .
 
 met:URI_Patient_P979 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P979" .
 
 met:URI_Patient_P980 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P980" .
 
 met:URI_Patient_P981 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Male;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P981" .
 
 met:URI_Patient_P989 a omet:Patient, owl:NamedIndividual;
   omet:hasPatientSex omet:Female;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P989" .
 
 met:URI_Visit_P005_2 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P005;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P005/2" .
 
 met:URI_Visit_P935_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P935;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P935/1" .
 
 met:URI_Visit_P973_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P973;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P973/1" .
 
 met:URI_Visit_P974_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P974;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P974/1" .
 
 met:URI_Visit_P975_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P975;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P975/1" .
 
 met:URI_Visit_P976_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P976;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P976/1" .
 
 met:URI_Visit_P977_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P977;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P977/1" .
 
 met:URI_Visit_P978_2 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P978;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P978/2" .
 
 met:URI_Visit_P979_1 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P979;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P979/1" .
 
 met:URI_Visit_P979_2 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P979;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P979/2" .
 
 met:URI_Visit_P980_2 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P980;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P980/2" .
 
 met:URI_Visit_P981_2 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P981;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P981/2" .
 
 met:URI_Visit_P989_2 a omet:ScanVisit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P989;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelB>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P989/2" .
 
 met:URI_liver_PDFF_P005_2 a omet:LiverPDFF, owl:NamedIndividual;
@@ -312,6 +363,7 @@ met:URI_liver_PDFF_P005_2 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "6.3"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P005;
   omet:isMetricForVisit met:URI_Visit_P005_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P005/2" .
 
 met:URI_liver_PDFF_P935_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -319,6 +371,7 @@ met:URI_liver_PDFF_P935_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "4.9"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P935;
   omet:isMetricForVisit met:URI_Visit_P935_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P935/1" .
 
 met:URI_liver_PDFF_P973_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -326,6 +379,7 @@ met:URI_liver_PDFF_P973_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "5.7"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P973;
   omet:isMetricForVisit met:URI_Visit_P973_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P973/1" .
 
 met:URI_liver_PDFF_P974_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -333,6 +387,7 @@ met:URI_liver_PDFF_P974_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P974;
   omet:isMetricForVisit met:URI_Visit_P974_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P974/1" .
 
 met:URI_liver_PDFF_P975_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -340,6 +395,7 @@ met:URI_liver_PDFF_P975_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "4.3"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P975;
   omet:isMetricForVisit met:URI_Visit_P975_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P975/1" .
 
 met:URI_liver_PDFF_P976_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -347,6 +403,7 @@ met:URI_liver_PDFF_P976_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "3.6"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P976;
   omet:isMetricForVisit met:URI_Visit_P976_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P976/1" .
 
 met:URI_liver_PDFF_P977_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -354,6 +411,7 @@ met:URI_liver_PDFF_P977_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "2.9"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P977;
   omet:isMetricForVisit met:URI_Visit_P977_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P977/1" .
 
 met:URI_liver_PDFF_P978_2 a omet:LiverPDFF, owl:NamedIndividual;
@@ -361,6 +419,7 @@ met:URI_liver_PDFF_P978_2 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "12.2"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P978;
   omet:isMetricForVisit met:URI_Visit_P978_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P978/2" .
 
 met:URI_liver_PDFF_P979_1 a omet:LiverPDFF, owl:NamedIndividual;
@@ -368,6 +427,7 @@ met:URI_liver_PDFF_P979_1 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "6"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P979/1" .
 
 met:URI_liver_PDFF_P979_2 a omet:LiverPDFF, owl:NamedIndividual;
@@ -375,6 +435,7 @@ met:URI_liver_PDFF_P979_2 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "4"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P979/2" .
 
 met:URI_liver_PDFF_P980_2 a omet:LiverPDFF, owl:NamedIndividual;
@@ -382,6 +443,7 @@ met:URI_liver_PDFF_P980_2 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "12"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P980;
   omet:isMetricForVisit met:URI_Visit_P980_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P980/2" .
 
 met:URI_liver_PDFF_P981_2 a omet:LiverPDFF, owl:NamedIndividual;
@@ -389,6 +451,7 @@ met:URI_liver_PDFF_P981_2 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P981;
   omet:isMetricForVisit met:URI_Visit_P981_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P981/2" .
 
 met:URI_liver_PDFF_P989_2 a omet:LiverPDFF, owl:NamedIndividual;
@@ -396,6 +459,7 @@ met:URI_liver_PDFF_P989_2 a omet:LiverPDFF, owl:NamedIndividual;
   qudt:value "13"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P989;
   omet:isMetricForVisit met:URI_Visit_P989_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver PDFF P989/2" .
 
 met:URI_liver_T2Star_P005_2 a omet:LiverT2Star, owl:NamedIndividual;
@@ -403,6 +467,7 @@ met:URI_liver_T2Star_P005_2 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "32.4"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P005;
   omet:isMetricForVisit met:URI_Visit_P005_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P005/2" .
 
 met:URI_liver_T2Star_P935_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -410,6 +475,7 @@ met:URI_liver_T2Star_P935_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "24.2"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P935;
   omet:isMetricForVisit met:URI_Visit_P935_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P935/1" .
 
 met:URI_liver_T2Star_P973_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -417,6 +483,7 @@ met:URI_liver_T2Star_P973_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "30.8"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P973;
   omet:isMetricForVisit met:URI_Visit_P973_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P973/1" .
 
 met:URI_liver_T2Star_P974_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -424,6 +491,7 @@ met:URI_liver_T2Star_P974_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "34.1"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P974;
   omet:isMetricForVisit met:URI_Visit_P974_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P974/1" .
 
 met:URI_liver_T2Star_P975_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -431,6 +499,7 @@ met:URI_liver_T2Star_P975_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "37.4"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P975;
   omet:isMetricForVisit met:URI_Visit_P975_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P975/1" .
 
 met:URI_liver_T2Star_P976_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -438,6 +507,7 @@ met:URI_liver_T2Star_P976_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "40.7"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P976;
   omet:isMetricForVisit met:URI_Visit_P976_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P976/1" .
 
 met:URI_liver_T2Star_P977_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -445,6 +515,7 @@ met:URI_liver_T2Star_P977_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "44"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P977;
   omet:isMetricForVisit met:URI_Visit_P977_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P977/1" .
 
 met:URI_liver_T2Star_P978_2 a omet:LiverT2Star, owl:NamedIndividual;
@@ -452,6 +523,7 @@ met:URI_liver_T2Star_P978_2 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "47.3"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P978;
   omet:isMetricForVisit met:URI_Visit_P978_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P978/2" .
 
 met:URI_liver_T2Star_P979_1 a omet:LiverT2Star, owl:NamedIndividual;
@@ -459,6 +531,7 @@ met:URI_liver_T2Star_P979_1 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "27.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P979/1" .
 
 met:URI_liver_T2Star_P979_2 a omet:LiverT2Star, owl:NamedIndividual;
@@ -466,6 +539,7 @@ met:URI_liver_T2Star_P979_2 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "50.6"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P979/2" .
 
 met:URI_liver_T2Star_P980_2 a omet:LiverT2Star, owl:NamedIndividual;
@@ -473,6 +547,7 @@ met:URI_liver_T2Star_P980_2 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "53.9"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P980;
   omet:isMetricForVisit met:URI_Visit_P980_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P980/2" .
 
 met:URI_liver_T2Star_P981_2 a omet:LiverT2Star, owl:NamedIndividual;
@@ -480,6 +555,7 @@ met:URI_liver_T2Star_P981_2 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "57.2"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P981;
   omet:isMetricForVisit met:URI_Visit_P981_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P981/2" .
 
 met:URI_liver_T2Star_P989_2 a omet:LiverT2Star, owl:NamedIndividual;
@@ -487,6 +563,7 @@ met:URI_liver_T2Star_P989_2 a omet:LiverT2Star, owl:NamedIndividual;
   qudt:value "60.5"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P989;
   omet:isMetricForVisit met:URI_Visit_P989_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver T2Star P989/2" .
 
 met:URI_liver_cT1_P005_2 a omet:LivercT1, owl:NamedIndividual;
@@ -494,6 +571,7 @@ met:URI_liver_cT1_P005_2 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "799"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P005;
   omet:isMetricForVisit met:URI_Visit_P005_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P005/2" .
 
 met:URI_liver_cT1_P935_1 a omet:LivercT1, owl:NamedIndividual;
@@ -501,6 +579,7 @@ met:URI_liver_cT1_P935_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "712"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P935;
   omet:isMetricForVisit met:URI_Visit_P935_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P935/1" .
 
 met:URI_liver_cT1_P973_1 a omet:LivercT1, owl:NamedIndividual;
@@ -508,6 +587,7 @@ met:URI_liver_cT1_P973_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "754"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P973;
   omet:isMetricForVisit met:URI_Visit_P973_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P973/1" .
 
 met:URI_liver_cT1_P974_1 a omet:LivercT1, owl:NamedIndividual;
@@ -515,6 +595,7 @@ met:URI_liver_cT1_P974_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "801"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P974;
   omet:isMetricForVisit met:URI_Visit_P974_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P974/1" .
 
 met:URI_liver_cT1_P975_1 a omet:LivercT1, owl:NamedIndividual;
@@ -522,6 +603,7 @@ met:URI_liver_cT1_P975_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "810"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P975;
   omet:isMetricForVisit met:URI_Visit_P975_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P975/1" .
 
 met:URI_liver_cT1_P976_1 a omet:LivercT1, owl:NamedIndividual;
@@ -529,6 +611,7 @@ met:URI_liver_cT1_P976_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "819"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P976;
   omet:isMetricForVisit met:URI_Visit_P976_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P976/1" .
 
 met:URI_liver_cT1_P977_1 a omet:LivercT1, owl:NamedIndividual;
@@ -536,6 +619,7 @@ met:URI_liver_cT1_P977_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "828"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P977;
   omet:isMetricForVisit met:URI_Visit_P977_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P977/1" .
 
 met:URI_liver_cT1_P978_2 a omet:LivercT1, owl:NamedIndividual;
@@ -543,6 +627,7 @@ met:URI_liver_cT1_P978_2 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "837"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P978;
   omet:isMetricForVisit met:URI_Visit_P978_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P978/2" .
 
 met:URI_liver_cT1_P979_1 a omet:LivercT1, owl:NamedIndividual;
@@ -550,6 +635,7 @@ met:URI_liver_cT1_P979_1 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "789"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_1;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P979/1" .
 
 met:URI_liver_cT1_P979_2 a omet:LivercT1, owl:NamedIndividual;
@@ -557,6 +643,7 @@ met:URI_liver_cT1_P979_2 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "846"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P979;
   omet:isMetricForVisit met:URI_Visit_P979_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P979/2" .
 
 met:URI_liver_cT1_P980_2 a omet:LivercT1, owl:NamedIndividual;
@@ -564,6 +651,7 @@ met:URI_liver_cT1_P980_2 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "788"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P980;
   omet:isMetricForVisit met:URI_Visit_P980_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P980/2" .
 
 met:URI_liver_cT1_P981_2 a omet:LivercT1, owl:NamedIndividual;
@@ -571,6 +659,7 @@ met:URI_liver_cT1_P981_2 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "864"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P981;
   omet:isMetricForVisit met:URI_Visit_P981_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P981/2" .
 
 met:URI_liver_cT1_P989_2 a omet:LivercT1, owl:NamedIndividual;
@@ -578,4 +667,5 @@ met:URI_liver_cT1_P989_2 a omet:LivercT1, owl:NamedIndividual;
   qudt:value "873"^^xsd:float;
   omet:isMetricForPatient met:URI_Patient_P989;
   omet:isMetricForVisit met:URI_Visit_P989_2;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "liver cT1 P989/2" .

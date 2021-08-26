@@ -10,42 +10,52 @@ scn:URI_FS_Philips_ModelA a oscn:ScannerFieldStrength, owl:NamedIndividual;
   oscn:FieldStrengthUnit unit:T;
   oscn:FieldStrengthValue 1.5E0;
   oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Philips_ModelA;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "1.5" .
 
 scn:URI_FS_Philips_ModelB a oscn:ScannerFieldStrength, owl:NamedIndividual;
   oscn:FieldStrengthUnit unit:T;
   oscn:FieldStrengthValue 5.0E0;
   oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "5" .
 
 scn:URI_FS_Siemens_ModelA a oscn:ScannerFieldStrength, owl:NamedIndividual;
   oscn:FieldStrengthUnit unit:T;
   oscn:FieldStrengthValue 1.5E0;
   oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Siemens_ModelA;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "1.5" .
 
 scn:URI_FS_Siemens_ModelB a oscn:ScannerFieldStrength, owl:NamedIndividual;
   oscn:FieldStrengthUnit unit:T;
   oscn:FieldStrengthValue 3.0E0;
   oscn:isFieldStrengthForScanner scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "3" .
 
 scn:URI_MRIScannerModel_Philips_ModelA a oscn:MRIScannerModel, owl:NamedIndividual;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Philips_ModelA" .
 
 scn:URI_MRIScannerModel_Philips_ModelB a oscn:MRIScannerModel, owl:NamedIndividual;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Philips_ModelB" .
 
 scn:URI_MRIScannerModel_Siemens_ModelA a oscn:MRIScannerModel, owl:NamedIndividual;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Siemens_ModelA" .
 
 scn:URI_MRIScannerModel_Siemens_ModelB a oscn:MRIScannerModel, owl:NamedIndividual;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Siemens_ModelB" .
 
 scn:URI_Manufacturer_Philips a oscn:ScannerManufacturer, owl:NamedIndividual;
   oscn:isMakerOfScanner scn:URI_MRIScannerModel_Philips_ModelA, scn:URI_MRIScannerModel_Philips_ModelB;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Philips" .
 
 scn:URI_Manufacturer_Siemens a oscn:ScannerManufacturer, owl:NamedIndividual;
   oscn:isMakerOfScanner scn:URI_MRIScannerModel_Siemens_ModelA, scn:URI_MRIScannerModel_Siemens_ModelB;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Siemens" .

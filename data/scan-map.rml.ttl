@@ -60,6 +60,12 @@
       rml:reference "Scanner Field Strength";
       rr:datatype xsd:string
       ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:isDefinedBy;
+    rr:objectMap [
+      rr:template "http://www.perspectum.com/resources/scanner/"
+    ]
   ].
 
 :scanner a rr:TriplesMap;
@@ -87,6 +93,12 @@
       rml:reference "Scanner Model";
       rr:datatype xsd:string
       ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:isDefinedBy;
+    rr:objectMap [
+      rr:template "http://www.perspectum.com/resources/scanner/"
+    ]
   ].
 
 :manufacturer  a rr:TriplesMap;
@@ -114,6 +126,12 @@
       rml:reference "Scanner Manufacturer";
       rr:datatype xsd:string
       ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate rdfs:isDefinedBy;
+    rr:objectMap [
+      rr:template "http://www.perspectum.com/resources/scanner/"
+    ]
   ];
   rr:predicateObjectMap [
     rr:predicate oscn:isMakerOfScanner ;
