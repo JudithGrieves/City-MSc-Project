@@ -15,6 +15,7 @@
 Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
 
 Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.""" ;
+                                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                                              rdfs:seeAlso "http://www.perspectum.com/ontology/scanner" ;
                                              owl:versionInfo """Versions
 
@@ -32,6 +33,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 <http://qudt.org/schema/qudt/Unit> rdf:type owl:ObjectProperty ;
                                    rdfs:domain :QuantitativeMetric ;
                                    rdfs:comment "unit of measure class from QUDT ontology." ;
+                                   rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                                    rdfs:label "unit of measure" .
 
 
@@ -40,6 +42,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
               owl:inverseOf :isAttendedBy ;
               rdfs:domain :Patient ;
               rdfs:range :ScanVisit ;
+              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
               rdfs:label "attends visit" .
 
 
@@ -48,13 +51,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                   owl:inverseOf :isMetricForPatient ;
                   rdfs:domain :Patient ;
                   rdfs:range :QuantitativeMetric ;
+                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                   rdfs:label "has patient metric" .
 
 
 ###  http://www.perspectum.com/ontology/metric#hasPatientSex
 :hasPatientSex rdf:type owl:ObjectProperty ;
                rdfs:domain :Patient ;
-               rdfs:range :PatientSex .
+               rdfs:range :PatientSex ;
+               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+               rdfs:label "has patient sex" .
 
 
 ###  http://www.perspectum.com/ontology/metric#hasVisitMetric
@@ -62,6 +68,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                 owl:inverseOf :isMetricForVisit ;
                 rdfs:domain :ScanVisit ;
                 rdfs:range :QuantitativeMetric ;
+                rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                 rdfs:label "has visit metric" .
 
 
@@ -69,16 +76,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 :isAttendedBy rdf:type owl:ObjectProperty ;
               rdfs:domain :ScanVisit ;
               rdfs:range :Patient ;
+              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
               rdfs:label "is attended by" .
 
 
 ###  http://www.perspectum.com/ontology/metric#isMetricForPatient
 :isMetricForPatient rdf:type owl:ObjectProperty ;
+                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                     rdfs:label "is metric for patient" .
 
 
 ###  http://www.perspectum.com/ontology/metric#isMetricForVisit
 :isMetricForVisit rdf:type owl:ObjectProperty ;
+                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                   rdfs:label "is metric for visit" .
 
 
@@ -87,11 +97,14 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
              owl:inverseOf :usesScannerModel ;
              rdfs:domain <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
              rdfs:range :ScanVisit ;
+             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
              rdfs:label "used in visit" .
 
 
 ###  http://www.perspectum.com/ontology/metric#usesScannerModel
-:usesScannerModel rdf:type owl:ObjectProperty .
+:usesScannerModel rdf:type owl:ObjectProperty ;
+                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                  rdfs:label "uses scanner model" .
 
 
 #################################################################
@@ -104,6 +117,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                                     rdfs:domain :QuantitativeMetric ;
                                     rdfs:range xsd:float ;
                                     rdfs:comment "A numerical value." ;
+                                    rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                                     rdfs:label "value" .
 
 
@@ -116,6 +130,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
            rdfs:subClassOf :ScanMetric ;
            rdfs:comment """Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
 (https://perspectum.com/media/1361/understanding-pdff.pdf)""" ;
+           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
            rdfs:label "liver PDFF" .
 
 
@@ -124,6 +139,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
              rdfs:subClassOf :ScanMetric ;
              rdfs:comment """T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
 T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.""" ;
+             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
              rdfs:label "liver T2star" .
 
 
@@ -132,6 +148,7 @@ T2* is a time constant (measured in milliseconds) describing the decay of an MRI
           rdfs:subClassOf :ScanMetric ;
           rdfs:comment """Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
 T1 measurements differ depending on magnetic field strength and MR manufacturer.""" ;
+          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
           rdfs:label "liver cT1" .
 
 
@@ -142,6 +159,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                           :ScanVisit ,
                           <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
          rdfs:comment "A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number." ;
+         rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
          rdfs:label "patient" .
 
 
@@ -149,6 +167,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 :PatientAge rdf:type owl:Class ;
             rdfs:subClassOf :PatientMetric ;
             rdfs:comment "The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric." ;
+            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
             rdfs:label "patient age" .
 
 
@@ -156,6 +175,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 :PatientBMI rdf:type owl:Class ;
             rdfs:subClassOf :PatientMetric ;
             rdfs:comment "The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres." ;
+            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
             rdfs:label "patient BMI" .
 
 
@@ -163,6 +183,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 :PatientMetric rdf:type owl:Class ;
                rdfs:subClassOf :QuantitativeMetric ;
                rdfs:comment "A quantitative metric gathered for the study and related to a patient" ;
+               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                rdfs:label "patient metric" .
 
 
@@ -177,6 +198,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                              :ScanVisit ,
                              <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
             rdfs:comment "The biological sex of a patient" ;
+            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
             rdfs:label "patient sex" .
 
 
@@ -185,6 +207,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                     owl:disjointWith :ScanVisit ,
                                      <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
                     rdfs:comment "A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1." ;
+                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                     rdfs:label "quantitative metric" .
 
 
@@ -192,6 +215,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 :ScanMetric rdf:type owl:Class ;
             rdfs:subClassOf :QuantitativeMetric ;
             rdfs:comment "A quantitative metric gathered for the study and derived from an MRI scan." ;
+            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
             rdfs:label "scan metric" .
 
 
@@ -200,6 +224,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
            owl:disjointWith <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
            rdfs:comment """A visit made by a patient for the purpose of taking part in an MRI scan to gather metrics for the study data.  A scan visit is defined as a single visit for a single patient and allows identification of multiple values of a single metric type for a single patient.
 A visit is currently identified by a sequential number currently given in the test data.""" ;
+           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
            rdfs:label "scan visit" .
 
 
@@ -207,6 +232,7 @@ A visit is currently identified by a sequential number currently given in the te
 <http://www.perspectum.com/ontology/scanner#MRIScannerModel> rdf:type owl:Class ;
                                                              rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
+                                                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                                                              rdfs:label "scanner" .
 
 
@@ -216,12 +242,14 @@ A visit is currently identified by a sequential number currently given in the te
 
 ###  http://www.perspectum.com/ontology/metric#Female
 :Female rdf:type owl:NamedIndividual ;
+        rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
         rdfs:label "F" ,
                    "Female" .
 
 
 ###  http://www.perspectum.com/ontology/metric#Male
 :Male rdf:type owl:NamedIndividual ;
+      rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
       rdfs:label "M" ,
                  "Male" .
 

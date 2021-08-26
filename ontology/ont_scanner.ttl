@@ -16,6 +16,7 @@
 Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
 
 Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.""" ;
+                                              rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                                               rdfs:seeAlso "http://www.perspectum.com/ontology/metrics" ;
                                               owl:versionInfo """Versions
 
@@ -30,6 +31,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 ###  http://qudt.org/schema/qudt#unit
 qudt:unit rdf:type owl:ObjectProperty ;
           rdfs:comment "unit property from QUDT ontology" ;
+          rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
           rdfs:label "unit" .
 
 
@@ -39,6 +41,7 @@ oscn:FieldStrengthUnit rdf:type owl:ObjectProperty ;
                        rdfs:domain oscn:ScannerFieldStrength ;
                        rdfs:range unit:T ;
                        rdfs:comment "field strength unit property" ;
+                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                        rdfs:label "field strength unit" .
 
 
@@ -46,6 +49,7 @@ oscn:FieldStrengthUnit rdf:type owl:ObjectProperty ;
 oscn:hasScannerFieldStrength rdf:type owl:ObjectProperty ;
                              rdfs:domain oscn:MRIScannerModel ;
                              rdfs:range oscn:ScannerFieldStrength ;
+                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                              rdfs:label "has scanner field strength" .
 
 
@@ -53,17 +57,20 @@ oscn:hasScannerFieldStrength rdf:type owl:ObjectProperty ;
 oscn:isFieldStrengthForScanner rdf:type owl:ObjectProperty ;
                                rdfs:domain oscn:ScannerFieldStrength ;
                                rdfs:range oscn:MRIScannerModel ;
+                               rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                                rdfs:label "is field strength for scanner" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMadeBy
 oscn:isMadeBy rdf:type owl:ObjectProperty ;
               owl:inverseOf oscn:isMakerOf ;
+              rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
               rdfs:label "is made by" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMakerOf
 oscn:isMakerOf rdf:type owl:ObjectProperty ;
+               rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                rdfs:label "is maker of" .
 
 
@@ -71,6 +78,7 @@ oscn:isMakerOf rdf:type owl:ObjectProperty ;
 oscn:isMakerOfScanner rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf oscn:isMakerOf ;
                       owl:inverseOf oscn:isScannerMadeBy ;
+                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                       rdfs:label "is maker of scanner" .
 
 
@@ -79,6 +87,7 @@ oscn:isScannerMadeBy rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf oscn:isMadeBy ;
                      rdfs:domain oscn:MRIScannerModel ;
                      rdfs:range oscn:ScannerManufacturer ;
+                     rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                      rdfs:label "is scanner made by" .
 
 
@@ -89,6 +98,7 @@ oscn:isScannerMadeBy rdf:type owl:ObjectProperty ;
 ###  http://qudt.org/schema/qudt#value
 qudt:value rdf:type owl:DatatypeProperty ;
            rdfs:comment "value data property from QUDT ontology" ;
+           rdfs:isDefinedBy <http://qudt.org/schema/qudt/> ;
            rdfs:label "value" .
 
 
@@ -98,6 +108,7 @@ oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
                         rdfs:domain oscn:ScannerFieldStrength ;
                         rdfs:range xsd:double ;
                         rdfs:comment "Field Strength of the MRI Scanner magnet(s)" ;
+                        rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                         rdfs:label "field strength value" .
 
 
@@ -105,12 +116,13 @@ oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://qudt.org/schema/qudt#quantity
-qudt:quantity rdf:type owl:Class ;
+###  http://qudt.org/schema/qudt#Quantity
+qudt:Quantity rdf:type owl:Class ;
               owl:disjointWith unit:T ,
                                oscn:MRIScannerModel ,
                                oscn:ScannerManufacturer ;
               rdfs:comment "quantity class from QUDT ontology" ;
+              rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
               rdfs:label "quantity" .
 
 
@@ -119,6 +131,7 @@ unit:T rdf:type owl:Class ;
        owl:disjointWith oscn:MRIScannerModel ,
                         oscn:ScannerManufacturer ;
        rdfs:comment "Unit of scanner field strength, Tesla, from vocabulary UNIT." ;
+       rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
        rdfs:label "Tesla" .
 
 
@@ -127,19 +140,22 @@ oscn:MRIScannerModel rdf:type owl:Class ;
                      owl:disjointWith oscn:ScannerManufacturer ;
                      rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
+                     rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                      rdfs:label "MRI scanner model" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrength
 oscn:ScannerFieldStrength rdf:type owl:Class ;
-                          rdfs:subClassOf qudt:quantity ;
+                          rdfs:subClassOf qudt:Quantity ;
                           rdfs:comment "The measure of the strength of the magnet used in an MRI Scanner." ;
+                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                           rdfs:label "scanner field strength" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerManufacturer
 oscn:ScannerManufacturer rdf:type owl:Class ;
                          rdfs:comment "A company that manufactures and sells MR scanners for human diagnostic use." ;
+                         rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                          rdfs:label "scanner manufacturer" .
 
 

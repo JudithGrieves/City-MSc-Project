@@ -25,6 +25,10 @@ Perspectum has published a  longitudinal, observational clinical study (Dennis e
 Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</Literal>
     </Annotation>
     <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI></IRI>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <Literal>http://www.perspectum.com/ontology/metrics</Literal>
     </Annotation>
@@ -37,7 +41,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 25/8/2021 1.2 Add comment annotations</Literal>
     </Annotation>
     <Declaration>
-        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class abbreviatedIRI="qudt:Quantity"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="unit:T"/>
@@ -83,18 +87,18 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <SubClassOf>
         <Class IRI="#ScannerFieldStrength"/>
-        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class abbreviatedIRI="qudt:Quantity"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class abbreviatedIRI="qudt:Quantity"/>
         <Class abbreviatedIRI="unit:T"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class abbreviatedIRI="qudt:Quantity"/>
         <Class IRI="#MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI="qudt:quantity"/>
+        <Class abbreviatedIRI="qudt:Quantity"/>
         <Class IRI="#ScannerManufacturer"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -175,18 +179,28 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>qudt:quantity</AbbreviatedIRI>
+        <AbbreviatedIRI>qudt:Quantity</AbbreviatedIRI>
         <Literal>quantity class from QUDT ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>qudt:Quantity</AbbreviatedIRI>
+        <IRI>http://qudt.org/schema/qudt</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>qudt:quantity</AbbreviatedIRI>
+        <AbbreviatedIRI>qudt:Quantity</AbbreviatedIRI>
         <Literal>quantity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
         <Literal>unit property from QUDT ontology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
+        <IRI>http://qudt.org/schema/qudt</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -199,6 +213,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>value data property from QUDT ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>qudt:value</AbbreviatedIRI>
+        <IRI>http://qudt.org/schema/qudt/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>qudt:value</AbbreviatedIRI>
         <Literal>value</Literal>
@@ -207,6 +226,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>unit:T</AbbreviatedIRI>
         <Literal>Unit of scanner field strength, Tesla, from vocabulary UNIT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>unit:T</AbbreviatedIRI>
+        <IRI>http://qudt.org/vocab/unit</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -219,6 +243,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>field strength unit property</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#FieldStrengthUnit</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#FieldStrengthUnit</IRI>
         <Literal>field strength unit</Literal>
@@ -227,6 +256,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#FieldStrengthValue</IRI>
         <Literal>Field Strength of the MRI Scanner magnet(s)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#FieldStrengthValue</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -240,6 +274,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 (https://www.nhs.uk/conditions/mri-scan/)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#MRIScannerModel</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MRIScannerModel</IRI>
         <Literal>MRI scanner model</Literal>
@@ -248,6 +287,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ScannerFieldStrength</IRI>
         <Literal>The measure of the strength of the magnet used in an MRI Scanner.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#ScannerFieldStrength</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -260,9 +304,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>A company that manufactures and sells MR scanners for human diagnostic use.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#ScannerManufacturer</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ScannerManufacturer</IRI>
         <Literal>scanner manufacturer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#hasScannerFieldStrength</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -270,9 +324,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>has scanner field strength</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#isFieldStrengthForScanner</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isFieldStrengthForScanner</IRI>
         <Literal>is field strength for scanner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#isMadeBy</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -280,14 +344,29 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>is made by</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#isMakerOf</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isMakerOf</IRI>
         <Literal>is maker of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#isMakerOfScanner</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isMakerOfScanner</IRI>
         <Literal>is maker of scanner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#isScannerMadeBy</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
