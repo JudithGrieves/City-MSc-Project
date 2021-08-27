@@ -126,6 +126,42 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
+    <!-- http://www.perspectum.com/ontology/metric#liverCT1Unit -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#liverCT1Unit">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LivercT1"/>
+        <rdfs:comment>liver CT1 unit of measure</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>liver CT1 unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#liverPDFFUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#liverPDFFUnit">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverPDFF"/>
+        <rdfs:comment>Liver PDFF unit of measure</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>Liver PDFF unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#liverT2StarUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#liverT2StarUnit">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverT2Star"/>
+        <rdfs:comment>liver T2* unit of measure</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>liver T2* unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.perspectum.com/ontology/metric#usedInVisit -->
 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#usedInVisit">
@@ -171,6 +207,41 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
+    <!-- http://www.perspectum.com/ontology/metric#liverCT1Value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#liverCT1Value">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/value"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LivercT1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="http://perspectum.com/ontology/metric"/>
+        <rdfs:label rdf:resource="liver CT1 value"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#liverPDFFValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#liverPDFFValue">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/value"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverPDFF"/>
+        <rdfs:isDefinedBy rdf:resource="http://perspectum.com/ontology/metric"/>
+        <rdfs:label rdf:resource="Liver PDFF value"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#liverT2StarValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#liverT2StarValue">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/value"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverT2Star"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:isDefinedBy rdf:resource="http://perspectum.com/ontology/metric"/>
+        <rdfs:label rdf:resource="Liver T2* value"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -179,6 +250,36 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Quantity -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Quantity">
+        <rdfs:comment>quantity class from QUDT ontology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
+        <rdfs:label>quantity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/MilliSEC -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit/MilliSEC">
+        <rdfs:comment>Millisecond unit of measure from QUDT Unit vocabulary.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/vocab/unit/"/>
+        <rdfs:label>millisecond</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/PERCENT -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit/PERCENT">
+        <rdfs:comment>Percent unit of measure, from vocabulary UNIT.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>percent</rdfs:label>
+    </owl:Class>
     
 
 
@@ -289,6 +390,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     <!-- http://www.perspectum.com/ontology/metric#QuantitativeMetric -->
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#QuantitativeMetric">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#ScanVisit"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <rdfs:comment>A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1.</rdfs:comment>

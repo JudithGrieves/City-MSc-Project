@@ -92,6 +92,33 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                   rdfs:label "is metric for visit" .
 
 
+###  http://www.perspectum.com/ontology/metric#liverCT1Unit
+:liverCT1Unit rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://qudt.org/schema/qudt/Unit> ;
+              rdfs:domain :LivercT1 ;
+              rdfs:comment "liver CT1 unit of measure" ;
+              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+              rdfs:label "liver CT1 unit" .
+
+
+###  http://www.perspectum.com/ontology/metric#liverPDFFUnit
+:liverPDFFUnit rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://qudt.org/schema/qudt/Unit> ;
+               rdfs:domain :LiverPDFF ;
+               rdfs:comment "Liver PDFF unit of measure" ;
+               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+               rdfs:label "Liver PDFF unit" .
+
+
+###  http://www.perspectum.com/ontology/metric#liverT2StarUnit
+:liverT2StarUnit rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://qudt.org/schema/qudt/Unit> ;
+                 rdfs:domain :LiverT2Star ;
+                 rdfs:comment "liver T2* unit of measure" ;
+                 rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                 rdfs:label "liver T2* unit" .
+
+
 ###  http://www.perspectum.com/ontology/metric#usedInVisit
 :usedInVisit rdf:type owl:ObjectProperty ;
              owl:inverseOf :usesScannerModel ;
@@ -121,9 +148,56 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
                                     rdfs:label "value" .
 
 
+###  http://www.perspectum.com/ontology/metric#liverCT1Value
+:liverCT1Value rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
+               rdfs:domain :LivercT1 ;
+               rdfs:range xsd:double ;
+               rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
+               rdfs:label <liver CT1 value> .
+
+
+###  http://www.perspectum.com/ontology/metric#liverPDFFValue
+:liverPDFFValue rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
+                rdfs:domain :LiverPDFF ;
+                rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
+                rdfs:label <Liver PDFF value> .
+
+
+###  http://www.perspectum.com/ontology/metric#liverT2StarValue
+:liverT2StarValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
+                  rdfs:domain :LiverT2Star ;
+                  rdfs:range xsd:double ;
+                  rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
+                  rdfs:label <Liver T2* value> .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://qudt.org/schema/qudt/Quantity
+<http://qudt.org/schema/qudt/Quantity> rdf:type owl:Class ;
+                                       rdfs:comment "quantity class from QUDT ontology." ;
+                                       rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+                                       rdfs:label "quantity" .
+
+
+###  http://qudt.org/vocab/unit/MilliSEC
+<http://qudt.org/vocab/unit/MilliSEC> rdf:type owl:Class ;
+                                      rdfs:comment "Millisecond unit of measure from QUDT Unit vocabulary." ;
+                                      rdfs:isDefinedBy <http://qudt.org/vocab/unit/> ;
+                                      rdfs:label "millisecond" .
+
+
+###  http://qudt.org/vocab/unit/PERCENT
+<http://qudt.org/vocab/unit/PERCENT> rdf:type owl:Class ;
+                                     rdfs:comment "Percent unit of measure, from vocabulary UNIT." ;
+                                     rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+                                     rdfs:label "percent" .
+
 
 ###  http://www.perspectum.com/ontology/metric#LiverPDFF
 :LiverPDFF rdf:type owl:Class ;
@@ -204,6 +278,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 
 ###  http://www.perspectum.com/ontology/metric#QuantitativeMetric
 :QuantitativeMetric rdf:type owl:Class ;
+                    rdfs:subClassOf <http://qudt.org/schema/qudt/Quantity> ;
                     owl:disjointWith :ScanVisit ,
                                      <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
                     rdfs:comment "A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1." ;
