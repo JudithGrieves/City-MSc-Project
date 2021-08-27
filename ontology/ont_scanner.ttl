@@ -35,14 +35,14 @@ qudt:unit rdf:type owl:ObjectProperty ;
           rdfs:label "unit" .
 
 
-###  http://www.perspectum.com/ontology/scanner#FieldStrengthUnit
-oscn:FieldStrengthUnit rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf qudt:unit ;
-                       rdfs:domain oscn:ScannerFieldStrength ;
-                       rdfs:range unit:T ;
-                       rdfs:comment "field strength unit property" ;
-                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                       rdfs:label "field strength unit" .
+###  http://www.perspectum.com/ontology/scanner#hasFieldStrengthUnit
+oscn:hasFieldStrengthUnit rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf qudt:unit ;
+                          rdfs:domain oscn:ScannerFieldStrength ;
+                          rdfs:range oscn:ScannerFieldStrengthUnit ;
+                          rdfs:comment "has field strength unit object property" ;
+                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
+                          rdfs:label "has field strength unit" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#hasScannerFieldStrength
@@ -118,7 +118,7 @@ oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
 
 ###  http://qudt.org/schema/qudt#Quantity
 qudt:Quantity rdf:type owl:Class ;
-              owl:disjointWith unit:T ,
+              owl:disjointWith <http://qudt.org/schema/qudt/Unit> ,
                                oscn:MRIScannerModel ,
                                oscn:ScannerManufacturer ;
               rdfs:comment "quantity class from QUDT ontology" ;
@@ -126,13 +126,13 @@ qudt:Quantity rdf:type owl:Class ;
               rdfs:label "quantity" .
 
 
-###  http://qudt.org/vocab/unit#T
-unit:T rdf:type owl:Class ;
-       owl:disjointWith oscn:MRIScannerModel ,
-                        oscn:ScannerManufacturer ;
-       rdfs:comment "Unit of scanner field strength, Tesla, from vocabulary UNIT." ;
-       rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
-       rdfs:label "Tesla" .
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
+                                   owl:disjointWith oscn:MRIScannerModel ,
+                                                    oscn:ScannerManufacturer ;
+                                   rdfs:comment "Unit of Measure from QUDT ontology" ;
+                                   rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+                                   rdfs:label "Unit" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
@@ -150,6 +150,14 @@ oscn:ScannerFieldStrength rdf:type owl:Class ;
                           rdfs:comment "The measure of the strength of the magnet used in an MRI Scanner." ;
                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                           rdfs:label "scanner field strength" .
+
+
+###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit
+oscn:ScannerFieldStrengthUnit rdf:type owl:Class ;
+                              rdfs:subClassOf <http://qudt.org/schema/qudt/Unit> ;
+                              rdfs:comment "Unit of measure of scanner field strength" ;
+                              rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+                              rdfs:label "scanner field strength unit" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerManufacturer

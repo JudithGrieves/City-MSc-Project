@@ -45,10 +45,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://qudt.org/vocab/unit/MilliSEC"/>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://qudt.org/vocab/unit/PERCENT"/>
+        <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LiverPDFF"/>
@@ -87,10 +87,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#attendsVisit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPatientMetric"/>
@@ -109,15 +118,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMetricForVisit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#liverCT1Unit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#liverPDFFUnit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#liverT2StarUnit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usedInVisit"/>
@@ -151,6 +151,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
+        <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#LiverPDFF"/>
         <Class IRI="#ScanMetric"/>
     </SubClassOf>
@@ -183,6 +187,34 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#QuantitativeMetric"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
+        <Class IRI="#Patient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
+        <Class IRI="#ScanVisit"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+        <Class IRI="#Patient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+        <Class IRI="#ScanVisit"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Patient"/>
         <Class IRI="#PatientSex"/>
     </DisjointClasses>
@@ -223,16 +255,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#liverCT1Unit"/>
-        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#liverPDFFUnit"/>
-        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#liverT2StarUnit"/>
-        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#attendsVisit"/>
@@ -251,12 +283,24 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#usesScannerModel"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://qudt.org/schema/qudt/Unit"/>
+        <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
         <Class IRI="#QuantitativeMetric"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#attendsVisit"/>
         <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+        <Class IRI="#LivercT1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+        <Class IRI="#LiverPDFF"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
+        <Class IRI="#LiverT2Star"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPatientMetric"/>
@@ -275,24 +319,24 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanVisit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#liverCT1Unit"/>
-        <Class IRI="#LivercT1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#liverPDFFUnit"/>
-        <Class IRI="#LiverPDFF"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#liverT2StarUnit"/>
-        <Class IRI="#LiverT2Star"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedInVisit"/>
         <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#attendsVisit"/>
         <Class IRI="#ScanVisit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+        <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+        <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
+        <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPatientMetric"/>
@@ -330,10 +374,6 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
-        <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
-        <Class IRI="#QuantitativeMetric"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#liverCT1Value"/>
         <Class IRI="#LivercT1"/>
     </DataPropertyDomain>
@@ -346,11 +386,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#LiverT2Star"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
+        <DataProperty IRI="#liverCT1Value"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#liverCT1Value"/>
+        <DataProperty IRI="#liverPDFFValue"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -375,7 +415,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>http://qudt.org/schema/qudt/Unit</IRI>
-        <Literal>unit of measure class from QUDT ontology.</Literal>
+        <Literal>Unit of measure from QUDT ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -385,6 +425,21 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://qudt.org/schema/qudt/Unit</IRI>
+        <Literal>Unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://qudt.org/schema/qudt/unit</IRI>
+        <Literal>unit of measure class from QUDT ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://qudt.org/schema/qudt/unit</IRI>
+        <IRI>http://qudt.org/schema/qudt</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://qudt.org/schema/qudt/unit</IRI>
         <Literal>unit of measure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -404,33 +459,18 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://qudt.org/vocab/unit/MilliSEC</IRI>
-        <Literal>Millisecond unit of measure from QUDT Unit vocabulary.</Literal>
+        <IRI>http://www.perspectum.com/ontology/MetricUnit</IRI>
+        <Literal>Unit of measure of a Quantitative Metric.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>http://qudt.org/vocab/unit/MilliSEC</IRI>
-        <IRI>http://qudt.org/vocab/unit/</IRI>
+        <IRI>http://www.perspectum.com/ontology/MetricUnit</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://qudt.org/vocab/unit/MilliSEC</IRI>
-        <Literal>millisecond</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://qudt.org/vocab/unit/PERCENT</IRI>
-        <Literal>Percent unit of measure, from vocabulary UNIT.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>http://qudt.org/vocab/unit/PERCENT</IRI>
-        <IRI>http://qudt.org/vocab/unit</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://qudt.org/vocab/unit/PERCENT</IRI>
-        <Literal>percent</Literal>
+        <IRI>http://www.perspectum.com/ontology/MetricUnit</IRI>
+        <Literal>metric unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -642,6 +682,51 @@ A visit is currently identified by a sequential number currently given in the te
         <Literal>attends visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLiverCT1Unit</IRI>
+        <Literal>liver CT1 unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#hasLiverCT1Unit</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasLiverCT1Unit</IRI>
+        <Literal>liver CT1 unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLiverPDFFUnit</IRI>
+        <Literal>Liver PDFF unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#hasLiverPDFFUnit</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasLiverPDFFUnit</IRI>
+        <Literal>Liver PDFF unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLiverT2StarUnit</IRI>
+        <Literal>liver T2* unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#hasLiverT2StarUnit</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasLiverT2StarUnit</IRI>
+        <Literal>liver T2* unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#hasPatientMetric</IRI>
         <IRI></IRI>
@@ -702,21 +787,6 @@ A visit is currently identified by a sequential number currently given in the te
         <Literal>is metric for visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#liverCT1Unit</IRI>
-        <Literal>liver CT1 unit of measure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#liverCT1Unit</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#liverCT1Unit</IRI>
-        <Literal>liver CT1 unit</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#liverCT1Value</IRI>
         <IRI>http://perspectum.com/ontology/metric</IRI>
@@ -724,22 +794,7 @@ A visit is currently identified by a sequential number currently given in the te
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#liverCT1Value</IRI>
-        <IRI>liver CT1 value</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#liverPDFFUnit</IRI>
-        <Literal>Liver PDFF unit of measure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#liverPDFFUnit</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#liverPDFFUnit</IRI>
-        <Literal>Liver PDFF unit</Literal>
+        <Literal>liver CT1 value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -749,22 +804,7 @@ A visit is currently identified by a sequential number currently given in the te
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#liverPDFFValue</IRI>
-        <IRI>Liver PDFF value</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#liverT2StarUnit</IRI>
-        <Literal>liver T2* unit of measure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#liverT2StarUnit</IRI>
-        <IRI></IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#liverT2StarUnit</IRI>
-        <Literal>liver T2* unit</Literal>
+        <Literal>Liver PDFF value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -774,7 +814,7 @@ A visit is currently identified by a sequential number currently given in the te
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#liverT2StarValue</IRI>
-        <IRI>Liver T2* value</IRI>
+        <Literal>Liver T2* value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>

@@ -1,6 +1,7 @@
 Optional.of(http://www.perspectum.com/ontology/scanner)
-http://qudt.org/schema/qudt#quantity,236.0,241.0
-http://www.perspectum.com/ontology/scanner#ScannerManufacturer,458.0,23.0
-http://qudt.org/vocab/unit#T,258.0,438.0
-http://www.perspectum.com/ontology/scanner#ScannerFieldStrength,469.0,431.0
-http://www.perspectum.com/ontology/scanner#MRIScannerModel,458.0,246.0
+http://www.perspectum.com/ontology/scanner#ScannerManufacturer,301.0,-140.0
+http://qudt.org/schema/qudt/Unit,133.0,60.0
+http://www.perspectum.com/ontology/scanner#ScannerFieldStrength,310.0,205.0
+http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit,101.0,209.0
+http://qudt.org/schema/qudt#Quantity,567.0,207.0
+http://www.perspectum.com/ontology/scanner#MRIScannerModel,301.0,16.0

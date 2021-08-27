@@ -48,15 +48,15 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/scanner#FieldStrengthUnit -->
+    <!-- http://www.perspectum.com/ontology/scanner#hasFieldStrengthUnit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#FieldStrengthUnit">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#hasFieldStrengthUnit">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt#unit"/>
         <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrength"/>
-        <rdfs:range rdf:resource="http://qudt.org/vocab/unit#T"/>
-        <rdfs:comment>field strength unit property</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit"/>
+        <rdfs:comment>has field strength unit object property</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
-        <rdfs:label>field strength unit</rdfs:label>
+        <rdfs:label>has field strength unit</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -173,7 +173,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://qudt.org/schema/qudt#Quantity -->
 
     <owl:Class rdf:about="http://qudt.org/schema/qudt#Quantity">
-        <owl:disjointWith rdf:resource="http://qudt.org/vocab/unit#T"/>
+        <owl:disjointWith rdf:resource="http://qudt.org/schema/qudt/Unit"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerManufacturer"/>
         <rdfs:comment>quantity class from QUDT ontology</rdfs:comment>
@@ -183,14 +183,14 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://qudt.org/vocab/unit#T -->
+    <!-- http://qudt.org/schema/qudt/Unit -->
 
-    <owl:Class rdf:about="http://qudt.org/vocab/unit#T">
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit">
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerManufacturer"/>
-        <rdfs:comment>Unit of scanner field strength, Tesla, from vocabulary UNIT.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://qudt.org/vocab/unit"/>
-        <rdfs:label>Tesla</rdfs:label>
+        <rdfs:comment>Unit of Measure from QUDT ontology</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
+        <rdfs:label>Unit</rdfs:label>
     </owl:Class>
     
 
@@ -214,6 +214,17 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>The measure of the strength of the magnet used in an MRI Scanner.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>scanner field strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <rdfs:comment>Unit of measure of scanner field strength</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
+        <rdfs:label>scanner field strength unit</rdfs:label>
     </owl:Class>
     
 
