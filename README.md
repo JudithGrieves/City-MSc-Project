@@ -6,7 +6,7 @@ Code, data and other information: a Knowledge Graph to orchestrate a multi-organ
     2. Run code/create_kg_rml.py.  This will create knowledge graph files data/metric_data.ttl, data/scanner_data.ttl
 
 2.  To query the knowledge graph(s)
-    a.  Ensure knowledge graph data exists: data/metric_data.ttl, data/scanner_data.ttl
-    b.  Run code/SPARQL_examples.py.  
-    c.  Output in data/metric_data-sparql[n].csv for reports where n=1, 2, 3
+    1.  Ensure knowledge graph data exists: data/metric_data.ttl, data/scanner_data.ttl
+    2.  Run code/SPARQL_examples.py.  
+    3.  Output in data/metric_data-sparql[n].csv for reports where n=1, 2, 3
 
