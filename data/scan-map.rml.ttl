@@ -12,6 +12,13 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
+
+#################################################################
+#    Field Strength
+#################################################################
+
+### source
+
 :field_strength a rr:TriplesMap;
   rml:logicalSource [
     rml:source [
@@ -24,6 +31,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mappings
 
 :field_strength 
   rr:subjectMap [
@@ -68,6 +77,12 @@
     ]
   ].
 
+#################################################################
+#    Scanner
+#################################################################
+
+### source
+
 :scanner a rr:TriplesMap;
   rml:logicalSource [
     rml:source [
@@ -80,6 +95,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :scanner 
   rr:subjectMap [
@@ -101,6 +118,12 @@
     ]
   ].
 
+#################################################################
+#    Manufacturer
+#################################################################
+
+### source
+
 :manufacturer  a rr:TriplesMap;
   rml:logicalSource [
     rml:source [
@@ -113,6 +136,9 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+
+### mapping
 
 :manufacturer  
   rr:subjectMap [

@@ -12,6 +12,13 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
+
+#################################################################
+#    Visit
+#################################################################
+
+### source
+
 :visit a rr:TriplesMap;
 
   rml:logicalSource [
@@ -25,6 +32,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :visit
   rr:subjectMap [
@@ -61,6 +70,12 @@
       rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner}"    ]
   ].
 
+#################################################################
+#    Patient
+#################################################################
+
+### source
+
 :patient a rr:TriplesMap;
   rml:logicalSource [
     rml:source [
@@ -73,6 +88,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :patient
   rr:subjectMap [
@@ -100,6 +117,12 @@
     ]
   ].
 
+#################################################################
+#    Age
+#################################################################
+
+### source
+
 :age a rr:TriplesMap;
 
   rml:logicalSource [
@@ -113,6 +136,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :age
   rr:subjectMap [
@@ -171,6 +196,12 @@
     ]
   ].
 
+#################################################################
+#    BMI
+#################################################################
+
+### source
+
 :bmi a rr:TriplesMap;
 
   rml:logicalSource [
@@ -184,6 +215,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :bmi
   rr:subjectMap [
@@ -242,6 +275,12 @@
     ]
   ].
 
+#################################################################
+#    liver PDFF
+#################################################################
+
+### source
+
 :liver_PDFF a rr:TriplesMap;
 
   rml:logicalSource [
@@ -255,6 +294,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :liver_PDFF
   rr:subjectMap [
@@ -313,6 +354,12 @@
     ]
   ].
 
+#################################################################
+#    liver T2Star
+#################################################################
+
+### source
+
 :liver_T2Star a rr:TriplesMap;
 
   rml:logicalSource [
@@ -326,6 +373,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :liver_T2Star
   rr:subjectMap [
@@ -384,6 +433,12 @@
     ]
   ].
 
+#################################################################
+#    liver cT1
+#################################################################
+
+### source
+
 :liver_cT1 a rr:TriplesMap;
 
   rml:logicalSource [
@@ -397,6 +452,8 @@
     ];
     rml:referenceFormulation ql:CSV
   ].
+
+### mapping
 
 :liver_cT1
   rr:subjectMap [
