@@ -13,7 +13,14 @@ given business competency questions and should provide a useful starting point t
 building a comprehensive and useful tool.
 
 ## User Guide
-[Creating the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph)
+[Installation](https://github.com/JudithGrieves/City-MSc-Project#source-dependencies)
+- [Source Dependencies](https://github.com/JudithGrieves/City-MSc-Project#source-dependencies)
+[Overview](https://github.com/JudithGrieves/City-MSc-Project#ontology)
+- [Ontology](https://github.com/JudithGrieves/City-MSc-Project#ontology)
+- [Input Data](https://github.com/JudithGrieves/City-MSc-Project#input-data)
+[Running the Code](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph)
+- [Creating the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph)
+- [Querying the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#input-data)
 
 ## Source dependencies
 
