@@ -17,6 +17,7 @@ building a comprehensive and useful tool.
 - [Python 3](https://www.python.org/)  
 - [Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2  
 - [RDFLib](https://rdflib.readthedocs.io/en/stable/gettingstarted.html): pip install rdflib  
+- [RMLmapper](https://github.com/RMLio/rmlmapper-java/releases/): download latest version of rmlmapper.jar 
 
 This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
 
@@ -39,8 +40,6 @@ See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/d
 -  Columns must be named as the examples but can be in any order.
 -  There is no limit to the number of rows loaded.
 - Scanner Models referenced in metric_data should exist in scanner_data but this integrity is not enforced.
-
-
 
 
 ## Creating the knowledge graph
