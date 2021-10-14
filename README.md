@@ -33,21 +33,27 @@ The ontology consists of two sub-ontologies:
 The input data required are two CSV files:
 - metric_data.csv : columns Patient_ID,	Scan, visit,	Age,	Sex,	BMI,	liver_cT1, liver_PDFF	,liver_T2star, Scanner Model. 
 - scanner_data.csv : columns Scanner Model, Manufacturer, Field Strength, Unit.  
+
 See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) for required format.
+
 -  Columns must be named as the examples but can be in any order.
 -  There is no limit to the number of rows loaded.
 - Scanner Models referenced in metric_data should exist in scanner_data but this integrity is not enforced.
 
 
 
-## References
 
-## To use 
-1.  To create the knowledge graph(s)
-    1. Ensure input study data is in data/metric_data.csv, data/scanner_data.csv
+## Creating the knowledge graph
+
+-  To create the knowledge graph(s)
+    1. Ensure the required input study data is in data/metric_data.csv, data/scanner_data.csv
     2. Run code/create_kg_rml.py.  This will create knowledge graph files data/metric_data.ttl, data/scanner_data.ttl
 
-2.  To query the knowledge graph(s)
-    1.  Ensure knowledge graph data exists: data/metric_data.ttl, data/scanner_data.ttl
+## Querying the knowledge graph
+
+- To query the knowledge graph(s)
+    1.  Ensure knowledge graph files exist: data/metric_data.ttl, data/scanner_data.ttl
     2.  Run code/SPARQL_examples.py.  
-    3.  Output in data/metric_data-sparql[n].csv for reports where n=1, 2, 3
+    3.  Output is written to data/metric_data-sparql[n].csv for reports where n=1, 2, 3
+
+## References
