@@ -13,9 +13,11 @@ given business competency questions and should provide a useful starting point t
 building a comprehensive and useful tool.
 
 ## Source dependencies
-[Link to Google](https://www.google.com)
-[Python 3](https://www.python.org/)
-Owlready2: pip install Owlready2
+
+[Python 3](https://www.python.org/)  
+
+[Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2
+
 RDFLib: pip install rdflib
 CMR-QA Ontology
 Current version (v0.4.6, November, 2018): OWL format
