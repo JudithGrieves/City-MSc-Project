@@ -8,6 +8,7 @@
      xmlns:oscn="http://www.perspectum.com/ontology/scanner#"
      xmlns:qudt="http://qudt.org/schema/qudt#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:unit="http://qudt.org/vocab/unit#">
     <owl:Ontology rdf:about="http://www.perspectum.com/ontology/scanner">
         <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/scanner/1.0"/>
@@ -22,8 +23,32 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
 7/7/2021 1.0  First version
 19/7/2021 1.1 Add ScannerFieldStrength entity
-25/8/2021 1.2 Add comment annotations</owl:versionInfo>
+25/8/2021 1.2 Add comment annotations
+14/10/2021 1.3 Add skos:altLabels; add missing comments</owl:versionInfo>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
     
 
 
@@ -44,6 +69,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>unit property from QUDT ontology</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
         <rdfs:label>unit</rdfs:label>
+        <skos:altLabel xml:lang="en">unit</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -57,6 +83,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>has field strength unit object property</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>has field strength unit</rdfs:label>
+        <skos:altLabel xml:lang="en">has unit</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -66,8 +93,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#hasScannerFieldStrength">
         <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrength"/>
+        <rdfs:comment xml:lang="en">object property &apos;has Scanner field strength&apos; defining relationship between MRI Scanner Model and Scanner Field Strength.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>has scanner field strength</rdfs:label>
+        <skos:altLabel xml:lang="en">has field strength</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -77,8 +106,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#isFieldStrengthForScanner">
         <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerFieldStrength"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <rdfs:comment xml:lang="en">object property &apos;is field strength for scanner&apos; defining relationship between Scanner Field Strength and MRI Scanner Model.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>is field strength for scanner</rdfs:label>
+        <skos:altLabel xml:lang="en">is field strength</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -87,8 +118,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#isMadeBy">
         <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/scanner#isMakerOf"/>
+        <rdfs:comment xml:lang="en">object property defining is made by, defining relationship between some product and a Manufacturer.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>is made by</rdfs:label>
+        <skos:altLabel xml:lang="en">made by</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -96,8 +129,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://www.perspectum.com/ontology/scanner#isMakerOf -->
 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#isMakerOf">
+        <rdfs:comment xml:lang="en">object property defining is maker of defining relationship between Manufacturer and some product.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>is maker of</rdfs:label>
+        <skos:altLabel xml:lang="en">maker of</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -107,8 +142,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/scanner#isMakerOfScanner">
         <rdfs:subPropertyOf rdf:resource="http://www.perspectum.com/ontology/scanner#isMakerOf"/>
         <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/scanner#isScannerMadeBy"/>
+        <rdfs:comment xml:lang="en">object property defining is maker of scanner relationship between Scanner Manufacturer and Scanner Model.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>is maker of scanner</rdfs:label>
+        <skos:altLabel xml:lang="en">maker of</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -119,8 +156,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:subPropertyOf rdf:resource="http://www.perspectum.com/ontology/scanner#isMadeBy"/>
         <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerManufacturer"/>
+        <rdfs:comment xml:lang="en">object property defining is Scanner Made By relationship between Scanner Model and Scanner Manufacturer.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>is scanner made by</rdfs:label>
+        <skos:altLabel xml:lang="en">made by</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -142,6 +181,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>value data property from QUDT ontology</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt/"/>
         <rdfs:label>value</rdfs:label>
+        <skos:altLabel xml:lang="en">value</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -155,6 +195,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>Field Strength of the MRI Scanner magnet(s)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>field strength value</rdfs:label>
+        <skos:altLabel xml:lang="en">field str. value</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -179,6 +220,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>quantity class from QUDT ontology</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
         <rdfs:label>quantity</rdfs:label>
+        <skos:altLabel xml:lang="en">quantity</skos:altLabel>
     </owl:Class>
     
 
@@ -191,6 +233,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>Unit of Measure from QUDT ontology</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
         <rdfs:label>Unit</rdfs:label>
+        <skos:altLabel xml:lang="en">unit</skos:altLabel>
     </owl:Class>
     
 
@@ -203,7 +246,14 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 (https://www.nhs.uk/conditions/mri-scan/)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>MRI scanner model</rdfs:label>
+        <skos:altLabel xml:lang="en">MRI scanner</skos:altLabel>
     </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/scanner#Manufacturer -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#Manufacturer"/>
     
 
 
@@ -214,6 +264,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>The measure of the strength of the magnet used in an MRI Scanner.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>scanner field strength</rdfs:label>
+        <skos:altLabel xml:lang="en">field strength</skos:altLabel>
     </owl:Class>
     
 
@@ -225,6 +276,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <rdfs:comment>Unit of measure of scanner field strength</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
         <rdfs:label>scanner field strength unit</rdfs:label>
+        <skos:altLabel xml:lang="en">field str. unit</skos:altLabel>
     </owl:Class>
     
 
@@ -232,9 +284,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://www.perspectum.com/ontology/scanner#ScannerManufacturer -->
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#ScannerManufacturer">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/scanner#Manufacturer"/>
         <rdfs:comment>A company that manufactures and sells MR scanners for human diagnostic use.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
         <rdfs:label>scanner manufacturer</rdfs:label>
+        <skos:altLabel xml:lang="en">manufacturer</skos:altLabel>
     </owl:Class>
 </rdf:RDF>
 

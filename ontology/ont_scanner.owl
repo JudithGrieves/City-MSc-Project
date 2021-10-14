@@ -15,6 +15,7 @@
     <Prefix name="oscn" IRI="http://www.perspectum.com/ontology/scanner#"/>
     <Prefix name="qudt" IRI="http://qudt.org/schema/qudt#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
     <Prefix name="unit" IRI="http://qudt.org/vocab/unit#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -38,7 +39,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
 7/7/2021 1.0  First version
 19/7/2021 1.1 Add ScannerFieldStrength entity
-25/8/2021 1.2 Add comment annotations</Literal>
+25/8/2021 1.2 Add comment annotations
+14/10/2021 1.3 Add skos:altLabels; add missing comments</Literal>
     </Annotation>
     <Declaration>
         <Class abbreviatedIRI="qudt:Quantity"/>
@@ -48,6 +50,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <Class IRI="#MRIScannerModel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manufacturer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ScannerFieldStrength"/>
@@ -88,6 +93,12 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <Declaration>
         <DataProperty IRI="#FieldStrengthValue"/>
     </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:prefLabel"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#ScannerFieldStrength"/>
         <Class abbreviatedIRI="qudt:Quantity"/>
@@ -95,6 +106,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <SubClassOf>
         <Class IRI="#ScannerFieldStrengthUnit"/>
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScannerManufacturer"/>
+        <Class IRI="#Manufacturer"/>
     </SubClassOf>
     <DisjointClasses>
         <Class abbreviatedIRI="qudt:Quantity"/>
@@ -200,6 +215,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>quantity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>qudt:Quantity</AbbreviatedIRI>
+        <Literal xml:lang="en">quantity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
         <Literal>unit property from QUDT ontology</Literal>
@@ -213,6 +233,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
         <Literal>unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>qudt:unit</AbbreviatedIRI>
+        <Literal xml:lang="en">unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -230,6 +255,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>qudt:value</AbbreviatedIRI>
+        <Literal xml:lang="en">value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>http://qudt.org/schema/qudt/Unit</IRI>
         <Literal>Unit of Measure from QUDT ontology</Literal>
@@ -245,6 +275,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>http://qudt.org/schema/qudt/Unit</IRI>
+        <Literal xml:lang="en">unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#FieldStrengthValue</IRI>
         <Literal>Field Strength of the MRI Scanner magnet(s)</Literal>
@@ -258,6 +293,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#FieldStrengthValue</IRI>
         <Literal>field strength value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#FieldStrengthValue</IRI>
+        <Literal xml:lang="en">field str. value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -276,6 +316,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>MRI scanner model</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#MRIScannerModel</IRI>
+        <Literal xml:lang="en">MRI scanner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ScannerFieldStrength</IRI>
         <Literal>The measure of the strength of the magnet used in an MRI Scanner.</Literal>
@@ -289,6 +334,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ScannerFieldStrength</IRI>
         <Literal>scanner field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#ScannerFieldStrength</IRI>
+        <Literal xml:lang="en">field strength</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -306,6 +356,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>scanner field strength unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#ScannerFieldStrengthUnit</IRI>
+        <Literal xml:lang="en">field str. unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ScannerManufacturer</IRI>
         <Literal>A company that manufactures and sells MR scanners for human diagnostic use.</Literal>
@@ -319,6 +374,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ScannerManufacturer</IRI>
         <Literal>scanner manufacturer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#ScannerManufacturer</IRI>
+        <Literal xml:lang="en">manufacturer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -336,6 +396,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>has field strength unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#hasFieldStrengthUnit</IRI>
+        <Literal xml:lang="en">has unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasScannerFieldStrength</IRI>
+        <Literal xml:lang="en">object property &apos;has Scanner field strength&apos; defining relationship between MRI Scanner Model and Scanner Field Strength.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#hasScannerFieldStrength</IRI>
         <IRI></IRI>
@@ -344,6 +414,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#hasScannerFieldStrength</IRI>
         <Literal>has scanner field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#hasScannerFieldStrength</IRI>
+        <Literal xml:lang="en">has field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isFieldStrengthForScanner</IRI>
+        <Literal xml:lang="en">object property &apos;is field strength for scanner&apos; defining relationship between Scanner Field Strength and MRI Scanner Model.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -356,6 +436,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>is field strength for scanner</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#isFieldStrengthForScanner</IRI>
+        <Literal xml:lang="en">is field strength</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMadeBy</IRI>
+        <Literal xml:lang="en">object property defining is made by, defining relationship between some product and a Manufacturer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#isMadeBy</IRI>
         <IRI></IRI>
@@ -364,6 +454,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isMadeBy</IRI>
         <Literal>is made by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#isMadeBy</IRI>
+        <Literal xml:lang="en">made by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMakerOf</IRI>
+        <Literal xml:lang="en">object property defining is maker of defining relationship between Manufacturer and some product.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -376,6 +476,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>is maker of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#isMakerOf</IRI>
+        <Literal xml:lang="en">maker of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMakerOfScanner</IRI>
+        <Literal xml:lang="en">object property defining is maker of scanner relationship between Scanner Manufacturer and Scanner Model.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#isMakerOfScanner</IRI>
         <IRI></IRI>
@@ -386,6 +496,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>is maker of scanner</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#isMakerOfScanner</IRI>
+        <Literal xml:lang="en">maker of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isScannerMadeBy</IRI>
+        <Literal xml:lang="en">object property defining is Scanner Made By relationship between Scanner Model and Scanner Manufacturer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#isScannerMadeBy</IRI>
         <IRI></IRI>
@@ -394,6 +514,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isScannerMadeBy</IRI>
         <Literal>is scanner made by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#isScannerMadeBy</IRI>
+        <Literal xml:lang="en">made by</Literal>
     </AnnotationAssertion>
 </Ontology>
 

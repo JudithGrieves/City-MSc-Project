@@ -6,6 +6,7 @@
 @prefix oscn: <http://www.perspectum.com/ontology/scanner#> .
 @prefix qudt: <http://qudt.org/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unit: <http://qudt.org/vocab/unit#> .
 @base <http://www.perspectum.com/ontology/scanner> .
 
@@ -22,7 +23,20 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
 7/7/2021 1.0  First version
 19/7/2021 1.1 Add ScannerFieldStrength entity
-25/8/2021 1.2 Add comment annotations""" .
+25/8/2021 1.2 Add comment annotations
+14/10/2021 1.3 Add skos:altLabels; add missing comments""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -32,7 +46,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 qudt:unit rdf:type owl:ObjectProperty ;
           rdfs:comment "unit property from QUDT ontology" ;
           rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
-          rdfs:label "unit" .
+          rdfs:label "unit" ;
+          skos:altLabel "unit"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#hasFieldStrengthUnit
@@ -42,44 +57,55 @@ oscn:hasFieldStrengthUnit rdf:type owl:ObjectProperty ;
                           rdfs:range oscn:ScannerFieldStrengthUnit ;
                           rdfs:comment "has field strength unit object property" ;
                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                          rdfs:label "has field strength unit" .
+                          rdfs:label "has field strength unit" ;
+                          skos:altLabel "has unit"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#hasScannerFieldStrength
 oscn:hasScannerFieldStrength rdf:type owl:ObjectProperty ;
                              rdfs:domain oscn:MRIScannerModel ;
                              rdfs:range oscn:ScannerFieldStrength ;
+                             rdfs:comment "object property 'has Scanner field strength' defining relationship between MRI Scanner Model and Scanner Field Strength."@en ;
                              rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                             rdfs:label "has scanner field strength" .
+                             rdfs:label "has scanner field strength" ;
+                             skos:altLabel "has field strength"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isFieldStrengthForScanner
 oscn:isFieldStrengthForScanner rdf:type owl:ObjectProperty ;
                                rdfs:domain oscn:ScannerFieldStrength ;
                                rdfs:range oscn:MRIScannerModel ;
+                               rdfs:comment "object property 'is field strength for scanner' defining relationship between Scanner Field Strength and MRI Scanner Model."@en ;
                                rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                               rdfs:label "is field strength for scanner" .
+                               rdfs:label "is field strength for scanner" ;
+                               skos:altLabel "is field strength"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMadeBy
 oscn:isMadeBy rdf:type owl:ObjectProperty ;
               owl:inverseOf oscn:isMakerOf ;
+              rdfs:comment "object property defining is made by, defining relationship between some product and a Manufacturer."@en ;
               rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-              rdfs:label "is made by" .
+              rdfs:label "is made by" ;
+              skos:altLabel "made by"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMakerOf
 oscn:isMakerOf rdf:type owl:ObjectProperty ;
+               rdfs:comment "object property defining is maker of defining relationship between Manufacturer and some product."@en ;
                rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-               rdfs:label "is maker of" .
+               rdfs:label "is maker of" ;
+               skos:altLabel "maker of"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isMakerOfScanner
 oscn:isMakerOfScanner rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf oscn:isMakerOf ;
                       owl:inverseOf oscn:isScannerMadeBy ;
+                      rdfs:comment "object property defining is maker of scanner relationship between Scanner Manufacturer and Scanner Model."@en ;
                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                      rdfs:label "is maker of scanner" .
+                      rdfs:label "is maker of scanner" ;
+                      skos:altLabel "maker of"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#isScannerMadeBy
@@ -87,8 +113,10 @@ oscn:isScannerMadeBy rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf oscn:isMadeBy ;
                      rdfs:domain oscn:MRIScannerModel ;
                      rdfs:range oscn:ScannerManufacturer ;
+                     rdfs:comment "object property defining is Scanner Made By relationship between Scanner Model and Scanner Manufacturer."@en ;
                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                     rdfs:label "is scanner made by" .
+                     rdfs:label "is scanner made by" ;
+                     skos:altLabel "made by"@en .
 
 
 #################################################################
@@ -99,7 +127,8 @@ oscn:isScannerMadeBy rdf:type owl:ObjectProperty ;
 qudt:value rdf:type owl:DatatypeProperty ;
            rdfs:comment "value data property from QUDT ontology" ;
            rdfs:isDefinedBy <http://qudt.org/schema/qudt/> ;
-           rdfs:label "value" .
+           rdfs:label "value" ;
+           skos:altLabel "value"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#FieldStrengthValue
@@ -109,7 +138,8 @@ oscn:FieldStrengthValue rdf:type owl:DatatypeProperty ;
                         rdfs:range xsd:double ;
                         rdfs:comment "Field Strength of the MRI Scanner magnet(s)" ;
                         rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                        rdfs:label "field strength value" .
+                        rdfs:label "field strength value" ;
+                        skos:altLabel "field str. value"@en .
 
 
 #################################################################
@@ -123,7 +153,8 @@ qudt:Quantity rdf:type owl:Class ;
                                oscn:ScannerManufacturer ;
               rdfs:comment "quantity class from QUDT ontology" ;
               rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
-              rdfs:label "quantity" .
+              rdfs:label "quantity" ;
+              skos:altLabel "quantity"@en .
 
 
 ###  http://qudt.org/schema/qudt/Unit
@@ -132,7 +163,8 @@ qudt:Quantity rdf:type owl:Class ;
                                                     oscn:ScannerManufacturer ;
                                    rdfs:comment "Unit of Measure from QUDT ontology" ;
                                    rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
-                                   rdfs:label "Unit" .
+                                   rdfs:label "Unit" ;
+                                   skos:altLabel "unit"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
@@ -141,7 +173,12 @@ oscn:MRIScannerModel rdf:type owl:Class ;
                      rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                     rdfs:label "MRI scanner model" .
+                     rdfs:label "MRI scanner model" ;
+                     skos:altLabel "MRI scanner"@en .
+
+
+###  http://www.perspectum.com/ontology/scanner#Manufacturer
+oscn:Manufacturer rdf:type owl:Class .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrength
@@ -149,7 +186,8 @@ oscn:ScannerFieldStrength rdf:type owl:Class ;
                           rdfs:subClassOf qudt:Quantity ;
                           rdfs:comment "The measure of the strength of the magnet used in an MRI Scanner." ;
                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                          rdfs:label "scanner field strength" .
+                          rdfs:label "scanner field strength" ;
+                          skos:altLabel "field strength"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit
@@ -157,14 +195,17 @@ oscn:ScannerFieldStrengthUnit rdf:type owl:Class ;
                               rdfs:subClassOf <http://qudt.org/schema/qudt/Unit> ;
                               rdfs:comment "Unit of measure of scanner field strength" ;
                               rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
-                              rdfs:label "scanner field strength unit" .
+                              rdfs:label "scanner field strength unit" ;
+                              skos:altLabel "field str. unit"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerManufacturer
 oscn:ScannerManufacturer rdf:type owl:Class ;
+                         rdfs:subClassOf oscn:Manufacturer ;
                          rdfs:comment "A company that manufactures and sells MR scanners for human diagnostic use." ;
                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                         rdfs:label "scanner manufacturer" .
+                         rdfs:label "scanner manufacturer" ;
+                         skos:altLabel "manufacturer"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
