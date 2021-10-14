@@ -31,9 +31,13 @@ The ontology consists of two sub-ontologies:
 
 ## Input data
 The input data required are two CSV files:
-- metric_data.csv : columns Patient_ID,	Scan, visit,	Age,	Sex,	BMI,	liver_cT1, liver_PDFF	,liver_T2star. 
+- metric_data.csv : columns Patient_ID,	Scan, visit,	Age,	Sex,	BMI,	liver_cT1, liver_PDFF	,liver_T2star, Scanner Model. 
 - scanner_data.csv : columns Scanner Model, Manufacturer, Field Strength, Unit.  
--   See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) for required format.
+See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) for required format.
+-  Columns must be named as the examples but can be in any order.
+-  There is no limit to the number of rows loaded.
+- Scanner Models referenced in metric_data should exist in scanner_data but this integrity is not enforced.
+
 
 
 ## References
