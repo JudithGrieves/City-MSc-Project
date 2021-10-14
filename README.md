@@ -12,6 +12,9 @@ Language and the FAIR data standards. The resulting proof of concept design and 
 given business competency questions and should provide a useful starting point to take forward into 
 building a comprehensive and useful tool.
 
+## User Guide
+[Creating the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph)
+
 ## Source dependencies
 
 - [Python 3](https://www.python.org/)  
