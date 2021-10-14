@@ -18,6 +18,8 @@ building a comprehensive and useful tool.
 - [Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2  
 - [RDFLib](https://rdflib.readthedocs.io/en/stable/gettingstarted.html): pip install rdflib  
 
+This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
+
 ## Ontology
 - Current version (v0.1, October, 2021): [OWL format](https://raw.githubusercontent.com/JudithGrieves/City-MSc-Project/main/ontology/ont_metric.owl)  
 - Created with [Protégé Desktop](https://protege.stanford.edu/)  
@@ -26,6 +28,14 @@ building a comprehensive and useful tool.
 The ontology consists of two sub-ontologies:
 - metric : information about patients, visits and biomarkers and other data collected during a visit.
 - scanner : information about MRI scanner models, their features and manufacturers
+
+## Input data
+The input data required are two CSV files:
+- metric_data.csv : columns Patient_ID,	Scan, visit,	Age,	Sex,	BMI,	liver_cT1, liver_PDFF	,liver_T2star. 
+- scanner_data.csv : columns Scanner Model, Manufacturer, Field Strength, Unit.  
+-   See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) for required format.
+
+
 ## References
 
 ## To use 
