@@ -21,7 +21,9 @@ building a comprehensive and useful tool.
 ## Ontology
 - Current version (v0.1, October, 2021): [OWL format](https://raw.githubusercontent.com/JudithGrieves/City-MSc-Project/main/ontology/ont_metric.owl)  
 - Created with [Protégé Desktop](https://protege.stanford.edu/)  
-- 
+The ontology consists of two sub-ontologies:
+- metric : information about patients, visits and biomarkers and other data collected during a visit.
+- scanner : information about MRI scanner models, their features and manufacturers
 ## References
 
 ## To use 
