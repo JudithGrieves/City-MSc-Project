@@ -14,15 +14,16 @@ building a comprehensive and useful tool.
 
 ## Source dependencies
 
-[Python 3](https://www.python.org/)  
+- [Python 3](https://www.python.org/)  
+- [Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2
 
-[Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2
+- [RDFLib](https://rdflib.readthedocs.io/en/stable/gettingstarted.html): pip install rdflib  
 
-RDFLib: pip install rdflib
-CMR-QA Ontology
-Current version (v0.4.6, November, 2018): OWL format
-Created with Protégé Desktop
-References
+## Ontology
+- Current version (v0.4.6, November, 2018): OWL format  
+- Created with [Protégé Desktop](https://protege.stanford.edu/)  
+- 
+## References
 
 1.  To create the knowledge graph(s)
     1. Ensure input study data is in data/metric_data.csv, data/scanner_data.csv
