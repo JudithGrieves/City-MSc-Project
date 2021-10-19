@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.perspectum.com/ontology/liver"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.perspectum.com/ontology/liver"
+     versionIRI="http://www.perspectum.com/ontology/liver/1.0">
+    <Prefix name="" IRI="http://www.perspectum.com/ontology/liver#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="oliv" IRI="http://www.perspectum.com/ontology/liver"/>
+    <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="#terms:creator"/>
+        <Literal>Judith Grieves</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>An Ontology to model the liver context of a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
+
+Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
+
+Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI></IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <Literal>http://www.perspectum.com/ontology/metric</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <Literal>http://www.perspectum.com/ontology/scanner</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>Versions
+
+18/10/2021 1.0  First version.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#ASTALTratio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Atlas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AttenuationCoefficient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BilirubinLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BloodPressure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthAssessment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImagingBiomarker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Liver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiverFatQuantification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiverFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiverHealthAssessment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiverMultiScan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiverPDFF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MRIimagingBiomarker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NakagamiParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PDFF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerspectumProduct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QuantitativeMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T2Star"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UltrasoundImagingBiomarker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cT1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHealthAssessment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isHealthAssessmentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMetricObtainedUsingProduct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProductGivingMetric"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#terms:creator"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ASTALTratio"/>
+        <Class IRI="#LiverFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atlas"/>
+        <Class IRI="#PerspectumProduct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AttenuationCoefficient"/>
+        <Class IRI="#LiverFatQuantification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AttenuationCoefficient"/>
+        <Class IRI="#UltrasoundImagingBiomarker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BilirubinLevel"/>
+        <Class IRI="#LiverFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BloodPressure"/>
+        <Class IRI="#LiverHealthAssessment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Liver"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiverFatQuantification"/>
+        <Class IRI="#LiverHealthAssessment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiverFunction"/>
+        <Class IRI="#LiverHealthAssessment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiverHealthAssessment"/>
+        <Class IRI="#HealthAssessment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiverMultiScan"/>
+        <Class IRI="#PerspectumProduct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiverPDFF"/>
+        <Class IRI="#PDFF"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MRIimagingBiomarker"/>
+        <Class IRI="#ImagingBiomarker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NakagamiParameter"/>
+        <Class IRI="#LiverFatQuantification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NakagamiParameter"/>
+        <Class IRI="#UltrasoundImagingBiomarker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PDFF"/>
+        <Class IRI="#LiverFatQuantification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PDFF"/>
+        <Class IRI="#MRIimagingBiomarker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PDFF"/>
+        <Class IRI="#QuantitativeMetric"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T2Star"/>
+        <Class IRI="#LiverFatQuantification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T2Star"/>
+        <Class IRI="#MRIimagingBiomarker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UltrasoundImagingBiomarker"/>
+        <Class IRI="#ImagingBiomarker"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cT1"/>
+        <Class IRI="#LiverFatQuantification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cT1"/>
+        <Class IRI="#MRIimagingBiomarker"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#HealthAssessment"/>
+        <Class IRI="#Organ"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ImagingBiomarker"/>
+        <Class IRI="#Organ"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Organ"/>
+        <Class IRI="#QuantitativeMetric"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasHealthAssessment"/>
+        <ObjectProperty IRI="#isHealthAssessmentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isMetricObtainedUsingProduct"/>
+        <ObjectProperty IRI="#isProductGivingMetric"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHealthAssessment"/>
+        <Class IRI="#LiverPDFF"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isHealthAssessmentOf"/>
+        <Class IRI="#LiverHealthAssessment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMetricObtainedUsingProduct"/>
+        <Class IRI="#LiverPDFF"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProductGivingMetric"/>
+        <Class IRI="#LiverMultiScan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasHealthAssessment"/>
+        <Class IRI="#LiverMultiScan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isHealthAssessmentOf"/>
+        <Class IRI="#Liver"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMetricObtainedUsingProduct"/>
+        <Class IRI="#LiverMultiScan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProductGivingMetric"/>
+        <Class IRI="#LiverPDFF"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ASTALTratio</IRI>
+        <Literal>Added to give context to Liver Health Assessment.  Aspartate aminotransferase (AST) to alanine aminotransferase (ALT) ratio.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ASTALTratio</IRI>
+        <Literal>AST ALT ratio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Atlas</IRI>
+        <Literal>Atlas® is a metabolic software suite redefining multi-organ assessment for clinical trials in diabetes and metabolic disease (https://perspectum.com/products/atlas).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Atlas</IRI>
+        <Literal>Atlas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AttenuationCoefficient</IRI>
+        <Literal>Added to give context to Liver Fat Quantification.  Attenuation Coefficient is a quantification of liver fat obtained from ultrasound imaging.  It has been found to be correlated with MRI PDFF.  D’Hondt, A. et al. (2021) ‘Liver Fat Quantification by Ultrasound in Children: A Prospective Study’, AJR. American journal of roentgenology, 217(4), pp. 996–1006. doi:10.2214/AJR.20.24874.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AttenuationCoefficient</IRI>
+        <Literal>attenuation coefficient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BilirubinLevel</IRI>
+        <Literal>Added to give context to Liver Health Assessment.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BilirubinLevel</IRI>
+        <Literal>bilirubin level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BloodPressure</IRI>
+        <Literal>Added to give context to Liver Health Assessment.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BloodPressure</IRI>
+        <Literal>blood pressure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HealthAssessment</IRI>
+        <Literal>An quantitative or qualitative assessment of patient health.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthAssessment</IRI>
+        <Literal>health assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ImagingBiomarker</IRI>
+        <Literal>An imaging biomarker is an indication of a biological function or status, obtained using imaging techniques.  An imaging biomarker may be a quantitative value measured from an image or a qualitative feature, such as a visual appearance.  The imaging technique may be, for example, MRI or ultrasound.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ImagingBiomarker</IRI>
+        <Literal>imaging biomarker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Liver</IRI>
+        <Literal>The liver is the largest internal organ of the human body, located in the upper right of the abdominal cavity. The liver performs many vital functions including regulating levels of chemicals in the blood and excreting waste products.  (https://www.hopkinsmedicine.org/health/conditions-and-diseases/liver-anatomy-and-functions)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Liver</IRI>
+        <Literal>liver</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverFatQuantification</IRI>
+        <Literal>Liver Fat Quantification is a numeric indication of the amount of fat in the liver.  It is a useful assessment of liver health as high levels of fat in the liver can correlated with disease and mortality.  The percentage of fat in the liver can be derived in several ways, including biopsy, ultrasound scans and MR imaging.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiverFatQuantification</IRI>
+        <Literal>liver fat quantification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverFunction</IRI>
+        <Literal>Added to give context to Liver Health Assessment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiverFunction</IRI>
+        <Literal>liver function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverHealthAssessment</IRI>
+        <Literal>Liver Health Assessment is a qualitative or quantitative indication of the health of a liver.  Liver health can be assessed by, for example, a quantification of liver fat, measurement of levels of serum bilirubin and bile acids in the blood or ultrasound scan to show unusual size, shape or texture.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiverHealthAssessment</IRI>
+        <Literal>liver health assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverMultiScan</IRI>
+        <Literal>LiverMultiScan is a non-invasive diagnostic technology for evaluating liver diseases by quantifying liver tissue. (https://perspectum.com/products/livermultiscan)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiverMultiScan</IRI>
+        <Literal>LMS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LiverPDFF</IRI>
+        <Literal>A  Proton Density Fat Fraction measurement obtained for the liver.  Liver PDFF can be derived using distinctive Perspectum products, image acquisition protocol and PDFF estimation methods such as IDEAL or DIXON (Hutton 2018).   (https://perspectum.com/products/livermultiscan)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiverPDFF</IRI>
+        <Literal>LMS liver PDFF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MRIimagingBiomarker</IRI>
+        <Literal>An imaging biomarker obtained using Magnetic Resonance Imaging. The biomarker may be qualitative or quantitative.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MRIimagingBiomarker</IRI>
+        <Literal>MRI biomarker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NakagamiParameter</IRI>
+        <Literal>Added to give context to Liver Fat Quantification.  The Nakagami Parameter is a quantification of liver fat obtained from ultrasound imaging.  It has been found to be correlated with MRI PDFF.  D’Hondt, A. et al. (2021) ‘Liver Fat Quantification by Ultrasound in Children: A Prospective Study’, AJR. American journal of roentgenology, 217(4), pp. 996–1006. doi:10.2214/AJR.20.24874.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NakagamiParameter</IRI>
+        <Literal>nakagami parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organ</IRI>
+        <Literal>An organ of the human body.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Organ</IRI>
+        <Literal>organ</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PDFF</IRI>
+        <Literal>Proton Density Fat Fraction (PDFF)  is a quantitative assessment of organ fat, derived from MRI, giving a measure of the proportion of tissue composed of fat.  It is a numeric value, given as a percentage (%).  Calculation of PDFF uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat).  PDFF of the liver has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  (https://perspectum.com/media/1361/understanding-pdff.pdf)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#PDFF</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PDFF</IRI>
+        <Literal>PDFF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PerspectumProduct</IRI>
+        <Literal>A software product developed and sold by Perspectum to provide MRI biomarkers as aids in assessing health and diagnosing diseases.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PerspectumProduct</IRI>
+        <Literal>Perspectum product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#QuantitativeMetric</IRI>
+        <Literal>A Quantitative Metric is a numeric value gathered to measure some aspect of a biomedical study.  Examples of quantitative metric are patient age, BMI or liver PDFF.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#QuantitativeMetric</IRI>
+        <Literal>quantitative metric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#T2Star</IRI>
+        <Literal>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.  T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.  CAN T2* BE DEFINED FOR OTHER ORGANS?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#T2Star</IRI>
+        <Literal>T2*</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UltrasoundImagingBiomarker</IRI>
+        <Literal>Added to give context to Imaging Biomarker.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UltrasoundImagingBiomarker</IRI>
+        <Literal>ultrasound imaging biomarker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cT1</IRI>
+        <Literal>Corrected T1 is an MRI derived biomarker providing a metric relating to organ inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.   In healthy tissue, the balance between water and proteins results in the T1 relaxation time being lower than in free water. However, in unhealthy tissue, such as in inflamed and fibrotic tissues, the abundance of free water results in higher T1 relaxation times.  T1 measurements differ depending on magnetic field strength and MR manufacturer. (https://perspectum.com/media/2081/mkt0073-ct1-explainer-40.pdf)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cT1</IRI>
+        <Literal>cT1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasHealthAssessment</IRI>
+        <Literal>has health assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isHealthAssessmentOf</IRI>
+        <Literal>is health assessment of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMetricObtainedUsingProduct</IRI>
+        <Literal>is metric obtained using product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isProductGivingMetric</IRI>
+        <Literal>is product giving metric</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.perspectum.com/ontology/liver#"
+     xml:base="http://www.perspectum.com/ontology/liver"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:oliv="http://www.perspectum.com/ontology/liver"
+     xmlns:omet="http://www.perspectum.com/ontology/metric"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://www.perspectum.com/ontology/liver#terms:">
+    <owl:Ontology rdf:about="http://www.perspectum.com/ontology/liver">
+        <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/liver/1.0"/>
+        <terms:creator>Judith Grieves</terms:creator>
+        <rdfs:comment>An Ontology to model the liver context of a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
+
+Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
+
+Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with long COVID’, medRxiv, p. 2020.10.14.20212555. doi: 10.1101/2020.10.14.20212555.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/liver"/>
+        <rdfs:seeAlso>http://www.perspectum.com/ontology/metric</rdfs:seeAlso>
+        <rdfs:seeAlso>http://www.perspectum.com/ontology/scanner</rdfs:seeAlso>
+        <owl:versionInfo>Versions
+
+18/10/2021 1.0  First version.</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#terms:creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/liver#terms:creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#hasHealthAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/liver#hasHealthAssessment">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/liver#isHealthAssessmentOf"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/liver#LiverPDFF"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/liver#LiverMultiScan"/>
+        <rdfs:label>has health assessment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#isHealthAssessmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/liver#isHealthAssessmentOf">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/liver#LiverHealthAssessment"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/liver#Liver"/>
+        <rdfs:label>is health assessment of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#isMetricObtainedUsingProduct -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/liver#isMetricObtainedUsingProduct">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/liver#isProductGivingMetric"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/liver#LiverPDFF"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/liver#LiverMultiScan"/>
+        <rdfs:label>is metric obtained using product</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#isProductGivingMetric -->
+
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/liver#isProductGivingMetric">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/liver#LiverMultiScan"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/liver#LiverPDFF"/>
+        <rdfs:label>is product giving metric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#ASTALTratio -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#ASTALTratio">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFunction"/>
+        <rdfs:comment>Added to give context to Liver Health Assessment.  Aspartate aminotransferase (AST) to alanine aminotransferase (ALT) ratio.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</rdfs:comment>
+        <rdfs:label>AST ALT ratio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#Atlas -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#Atlas">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#PerspectumProduct"/>
+        <rdfs:comment>Atlas® is a metabolic software suite redefining multi-organ assessment for clinical trials in diabetes and metabolic disease (https://perspectum.com/products/atlas).</rdfs:comment>
+        <rdfs:label>Atlas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#AttenuationCoefficient -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#AttenuationCoefficient">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFatQuantification"/>
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#UltrasoundImagingBiomarker"/>
+        <rdfs:comment>Added to give context to Liver Fat Quantification.  Attenuation Coefficient is a quantification of liver fat obtained from ultrasound imaging.  It has been found to be correlated with MRI PDFF.  D’Hondt, A. et al. (2021) ‘Liver Fat Quantification by Ultrasound in Children: A Prospective Study’, AJR. American journal of roentgenology, 217(4), pp. 996–1006. doi:10.2214/AJR.20.24874.</rdfs:comment>
+        <rdfs:label>attenuation coefficient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#BilirubinLevel -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#BilirubinLevel">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFunction"/>
+        <rdfs:comment>Added to give context to Liver Health Assessment.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</rdfs:comment>
+        <rdfs:label>bilirubin level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#BloodPressure -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#BloodPressure">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverHealthAssessment"/>
+        <rdfs:comment>Added to give context to Liver Health Assessment.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</rdfs:comment>
+        <rdfs:label>blood pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#HealthAssessment -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#HealthAssessment">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/liver#Organ"/>
+        <rdfs:comment>An quantitative or qualitative assessment of patient health.</rdfs:comment>
+        <rdfs:label>health assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#ImagingBiomarker -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#ImagingBiomarker">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/liver#Organ"/>
+        <rdfs:comment>An imaging biomarker is an indication of a biological function or status, obtained using imaging techniques.  An imaging biomarker may be a quantitative value measured from an image or a qualitative feature, such as a visual appearance.  The imaging technique may be, for example, MRI or ultrasound.</rdfs:comment>
+        <rdfs:label>imaging biomarker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#Liver -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#Liver">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#Organ"/>
+        <rdfs:comment>The liver is the largest internal organ of the human body, located in the upper right of the abdominal cavity. The liver performs many vital functions including regulating levels of chemicals in the blood and excreting waste products.  (https://www.hopkinsmedicine.org/health/conditions-and-diseases/liver-anatomy-and-functions)</rdfs:comment>
+        <rdfs:label>liver</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#LiverFatQuantification -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#LiverFatQuantification">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverHealthAssessment"/>
+        <rdfs:comment>Liver Fat Quantification is a numeric indication of the amount of fat in the liver.  It is a useful assessment of liver health as high levels of fat in the liver can correlated with disease and mortality.  The percentage of fat in the liver can be derived in several ways, including biopsy, ultrasound scans and MR imaging.</rdfs:comment>
+        <rdfs:label>liver fat quantification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#LiverFunction -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#LiverFunction">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverHealthAssessment"/>
+        <rdfs:comment>Added to give context to Liver Health Assessment.</rdfs:comment>
+        <rdfs:label>liver function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#LiverHealthAssessment -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#LiverHealthAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#HealthAssessment"/>
+        <rdfs:comment>Liver Health Assessment is a qualitative or quantitative indication of the health of a liver.  Liver health can be assessed by, for example, a quantification of liver fat, measurement of levels of serum bilirubin and bile acids in the blood or ultrasound scan to show unusual size, shape or texture.</rdfs:comment>
+        <rdfs:label>liver health assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#LiverMultiScan -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#LiverMultiScan">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#PerspectumProduct"/>
+        <rdfs:comment>LiverMultiScan is a non-invasive diagnostic technology for evaluating liver diseases by quantifying liver tissue. (https://perspectum.com/products/livermultiscan)</rdfs:comment>
+        <rdfs:label>LMS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#LiverPDFF -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#LiverPDFF">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#PDFF"/>
+        <rdfs:comment>A  Proton Density Fat Fraction measurement obtained for the liver.  Liver PDFF can be derived using distinctive Perspectum products, image acquisition protocol and PDFF estimation methods such as IDEAL or DIXON (Hutton 2018).   (https://perspectum.com/products/livermultiscan)</rdfs:comment>
+        <rdfs:label>LMS liver PDFF</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#MRIimagingBiomarker -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#MRIimagingBiomarker">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#ImagingBiomarker"/>
+        <rdfs:comment>An imaging biomarker obtained using Magnetic Resonance Imaging. The biomarker may be qualitative or quantitative.</rdfs:comment>
+        <rdfs:label>MRI biomarker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#NakagamiParameter -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#NakagamiParameter">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFatQuantification"/>
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#UltrasoundImagingBiomarker"/>
+        <rdfs:comment>Added to give context to Liver Fat Quantification.  The Nakagami Parameter is a quantification of liver fat obtained from ultrasound imaging.  It has been found to be correlated with MRI PDFF.  D’Hondt, A. et al. (2021) ‘Liver Fat Quantification by Ultrasound in Children: A Prospective Study’, AJR. American journal of roentgenology, 217(4), pp. 996–1006. doi:10.2214/AJR.20.24874.</rdfs:comment>
+        <rdfs:label>nakagami parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#Organ -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#Organ">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/liver#QuantitativeMetric"/>
+        <rdfs:comment>An organ of the human body.</rdfs:comment>
+        <rdfs:label>organ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#PDFF -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#PDFF">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFatQuantification"/>
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#MRIimagingBiomarker"/>
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#QuantitativeMetric"/>
+        <rdfs:comment>Proton Density Fat Fraction (PDFF)  is a quantitative assessment of organ fat, derived from MRI, giving a measure of the proportion of tissue composed of fat.  It is a numeric value, given as a percentage (%).  Calculation of PDFF uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat).  PDFF of the liver has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  (https://perspectum.com/media/1361/understanding-pdff.pdf)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/liver"/>
+        <rdfs:label>PDFF</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#PerspectumProduct -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#PerspectumProduct">
+        <rdfs:comment>A software product developed and sold by Perspectum to provide MRI biomarkers as aids in assessing health and diagnosing diseases.</rdfs:comment>
+        <rdfs:label>Perspectum product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#QuantitativeMetric -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#QuantitativeMetric">
+        <rdfs:comment>A Quantitative Metric is a numeric value gathered to measure some aspect of a biomedical study.  Examples of quantitative metric are patient age, BMI or liver PDFF.</rdfs:comment>
+        <rdfs:label>quantitative metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#T2Star -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#T2Star">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFatQuantification"/>
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#MRIimagingBiomarker"/>
+        <rdfs:comment>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.  T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.  CAN T2* BE DEFINED FOR OTHER ORGANS?</rdfs:comment>
+        <rdfs:label>T2*</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#UltrasoundImagingBiomarker -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#UltrasoundImagingBiomarker">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#ImagingBiomarker"/>
+        <rdfs:comment>Added to give context to Imaging Biomarker.</rdfs:comment>
+        <rdfs:label>ultrasound imaging biomarker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#cT1 -->
+
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#cT1">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#LiverFatQuantification"/>
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#MRIimagingBiomarker"/>
+        <rdfs:comment>Corrected T1 is an MRI derived biomarker providing a metric relating to organ inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.   In healthy tissue, the balance between water and proteins results in the T1 relaxation time being lower than in free water. However, in unhealthy tissue, such as in inflamed and fibrotic tissues, the abundance of free water results in higher T1 relaxation times.  T1 measurements differ depending on magnetic field strength and MR manufacturer. (https://perspectum.com/media/2081/mkt0073-ct1-explainer-40.pdf)</rdfs:comment>
+        <rdfs:label>cT1</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
