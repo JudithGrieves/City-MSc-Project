@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.perspectum.com/ontology/liver"
-     versionIRI="http://www.perspectum.com/ontology/liver/1.0">
+     versionIRI="http://www.perspectum.com/ontology/liver/1.1">
     <Prefix name="" IRI="http://www.perspectum.com/ontology/liver#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -15,6 +15,7 @@
     <Prefix name="oliv" IRI="http://www.perspectum.com/ontology/liver"/>
     <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
     <Annotation>
         <AnnotationProperty IRI="#terms:creator"/>
         <Literal>Judith Grieves</Literal>
@@ -43,7 +44,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
         <Literal>Versions
 
-18/10/2021 1.0  First version.</Literal>
+18/10/2021 1.0  First version.
+20/10/2021 1.1 Add annotations skos:altLabel, skos:example, rdfs:isDefinedBy</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#ASTALTratio"/>
@@ -134,6 +136,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="#terms:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#ASTALTratio"/>
@@ -285,6 +290,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Added to give context to Liver Health Assessment.  Aspartate aminotransferase (AST) to alanine aminotransferase (ALT) ratio.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#ASTALTratio</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ASTALTratio</IRI>
         <Literal>AST ALT ratio</Literal>
@@ -293,6 +303,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Atlas</IRI>
         <Literal>Atlas® is a metabolic software suite redefining multi-organ assessment for clinical trials in diabetes and metabolic disease (https://perspectum.com/products/atlas).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Atlas</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -305,6 +320,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Added to give context to Liver Fat Quantification.  Attenuation Coefficient is a quantification of liver fat obtained from ultrasound imaging.  It has been found to be correlated with MRI PDFF.  D’Hondt, A. et al. (2021) ‘Liver Fat Quantification by Ultrasound in Children: A Prospective Study’, AJR. American journal of roentgenology, 217(4), pp. 996–1006. doi:10.2214/AJR.20.24874.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#AttenuationCoefficient</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#AttenuationCoefficient</IRI>
         <Literal>attenuation coefficient</Literal>
@@ -313,6 +333,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BilirubinLevel</IRI>
         <Literal>Added to give context to Liver Health Assessment.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#BilirubinLevel</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -325,6 +350,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Added to give context to Liver Health Assessment.  (https://cks.nice.org.uk/topics/non-alcoholic-fatty-liver-disease-nafld/diagnosis/assessment/)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#BloodPressure</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#BloodPressure</IRI>
         <Literal>blood pressure</Literal>
@@ -335,9 +365,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>An quantitative or qualitative assessment of patient health.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#HealthAssessment</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#HealthAssessment</IRI>
         <Literal>health assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#HealthAssessment</IRI>
+        <Literal xml:lang="en">health ass.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -345,9 +385,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>An imaging biomarker is an indication of a biological function or status, obtained using imaging techniques.  An imaging biomarker may be a quantitative value measured from an image or a qualitative feature, such as a visual appearance.  The imaging technique may be, for example, MRI or ultrasound.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#ImagingBiomarker</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ImagingBiomarker</IRI>
         <Literal>imaging biomarker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#ImagingBiomarker</IRI>
+        <Literal xml:lang="en">biomarker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#semanticGroup"/>
@@ -370,9 +420,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>The liver is the largest internal organ of the human body, located in the upper right of the abdominal cavity. The liver performs many vital functions including regulating levels of chemicals in the blood and excreting waste products.  (https://www.hopkinsmedicine.org/health/conditions-and-diseases/liver-anatomy-and-functions)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Liver</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Liver</IRI>
         <Literal>liver</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#Liver</IRI>
+        <Literal xml:lang="en">liver</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -380,9 +440,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Liver Fat Quantification is a numeric indication of the amount of fat in the liver.  It is a useful assessment of liver health as high levels of fat in the liver can correlated with disease and mortality.  The percentage of fat in the liver can be derived in several ways, including biopsy, ultrasound scans and MR imaging.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#LiverFatQuantification</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverFatQuantification</IRI>
         <Literal>liver fat quantification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#LiverFatQuantification</IRI>
+        <Literal xml:lang="en">liver fat quant.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -390,9 +460,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Added to give context to Liver Health Assessment.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#LiverFunction</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverFunction</IRI>
         <Literal>liver function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#LiverFunction</IRI>
+        <Literal xml:lang="en">liver func.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -400,9 +480,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Liver Health Assessment is a qualitative or quantitative indication of the health of a liver.  Liver health can be assessed by, for example, a quantification of liver fat, measurement of levels of serum bilirubin and bile acids in the blood or ultrasound scan to show unusual size, shape or texture.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#LiverHealthAssessment</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LiverHealthAssessment</IRI>
         <Literal>liver health assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#LiverHealthAssessment</IRI>
+        <Literal xml:lang="en">liver health ass.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -410,7 +500,17 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>LiverMultiScan is a non-invasive diagnostic technology for evaluating liver diseases by quantifying liver tissue. (https://perspectum.com/products/livermultiscan)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#LiverMultiScan</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiverMultiScan</IRI>
+        <Literal>LMS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
         <IRI>#LiverMultiScan</IRI>
         <Literal>LMS</Literal>
     </AnnotationAssertion>
@@ -418,6 +518,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#LiverPDFF</IRI>
         <Literal>A  Proton Density Fat Fraction measurement obtained for the liver.  Liver PDFF can be derived using distinctive Perspectum products, image acquisition protocol and PDFF estimation methods such as IDEAL or DIXON (Hutton 2018).   (https://perspectum.com/products/livermultiscan)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#LiverPDFF</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -430,9 +535,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>An imaging biomarker obtained using Magnetic Resonance Imaging. The biomarker may be qualitative or quantitative.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#MRIimagingBiomarker</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MRIimagingBiomarker</IRI>
         <Literal>MRI biomarker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#MRIimagingBiomarker</IRI>
+        <Literal xml:lang="en">biomarker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -440,9 +555,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Added to give context to Liver Fat Quantification.  The Nakagami Parameter is a quantification of liver fat obtained from ultrasound imaging.  It has been found to be correlated with MRI PDFF.  D’Hondt, A. et al. (2021) ‘Liver Fat Quantification by Ultrasound in Children: A Prospective Study’, AJR. American journal of roentgenology, 217(4), pp. 996–1006. doi:10.2214/AJR.20.24874.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#NakagamiParameter</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#NakagamiParameter</IRI>
         <Literal>nakagami parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#NakagamiParameter</IRI>
+        <Literal xml:lang="en">nakagami</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#semanticGroup"/>
@@ -463,6 +588,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Organ</IRI>
         <Literal>An organ of the human body.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Organ</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -490,9 +620,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>A software product developed and sold by Perspectum to provide MRI biomarkers as aids in assessing health and diagnosing diseases.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#PerspectumProduct</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#PerspectumProduct</IRI>
         <Literal>Perspectum product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#PerspectumProduct</IRI>
+        <Literal xml:lang="en">product</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -500,14 +640,29 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>A Quantitative Metric is a numeric value gathered to measure some aspect of a biomedical study.  Examples of quantitative metric are patient age, BMI or liver PDFF.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#QuantitativeMetric</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#QuantitativeMetric</IRI>
         <Literal>quantitative metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#QuantitativeMetric</IRI>
+        <Literal xml:lang="en">quant metric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#T2Star</IRI>
         <Literal>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.  T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.  CAN T2* BE DEFINED FOR OTHER ORGANS?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#T2Star</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -520,14 +675,29 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Added to give context to Imaging Biomarker.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#UltrasoundImagingBiomarker</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#UltrasoundImagingBiomarker</IRI>
         <Literal>ultrasound imaging biomarker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#UltrasoundImagingBiomarker</IRI>
+        <Literal xml:lang="en">u/s biomarker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#cT1</IRI>
         <Literal>Corrected T1 is an MRI derived biomarker providing a metric relating to organ inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.   In healthy tissue, the balance between water and proteins results in the T1 relaxation time being lower than in free water. However, in unhealthy tissue, such as in inflamed and fibrotic tissues, the abundance of free water results in higher T1 relaxation times.  T1 measurements differ depending on magnetic field strength and MR manufacturer. (https://perspectum.com/media/2081/mkt0073-ct1-explainer-40.pdf)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#cT1</IRI>
+        <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

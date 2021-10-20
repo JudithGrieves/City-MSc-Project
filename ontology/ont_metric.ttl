@@ -7,6 +7,7 @@
 @prefix oscn: <http://www.perspectum.com/ontology/scanner#> .
 @prefix qudt: <http://qudt.org/schema/qudt> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix CMR-QA: <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#> .
 @base <http://www.perspectum.com/ontology/metric> .
 
@@ -33,15 +34,34 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #################################################################
 
 ###  http://www.perspectum.com/ontology/metric#semanticGroup
-:semanticGroup rdf:type owl:AnnotationProperty .
+:semanticGroup rdf:type owl:AnnotationProperty ;
+               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+               rdfs:label "semantic group" .
 
 
 ###  http://www.perspectum.com/ontology/metric#semanticType
-:semanticType rdf:type owl:AnnotationProperty .
+:semanticType rdf:type owl:AnnotationProperty ;
+              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+              rdfs:label "semantic type" .
 
 
 ###  http://www.perspectum.com/ontology/metric#semanticTypeID
-:semanticTypeID rdf:type owl:AnnotationProperty .
+:semanticTypeID rdf:type owl:AnnotationProperty ;
+                rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                rdfs:label "semantic type id" .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              rdfs:isDefinedBy <https://www.w3.org/2009/08/skos-reference/skos.html#altLabel> ;
+              rdfs:label "alternate label" .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty ;
+             rdfs:comment "examples of uses" ;
+             rdfs:isDefinedBy <https://www.w3.org/TR/skos-reference/#example> ;
+             rdfs:label "example" .
 
 
 #################################################################
@@ -234,7 +254,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
            rdfs:comment """Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
 (https://perspectum.com/media/1361/understanding-pdff.pdf)""" ;
            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-           rdfs:label "liver PDFF" .
+           rdfs:label "liver PDFF" ;
+           skos:altLabel "PDFF" ;
+           skos:example "5%, 7.5%, etc" .
 
 
 ###  http://www.perspectum.com/ontology/metric#LiverT2Star
@@ -243,7 +265,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
              rdfs:comment """T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
 T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.""" ;
              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-             rdfs:label "liver T2star" .
+             rdfs:label "liver T2star" ;
+             skos:altLabel "T2*" ;
+             skos:example "32.4 ms, 25 ms, etc" .
 
 
 ###  http://www.perspectum.com/ontology/metric#LivercT1
@@ -252,7 +276,9 @@ T2* is a time constant (measured in milliseconds) describing the decay of an MRI
           rdfs:comment """Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
 T1 measurements differ depending on magnetic field strength and MR manufacturer.""" ;
           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-          rdfs:label "liver cT1" .
+          rdfs:label "liver cT1" ;
+          skos:altLabel "cT1" ;
+          skos:example "712 ms, 800 ms, etc" .
 
 
 ###  http://www.perspectum.com/ontology/metric#Patient
@@ -266,7 +292,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
          :semanticTypeID "T016" ;
          rdfs:comment "A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number." ;
          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-         rdfs:label "patient" .
+         rdfs:label "patient" ;
+         skos:example "P005, P061" .
 
 
 ###  http://www.perspectum.com/ontology/metric#PatientAge
@@ -274,7 +301,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
             rdfs:subClassOf :PatientMetric ;
             rdfs:comment "The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric." ;
             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-            rdfs:label "patient age" .
+            rdfs:label "patient age" ;
+            skos:altLabel "age" ;
+            skos:example "35, 44, 60" .
 
 
 ###  http://www.perspectum.com/ontology/metric#PatientBMI
@@ -282,7 +311,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
             rdfs:subClassOf :PatientMetric ;
             rdfs:comment "The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres." ;
             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-            rdfs:label "patient BMI" .
+            rdfs:label "patient BMI" ;
+            skos:altLabel "BMI" ;
+            skos:example "25.5, 32.0, 27" .
 
 
 ###  http://www.perspectum.com/ontology/metric#PatientMetric
@@ -290,7 +321,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                rdfs:subClassOf :QuantitativeMetric ;
                rdfs:comment "A quantitative metric gathered for the study and related to a patient" ;
                rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-               rdfs:label "patient metric" .
+               rdfs:label "patient metric" ;
+               skos:altLabel "metric" .
 
 
 ###  http://www.perspectum.com/ontology/metric#PatientSex
@@ -315,7 +347,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                                      CMR-QA:Imaging_Scan_Visit ;
                     rdfs:comment "A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1." ;
                     rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                    rdfs:label "quantitative metric" .
+                    rdfs:label "quantitative metric" ;
+                    skos:altLabel "metric" .
 
 
 ###  http://www.perspectum.com/ontology/metric#ScanMetric
@@ -336,7 +369,9 @@ oscn:MRIScannerModel rdf:type owl:Class ;
                      rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
-                     rdfs:label "scanner" .
+                     rdfs:label "MRI scanner model" ;
+                     skos:altLabel "scanner" ;
+                     skos:example "Philips Ingenia Ambition 1.5T, Siemens MAGNETOM Sola" .
 
 
 ###  http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit
@@ -346,17 +381,20 @@ CMR-QA:Imaging_Scan_Visit rdf:type owl:Class ;
 A visit is currently identified by a sequential number currently given in the test data.
 This class has been reused from the CMR-QA ontology.""" ;
                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                          rdfs:label "imaging scan visit" .
+                          rdfs:label "imaging scan visit" ;
+                          skos:altLabel "visit" ;
+                          skos:example "P005/1, P061/2" .
 
 
 ###  http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study
 CMR-QA:Medical_Imaging_Study rdf:type owl:Class ;
                              :semanticGroup "PROC" ;
                              :semanticType "Research Activity" ;
-                             rdfs:comment "A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology." ,
+                             rdfs:comment "A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology and is not currently populated in the knowledge graph." ,
                                           "T062" ;
                              rdfs:isDefinedBy "http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA" ;
-                             rdfs:label "medical imaging study" .
+                             rdfs:label "medical imaging study" ;
+                             skos:altLabel "study" .
 
 
 #################################################################

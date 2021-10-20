@@ -9,6 +9,7 @@
      xmlns:oscn="http://www.perspectum.com/ontology/scanner#"
      xmlns:qudt="http://qudt.org/schema/qudt"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:CMR-QA="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#">
     <owl:Ontology rdf:about="http://www.perspectum.com/ontology/metric">
         <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/metric/1.5"/>
@@ -44,19 +45,47 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <!-- http://www.perspectum.com/ontology/metric#semanticGroup -->
 
-    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticGroup"/>
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticGroup">
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>semantic group</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
     <!-- http://www.perspectum.com/ontology/metric#semanticType -->
 
-    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticType"/>
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticType">
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>semantic type</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
     <!-- http://www.perspectum.com/ontology/metric#semanticTypeID -->
 
-    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticTypeID"/>
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticTypeID">
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>semantic type id</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+        <rdfs:isDefinedBy rdf:resource="https://www.w3.org/2009/08/skos-reference/skos.html#altLabel"/>
+        <rdfs:label>alternate label</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example">
+        <rdfs:comment>examples of uses</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.w3.org/TR/skos-reference/#example"/>
+        <rdfs:label>example</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
@@ -333,6 +362,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 (https://perspectum.com/media/1361/understanding-pdff.pdf)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>liver PDFF</rdfs:label>
+        <skos:altLabel>PDFF</skos:altLabel>
+        <skos:example>5%, 7.5%, etc</skos:example>
     </owl:Class>
     
 
@@ -345,6 +376,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>liver T2star</rdfs:label>
+        <skos:altLabel>T2*</skos:altLabel>
+        <skos:example>32.4 ms, 25 ms, etc</skos:example>
     </owl:Class>
     
 
@@ -357,6 +390,8 @@ T2* is a time constant (measured in milliseconds) describing the decay of an MRI
 T1 measurements differ depending on magnetic field strength and MR manufacturer.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>liver cT1</rdfs:label>
+        <skos:altLabel>cT1</skos:altLabel>
+        <skos:example>712 ms, 800 ms, etc</skos:example>
     </owl:Class>
     
 
@@ -374,6 +409,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <rdfs:comment>A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient</rdfs:label>
+        <skos:example>P005, P061</skos:example>
     </owl:Class>
     
 
@@ -385,6 +421,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <rdfs:comment>The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient age</rdfs:label>
+        <skos:altLabel>age</skos:altLabel>
+        <skos:example>35, 44, 60</skos:example>
     </owl:Class>
     
 
@@ -396,6 +434,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <rdfs:comment>The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient BMI</rdfs:label>
+        <skos:altLabel>BMI</skos:altLabel>
+        <skos:example>25.5, 32.0, 27</skos:example>
     </owl:Class>
     
 
@@ -407,6 +447,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <rdfs:comment>A quantitative metric gathered for the study and related to a patient</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient metric</rdfs:label>
+        <skos:altLabel>metric</skos:altLabel>
     </owl:Class>
     
 
@@ -441,6 +482,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <rdfs:comment>A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>quantitative metric</rdfs:label>
+        <skos:altLabel>metric</skos:altLabel>
     </owl:Class>
     
 
@@ -467,7 +509,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <rdfs:comment>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
-        <rdfs:label>scanner</rdfs:label>
+        <rdfs:label>MRI scanner model</rdfs:label>
+        <skos:altLabel>scanner</skos:altLabel>
+        <skos:example>Philips Ingenia Ambition 1.5T, Siemens MAGNETOM Sola</skos:example>
     </owl:Class>
     
 
@@ -481,6 +525,8 @@ A visit is currently identified by a sequential number currently given in the te
 This class has been reused from the CMR-QA ontology.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>imaging scan visit</rdfs:label>
+        <skos:altLabel>visit</skos:altLabel>
+        <skos:example>P005/1, P061/2</skos:example>
     </owl:Class>
     
 
@@ -490,10 +536,11 @@ This class has been reused from the CMR-QA ontology.</rdfs:comment>
     <owl:Class rdf:about="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study">
         <semanticGroup>PROC</semanticGroup>
         <semanticType>Research Activity</semanticType>
-        <rdfs:comment>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology.</rdfs:comment>
+        <rdfs:comment>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology and is not currently populated in the knowledge graph.</rdfs:comment>
         <rdfs:comment>T062</rdfs:comment>
         <rdfs:isDefinedBy>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA</rdfs:isDefinedBy>
         <rdfs:label>medical imaging study</rdfs:label>
+        <skos:altLabel>study</skos:altLabel>
     </owl:Class>
     
 

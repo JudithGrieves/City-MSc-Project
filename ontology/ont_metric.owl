@@ -16,6 +16,7 @@
     <Prefix name="oscn" IRI="http://www.perspectum.com/ontology/scanner#"/>
     <Prefix name="qudt" IRI="http://qudt.org/schema/qudt"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
     <Prefix name="CMR-QA" IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -157,6 +158,12 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="#semanticTypeID"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#PatientSex"/>
@@ -527,6 +534,16 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>liver PDFF</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#LiverPDFF</IRI>
+        <Literal>PDFF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <IRI>#LiverPDFF</IRI>
+        <Literal>5%, 7.5%, etc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#LiverT2Star</IRI>
         <Literal>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
@@ -543,6 +560,16 @@ T2* is a time constant (measured in milliseconds) describing the decay of an MRI
         <Literal>liver T2star</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#LiverT2Star</IRI>
+        <Literal>T2*</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <IRI>#LiverT2Star</IRI>
+        <Literal>32.4 ms, 25 ms, etc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#LivercT1</IRI>
         <Literal>Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
@@ -557,6 +584,16 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#LivercT1</IRI>
         <Literal>liver cT1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#LivercT1</IRI>
+        <Literal>cT1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <IRI>#LivercT1</IRI>
+        <Literal>712 ms, 800 ms, etc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -604,6 +641,11 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <Literal>patient</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <IRI>#Patient</IRI>
+        <Literal>P005, P061</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#PatientAge</IRI>
         <Literal>The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric.</Literal>
@@ -617,6 +659,16 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#PatientAge</IRI>
         <Literal>patient age</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#PatientAge</IRI>
+        <Literal>age</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <IRI>#PatientAge</IRI>
+        <Literal>35, 44, 60</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -634,6 +686,16 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <Literal>patient BMI</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#PatientBMI</IRI>
+        <Literal>BMI</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <IRI>#PatientBMI</IRI>
+        <Literal>25.5, 32.0, 27</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#PatientMetric</IRI>
         <Literal>A quantitative metric gathered for the study and related to a patient</Literal>
@@ -647,6 +709,11 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#PatientMetric</IRI>
         <Literal>patient metric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#PatientMetric</IRI>
+        <Literal>metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -677,6 +744,11 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#QuantitativeMetric</IRI>
         <Literal>quantitative metric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#QuantitativeMetric</IRI>
+        <Literal>metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -840,6 +912,36 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#semanticGroup</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#semanticGroup</IRI>
+        <Literal>semantic group</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#semanticType</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#semanticType</IRI>
+        <Literal>semantic type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#semanticTypeID</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#semanticTypeID</IRI>
+        <Literal>semantic type id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#usedInVisit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
@@ -887,7 +989,17 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
+        <Literal>MRI scanner model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>scanner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
+        <Literal>Philips Ingenia Ambition 1.5T, Siemens MAGNETOM Sola</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -907,6 +1019,16 @@ This class has been reused from the CMR-QA ontology.</Literal>
         <Literal>imaging scan visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>CMR-QA:Imaging_Scan_Visit</AbbreviatedIRI>
+        <Literal>visit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:example"/>
+        <AbbreviatedIRI>CMR-QA:Imaging_Scan_Visit</AbbreviatedIRI>
+        <Literal>P005/1, P061/2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#semanticGroup"/>
         <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>PROC</Literal>
@@ -919,7 +1041,7 @@ This class has been reused from the CMR-QA ontology.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
-        <Literal>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology.</Literal>
+        <Literal>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology and is not currently populated in the knowledge graph.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -935,6 +1057,36 @@ This class has been reused from the CMR-QA ontology.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>medical imaging study</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
+        <Literal>study</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>skos:altLabel</AbbreviatedIRI>
+        <IRI>https://www.w3.org/2009/08/skos-reference/skos.html#altLabel</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>skos:altLabel</AbbreviatedIRI>
+        <Literal>alternate label</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>skos:example</AbbreviatedIRI>
+        <Literal>examples of uses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>skos:example</AbbreviatedIRI>
+        <IRI>https://www.w3.org/TR/skos-reference/#example</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>skos:example</AbbreviatedIRI>
+        <Literal>example</Literal>
     </AnnotationAssertion>
 </Ontology>
 

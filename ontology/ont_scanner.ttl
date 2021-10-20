@@ -31,23 +31,43 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #################################################################
 
 ###  http://www.perspectum.com/ontology/scanner#semanticGroup
-oscn:semanticGroup rdf:type owl:AnnotationProperty .
+oscn:semanticGroup rdf:type owl:AnnotationProperty ;
+                   rdfs:comment "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemGroups_2018.txt" ;
+                   rdfs:isDefinedBy <https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemGroups_2018.txt> ;
+                   rdfs:label "semantic group" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#semanticType
-oscn:semanticType rdf:type owl:AnnotationProperty .
+oscn:semanticType rdf:type owl:AnnotationProperty ;
+                  rdfs:comment "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemGroups_2018.txt" ;
+                  rdfs:isDefinedBy <https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemGroups_2018.txt> ;
+                  rdfs:label "semantic type" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#semanticTypeID
-oscn:semanticTypeID rdf:type owl:AnnotationProperty .
+oscn:semanticTypeID rdf:type owl:AnnotationProperty ;
+                    rdfs:comment "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemGroups_2018.txt" ;
+                    rdfs:isDefinedBy <https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemGroups_2018.txt> ;
+                    rdfs:label "semantic type ID" .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
-skos:altLabel rdf:type owl:AnnotationProperty .
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              rdfs:isDefinedBy <https://www.w3.org/2009/08/skos-reference/skos.html#altLabel> ;
+              rdfs:label "alternate label" .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty ;
+             rdfs:comment "examples of uses" ;
+             rdfs:isDefinedBy <https://www.w3.org/TR/skos-reference/#example> ;
+             rdfs:label "example" .
 
 
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:AnnotationProperty .
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               rdfs:isDefinedBy <https://www.w3.org/2009/08/skos-reference/skos.html#prefLabel> ;
+               rdfs:label "preferred label" .
 
 
 #################################################################
@@ -166,7 +186,8 @@ qudt:Quantity rdf:type owl:Class ;
               rdfs:comment "quantity class from QUDT ontology" ;
               rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
               rdfs:label "quantity" ;
-              skos:altLabel "quantity"@en .
+              skos:altLabel "quantity"@en ;
+              skos:example "25, 1.333, 10000" .
 
 
 ###  http://qudt.org/schema/qudt/Unit
@@ -176,7 +197,8 @@ qudt:Quantity rdf:type owl:Class ;
                                    rdfs:comment "Unit of Measure from QUDT ontology" ;
                                    rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                                    rdfs:label "Unit" ;
-                                   skos:altLabel "unit"@en .
+                                   skos:altLabel "unit"@en ;
+                                   skos:example "mm, ms, Tesla" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
@@ -189,11 +211,14 @@ oscn:MRIScannerModel rdf:type owl:Class ;
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                      rdfs:label "MRI scanner model" ;
-                     skos:altLabel "MRI scanner"@en .
+                     skos:altLabel "MRI scanner"@en ;
+                     skos:example "Philips Ingenia Ambition 1.5T, Siemens MAGNETOM Sola"@en .
 
 
 ###  http://www.perspectum.com/ontology/scanner#Manufacturer
-oscn:Manufacturer rdf:type owl:Class .
+oscn:Manufacturer rdf:type owl:Class ;
+                  rdfs:comment "A manufacturer of goods." ;
+                  rdfs:label "manufacturer" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrength
@@ -202,7 +227,8 @@ oscn:ScannerFieldStrength rdf:type owl:Class ;
                           rdfs:comment "The measure of the strength of the magnet used in an MRI Scanner." ;
                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                           rdfs:label "scanner field strength" ;
-                          skos:altLabel "field strength"@en .
+                          skos:altLabel "field strength"@en ;
+                          skos:example "1.5T, 3.0T" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerFieldStrengthUnit
@@ -211,7 +237,8 @@ oscn:ScannerFieldStrengthUnit rdf:type owl:Class ;
                               rdfs:comment "Unit of measure of scanner field strength" ;
                               rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                               rdfs:label "scanner field strength unit" ;
-                              skos:altLabel "field str. unit"@en .
+                              skos:altLabel "field str. unit"@en ;
+                              skos:example "T (Tesla)" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#ScannerManufacturer
@@ -220,7 +247,8 @@ oscn:ScannerManufacturer rdf:type owl:Class ;
                          rdfs:comment "A company that manufactures and sells MR scanners for human diagnostic use." ;
                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                          rdfs:label "scanner manufacturer" ;
-                         skos:altLabel "manufacturer"@en .
+                         skos:altLabel "manufacturer"@en ;
+                         skos:example "Siemens, Philips" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
