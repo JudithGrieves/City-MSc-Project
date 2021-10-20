@@ -6,8 +6,10 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:omet="http://www.perspectum.com/ontology/metric"
+     xmlns:oscn="http://www.perspectum.com/ontology/scanner#"
      xmlns:qudt="http://qudt.org/schema/qudt"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CMR-QA="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#">
     <owl:Ontology rdf:about="http://www.perspectum.com/ontology/metric">
         <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/metric/1.5"/>
         <rdfs:comment>An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.

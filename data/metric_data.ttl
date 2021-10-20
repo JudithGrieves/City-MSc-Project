@@ -2,6 +2,7 @@
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix met: <http://www.perspectum.com/resources/metric/> .
 @prefix omet: <http://www.perspectum.com/ontology/metric/> .
+@prefix oscn: <http://www.perspectum.com/ontology/scanner/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .

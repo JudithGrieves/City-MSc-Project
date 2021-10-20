@@ -13,8 +13,10 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric"/>
+    <Prefix name="oscn" IRI="http://www.perspectum.com/ontology/scanner#"/>
     <Prefix name="qudt" IRI="http://qudt.org/schema/qudt"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="CMR-QA" IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <Literal>An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
@@ -82,13 +84,13 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#ScanMetric"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study"/>
+        <Class abbreviatedIRI="CMR-QA:Medical_Imaging_Study"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
@@ -191,8 +193,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="#QuantitativeMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Medical_Imaging_Study"/>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
@@ -204,11 +206,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
@@ -216,11 +218,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Patient"/>
@@ -232,11 +234,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Patient"/>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Patient"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#PatientSex"/>
@@ -244,27 +246,27 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#PatientSex"/>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#PatientSex"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#QuantitativeMetric"/>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#QuantitativeMetric"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
+        <Class abbreviatedIRI="CMR-QA:Medical_Imaging_Study"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasLiverCT1Unit"/>
@@ -324,19 +326,19 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasVisitMetric"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isAttendedBy"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedInVisit"/>
-        <Class IRI="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
+        <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#attendsVisit"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasLiverCT1Unit"/>
@@ -368,7 +370,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usedInVisit"/>
-        <Class IRI="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#liverCT1Value"/>
@@ -834,50 +836,50 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://www.perspectum.com/ontology/scanner#MRIScannerModel</IRI>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>http://www.perspectum.com/ontology/scanner#MRIScannerModel</IRI>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <IRI>http://www.perspectum.com/ontology/scanner</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://www.perspectum.com/ontology/scanner#MRIScannerModel</IRI>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>scanner</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit</IRI>
+        <AbbreviatedIRI>CMR-QA:Imaging_Scan_Visit</AbbreviatedIRI>
         <Literal>A visit made by a patient for the purpose of taking part in an MRI scan to gather metrics for the study data.  A scan visit is defined as a single visit for a single patient and allows identification of multiple values of a single metric type for a single patient.
 A visit is currently identified by a sequential number currently given in the test data.
 This class has been reused from the CMR-QA ontology.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit</IRI>
+        <AbbreviatedIRI>CMR-QA:Imaging_Scan_Visit</AbbreviatedIRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit</IRI>
+        <AbbreviatedIRI>CMR-QA:Imaging_Scan_Visit</AbbreviatedIRI>
         <Literal>imaging scan visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study</IRI>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study</IRI>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study</IRI>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>medical imaging study</Literal>
     </AnnotationAssertion>
 </Ontology>
