@@ -124,6 +124,15 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="#isProductGivingMetric"/>
     </Declaration>
     <Declaration>
+        <AnnotationProperty IRI="#semanticGroup"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty IRI="#terms:creator"/>
     </Declaration>
     <SubClassOf>
@@ -341,6 +350,21 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>imaging biomarker</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticGroup"/>
+        <IRI>#Liver</IRI>
+        <Literal>ANAT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticType"/>
+        <IRI>#Liver</IRI>
+        <Literal>Body Part, Organ, or Organ Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+        <IRI>#Liver</IRI>
+        <Literal>T023</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Liver</IRI>
         <Literal>The liver is the largest internal organ of the human body, located in the upper right of the abdominal cavity. The liver performs many vital functions including regulating levels of chemicals in the blood and excreting waste products.  (https://www.hopkinsmedicine.org/health/conditions-and-diseases/liver-anatomy-and-functions)</Literal>
@@ -419,6 +443,21 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#NakagamiParameter</IRI>
         <Literal>nakagami parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticGroup"/>
+        <IRI>#Organ</IRI>
+        <Literal>ANAT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticType"/>
+        <IRI>#Organ</IRI>
+        <Literal>Body Part, Organ, or Organ Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+        <IRI>#Organ</IRI>
+        <Literal>T023</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

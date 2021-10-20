@@ -29,6 +29,22 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology""" .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.perspectum.com/ontology/metric#semanticGroup
+:semanticGroup rdf:type owl:AnnotationProperty .
+
+
+###  http://www.perspectum.com/ontology/metric#semanticType
+:semanticType rdf:type owl:AnnotationProperty .
+
+
+###  http://www.perspectum.com/ontology/metric#semanticTypeID
+:semanticTypeID rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -245,6 +261,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                           :QuantitativeMetric ,
                           oscn:MRIScannerModel ,
                           CMR-QA:Imaging_Scan_Visit ;
+         :semanticGroup "LIVB" ;
+         :semanticType "Human" ;
+         :semanticTypeID "T016" ;
          rdfs:comment "A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number." ;
          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
          rdfs:label "patient" .
@@ -311,6 +330,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 oscn:MRIScannerModel rdf:type owl:Class ;
                      owl:disjointWith CMR-QA:Imaging_Scan_Visit ,
                                       CMR-QA:Medical_Imaging_Study ;
+                     :semanticGroup "DEVI" ;
+                     :semanticType "Medical Device" ;
+                     :semanticTypeID "T074" ;
                      rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
@@ -329,7 +351,10 @@ This class has been reused from the CMR-QA ontology.""" ;
 
 ###  http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study
 CMR-QA:Medical_Imaging_Study rdf:type owl:Class ;
-                             rdfs:comment "A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology." ;
+                             :semanticGroup "PROC" ;
+                             :semanticType "Research Activity" ;
+                             rdfs:comment "A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology." ,
+                                          "T062" ;
                              rdfs:isDefinedBy "http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA" ;
                              rdfs:label "medical imaging study" .
 

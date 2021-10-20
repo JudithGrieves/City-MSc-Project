@@ -94,6 +94,15 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <DataProperty IRI="#FieldStrengthValue"/>
     </Declaration>
     <Declaration>
+        <AnnotationProperty IRI="#semanticGroup"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
     </Declaration>
     <Declaration>
@@ -298,6 +307,21 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
         <IRI>#FieldStrengthValue</IRI>
         <Literal xml:lang="en">field str. value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticGroup"/>
+        <IRI>#MRIScannerModel</IRI>
+        <Literal>DEVI</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticType"/>
+        <IRI>#MRIScannerModel</IRI>
+        <Literal>Medical Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+        <IRI>#MRIScannerModel</IRI>
+        <Literal>T074</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

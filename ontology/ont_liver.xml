@@ -38,6 +38,24 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
+    <!-- http://www.perspectum.com/ontology/liver#semanticGroup -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/liver#semanticGroup"/>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#semanticType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/liver#semanticType"/>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/liver#semanticTypeID -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/liver#semanticTypeID"/>
+    
+
+
     <!-- http://www.perspectum.com/ontology/liver#terms:creator -->
 
     <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/liver#terms:creator"/>
@@ -183,6 +201,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#Liver">
         <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/liver#Organ"/>
+        <semanticGroup>ANAT</semanticGroup>
+        <semanticType>Body Part, Organ, or Organ Component</semanticType>
+        <semanticTypeID>T023</semanticTypeID>
         <rdfs:comment>The liver is the largest internal organ of the human body, located in the upper right of the abdominal cavity. The liver performs many vital functions including regulating levels of chemicals in the blood and excreting waste products.  (https://www.hopkinsmedicine.org/health/conditions-and-diseases/liver-anatomy-and-functions)</rdfs:comment>
         <rdfs:label>liver</rdfs:label>
     </owl:Class>
@@ -264,6 +285,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology/liver#Organ">
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/liver#QuantitativeMetric"/>
+        <semanticGroup>ANAT</semanticGroup>
+        <semanticType>Body Part, Organ, or Organ Component</semanticType>
+        <semanticTypeID>T023</semanticTypeID>
         <rdfs:comment>An organ of the human body.</rdfs:comment>
         <rdfs:label>organ</rdfs:label>
     </owl:Class>

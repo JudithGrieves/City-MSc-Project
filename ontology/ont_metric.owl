@@ -149,6 +149,15 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <Declaration>
         <NamedIndividual IRI="#Male"/>
     </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticGroup"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#PatientSex"/>
         <ObjectOneOf>
@@ -565,6 +574,21 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <Literal>Male</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticGroup"/>
+        <IRI>#Patient</IRI>
+        <Literal>LIVB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticType"/>
+        <IRI>#Patient</IRI>
+        <Literal>Human</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+        <IRI>#Patient</IRI>
+        <Literal>T016</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Patient</IRI>
         <Literal>A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number.</Literal>
@@ -835,6 +859,21 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <Literal>uses scanner model</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticGroup"/>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
+        <Literal>DEVI</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticType"/>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
+        <Literal>Medical Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticTypeID"/>
+        <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
+        <Literal>T074</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
@@ -868,9 +907,24 @@ This class has been reused from the CMR-QA ontology.</Literal>
         <Literal>imaging scan visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticGroup"/>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
+        <Literal>PROC</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#semanticType"/>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
+        <Literal>Research Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
+        <Literal>T062</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>

@@ -34,6 +34,35 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#semanticGroup -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticGroup"/>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#semanticType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticType"/>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric#semanticTypeID -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticTypeID"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -339,6 +368,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
+        <semanticGroup>LIVB</semanticGroup>
+        <semanticType>Human</semanticType>
+        <semanticTypeID>T016</semanticTypeID>
         <rdfs:comment>A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient</rdfs:label>
@@ -429,6 +461,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#MRIScannerModel">
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study"/>
+        <semanticGroup>DEVI</semanticGroup>
+        <semanticType>Medical Device</semanticType>
+        <semanticTypeID>T074</semanticTypeID>
         <rdfs:comment>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
@@ -453,7 +488,10 @@ This class has been reused from the CMR-QA ontology.</rdfs:comment>
     <!-- http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study">
+        <semanticGroup>PROC</semanticGroup>
+        <semanticType>Research Activity</semanticType>
         <rdfs:comment>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology.</rdfs:comment>
+        <rdfs:comment>T062</rdfs:comment>
         <rdfs:isDefinedBy>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA</rdfs:isDefinedBy>
         <rdfs:label>medical imaging study</rdfs:label>
     </owl:Class>

@@ -27,6 +27,18 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 #    Annotation properties
 #################################################################
 
+###  http://www.perspectum.com/ontology/liver#semanticGroup
+:semanticGroup rdf:type owl:AnnotationProperty .
+
+
+###  http://www.perspectum.com/ontology/liver#semanticType
+:semanticType rdf:type owl:AnnotationProperty .
+
+
+###  http://www.perspectum.com/ontology/liver#semanticTypeID
+:semanticTypeID rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.perspectum.com/ontology/liver#terms:creator
 :terms:creator rdf:type owl:AnnotationProperty .
 
@@ -122,6 +134,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 ###  http://www.perspectum.com/ontology/liver#Liver
 :Liver rdf:type owl:Class ;
        rdfs:subClassOf :Organ ;
+       :semanticGroup "ANAT" ;
+       :semanticType "Body Part, Organ, or Organ Component" ;
+       :semanticTypeID "T023" ;
        rdfs:comment "The liver is the largest internal organ of the human body, located in the upper right of the abdominal cavity. The liver performs many vital functions including regulating levels of chemicals in the blood and excreting waste products.  (https://www.hopkinsmedicine.org/health/conditions-and-diseases/liver-anatomy-and-functions)" ;
        rdfs:label "liver" .
 
@@ -179,6 +194,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 ###  http://www.perspectum.com/ontology/liver#Organ
 :Organ rdf:type owl:Class ;
        owl:disjointWith :QuantitativeMetric ;
+       :semanticGroup "ANAT" ;
+       :semanticType "Body Part, Organ, or Organ Component" ;
+       :semanticTypeID "T023" ;
        rdfs:comment "An organ of the human body." ;
        rdfs:label "organ" .
 

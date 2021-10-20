@@ -40,6 +40,24 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
+    <!-- http://www.perspectum.com/ontology/scanner#semanticGroup -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/scanner#semanticGroup"/>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/scanner#semanticType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/scanner#semanticType"/>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/scanner#semanticTypeID -->
+
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/scanner#semanticTypeID"/>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -242,6 +260,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#MRIScannerModel">
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerManufacturer"/>
+        <oscn:semanticGroup>DEVI</oscn:semanticGroup>
+        <oscn:semanticType>Medical Device</oscn:semanticType>
+        <oscn:semanticTypeID>T074</oscn:semanticTypeID>
         <rdfs:comment>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
