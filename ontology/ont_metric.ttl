@@ -9,7 +9,7 @@
 @base <http://www.perspectum.com/ontology/metric> .
 
 <http://www.perspectum.com/ontology/metric> rdf:type owl:Ontology ;
-                                             owl:versionIRI <http://www.perspectum.com/ontology/metric/1.3> ;
+                                             owl:versionIRI <http://www.perspectum.com/ontology/metric/1.5> ;
                                              rdfs:comment """An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
 
 Perspectum has published a  longitudinal, observational clinical study (Dennis et al, 2020) of patients, still experiencing  symptoms 3 months post-infection, with acute SARS-CoV-2. Patients were assessed with health  questionnaires, blood investigations and quantitative magnetic resonance imaging (MRI). 
@@ -23,7 +23,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 12/7/2021 1.1  Remove Manufacturer; now in Scanner ontology
 19/7/2021 1.2  Remove FieldStrengthValue/Unit & isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
-25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.""" .
+25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.
+20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology""" .
 
 #################################################################
 #    Object Properties
@@ -41,7 +42,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 :attendsVisit rdf:type owl:ObjectProperty ;
               owl:inverseOf :isAttendedBy ;
               rdfs:domain :Patient ;
-              rdfs:range :ScanVisit ;
+              rdfs:range <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
               rdfs:label "attends visit" .
 
@@ -96,7 +97,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 ###  http://www.perspectum.com/ontology/metric#hasVisitMetric
 :hasVisitMetric rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isMetricForVisit ;
-                rdfs:domain :ScanVisit ;
+                rdfs:domain <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
                 rdfs:range :QuantitativeMetric ;
                 rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                 rdfs:label "has visit metric" .
@@ -104,7 +105,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
 ###  http://www.perspectum.com/ontology/metric#isAttendedBy
 :isAttendedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :ScanVisit ;
+              rdfs:domain <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
               rdfs:range :Patient ;
               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
               rdfs:label "is attended by" .
@@ -126,7 +127,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 :usedInVisit rdf:type owl:ObjectProperty ;
              owl:inverseOf :usesScannerModel ;
              rdfs:domain <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
-             rdfs:range :ScanVisit ;
+             rdfs:range <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
              rdfs:label "used in visit" .
 
@@ -184,8 +185,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 <http://qudt.org/schema/qudt/Quantity> rdf:type owl:Class ;
                                        owl:disjointWith <http://qudt.org/schema/qudt/Unit> ,
                                                         :Patient ,
-                                                        :ScanVisit ,
-                                                        <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
+                                                        <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ,
+                                                        <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
                                        rdfs:comment "quantity class from QUDT ontology." ;
                                        rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                                        rdfs:label "quantity" .
@@ -194,8 +195,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 ###  http://qudt.org/schema/qudt/Unit
 <http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
                                    owl:disjointWith :Patient ,
-                                                    :ScanVisit ,
-                                                    <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
+                                                    <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ,
+                                                    <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
                                    rdfs:comment "Unit of measure from QUDT ontology" ;
                                    rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                                    rdfs:label "Unit" .
@@ -240,8 +241,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 :Patient rdf:type owl:Class ;
          owl:disjointWith :PatientSex ,
                           :QuantitativeMetric ,
-                          :ScanVisit ,
-                          <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
+                          <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ,
+                          <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
          rdfs:comment "A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number." ;
          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
          rdfs:label "patient" .
@@ -279,8 +280,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                                             )
                                 ] ;
             owl:disjointWith :QuantitativeMetric ,
-                             :ScanVisit ,
-                             <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
+                             <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ,
+                             <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
             rdfs:comment "The biological sex of a patient" ;
             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
             rdfs:label "patient sex" .
@@ -289,8 +290,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 ###  http://www.perspectum.com/ontology/metric#QuantitativeMetric
 :QuantitativeMetric rdf:type owl:Class ;
                     rdfs:subClassOf <http://qudt.org/schema/qudt/Quantity> ;
-                    owl:disjointWith :ScanVisit ,
-                                     <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
+                    owl:disjointWith <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ,
+                                     <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ;
                     rdfs:comment "A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1." ;
                     rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                     rdfs:label "quantitative metric" .
@@ -304,21 +305,31 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
             rdfs:label "scan metric" .
 
 
-###  http://www.perspectum.com/ontology/metric#ScanVisit
-:ScanVisit rdf:type owl:Class ;
-           owl:disjointWith <http://www.perspectum.com/ontology/scanner#MRIScannerModel> ;
-           rdfs:comment """A visit made by a patient for the purpose of taking part in an MRI scan to gather metrics for the study data.  A scan visit is defined as a single visit for a single patient and allows identification of multiple values of a single metric type for a single patient.
-A visit is currently identified by a sequential number currently given in the test data.""" ;
-           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-           rdfs:label "scan visit" .
-
-
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
 <http://www.perspectum.com/ontology/scanner#MRIScannerModel> rdf:type owl:Class ;
+                                                             owl:disjointWith <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> ,
+                                                                              <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study> ;
                                                              rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
                                                              rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
                                                              rdfs:label "scanner" .
+
+
+###  http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit
+<http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study> ;
+                                                                          rdfs:comment """A visit made by a patient for the purpose of taking part in an MRI scan to gather metrics for the study data.  A scan visit is defined as a single visit for a single patient and allows identification of multiple values of a single metric type for a single patient.
+A visit is currently identified by a sequential number currently given in the test data.
+This class has been reused from the CMR-QA ontology.""" ;
+                                                                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                                          rdfs:label "imaging scan visit" .
+
+
+###  http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study
+<http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study> rdf:type owl:Class ;
+                                                                             rdfs:comment "A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology." ;
+                                                                             rdfs:isDefinedBy "http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA" ;
+                                                                             rdfs:label "medical imaging study" .
 
 
 #################################################################

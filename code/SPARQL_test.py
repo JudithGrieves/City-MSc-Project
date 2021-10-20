@@ -71,7 +71,7 @@ def query_all(g,outfile):
                           ?fsval ?fsunitlabel  ?manf_label \
                        WHERE
                 {
-                 ?visit a omet:ScanVisit .
+                 ?visit a omet:Imaging_Scan_Visit .
                  ?visit rdfs:label ?visit_label .
                  ?visit omet:isAttendedBy ?patient .  
                  ?patient a omet:Patient .

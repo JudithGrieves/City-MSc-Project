@@ -38,7 +38,7 @@
 :visit
   rr:subjectMap [
     rr:template "http://www.perspectum.com/resources/metric/URI_Visit_{Patient_ID}_{Scan visit}";
-    rr:class omet:ScanVisit;
+    rr:class omet:Imaging_Scan_Visit;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [

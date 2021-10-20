@@ -280,79 +280,79 @@ met:URI_Patient_P989 a omet:Patient, owl:NamedIndividual;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P989" .
 
-met:URI_Visit_P005_2 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P005_2 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P005;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P005/2" .
 
-met:URI_Visit_P935_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P935_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P935;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelA>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P935/1" .
 
-met:URI_Visit_P973_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P973_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P973;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelA>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P973/1" .
 
-met:URI_Visit_P974_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P974_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P974;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P974/1" .
 
-met:URI_Visit_P975_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P975_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P975;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P975/1" .
 
-met:URI_Visit_P976_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P976_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P976;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P976/1" .
 
-met:URI_Visit_P977_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P977_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P977;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P977/1" .
 
-met:URI_Visit_P978_2 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P978_2 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P978;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P978/2" .
 
-met:URI_Visit_P979_1 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P979_1 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P979;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Siemens_ModelA>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P979/1" .
 
-met:URI_Visit_P979_2 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P979_2 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P979;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P979/2" .
 
-met:URI_Visit_P980_2 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P980_2 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P980;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P980/2" .
 
-met:URI_Visit_P981_2 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P981_2 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P981;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P981/2" .
 
-met:URI_Visit_P989_2 a omet:ScanVisit, owl:NamedIndividual;
+met:URI_Visit_P989_2 a omet:Imaging_Scan_Visit, owl:NamedIndividual;
   omet:isAttendedBy met:URI_Patient_P989;
   omet:usesScannerModel <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelB>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;

@@ -31,7 +31,7 @@ def query1(g,outfile):
     qres = g.query(
     """SELECT DISTINCT  ?patient_label ?visit_label ?sex ?age ?bmi ?livercT1  WHERE
                 {
-                 ?visit a omet:ScanVisit .
+                 ?visit a omet:Imaging_Scan_Visit .
                  ?visit rdfs:label ?visit_label .
                  ?visit omet:isAttendedBy ?patient .  
                  ?patient a ?Patient .
@@ -72,10 +72,10 @@ def query2(g,outfile):
     Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5% 
     '''    
     qres = g.query(
-    """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
+    """SELECT DISTINCT  ?patient_label ?visit_label  ?age ?bmi 
                         ?liverPDFF ?scanner_label ?fsval ?fsunit_label ?manf_label
             WHERE
-                {?visit a ?ScanVisit .
+                {?visit a ?Imaging_Scan_Visit .
                  ?visit rdfs:label ?visit_label .
                  ?visit omet:isAttendedBy ?patient . 
                  ?patient rdfs:label ?patient_label .
@@ -113,7 +113,7 @@ def query2(g,outfile):
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
        
-    header='"Visit","Patient","Sex","Age","BMI","liverPDFF","Scanner"\
+    header='"Patient","Visit","Age","BMI","liverPDFF","Scanner"\
             ,"Field Strength","Units","Manufacturer"'  
     outfile=outfile.replace("x", "2")       
     write_sparql(outfile,header,qres,1,1)  
@@ -125,10 +125,10 @@ def query3(g,outfile):
     cases where cT1 is above 800 ms but PDFF is below 10%
     '''    
     qres = g.query(
-    """SELECT DISTINCT  ?visit_label ?patient_label ?sex ?age ?bmi 
+    """SELECT DISTINCT  ?patient_label ?visit_label  ?age ?bmi 
                         ?livercT1 ?liverPDFF 
             WHERE
-                {?visit a ?ScanVisit .
+                {?visit a ?Imaging_Scan_Visit .
                  ?visit rdfs:label ?visit_label .
                  ?visit omet:isAttendedBy ?patient .  
                  ?patient a ?Patient .
@@ -157,7 +157,7 @@ def query3(g,outfile):
            
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
-    header='"Visit","Patient","Sex","Age","BMI","livercT1","liverPDFF"'  
+    header='"Visit","Patient","Age","BMI","livercT1","liverPDFF"'  
     outfile=outfile.replace("x", "3")       
     write_sparql(outfile,header,qres,1,1)   
         
@@ -186,8 +186,8 @@ def main():
     g.parse(inFile2, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n")  
     # SUPPRESS THIS WHILE TESTING
-    g.parse(inFile3, format="ttl")         
-    print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)       
+    #g.parse(inFile3, format="ttl")         
+    #print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)       
 
     # run SPARQL queries against the loaded graph
     query1(g,outfile)
