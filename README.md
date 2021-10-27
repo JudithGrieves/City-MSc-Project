@@ -1,5 +1,5 @@
 # A knowledge graph to orchestrate a multi-organ quantitative assessment of long Covid
-Code, data and other information.
+Ontologies, code, data and other information.
  
 The results and metrics produced in biomedical imaging clinical studies are an invaluable resource for 
 analysis and future work but only if they are well-structured and easily accessible. This project 
