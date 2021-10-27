@@ -59,9 +59,10 @@ This software consists of an ontology and code to create a knowledge graph based
 - Created with [Protégé Desktop](https://protege.stanford.edu/)  
 
 
-The ontology consists of two sub-ontologies:
+The ontology consists of three sub-ontologies:
 - metric : information about patients, visits and biomarkers and other data collected during a visit.
-- scanner : information about MRI scanner models, their features and manufacturers
+- scanner : information about MRI scanner models, their features and manufacturers.
+- liver : context of the liver and health assessment data featured in the metrics ontology - this ontology has no associated knowledge graph.
 
 ## Input data
 The input data required are two CSV files:
