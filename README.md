@@ -36,10 +36,15 @@ This software consists of an ontology and code to create a knowledge graph based
 
 ## Directories
 [data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) contains
-- metric_data.csv, scanner_data.csv : input CSV files for metric and scanner data
-- SPARQL query results : metric_data-sparql1/2/4.csv
-- Test comparison results : metric_data-compare.csv
+- input CSV files for metric and scanner data: metric_data.csv, scanner_data.csv
+- SPARQL query results: metric_data-sparql1/2/3.csv
+- system test query results: metric_data-replicate.csv
+- Test comparison results: metric_data-compare.csv
 - RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl
+[ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver) contains:
+- ontology extract file in 3 formats: .OWL, .XML, .TTL
+- Graph diagram of the ontology: .JPG 
+- Protege diagram format file: .graph
 
 ## Ontology
 - Current version (v0.1, October, 2021): [OWL format](https://raw.githubusercontent.com/JudithGrieves/City-MSc-Project/main/ontology/ont_metric.owl)  
