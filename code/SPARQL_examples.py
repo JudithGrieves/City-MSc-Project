@@ -29,7 +29,7 @@ def query1(g,outfile):
     all the Females with age above 40 and BMI above 25 that have liver cT1 above 800 ms    '''    
 
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?visit_label ?sex ?age ?bmi ?livercT1  WHERE
+    """SELECT DISTINCT  ?patient_label ?visit_label ?age ?sex_label ?bmi ?livercT1  WHERE
                 {
                  ?visit a omet:Imaging_Scan_Visit .
                  ?visit rdfs:label ?visit_label .
@@ -37,6 +37,7 @@ def query1(g,outfile):
                  ?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
+                  OPTIONAL {?sex  rdfs:label ?sex_label . }
                  {?PatientAge omet:isMetricForPatient  ?patient  .
                   ?PatientAge omet:isMetricForVisit  ?visit  .
                  ?PatientAge qudt:value ?age .
@@ -52,13 +53,14 @@ def query1(g,outfile):
                  ?cT1 qudt:value ?livercT1 .
                  ?cT1 a omet:LivercT1  .} 
                  FILTER( ?livercT1 > 800 )
+                 FILTER( ?sex_label = 'Female' )
                  } 
     ORDER BY ASC(?patient_label)  """)  
 
     print("Query 1 - Females with age above 40 and BMI above 25 that  \
             have liver cT1 above 800 ms:\n")   
        
-    header='"Patient","Visit","Sex","Age","BMI","livercT1"'  
+    header='"Patient","Visit","Age","Sex","BMI","livercT1"'  
     print("outfile",outfile)
     #outfile=str(outfile)
     outfile=outfile.replace("x", "1")       
@@ -72,7 +74,7 @@ def query2(g,outfile):
     Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5% 
     '''    
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?visit_label  ?age ?bmi 
+    """SELECT DISTINCT  ?patient_label ?visit_label  ?age ?sex_label ?bmi 
                         ?liverPDFF ?scanner_label ?fsval ?fsunit_label ?manf_label
             WHERE
                 {?visit a ?Imaging_Scan_Visit .
@@ -80,6 +82,7 @@ def query2(g,outfile):
                  ?visit omet:isAttendedBy ?patient . 
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
+                  OPTIONAL {?sex  rdfs:label ?sex_label . }
                  {?PatientAge omet:isMetricForPatient  ?patient  .
                   ?PatientAge omet:isMetricForVisit  ?visit  .
                  ?PatientAge qudt:value ?age .
@@ -113,7 +116,7 @@ def query2(g,outfile):
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
        
-    header='"Patient","Visit","Age","BMI","liverPDFF","Scanner"\
+    header='"Patient","Visit","Age","Sex","BMI","liverPDFF","Scanner"\
             ,"Field Strength","Units","Manufacturer"'  
     outfile=outfile.replace("x", "2")       
     write_sparql(outfile,header,qres,1,1)  
@@ -125,7 +128,7 @@ def query3(g,outfile):
     cases where cT1 is above 800 ms but PDFF is below 10%
     '''    
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label ?visit_label  ?age ?bmi 
+    """SELECT DISTINCT  ?patient_label ?visit_label  ?age ?sex_label ?bmi 
                         ?livercT1 ?liverPDFF 
             WHERE
                 {?visit a ?Imaging_Scan_Visit .
@@ -134,6 +137,7 @@ def query3(g,outfile):
                  ?patient a ?Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
+                  OPTIONAL {?sex  rdfs:label ?sex_label . }
                  {?PatientAge omet:isMetricForPatient  ?patient  .
                   ?PatientAge omet:isMetricForVisit  ?visit  .
                  ?PatientAge qudt:value ?age .
@@ -157,7 +161,7 @@ def query3(g,outfile):
            
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
-    header='"Visit","Patient","Age","BMI","livercT1","liverPDFF"'  
+    header='"Visit","Patient","Age","Sex","BMI","livercT1","liverPDFF"'  
     outfile=outfile.replace("x", "3")       
     write_sparql(outfile,header,qres,1,1)   
         
@@ -186,8 +190,14 @@ def main():
     g.parse(inFile2, format="ttl")         
     print("Loaded '" + str(len(g)) + "' triples.\n")  
     # SUPPRESS THIS WHILE TESTING
-    #g.parse(inFile3, format="ttl")         
-    #print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)       
+    g.parse(inFile3, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile3)     
+    
+    ont_dir = os.path.join(dirname(dirname(abspath(__file__))), 'ontology')
+    inFile4="ont_metric.ttl" 
+    inFile4 = os.path.join(ont_dir,inFile4)
+    g.parse(inFile4, format="ttl")         
+    print("Loaded '" + str(len(g)) + "' triples.\n",inFile4)      
 
     # run SPARQL queries against the loaded graph
     query1(g,outfile)

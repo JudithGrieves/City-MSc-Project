@@ -1,1 +1,2 @@
-"Patient","Visit","Age","BMI","liverPDFF","Scanner"            ,"Field Strength","Units","Manufacturer"
+"Patient","Visit","Age","Sex","BMI","liverPDFF","Scanner"            ,"Field Strength","Units","Manufacturer"
+P935,P935/1,25,Female,22.0,4.9,Siemens_ModelA,1.5,Tesla,Siemens,

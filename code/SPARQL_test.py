@@ -66,7 +66,7 @@ def query_all(g,outfile):
     # ?fsunit not in original TabularData sheet but included here to show 
     # that the scanner data is being picked up from a separate KG
     qres = g.query(
-    """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex ?bmi  \
+    """SELECT DISTINCT  ?patient_label   ?visit_label ?age  ?sex_label ?bmi  \
                         ?livercT1   ?liverPDFF ?liverT2Star ?scanner_label \
                           ?fsval ?fsunitlabel  ?manf_label \
                        WHERE
@@ -77,7 +77,7 @@ def query_all(g,outfile):
                  ?patient a omet:Patient .
                  ?patient rdfs:label ?patient_label .
                  ?patient omet:hasPatientSex ?sex . 
-                  OPTIONAL {?sex  rdfs:label ?label . }
+                  OPTIONAL {?sex  rdfs:label ?sex_label . }
                  ?visit omet:usesScannerModel  ?scanner  .
                  ?scanner rdfs:label ?scanner_label .
                  ?scanner a oscn:MRIScannerModel .

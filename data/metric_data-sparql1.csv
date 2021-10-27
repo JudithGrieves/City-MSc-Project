@@ -1,7 +1,5 @@
-"Patient","Visit","Sex","Age","BMI","livercT1"
-P976,P976/1,http://www.perspectum.com/ontology/metric/Female,41,32.5,819.0,
-P977,P977/1,http://www.perspectum.com/ontology/metric/Female,42,34.0,828.0,
-P978,P978/2,http://www.perspectum.com/ontology/metric/Male,43,35.5,837.0,
-P979,P979/2,http://www.perspectum.com/ontology/metric/Female,44,37.0,846.0,
-P981,P981/2,http://www.perspectum.com/ontology/metric/Male,46,40.0,864.0,
-P989,P989/2,http://www.perspectum.com/ontology/metric/Female,47,41.5,873.0,
+"Patient","Visit","Age","Sex","BMI","livercT1"
+P976,P976/1,41,Female,32.5,819.0,
+P977,P977/1,42,Female,34.0,828.0,
+P979,P979/2,44,Female,37.0,846.0,
+P989,P989/2,47,Female,41.5,873.0,

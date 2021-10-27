@@ -7,8 +7,8 @@
 @prefix : <http://example.org/rules/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix oscn: <http://www.perspectum.com/ontology/scanner/> .
-@prefix scn: <http://www.perspectum.com/resources/scanner/> .
+@prefix oscn: <http://www.perspectum.com/ontology/scanner#> .
+@prefix scn: <http://www.perspectum.com/resources/scanner#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 

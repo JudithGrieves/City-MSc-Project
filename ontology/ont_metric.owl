@@ -12,7 +12,7 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric"/>
+    <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric#"/>
     <Prefix name="oscn" IRI="http://www.perspectum.com/ontology/scanner#"/>
     <Prefix name="qudt" IRI="http://qudt.org/schema/qudt"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
@@ -43,7 +43,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 19/7/2021 1.2  Remove FieldStrengthValue/Unit &amp; isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
 25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.
-20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology</Literal>
+20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology
+27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
@@ -55,34 +56,34 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LiverPDFF"/>
+        <Class IRI="/LiverPDFF"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LiverT2Star"/>
+        <Class IRI="/LiverT2Star"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LivercT1"/>
+        <Class IRI="/LivercT1"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Patient"/>
+        <Class IRI="/Patient"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PatientAge"/>
+        <Class IRI="/PatientAge"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PatientBMI"/>
+        <Class IRI="/PatientBMI"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PatientMetric"/>
+        <Class IRI="/PatientMetric"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PatientSex"/>
+        <Class IRI="/PatientSex"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ScanMetric"/>
+        <Class IRI="/ScanMetric"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="oscn:MRIScannerModel"/>
@@ -97,67 +98,67 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#attendsVisit"/>
+        <ObjectProperty IRI="/attendsVisit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+        <ObjectProperty IRI="/hasLiverCT1Unit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+        <ObjectProperty IRI="/hasLiverPDFFUnit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
+        <ObjectProperty IRI="/hasLiverT2StarUnit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasPatientMetric"/>
+        <ObjectProperty IRI="/hasPatientMetric"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasPatientSex"/>
+        <ObjectProperty IRI="/hasPatientSex"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasVisitMetric"/>
+        <ObjectProperty IRI="/hasVisitMetric"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isAttendedBy"/>
+        <ObjectProperty IRI="/isAttendedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isMetricForPatient"/>
+        <ObjectProperty IRI="/isMetricForPatient"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isMetricForVisit"/>
+        <ObjectProperty IRI="/isMetricForVisit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usedInVisit"/>
+        <ObjectProperty IRI="/usedInVisit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesScannerModel"/>
+        <ObjectProperty IRI="/usesScannerModel"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#liverCT1Value"/>
+        <DataProperty IRI="/liverCT1Value"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#liverPDFFValue"/>
+        <DataProperty IRI="/liverPDFFValue"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#liverT2StarValue"/>
+        <DataProperty IRI="/liverT2StarValue"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Female"/>
+        <NamedIndividual IRI="/Female"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Male"/>
+        <NamedIndividual IRI="/Male"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#semanticGroup"/>
+        <AnnotationProperty IRI="/semanticGroup"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#semanticType"/>
+        <AnnotationProperty IRI="/semanticType"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#semanticTypeID"/>
+        <AnnotationProperty IRI="/semanticTypeID"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
@@ -166,10 +167,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <AnnotationProperty abbreviatedIRI="skos:example"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="#PatientSex"/>
+        <Class IRI="/PatientSex"/>
         <ObjectOneOf>
-            <NamedIndividual IRI="#Female"/>
-            <NamedIndividual IRI="#Male"/>
+            <NamedIndividual IRI="/Female"/>
+            <NamedIndividual IRI="/Male"/>
         </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
@@ -177,36 +178,36 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LiverPDFF"/>
-        <Class IRI="#ScanMetric"/>
+        <Class IRI="/LiverPDFF"/>
+        <Class IRI="/ScanMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LiverT2Star"/>
-        <Class IRI="#ScanMetric"/>
+        <Class IRI="/LiverT2Star"/>
+        <Class IRI="/ScanMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LivercT1"/>
-        <Class IRI="#ScanMetric"/>
+        <Class IRI="/LivercT1"/>
+        <Class IRI="/ScanMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PatientAge"/>
-        <Class IRI="#PatientMetric"/>
+        <Class IRI="/PatientAge"/>
+        <Class IRI="/PatientMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PatientBMI"/>
-        <Class IRI="#PatientMetric"/>
+        <Class IRI="/PatientBMI"/>
+        <Class IRI="/PatientMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PatientMetric"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/PatientMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ScanMetric"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/ScanMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
@@ -218,7 +219,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
-        <Class IRI="#Patient"/>
+        <Class IRI="/Patient"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Quantity"/>
@@ -230,7 +231,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
-        <Class IRI="#Patient"/>
+        <Class IRI="/Patient"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://qudt.org/schema/qudt/Unit"/>
@@ -241,39 +242,39 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Patient"/>
-        <Class IRI="#PatientSex"/>
+        <Class IRI="/Patient"/>
+        <Class IRI="/PatientSex"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Patient"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/Patient"/>
+        <Class IRI="/QuantitativeMetric"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Patient"/>
+        <Class IRI="/Patient"/>
         <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Patient"/>
+        <Class IRI="/Patient"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#PatientSex"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/PatientSex"/>
+        <Class IRI="/QuantitativeMetric"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#PatientSex"/>
+        <Class IRI="/PatientSex"/>
         <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#PatientSex"/>
+        <Class IRI="/PatientSex"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
         <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -285,146 +286,146 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Class abbreviatedIRI="CMR-QA:Medical_Imaging_Study"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+        <ObjectProperty IRI="/hasLiverCT1Unit"/>
         <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+        <ObjectProperty IRI="/hasLiverPDFFUnit"/>
         <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
+        <ObjectProperty IRI="/hasLiverT2StarUnit"/>
         <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#attendsVisit"/>
-        <ObjectProperty IRI="#isAttendedBy"/>
+        <ObjectProperty IRI="/attendsVisit"/>
+        <ObjectProperty IRI="/isAttendedBy"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasPatientMetric"/>
-        <ObjectProperty IRI="#isMetricForPatient"/>
+        <ObjectProperty IRI="/hasPatientMetric"/>
+        <ObjectProperty IRI="/isMetricForPatient"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasVisitMetric"/>
-        <ObjectProperty IRI="#isMetricForVisit"/>
+        <ObjectProperty IRI="/hasVisitMetric"/>
+        <ObjectProperty IRI="/isMetricForVisit"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#usedInVisit"/>
-        <ObjectProperty IRI="#usesScannerModel"/>
+        <ObjectProperty IRI="/usedInVisit"/>
+        <ObjectProperty IRI="/usesScannerModel"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="http://qudt.org/schema/qudt/unit"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#attendsVisit"/>
-        <Class IRI="#Patient"/>
+        <ObjectProperty IRI="/attendsVisit"/>
+        <Class IRI="/Patient"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasLiverCT1Unit"/>
-        <Class IRI="#LivercT1"/>
+        <ObjectProperty IRI="/hasLiverCT1Unit"/>
+        <Class IRI="/LivercT1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
-        <Class IRI="#LiverPDFF"/>
+        <ObjectProperty IRI="/hasLiverPDFFUnit"/>
+        <Class IRI="/LiverPDFF"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
-        <Class IRI="#LiverT2Star"/>
+        <ObjectProperty IRI="/hasLiverT2StarUnit"/>
+        <Class IRI="/LiverT2Star"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPatientMetric"/>
-        <Class IRI="#Patient"/>
+        <ObjectProperty IRI="/hasPatientMetric"/>
+        <Class IRI="/Patient"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPatientSex"/>
-        <Class IRI="#Patient"/>
+        <ObjectProperty IRI="/hasPatientSex"/>
+        <Class IRI="/Patient"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasVisitMetric"/>
+        <ObjectProperty IRI="/hasVisitMetric"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isAttendedBy"/>
+        <ObjectProperty IRI="/isAttendedBy"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usedInVisit"/>
+        <ObjectProperty IRI="/usedInVisit"/>
         <Class abbreviatedIRI="oscn:MRIScannerModel"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#attendsVisit"/>
+        <ObjectProperty IRI="/attendsVisit"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasLiverCT1Unit"/>
+        <ObjectProperty IRI="/hasLiverCT1Unit"/>
         <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasLiverPDFFUnit"/>
+        <ObjectProperty IRI="/hasLiverPDFFUnit"/>
         <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasLiverT2StarUnit"/>
+        <ObjectProperty IRI="/hasLiverT2StarUnit"/>
         <Class IRI="http://www.perspectum.com/ontology/MetricUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPatientMetric"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <ObjectProperty IRI="/hasPatientMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPatientSex"/>
-        <Class IRI="#PatientSex"/>
+        <ObjectProperty IRI="/hasPatientSex"/>
+        <Class IRI="/PatientSex"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasVisitMetric"/>
-        <Class IRI="#QuantitativeMetric"/>
+        <ObjectProperty IRI="/hasVisitMetric"/>
+        <Class IRI="/QuantitativeMetric"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isAttendedBy"/>
-        <Class IRI="#Patient"/>
+        <ObjectProperty IRI="/isAttendedBy"/>
+        <Class IRI="/Patient"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usedInVisit"/>
+        <ObjectProperty IRI="/usedInVisit"/>
         <Class abbreviatedIRI="CMR-QA:Imaging_Scan_Visit"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
-        <DataProperty IRI="#liverCT1Value"/>
+        <DataProperty IRI="/liverCT1Value"/>
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#liverPDFFValue"/>
+        <DataProperty IRI="/liverPDFFValue"/>
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#liverT2StarValue"/>
+        <DataProperty IRI="/liverT2StarValue"/>
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="http://qudt.org/schema/qudt/value"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
-        <DataProperty IRI="#liverCT1Value"/>
-        <Class IRI="#LivercT1"/>
+        <DataProperty IRI="/liverCT1Value"/>
+        <Class IRI="/LivercT1"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#liverPDFFValue"/>
-        <Class IRI="#LiverPDFF"/>
+        <DataProperty IRI="/liverPDFFValue"/>
+        <Class IRI="/LiverPDFF"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#liverT2StarValue"/>
-        <Class IRI="#LiverT2Star"/>
+        <DataProperty IRI="/liverT2StarValue"/>
+        <Class IRI="/LiverT2Star"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#liverCT1Value"/>
+        <DataProperty IRI="/liverCT1Value"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#liverPDFFValue"/>
+        <DataProperty IRI="/liverPDFFValue"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#liverT2StarValue"/>
+        <DataProperty IRI="/liverT2StarValue"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <AnnotationAssertion>
@@ -504,474 +505,474 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#Female</IRI>
+        <IRI>/Female</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Female</IRI>
-        <Literal>F</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Female</IRI>
+        <IRI>/Female</IRI>
         <Literal>Female</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>/Female</IRI>
+        <Literal>F</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#LiverPDFF</IRI>
+        <IRI>/LiverPDFF</IRI>
         <Literal>Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
 (https://perspectum.com/media/1361/understanding-pdff.pdf)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#LiverPDFF</IRI>
+        <IRI>/LiverPDFF</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#LiverPDFF</IRI>
+        <IRI>/LiverPDFF</IRI>
         <Literal>liver PDFF</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#LiverPDFF</IRI>
+        <IRI>/LiverPDFF</IRI>
         <Literal>PDFF</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:example"/>
-        <IRI>#LiverPDFF</IRI>
+        <IRI>/LiverPDFF</IRI>
         <Literal>5%, 7.5%, etc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#LiverT2Star</IRI>
+        <IRI>/LiverT2Star</IRI>
         <Literal>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
 T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#LiverT2Star</IRI>
+        <IRI>/LiverT2Star</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#LiverT2Star</IRI>
+        <IRI>/LiverT2Star</IRI>
         <Literal>liver T2star</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#LiverT2Star</IRI>
+        <IRI>/LiverT2Star</IRI>
         <Literal>T2*</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:example"/>
-        <IRI>#LiverT2Star</IRI>
+        <IRI>/LiverT2Star</IRI>
         <Literal>32.4 ms, 25 ms, etc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#LivercT1</IRI>
+        <IRI>/LivercT1</IRI>
         <Literal>Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
 T1 measurements differ depending on magnetic field strength and MR manufacturer.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#LivercT1</IRI>
+        <IRI>/LivercT1</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#LivercT1</IRI>
+        <IRI>/LivercT1</IRI>
         <Literal>liver cT1</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#LivercT1</IRI>
+        <IRI>/LivercT1</IRI>
         <Literal>cT1</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:example"/>
-        <IRI>#LivercT1</IRI>
+        <IRI>/LivercT1</IRI>
         <Literal>712 ms, 800 ms, etc</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#Male</IRI>
+        <IRI>/Male</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Male</IRI>
-        <Literal>M</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Male</IRI>
+        <IRI>/Male</IRI>
         <Literal>Male</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticGroup"/>
-        <IRI>#Patient</IRI>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>/Male</IRI>
+        <Literal>M</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="/semanticGroup"/>
+        <IRI>/Patient</IRI>
         <Literal>LIVB</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticType"/>
-        <IRI>#Patient</IRI>
+        <AnnotationProperty IRI="/semanticType"/>
+        <IRI>/Patient</IRI>
         <Literal>Human</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticTypeID"/>
-        <IRI>#Patient</IRI>
+        <AnnotationProperty IRI="/semanticTypeID"/>
+        <IRI>/Patient</IRI>
         <Literal>T016</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Patient</IRI>
+        <IRI>/Patient</IRI>
         <Literal>A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#Patient</IRI>
+        <IRI>/Patient</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Patient</IRI>
+        <IRI>/Patient</IRI>
         <Literal>patient</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:example"/>
-        <IRI>#Patient</IRI>
+        <IRI>/Patient</IRI>
         <Literal>P005, P061</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PatientAge</IRI>
+        <IRI>/PatientAge</IRI>
         <Literal>The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#PatientAge</IRI>
+        <IRI>/PatientAge</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PatientAge</IRI>
+        <IRI>/PatientAge</IRI>
         <Literal>patient age</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#PatientAge</IRI>
+        <IRI>/PatientAge</IRI>
         <Literal>age</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:example"/>
-        <IRI>#PatientAge</IRI>
+        <IRI>/PatientAge</IRI>
         <Literal>35, 44, 60</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PatientBMI</IRI>
+        <IRI>/PatientBMI</IRI>
         <Literal>The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#PatientBMI</IRI>
+        <IRI>/PatientBMI</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PatientBMI</IRI>
+        <IRI>/PatientBMI</IRI>
         <Literal>patient BMI</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#PatientBMI</IRI>
+        <IRI>/PatientBMI</IRI>
         <Literal>BMI</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:example"/>
-        <IRI>#PatientBMI</IRI>
+        <IRI>/PatientBMI</IRI>
         <Literal>25.5, 32.0, 27</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PatientMetric</IRI>
+        <IRI>/PatientMetric</IRI>
         <Literal>A quantitative metric gathered for the study and related to a patient</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#PatientMetric</IRI>
+        <IRI>/PatientMetric</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PatientMetric</IRI>
+        <IRI>/PatientMetric</IRI>
         <Literal>patient metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#PatientMetric</IRI>
+        <IRI>/PatientMetric</IRI>
         <Literal>metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PatientSex</IRI>
+        <IRI>/PatientSex</IRI>
         <Literal>The biological sex of a patient</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#PatientSex</IRI>
+        <IRI>/PatientSex</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PatientSex</IRI>
+        <IRI>/PatientSex</IRI>
         <Literal>patient sex</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#QuantitativeMetric</IRI>
+        <IRI>/QuantitativeMetric</IRI>
         <Literal>A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#QuantitativeMetric</IRI>
+        <IRI>/QuantitativeMetric</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#QuantitativeMetric</IRI>
+        <IRI>/QuantitativeMetric</IRI>
         <Literal>quantitative metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
-        <IRI>#QuantitativeMetric</IRI>
+        <IRI>/QuantitativeMetric</IRI>
         <Literal>metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#ScanMetric</IRI>
+        <IRI>/ScanMetric</IRI>
         <Literal>A quantitative metric gathered for the study and derived from an MRI scan.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#ScanMetric</IRI>
+        <IRI>/ScanMetric</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ScanMetric</IRI>
+        <IRI>/ScanMetric</IRI>
         <Literal>scan metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#attendsVisit</IRI>
+        <IRI>/attendsVisit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#attendsVisit</IRI>
+        <IRI>/attendsVisit</IRI>
         <Literal>attends visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasLiverCT1Unit</IRI>
+        <IRI>/hasLiverCT1Unit</IRI>
         <Literal>liver CT1 unit of measure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#hasLiverCT1Unit</IRI>
+        <IRI>/hasLiverCT1Unit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasLiverCT1Unit</IRI>
+        <IRI>/hasLiverCT1Unit</IRI>
         <Literal>liver CT1 unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasLiverPDFFUnit</IRI>
+        <IRI>/hasLiverPDFFUnit</IRI>
         <Literal>Liver PDFF unit of measure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#hasLiverPDFFUnit</IRI>
+        <IRI>/hasLiverPDFFUnit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasLiverPDFFUnit</IRI>
+        <IRI>/hasLiverPDFFUnit</IRI>
         <Literal>Liver PDFF unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasLiverT2StarUnit</IRI>
+        <IRI>/hasLiverT2StarUnit</IRI>
         <Literal>liver T2* unit of measure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#hasLiverT2StarUnit</IRI>
+        <IRI>/hasLiverT2StarUnit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasLiverT2StarUnit</IRI>
+        <IRI>/hasLiverT2StarUnit</IRI>
         <Literal>liver T2* unit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#hasPatientMetric</IRI>
+        <IRI>/hasPatientMetric</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasPatientMetric</IRI>
+        <IRI>/hasPatientMetric</IRI>
         <Literal>has patient metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#hasPatientSex</IRI>
+        <IRI>/hasPatientSex</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasPatientSex</IRI>
+        <IRI>/hasPatientSex</IRI>
         <Literal>has patient sex</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#hasVisitMetric</IRI>
+        <IRI>/hasVisitMetric</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasVisitMetric</IRI>
+        <IRI>/hasVisitMetric</IRI>
         <Literal>has visit metric</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#isAttendedBy</IRI>
+        <IRI>/isAttendedBy</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isAttendedBy</IRI>
+        <IRI>/isAttendedBy</IRI>
         <Literal>is attended by</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#isMetricForPatient</IRI>
+        <IRI>/isMetricForPatient</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isMetricForPatient</IRI>
+        <IRI>/isMetricForPatient</IRI>
         <Literal>is metric for patient</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#isMetricForVisit</IRI>
+        <IRI>/isMetricForVisit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isMetricForVisit</IRI>
+        <IRI>/isMetricForVisit</IRI>
         <Literal>is metric for visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#liverCT1Value</IRI>
+        <IRI>/liverCT1Value</IRI>
         <IRI>http://perspectum.com/ontology/metric</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#liverCT1Value</IRI>
+        <IRI>/liverCT1Value</IRI>
         <Literal>liver CT1 value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#liverPDFFValue</IRI>
+        <IRI>/liverPDFFValue</IRI>
         <IRI>http://perspectum.com/ontology/metric</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#liverPDFFValue</IRI>
+        <IRI>/liverPDFFValue</IRI>
         <Literal>Liver PDFF value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#liverT2StarValue</IRI>
+        <IRI>/liverT2StarValue</IRI>
         <IRI>http://perspectum.com/ontology/metric</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#liverT2StarValue</IRI>
+        <IRI>/liverT2StarValue</IRI>
         <Literal>Liver T2* value</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#semanticGroup</IRI>
+        <IRI>/semanticGroup</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#semanticGroup</IRI>
+        <IRI>/semanticGroup</IRI>
         <Literal>semantic group</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#semanticType</IRI>
+        <IRI>/semanticType</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#semanticType</IRI>
+        <IRI>/semanticType</IRI>
         <Literal>semantic type</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#semanticTypeID</IRI>
+        <IRI>/semanticTypeID</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#semanticTypeID</IRI>
+        <IRI>/semanticTypeID</IRI>
         <Literal>semantic type id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#usedInVisit</IRI>
+        <IRI>/usedInVisit</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#usedInVisit</IRI>
+        <IRI>/usedInVisit</IRI>
         <Literal>used in visit</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#usesScannerModel</IRI>
+        <IRI>/usesScannerModel</IRI>
         <IRI></IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#usesScannerModel</IRI>
+        <IRI>/usesScannerModel</IRI>
         <Literal>uses scanner model</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticGroup"/>
+        <AnnotationProperty IRI="/semanticGroup"/>
         <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>DEVI</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticType"/>
+        <AnnotationProperty IRI="/semanticType"/>
         <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>Medical Device</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticTypeID"/>
+        <AnnotationProperty IRI="/semanticTypeID"/>
         <AbbreviatedIRI>oscn:MRIScannerModel</AbbreviatedIRI>
         <Literal>T074</Literal>
     </AnnotationAssertion>
@@ -1029,12 +1030,12 @@ This class has been reused from the CMR-QA ontology.</Literal>
         <Literal>P005/1, P061/2</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticGroup"/>
+        <AnnotationProperty IRI="/semanticGroup"/>
         <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>PROC</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#semanticType"/>
+        <AnnotationProperty IRI="/semanticType"/>
         <AbbreviatedIRI>CMR-QA:Medical_Imaging_Study</AbbreviatedIRI>
         <Literal>Research Activity</Literal>
     </AnnotationAssertion>

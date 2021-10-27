@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.perspectum.com/ontology/scanner"
+<rdf:RDF xmlns="http://www.perspectum.com/ontology/scanner#"
      xml:base="http://www.perspectum.com/ontology/scanner"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -24,7 +24,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 7/7/2021 1.0  First version
 19/7/2021 1.1 Add ScannerFieldStrength entity
 25/8/2021 1.2 Add comment annotations
-14/10/2021 1.3 Add skos:altLabels; add missing comments</owl:versionInfo>
+14/10/2021 1.3 Add skos:altLabels; add missing comments
+27/10/2021 1.4 Amend scanner prefixes to end in #</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -290,9 +291,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#MRIScannerModel">
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#ScannerManufacturer"/>
-        <oscn:semanticGroup>DEVI</oscn:semanticGroup>
-        <oscn:semanticType>Medical Device</oscn:semanticType>
-        <oscn:semanticTypeID>T074</oscn:semanticTypeID>
+        <semanticGroup>DEVI</semanticGroup>
+        <semanticType>Medical Device</semanticType>
+        <semanticTypeID>T074</semanticTypeID>
         <rdfs:comment>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>

@@ -3,7 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix omet: <http://www.perspectum.com/ontology/metric> .
+@prefix omet: <http://www.perspectum.com/ontology/metric#> .
 @prefix oscn: <http://www.perspectum.com/ontology/scanner#> .
 @prefix qudt: <http://qudt.org/schema/qudt> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -27,28 +27,29 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 19/7/2021 1.2  Remove FieldStrengthValue/Unit & isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
 25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.
-20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology""" .
+20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology
+27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.""" .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
-###  http://www.perspectum.com/ontology/metric#semanticGroup
-:semanticGroup rdf:type owl:AnnotationProperty ;
-               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-               rdfs:label "semantic group" .
+###  http://www.perspectum.com/ontology/metric/semanticGroup
+<http://www.perspectum.com/ontology/metric/semanticGroup> rdf:type owl:AnnotationProperty ;
+                                                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                          rdfs:label "semantic group" .
 
 
-###  http://www.perspectum.com/ontology/metric#semanticType
-:semanticType rdf:type owl:AnnotationProperty ;
-              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-              rdfs:label "semantic type" .
+###  http://www.perspectum.com/ontology/metric/semanticType
+<http://www.perspectum.com/ontology/metric/semanticType> rdf:type owl:AnnotationProperty ;
+                                                         rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                         rdfs:label "semantic type" .
 
 
-###  http://www.perspectum.com/ontology/metric#semanticTypeID
-:semanticTypeID rdf:type owl:AnnotationProperty ;
-                rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                rdfs:label "semantic type id" .
+###  http://www.perspectum.com/ontology/metric/semanticTypeID
+<http://www.perspectum.com/ontology/metric/semanticTypeID> rdf:type owl:AnnotationProperty ;
+                                                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                           rdfs:label "semantic type id" .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -70,110 +71,110 @@ skos:example rdf:type owl:AnnotationProperty ;
 
 ###  http://qudt.org/schema/qudt/unit
 <http://qudt.org/schema/qudt/unit> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain :QuantitativeMetric ;
+                                   rdfs:domain <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ;
                                    rdfs:comment "unit of measure class from QUDT ontology." ;
                                    rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
                                    rdfs:label "unit of measure" .
 
 
-###  http://www.perspectum.com/ontology/metric#attendsVisit
-:attendsVisit rdf:type owl:ObjectProperty ;
-              owl:inverseOf :isAttendedBy ;
-              rdfs:domain :Patient ;
-              rdfs:range CMR-QA:Imaging_Scan_Visit ;
-              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-              rdfs:label "attends visit" .
+###  http://www.perspectum.com/ontology/metric/attendsVisit
+<http://www.perspectum.com/ontology/metric/attendsVisit> rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf <http://www.perspectum.com/ontology/metric/isAttendedBy> ;
+                                                         rdfs:domain <http://www.perspectum.com/ontology/metric/Patient> ;
+                                                         rdfs:range CMR-QA:Imaging_Scan_Visit ;
+                                                         rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                         rdfs:label "attends visit" .
 
 
-###  http://www.perspectum.com/ontology/metric#hasLiverCT1Unit
-:hasLiverCT1Unit rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <http://qudt.org/schema/qudt/unit> ;
-                 rdfs:domain :LivercT1 ;
-                 rdfs:range <http://www.perspectum.com/ontology/MetricUnit> ;
-                 rdfs:comment "liver CT1 unit of measure" ;
-                 rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                 rdfs:label "liver CT1 unit" .
+###  http://www.perspectum.com/ontology/metric/hasLiverCT1Unit
+<http://www.perspectum.com/ontology/metric/hasLiverCT1Unit> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://qudt.org/schema/qudt/unit> ;
+                                                            rdfs:domain <http://www.perspectum.com/ontology/metric/LivercT1> ;
+                                                            rdfs:range <http://www.perspectum.com/ontology/MetricUnit> ;
+                                                            rdfs:comment "liver CT1 unit of measure" ;
+                                                            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                            rdfs:label "liver CT1 unit" .
 
 
-###  http://www.perspectum.com/ontology/metric#hasLiverPDFFUnit
-:hasLiverPDFFUnit rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <http://qudt.org/schema/qudt/unit> ;
-                  rdfs:domain :LiverPDFF ;
-                  rdfs:range <http://www.perspectum.com/ontology/MetricUnit> ;
-                  rdfs:comment "Liver PDFF unit of measure" ;
-                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                  rdfs:label "Liver PDFF unit" .
+###  http://www.perspectum.com/ontology/metric/hasLiverPDFFUnit
+<http://www.perspectum.com/ontology/metric/hasLiverPDFFUnit> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <http://qudt.org/schema/qudt/unit> ;
+                                                             rdfs:domain <http://www.perspectum.com/ontology/metric/LiverPDFF> ;
+                                                             rdfs:range <http://www.perspectum.com/ontology/MetricUnit> ;
+                                                             rdfs:comment "Liver PDFF unit of measure" ;
+                                                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                             rdfs:label "Liver PDFF unit" .
 
 
-###  http://www.perspectum.com/ontology/metric#hasLiverT2StarUnit
-:hasLiverT2StarUnit rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf <http://qudt.org/schema/qudt/unit> ;
-                    rdfs:domain :LiverT2Star ;
-                    rdfs:range <http://www.perspectum.com/ontology/MetricUnit> ;
-                    rdfs:comment "liver T2* unit of measure" ;
-                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                    rdfs:label "liver T2* unit" .
+###  http://www.perspectum.com/ontology/metric/hasLiverT2StarUnit
+<http://www.perspectum.com/ontology/metric/hasLiverT2StarUnit> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <http://qudt.org/schema/qudt/unit> ;
+                                                               rdfs:domain <http://www.perspectum.com/ontology/metric/LiverT2Star> ;
+                                                               rdfs:range <http://www.perspectum.com/ontology/MetricUnit> ;
+                                                               rdfs:comment "liver T2* unit of measure" ;
+                                                               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                               rdfs:label "liver T2* unit" .
 
 
-###  http://www.perspectum.com/ontology/metric#hasPatientMetric
-:hasPatientMetric rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :isMetricForPatient ;
-                  rdfs:domain :Patient ;
-                  rdfs:range :QuantitativeMetric ;
-                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                  rdfs:label "has patient metric" .
+###  http://www.perspectum.com/ontology/metric/hasPatientMetric
+<http://www.perspectum.com/ontology/metric/hasPatientMetric> rdf:type owl:ObjectProperty ;
+                                                             owl:inverseOf <http://www.perspectum.com/ontology/metric/isMetricForPatient> ;
+                                                             rdfs:domain <http://www.perspectum.com/ontology/metric/Patient> ;
+                                                             rdfs:range <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ;
+                                                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                             rdfs:label "has patient metric" .
 
 
-###  http://www.perspectum.com/ontology/metric#hasPatientSex
-:hasPatientSex rdf:type owl:ObjectProperty ;
-               rdfs:domain :Patient ;
-               rdfs:range :PatientSex ;
-               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-               rdfs:label "has patient sex" .
+###  http://www.perspectum.com/ontology/metric/hasPatientSex
+<http://www.perspectum.com/ontology/metric/hasPatientSex> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://www.perspectum.com/ontology/metric/Patient> ;
+                                                          rdfs:range <http://www.perspectum.com/ontology/metric/PatientSex> ;
+                                                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                          rdfs:label "has patient sex" .
 
 
-###  http://www.perspectum.com/ontology/metric#hasVisitMetric
-:hasVisitMetric rdf:type owl:ObjectProperty ;
-                owl:inverseOf :isMetricForVisit ;
-                rdfs:domain CMR-QA:Imaging_Scan_Visit ;
-                rdfs:range :QuantitativeMetric ;
-                rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                rdfs:label "has visit metric" .
+###  http://www.perspectum.com/ontology/metric/hasVisitMetric
+<http://www.perspectum.com/ontology/metric/hasVisitMetric> rdf:type owl:ObjectProperty ;
+                                                           owl:inverseOf <http://www.perspectum.com/ontology/metric/isMetricForVisit> ;
+                                                           rdfs:domain CMR-QA:Imaging_Scan_Visit ;
+                                                           rdfs:range <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ;
+                                                           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                           rdfs:label "has visit metric" .
 
 
-###  http://www.perspectum.com/ontology/metric#isAttendedBy
-:isAttendedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain CMR-QA:Imaging_Scan_Visit ;
-              rdfs:range :Patient ;
-              rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-              rdfs:label "is attended by" .
+###  http://www.perspectum.com/ontology/metric/isAttendedBy
+<http://www.perspectum.com/ontology/metric/isAttendedBy> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain CMR-QA:Imaging_Scan_Visit ;
+                                                         rdfs:range <http://www.perspectum.com/ontology/metric/Patient> ;
+                                                         rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                         rdfs:label "is attended by" .
 
 
-###  http://www.perspectum.com/ontology/metric#isMetricForPatient
-:isMetricForPatient rdf:type owl:ObjectProperty ;
-                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                    rdfs:label "is metric for patient" .
+###  http://www.perspectum.com/ontology/metric/isMetricForPatient
+<http://www.perspectum.com/ontology/metric/isMetricForPatient> rdf:type owl:ObjectProperty ;
+                                                               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                               rdfs:label "is metric for patient" .
 
 
-###  http://www.perspectum.com/ontology/metric#isMetricForVisit
-:isMetricForVisit rdf:type owl:ObjectProperty ;
-                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                  rdfs:label "is metric for visit" .
+###  http://www.perspectum.com/ontology/metric/isMetricForVisit
+<http://www.perspectum.com/ontology/metric/isMetricForVisit> rdf:type owl:ObjectProperty ;
+                                                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                             rdfs:label "is metric for visit" .
 
 
-###  http://www.perspectum.com/ontology/metric#usedInVisit
-:usedInVisit rdf:type owl:ObjectProperty ;
-             owl:inverseOf :usesScannerModel ;
-             rdfs:domain oscn:MRIScannerModel ;
-             rdfs:range CMR-QA:Imaging_Scan_Visit ;
-             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-             rdfs:label "used in visit" .
+###  http://www.perspectum.com/ontology/metric/usedInVisit
+<http://www.perspectum.com/ontology/metric/usedInVisit> rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf <http://www.perspectum.com/ontology/metric/usesScannerModel> ;
+                                                        rdfs:domain oscn:MRIScannerModel ;
+                                                        rdfs:range CMR-QA:Imaging_Scan_Visit ;
+                                                        rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                        rdfs:label "used in visit" .
 
 
-###  http://www.perspectum.com/ontology/metric#usesScannerModel
-:usesScannerModel rdf:type owl:ObjectProperty ;
-                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                  rdfs:label "uses scanner model" .
+###  http://www.perspectum.com/ontology/metric/usesScannerModel
+<http://www.perspectum.com/ontology/metric/usesScannerModel> rdf:type owl:ObjectProperty ;
+                                                             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                             rdfs:label "uses scanner model" .
 
 
 #################################################################
@@ -188,31 +189,31 @@ skos:example rdf:type owl:AnnotationProperty ;
                                     rdfs:label "value" .
 
 
-###  http://www.perspectum.com/ontology/metric#liverCT1Value
-:liverCT1Value rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
-               rdfs:domain :LivercT1 ;
-               rdfs:range xsd:double ;
-               rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
-               rdfs:label "liver CT1 value" .
+###  http://www.perspectum.com/ontology/metric/liverCT1Value
+<http://www.perspectum.com/ontology/metric/liverCT1Value> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
+                                                          rdfs:domain <http://www.perspectum.com/ontology/metric/LivercT1> ;
+                                                          rdfs:range xsd:double ;
+                                                          rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
+                                                          rdfs:label "liver CT1 value" .
 
 
-###  http://www.perspectum.com/ontology/metric#liverPDFFValue
-:liverPDFFValue rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
-                rdfs:domain :LiverPDFF ;
-                rdfs:range xsd:double ;
-                rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
-                rdfs:label "Liver PDFF value" .
+###  http://www.perspectum.com/ontology/metric/liverPDFFValue
+<http://www.perspectum.com/ontology/metric/liverPDFFValue> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
+                                                           rdfs:domain <http://www.perspectum.com/ontology/metric/LiverPDFF> ;
+                                                           rdfs:range xsd:double ;
+                                                           rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
+                                                           rdfs:label "Liver PDFF value" .
 
 
-###  http://www.perspectum.com/ontology/metric#liverT2StarValue
-:liverT2StarValue rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
-                  rdfs:domain :LiverT2Star ;
-                  rdfs:range xsd:double ;
-                  rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
-                  rdfs:label "Liver T2* value" .
+###  http://www.perspectum.com/ontology/metric/liverT2StarValue
+<http://www.perspectum.com/ontology/metric/liverT2StarValue> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <http://qudt.org/schema/qudt/value> ;
+                                                             rdfs:domain <http://www.perspectum.com/ontology/metric/LiverT2Star> ;
+                                                             rdfs:range xsd:double ;
+                                                             rdfs:isDefinedBy <http://perspectum.com/ontology/metric> ;
+                                                             rdfs:label "Liver T2* value" .
 
 
 #################################################################
@@ -222,7 +223,7 @@ skos:example rdf:type owl:AnnotationProperty ;
 ###  http://qudt.org/schema/qudt/Quantity
 <http://qudt.org/schema/qudt/Quantity> rdf:type owl:Class ;
                                        owl:disjointWith <http://qudt.org/schema/qudt/Unit> ,
-                                                        :Patient ,
+                                                        <http://www.perspectum.com/ontology/metric/Patient> ,
                                                         oscn:MRIScannerModel ,
                                                         CMR-QA:Imaging_Scan_Visit ;
                                        rdfs:comment "quantity class from QUDT ontology." ;
@@ -232,7 +233,7 @@ skos:example rdf:type owl:AnnotationProperty ;
 
 ###  http://qudt.org/schema/qudt/Unit
 <http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
-                                   owl:disjointWith :Patient ,
+                                   owl:disjointWith <http://www.perspectum.com/ontology/metric/Patient> ,
                                                     oscn:MRIScannerModel ,
                                                     CMR-QA:Imaging_Scan_Visit ;
                                    rdfs:comment "Unit of measure from QUDT ontology" ;
@@ -248,124 +249,124 @@ skos:example rdf:type owl:AnnotationProperty ;
                                                 rdfs:label "metric unit" .
 
 
-###  http://www.perspectum.com/ontology/metric#LiverPDFF
-:LiverPDFF rdf:type owl:Class ;
-           rdfs:subClassOf :ScanMetric ;
-           rdfs:comment """Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
+###  http://www.perspectum.com/ontology/metric/LiverPDFF
+<http://www.perspectum.com/ontology/metric/LiverPDFF> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.perspectum.com/ontology/metric/ScanMetric> ;
+                                                      rdfs:comment """Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
 (https://perspectum.com/media/1361/understanding-pdff.pdf)""" ;
-           rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-           rdfs:label "liver PDFF" ;
-           skos:altLabel "PDFF" ;
-           skos:example "5%, 7.5%, etc" .
+                                                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                      rdfs:label "liver PDFF" ;
+                                                      skos:altLabel "PDFF" ;
+                                                      skos:example "5%, 7.5%, etc" .
 
 
-###  http://www.perspectum.com/ontology/metric#LiverT2Star
-:LiverT2Star rdf:type owl:Class ;
-             rdfs:subClassOf :ScanMetric ;
-             rdfs:comment """T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
+###  http://www.perspectum.com/ontology/metric/LiverT2Star
+<http://www.perspectum.com/ontology/metric/LiverT2Star> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.perspectum.com/ontology/metric/ScanMetric> ;
+                                                        rdfs:comment """T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
 T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.""" ;
-             rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-             rdfs:label "liver T2star" ;
-             skos:altLabel "T2*" ;
-             skos:example "32.4 ms, 25 ms, etc" .
+                                                        rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                        rdfs:label "liver T2star" ;
+                                                        skos:altLabel "T2*" ;
+                                                        skos:example "32.4 ms, 25 ms, etc" .
 
 
-###  http://www.perspectum.com/ontology/metric#LivercT1
-:LivercT1 rdf:type owl:Class ;
-          rdfs:subClassOf :ScanMetric ;
-          rdfs:comment """Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
+###  http://www.perspectum.com/ontology/metric/LivercT1
+<http://www.perspectum.com/ontology/metric/LivercT1> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.perspectum.com/ontology/metric/ScanMetric> ;
+                                                     rdfs:comment """Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
 T1 measurements differ depending on magnetic field strength and MR manufacturer.""" ;
-          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-          rdfs:label "liver cT1" ;
-          skos:altLabel "cT1" ;
-          skos:example "712 ms, 800 ms, etc" .
+                                                     rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                     rdfs:label "liver cT1" ;
+                                                     skos:altLabel "cT1" ;
+                                                     skos:example "712 ms, 800 ms, etc" .
 
 
-###  http://www.perspectum.com/ontology/metric#Patient
-:Patient rdf:type owl:Class ;
-         owl:disjointWith :PatientSex ,
-                          :QuantitativeMetric ,
-                          oscn:MRIScannerModel ,
-                          CMR-QA:Imaging_Scan_Visit ;
-         :semanticGroup "LIVB" ;
-         :semanticType "Human" ;
-         :semanticTypeID "T016" ;
-         rdfs:comment "A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number." ;
-         rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-         rdfs:label "patient" ;
-         skos:example "P005, P061" .
+###  http://www.perspectum.com/ontology/metric/Patient
+<http://www.perspectum.com/ontology/metric/Patient> rdf:type owl:Class ;
+                                                    owl:disjointWith <http://www.perspectum.com/ontology/metric/PatientSex> ,
+                                                                     <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ,
+                                                                     oscn:MRIScannerModel ,
+                                                                     CMR-QA:Imaging_Scan_Visit ;
+                                                    <http://www.perspectum.com/ontology/metric/semanticGroup> "LIVB" ;
+                                                    <http://www.perspectum.com/ontology/metric/semanticType> "Human" ;
+                                                    <http://www.perspectum.com/ontology/metric/semanticTypeID> "T016" ;
+                                                    rdfs:comment "A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number." ;
+                                                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                    rdfs:label "patient" ;
+                                                    skos:example "P005, P061" .
 
 
-###  http://www.perspectum.com/ontology/metric#PatientAge
-:PatientAge rdf:type owl:Class ;
-            rdfs:subClassOf :PatientMetric ;
-            rdfs:comment "The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric." ;
-            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-            rdfs:label "patient age" ;
-            skos:altLabel "age" ;
-            skos:example "35, 44, 60" .
+###  http://www.perspectum.com/ontology/metric/PatientAge
+<http://www.perspectum.com/ontology/metric/PatientAge> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.perspectum.com/ontology/metric/PatientMetric> ;
+                                                       rdfs:comment "The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric." ;
+                                                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                       rdfs:label "patient age" ;
+                                                       skos:altLabel "age" ;
+                                                       skos:example "35, 44, 60" .
 
 
-###  http://www.perspectum.com/ontology/metric#PatientBMI
-:PatientBMI rdf:type owl:Class ;
-            rdfs:subClassOf :PatientMetric ;
-            rdfs:comment "The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres." ;
-            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-            rdfs:label "patient BMI" ;
-            skos:altLabel "BMI" ;
-            skos:example "25.5, 32.0, 27" .
+###  http://www.perspectum.com/ontology/metric/PatientBMI
+<http://www.perspectum.com/ontology/metric/PatientBMI> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.perspectum.com/ontology/metric/PatientMetric> ;
+                                                       rdfs:comment "The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres." ;
+                                                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                       rdfs:label "patient BMI" ;
+                                                       skos:altLabel "BMI" ;
+                                                       skos:example "25.5, 32.0, 27" .
 
 
-###  http://www.perspectum.com/ontology/metric#PatientMetric
-:PatientMetric rdf:type owl:Class ;
-               rdfs:subClassOf :QuantitativeMetric ;
-               rdfs:comment "A quantitative metric gathered for the study and related to a patient" ;
-               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-               rdfs:label "patient metric" ;
-               skos:altLabel "metric" .
+###  http://www.perspectum.com/ontology/metric/PatientMetric
+<http://www.perspectum.com/ontology/metric/PatientMetric> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ;
+                                                          rdfs:comment "A quantitative metric gathered for the study and related to a patient" ;
+                                                          rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                          rdfs:label "patient metric" ;
+                                                          skos:altLabel "metric" .
 
 
-###  http://www.perspectum.com/ontology/metric#PatientSex
-:PatientSex rdf:type owl:Class ;
-            owl:equivalentClass [ rdf:type owl:Class ;
-                                  owl:oneOf ( :Female
-                                              :Male
-                                            )
-                                ] ;
-            owl:disjointWith :QuantitativeMetric ,
-                             oscn:MRIScannerModel ,
-                             CMR-QA:Imaging_Scan_Visit ;
-            rdfs:comment "The biological sex of a patient" ;
-            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-            rdfs:label "patient sex" .
+###  http://www.perspectum.com/ontology/metric/PatientSex
+<http://www.perspectum.com/ontology/metric/PatientSex> rdf:type owl:Class ;
+                                                       owl:equivalentClass [ rdf:type owl:Class ;
+                                                                             owl:oneOf ( <http://www.perspectum.com/ontology/metric/Female>
+                                                                                         <http://www.perspectum.com/ontology/metric/Male>
+                                                                                       )
+                                                                           ] ;
+                                                       owl:disjointWith <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ,
+                                                                        oscn:MRIScannerModel ,
+                                                                        CMR-QA:Imaging_Scan_Visit ;
+                                                       rdfs:comment "The biological sex of a patient" ;
+                                                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                       rdfs:label "patient sex" .
 
 
-###  http://www.perspectum.com/ontology/metric#QuantitativeMetric
-:QuantitativeMetric rdf:type owl:Class ;
-                    rdfs:subClassOf <http://qudt.org/schema/qudt/Quantity> ;
-                    owl:disjointWith oscn:MRIScannerModel ,
-                                     CMR-QA:Imaging_Scan_Visit ;
-                    rdfs:comment "A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1." ;
-                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-                    rdfs:label "quantitative metric" ;
-                    skos:altLabel "metric" .
+###  http://www.perspectum.com/ontology/metric/QuantitativeMetric
+<http://www.perspectum.com/ontology/metric/QuantitativeMetric> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://qudt.org/schema/qudt/Quantity> ;
+                                                               owl:disjointWith oscn:MRIScannerModel ,
+                                                                                CMR-QA:Imaging_Scan_Visit ;
+                                                               rdfs:comment "A quantitative metric gathered for the study.  The metric may either be scan or patient related.  Example metrics are Patient Age or Liver cT1." ;
+                                                               rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                               rdfs:label "quantitative metric" ;
+                                                               skos:altLabel "metric" .
 
 
-###  http://www.perspectum.com/ontology/metric#ScanMetric
-:ScanMetric rdf:type owl:Class ;
-            rdfs:subClassOf :QuantitativeMetric ;
-            rdfs:comment "A quantitative metric gathered for the study and derived from an MRI scan." ;
-            rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-            rdfs:label "scan metric" .
+###  http://www.perspectum.com/ontology/metric/ScanMetric
+<http://www.perspectum.com/ontology/metric/ScanMetric> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ;
+                                                       rdfs:comment "A quantitative metric gathered for the study and derived from an MRI scan." ;
+                                                       rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                       rdfs:label "scan metric" .
 
 
 ###  http://www.perspectum.com/ontology/scanner#MRIScannerModel
 oscn:MRIScannerModel rdf:type owl:Class ;
                      owl:disjointWith CMR-QA:Imaging_Scan_Visit ,
                                       CMR-QA:Medical_Imaging_Study ;
-                     :semanticGroup "DEVI" ;
-                     :semanticType "Medical Device" ;
-                     :semanticTypeID "T074" ;
+                     <http://www.perspectum.com/ontology/metric/semanticGroup> "DEVI" ;
+                     <http://www.perspectum.com/ontology/metric/semanticType> "Medical Device" ;
+                     <http://www.perspectum.com/ontology/metric/semanticTypeID> "T074" ;
                      rdfs:comment """An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)""" ;
                      rdfs:isDefinedBy <http://www.perspectum.com/ontology/scanner> ;
@@ -388,8 +389,8 @@ This class has been reused from the CMR-QA ontology.""" ;
 
 ###  http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study
 CMR-QA:Medical_Imaging_Study rdf:type owl:Class ;
-                             :semanticGroup "PROC" ;
-                             :semanticType "Research Activity" ;
+                             <http://www.perspectum.com/ontology/metric/semanticGroup> "PROC" ;
+                             <http://www.perspectum.com/ontology/metric/semanticType> "Research Activity" ;
                              rdfs:comment "A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology and is not currently populated in the knowledge graph." ,
                                           "T062" ;
                              rdfs:isDefinedBy "http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA" ;
@@ -401,18 +402,18 @@ CMR-QA:Medical_Imaging_Study rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://www.perspectum.com/ontology/metric#Female
-:Female rdf:type owl:NamedIndividual ;
-        rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-        rdfs:label "F" ,
-                   "Female" .
+###  http://www.perspectum.com/ontology/metric/Female
+<http://www.perspectum.com/ontology/metric/Female> rdf:type owl:NamedIndividual ;
+                                                   rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                   rdfs:label "Female" ;
+                                                   skos:altLabel "F" .
 
 
-###  http://www.perspectum.com/ontology/metric#Male
-:Male rdf:type owl:NamedIndividual ;
-      rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
-      rdfs:label "M" ,
-                 "Male" .
+###  http://www.perspectum.com/ontology/metric/Male
+<http://www.perspectum.com/ontology/metric/Male> rdf:type owl:NamedIndividual ;
+                                                 rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                 rdfs:label "Male" ;
+                                                 skos:altLabel "M" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -5,12 +5,13 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:omet="http://www.perspectum.com/ontology/metric"
+     xmlns:omet="http://www.perspectum.com/ontology/metric#"
      xmlns:oscn="http://www.perspectum.com/ontology/scanner#"
      xmlns:qudt="http://qudt.org/schema/qudt"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:CMR-QA="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#">
+     xmlns:CMR-QA="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#"
+     xmlns:metric="http://www.perspectum.com/ontology/metric/">
     <owl:Ontology rdf:about="http://www.perspectum.com/ontology/metric">
         <owl:versionIRI rdf:resource="http://www.perspectum.com/ontology/metric/1.5"/>
         <rdfs:comment>An Ontology to model metrics collected in a clinical study of multi-organ imaging of  patients exhibiting symptoms of long Covid.
@@ -27,7 +28,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 19/7/2021 1.2  Remove FieldStrengthValue/Unit &amp; isMakerOf/MadeBy - now in Scanner ontology; rename Scanner to MRIScannerModel.
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
 25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.
-20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology</owl:versionInfo>
+20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology
+27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -43,27 +45,27 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#semanticGroup -->
+    <!-- http://www.perspectum.com/ontology/metric/semanticGroup -->
 
-    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticGroup">
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric/semanticGroup">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>semantic group</rdfs:label>
     </owl:AnnotationProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#semanticType -->
+    <!-- http://www.perspectum.com/ontology/metric/semanticType -->
 
-    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticType">
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric/semanticType">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>semantic type</rdfs:label>
     </owl:AnnotationProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#semanticTypeID -->
+    <!-- http://www.perspectum.com/ontology/metric/semanticTypeID -->
 
-    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric#semanticTypeID">
+    <owl:AnnotationProperty rdf:about="http://www.perspectum.com/ontology/metric/semanticTypeID">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>semantic type id</rdfs:label>
     </owl:AnnotationProperty>
@@ -103,7 +105,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://qudt.org/schema/qudt/unit -->
 
     <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <rdfs:comment>unit of measure class from QUDT ontology.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/schema/qudt"/>
         <rdfs:label>unit of measure</rdfs:label>
@@ -111,11 +113,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#attendsVisit -->
+    <!-- http://www.perspectum.com/ontology/metric/attendsVisit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#attendsVisit">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#isAttendedBy"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/attendsVisit">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric/isAttendedBy"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/Patient"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>attends visit</rdfs:label>
@@ -123,11 +125,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#hasLiverCT1Unit -->
+    <!-- http://www.perspectum.com/ontology/metric/hasLiverCT1Unit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasLiverCT1Unit">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/hasLiverCT1Unit">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/unit"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LivercT1"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/LivercT1"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology/MetricUnit"/>
         <rdfs:comment>liver CT1 unit of measure</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -136,11 +138,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#hasLiverPDFFUnit -->
+    <!-- http://www.perspectum.com/ontology/metric/hasLiverPDFFUnit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasLiverPDFFUnit">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/hasLiverPDFFUnit">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/unit"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverPDFF"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/LiverPDFF"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology/MetricUnit"/>
         <rdfs:comment>Liver PDFF unit of measure</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -149,11 +151,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#hasLiverT2StarUnit -->
+    <!-- http://www.perspectum.com/ontology/metric/hasLiverT2StarUnit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasLiverT2StarUnit">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/hasLiverT2StarUnit">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/unit"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverT2Star"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/LiverT2Star"/>
         <rdfs:range rdf:resource="http://www.perspectum.com/ontology/MetricUnit"/>
         <rdfs:comment>liver T2* unit of measure</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -162,74 +164,74 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#hasPatientMetric -->
+    <!-- http://www.perspectum.com/ontology/metric/hasPatientMetric -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasPatientMetric">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#isMetricForPatient"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/hasPatientMetric">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric/isMetricForPatient"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/Patient"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>has patient metric</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#hasPatientSex -->
+    <!-- http://www.perspectum.com/ontology/metric/hasPatientSex -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasPatientSex">
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#PatientSex"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/hasPatientSex">
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/Patient"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric/PatientSex"/>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>has patient sex</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#hasVisitMetric -->
+    <!-- http://www.perspectum.com/ontology/metric/hasVisitMetric -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#hasVisitMetric">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#isMetricForVisit"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/hasVisitMetric">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric/isMetricForVisit"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>has visit metric</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#isAttendedBy -->
+    <!-- http://www.perspectum.com/ontology/metric/isAttendedBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#isAttendedBy">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/isAttendedBy">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
-        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <rdfs:range rdf:resource="http://www.perspectum.com/ontology/metric/Patient"/>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>is attended by</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#isMetricForPatient -->
+    <!-- http://www.perspectum.com/ontology/metric/isMetricForPatient -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#isMetricForPatient">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/isMetricForPatient">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>is metric for patient</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#isMetricForVisit -->
+    <!-- http://www.perspectum.com/ontology/metric/isMetricForVisit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#isMetricForVisit">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/isMetricForVisit">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>is metric for visit</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#usedInVisit -->
+    <!-- http://www.perspectum.com/ontology/metric/usedInVisit -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#usedInVisit">
-        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric#usesScannerModel"/>
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/usedInVisit">
+        <owl:inverseOf rdf:resource="http://www.perspectum.com/ontology/metric/usesScannerModel"/>
         <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -238,9 +240,9 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#usesScannerModel -->
+    <!-- http://www.perspectum.com/ontology/metric/usesScannerModel -->
 
-    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric#usesScannerModel">
+    <owl:ObjectProperty rdf:about="http://www.perspectum.com/ontology/metric/usesScannerModel">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>uses scanner model</rdfs:label>
     </owl:ObjectProperty>
@@ -269,11 +271,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#liverCT1Value -->
+    <!-- http://www.perspectum.com/ontology/metric/liverCT1Value -->
 
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#liverCT1Value">
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric/liverCT1Value">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/value"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LivercT1"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/LivercT1"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:isDefinedBy rdf:resource="http://perspectum.com/ontology/metric"/>
         <rdfs:label>liver CT1 value</rdfs:label>
@@ -281,11 +283,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#liverPDFFValue -->
+    <!-- http://www.perspectum.com/ontology/metric/liverPDFFValue -->
 
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#liverPDFFValue">
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric/liverPDFFValue">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/value"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverPDFF"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/LiverPDFF"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:isDefinedBy rdf:resource="http://perspectum.com/ontology/metric"/>
         <rdfs:label>Liver PDFF value</rdfs:label>
@@ -293,11 +295,11 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#liverT2StarValue -->
+    <!-- http://www.perspectum.com/ontology/metric/liverT2StarValue -->
 
-    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric#liverT2StarValue">
+    <owl:DatatypeProperty rdf:about="http://www.perspectum.com/ontology/metric/liverT2StarValue">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/value"/>
-        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric#LiverT2Star"/>
+        <rdfs:domain rdf:resource="http://www.perspectum.com/ontology/metric/LiverT2Star"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:isDefinedBy rdf:resource="http://perspectum.com/ontology/metric"/>
         <rdfs:label>Liver T2* value</rdfs:label>
@@ -320,7 +322,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 
     <owl:Class rdf:about="http://qudt.org/schema/qudt/Quantity">
         <owl:disjointWith rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric/Patient"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <rdfs:comment>quantity class from QUDT ontology.</rdfs:comment>
@@ -333,7 +335,7 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     <!-- http://qudt.org/schema/qudt/Unit -->
 
     <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit">
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric/Patient"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <rdfs:comment>Unit of measure from QUDT ontology</rdfs:comment>
@@ -354,10 +356,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#LiverPDFF -->
+    <!-- http://www.perspectum.com/ontology/metric/LiverPDFF -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#LiverPDFF">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#ScanMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/LiverPDFF">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/ScanMetric"/>
         <rdfs:comment>Liver Protein Density Fat Fraction (PDFF)  is a measure of hepatic fat.  It is an MRI derived biomarker, given as a percentage (%) , which uses the difference in resonance frequencies of the protons in water and fat to provide estimates of tissue fat fraction, given by fat / (water + fat). PDFF has been widely shown to corelate with the degree of hepatic steatosis with a cut-off of 5% being indicative of Non-Alcoholic Fatty Liver Deasease (NALFD).  A sub class of Quantitative Metric.
 (https://perspectum.com/media/1361/understanding-pdff.pdf)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -368,10 +370,10 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#LiverT2Star -->
+    <!-- http://www.perspectum.com/ontology/metric/LiverT2Star -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#LiverT2Star">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#ScanMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/LiverT2Star">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/ScanMetric"/>
         <rdfs:comment>T2* is an MRI derived biomarker that can be used in  the assessment of hepatic iron overload, or hemosiderosis.  Measuring iron load is important in assessing liver health and the relationship between T2* and liver iron concentration (mg Fe/g dry weight tissue) has been well validated.   A sub class of Quantitative Metric.
 T2* is a time constant (measured in milliseconds) describing the decay of an MRI signal and can indicate iron deposits in the liver. T2* is field strength dependant.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -382,10 +384,10 @@ T2* is a time constant (measured in milliseconds) describing the decay of an MRI
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#LivercT1 -->
+    <!-- http://www.perspectum.com/ontology/metric/LivercT1 -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#LivercT1">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#ScanMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/LivercT1">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/ScanMetric"/>
         <rdfs:comment>Corrected T1 is an MRI derived liver biomarker providing a metric relating to inflammation and fibrosis.  T1-relaxation time (measured in milliseconds) is a fundamental parameter in MRI relating to the interaction and energy exchange between the excited hydrogen atoms (usually in water) and the surrounding tissue structure.  A sub class of Quantitative Metric.
 T1 measurements differ depending on magnetic field strength and MR manufacturer.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
@@ -396,16 +398,16 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#Patient -->
+    <!-- http://www.perspectum.com/ontology/metric/Patient -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#Patient">
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#PatientSex"/>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/Patient">
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric/PatientSex"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
-        <semanticGroup>LIVB</semanticGroup>
-        <semanticType>Human</semanticType>
-        <semanticTypeID>T016</semanticTypeID>
+        <metric:semanticGroup>LIVB</metric:semanticGroup>
+        <metric:semanticType>Human</metric:semanticType>
+        <metric:semanticTypeID>T016</metric:semanticTypeID>
         <rdfs:comment>A human participant in the Perspectum long COVID study.  For the purposes of this ontology, the patient is anonymously identified by a patient identifier, Pnnn, where n is a unique number.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient</rdfs:label>
@@ -414,10 +416,10 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#PatientAge -->
+    <!-- http://www.perspectum.com/ontology/metric/PatientAge -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#PatientAge">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#PatientMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/PatientAge">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/PatientMetric"/>
         <rdfs:comment>The age of a patient, in years, recorded at a Scan Visit.  A sub class of Quantitative Metric.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient age</rdfs:label>
@@ -427,10 +429,10 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#PatientBMI -->
+    <!-- http://www.perspectum.com/ontology/metric/PatientBMI -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#PatientBMI">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#PatientMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/PatientBMI">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/PatientMetric"/>
         <rdfs:comment>The Body Mass Index (BMI) of a patient. BMI is calculated as weight in KG squared / height in metres.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient BMI</rdfs:label>
@@ -440,10 +442,10 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#PatientMetric -->
+    <!-- http://www.perspectum.com/ontology/metric/PatientMetric -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#PatientMetric">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/PatientMetric">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <rdfs:comment>A quantitative metric gathered for the study and related to a patient</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>patient metric</rdfs:label>
@@ -452,18 +454,18 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#PatientSex -->
+    <!-- http://www.perspectum.com/ontology/metric/PatientSex -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#PatientSex">
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/PatientSex">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric#Female"/>
-                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric#Male"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/Female"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/Male"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+        <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <rdfs:comment>The biological sex of a patient</rdfs:comment>
@@ -473,9 +475,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#QuantitativeMetric -->
+    <!-- http://www.perspectum.com/ontology/metric/QuantitativeMetric -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#QuantitativeMetric">
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/QuantitativeMetric">
         <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
         <owl:disjointWith rdf:resource="http://www.perspectum.com/ontology/scanner#MRIScannerModel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
@@ -487,10 +489,10 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#ScanMetric -->
+    <!-- http://www.perspectum.com/ontology/metric/ScanMetric -->
 
-    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric#ScanMetric">
-        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric#QuantitativeMetric"/>
+    <owl:Class rdf:about="http://www.perspectum.com/ontology/metric/ScanMetric">
+        <rdfs:subClassOf rdf:resource="http://www.perspectum.com/ontology/metric/QuantitativeMetric"/>
         <rdfs:comment>A quantitative metric gathered for the study and derived from an MRI scan.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>scan metric</rdfs:label>
@@ -503,9 +505,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
     <owl:Class rdf:about="http://www.perspectum.com/ontology/scanner#MRIScannerModel">
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Imaging_Scan_Visit"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study"/>
-        <semanticGroup>DEVI</semanticGroup>
-        <semanticType>Medical Device</semanticType>
-        <semanticTypeID>T074</semanticTypeID>
+        <metric:semanticGroup>DEVI</metric:semanticGroup>
+        <metric:semanticType>Medical Device</metric:semanticType>
+        <metric:semanticTypeID>T074</metric:semanticTypeID>
         <rdfs:comment>An MRI ( Magnetic resonance imaging) scanner is a large tube that contains powerful magnets and can be used to examine almost any part of the body.  Magnetic resonance imaging (MRI) is a type of scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body. The results of an MRI scan can be used to help diagnose conditions, plan treatments and assess how effective previous treatment has been.
 (https://www.nhs.uk/conditions/mri-scan/)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/scanner"/>
@@ -534,8 +536,8 @@ This class has been reused from the CMR-QA ontology.</rdfs:comment>
     <!-- http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA#Medical_Imaging_Study">
-        <semanticGroup>PROC</semanticGroup>
-        <semanticType>Research Activity</semanticType>
+        <metric:semanticGroup>PROC</metric:semanticGroup>
+        <metric:semanticType>Research Activity</metric:semanticType>
         <rdfs:comment>A clinical study that uses medical imaging as a source of patient data or biomarkers.  This class has been reused from the CMR-QA ontology and is not currently populated in the knowledge graph.</rdfs:comment>
         <rdfs:comment>T062</rdfs:comment>
         <rdfs:isDefinedBy>http://www.semanticweb.org/ukbiobank/ocmr_isg/CMR-QA</rdfs:isDefinedBy>
@@ -556,22 +558,22 @@ This class has been reused from the CMR-QA ontology.</rdfs:comment>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#Female -->
+    <!-- http://www.perspectum.com/ontology/metric/Female -->
 
-    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric#Female">
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/Female">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
-        <rdfs:label>F</rdfs:label>
         <rdfs:label>Female</rdfs:label>
+        <skos:altLabel>F</skos:altLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric#Male -->
+    <!-- http://www.perspectum.com/ontology/metric/Male -->
 
-    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric#Male">
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/Male">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
-        <rdfs:label>M</rdfs:label>
         <rdfs:label>Male</rdfs:label>
+        <skos:altLabel>M</skos:altLabel>
     </owl:NamedIndividual>
 </rdf:RDF>
 

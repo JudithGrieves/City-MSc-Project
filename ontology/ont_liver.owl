@@ -12,7 +12,7 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="oliv" IRI="http://www.perspectum.com/ontology/liver"/>
+    <Prefix name="oliv" IRI="http://www.perspectum.com/ontology/liver#"/>
     <Prefix name="omet" IRI="http://www.perspectum.com/ontology/metric"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
@@ -45,7 +45,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
         <Literal>Versions
 
 18/10/2021 1.0  First version.
-20/10/2021 1.1 Add annotations skos:altLabel, skos:example, rdfs:isDefinedBy</Literal>
+20/10/2021 1.1 Add annotations skos:altLabel, skos:example, rdfs:isDefinedBy
+27/10/2021 1.2 Amend prefix URIs to end in #</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#ASTALTratio"/>
