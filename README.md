@@ -18,6 +18,7 @@ building a comprehensive and useful tool.
 
 [Overview](https://github.com/JudithGrieves/City-MSc-Project#ontology) 
 - [Ontology](https://github.com/JudithGrieves/City-MSc-Project#ontology) 
+- [Directories](https://github.com/JudithGrieves/City-MSc-Project#Directories) 
 - [Input Data](https://github.com/JudithGrieves/City-MSc-Project#input-data)  
 
 [Running the Code](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
@@ -34,7 +35,11 @@ building a comprehensive and useful tool.
 This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
 
 ## Directories
-[data](https://github.com/JudithGrieves/City-MSc-Project/data)
+[data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) contains
+- metric_data.csv, scanner_data.csv : input CSV files for metric and scanner data
+- SPARQL query results : metric_data-sparql1/2/4.csv
+- Test comparison results : metric_data-compare.csv
+- RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl
 
 ## Ontology
 - Current version (v0.1, October, 2021): [OWL format](https://raw.githubusercontent.com/JudithGrieves/City-MSc-Project/main/ontology/ont_metric.owl)  
