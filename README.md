@@ -18,7 +18,7 @@ building a comprehensive and useful tool.
 
 [Overview](https://github.com/JudithGrieves/City-MSc-Project#ontology) 
 - [Ontology](https://github.com/JudithGrieves/City-MSc-Project#ontology) 
-- [Directories](https://github.com/JudithGrieves/City-MSc-Project#Directories) 
+- [Folders](https://github.com/JudithGrieves/City-MSc-Project#Folders) 
 - [Input Data](https://github.com/JudithGrieves/City-MSc-Project#input-data)  
 
 [Running the Code](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
@@ -34,14 +34,22 @@ building a comprehensive and useful tool.
 
 This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
 
-## Directories
+## Folders
 [data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) contains
 - input CSV files for metric and scanner data: metric_data.csv, scanner_data.csv
 - SPARQL query results: metric_data-sparql1/2/3.csv
 - system test query results: metric_data-replicate.csv
 - Test comparison results: metric_data-compare.csv
-- RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl
-[ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver) contains:
+- RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl  
+
+[ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver), contains:
+- main knowledge graph transform and load program: create_kg_rml.py
+- business competency queries: SPARQL_examples.py
+- system test queries: SPARQL_test.py
+- queries to show the ontology classes: SPARQL_ontology
+- module to write queries to CSV file: write_sparql_file.py
+
+[code](https://github.com/JudithGrieves/City-MSc-Project/tree/main/code) contains:
 - ontology extract file in 3 formats: .OWL, .XML, .TTL
 - Graph diagram of the ontology: .JPG 
 - Protege diagram format file: .graph
