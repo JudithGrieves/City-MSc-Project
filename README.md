@@ -33,6 +33,9 @@ building a comprehensive and useful tool.
 
 This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
 
+## Directories
+[data](https://github.com/JudithGrieves/City-MSc-Project/data)
+
 ## Ontology
 - Current version (v0.1, October, 2021): [OWL format](https://raw.githubusercontent.com/JudithGrieves/City-MSc-Project/main/ontology/ont_metric.owl)  
 - Created with [Protégé Desktop](https://protege.stanford.edu/)  
