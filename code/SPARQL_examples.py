@@ -8,12 +8,6 @@ INM363 Individual Project
 This code loads the Perspectum Knowledge Graph triples (metrics and scanner)
 and executes the Iteration 1 example queries over the graph.
 
-ISSUES:
-    
-    NEEDS TO RETURN :FEMALE/MALE ENUMERATED TYPES W/O FULL URI PATH?
-    FIELD STRENGTH VALUES MISSING
-    using this triple in query ?visit omet:usesScannerModel  ?scanner  . instead of ?scanner omet:usedInVisit ?visit .
-
 '''
 from rdflib import Graph
 

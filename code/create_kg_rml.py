@@ -13,36 +13,13 @@ RDF triples output file.
 ISSUES:
     subprocess.run not working with full file paths - to be investigated.
     the current run_rmlmapper function has ../data hardcoded in them
-    !!! an dummy first csv column of 'tmp' has been added to metrics_data.csv to fix an error of 'Patient_ID' not found!!!!
-    metric units of measure should be retrieved from a lookup - currently hard-coded
+    a dummy first csv column of 'tmp' has been added to metrics_data.csv to fix an error of 'Patient_ID' not found
 """
 import subprocess
 from subprocess import check_output
 import os
 from os.path import dirname, abspath
 
-def run_rmlmapper_hardcoded(map_file,rdf_outfile):
-    '''
-    Function runs rmlmapper.jar to create RDF triples for a given mapping
-    Parameters:
-        map_file:   the RML mapping file containing the mapping rules
-        rdf_outfile: the file to write RDF triples output
-    BUT PARAMETER SUBSTITUTION NOT WORKING SO CURRENTLY HARDCODED TO DO BOTH KGs
-    '''
-    
-    rmlmapper1="java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m "
-    
-    rmlmapper2=" -o "
-    rmlmapper3=""
-    rmlmapper_cmd = rmlmapper1 + map_file + rmlmapper2 + rdf_outfile + rmlmapper3
-    print("Running ... ",rmlmapper_cmd)
-    #cmdline="cmd /c "+rmlmapper_cmd
-    #print(cmdline)
-    #subprocess.call(['java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ', map_file, ' -o  ', rdf_outfile])
-    #subprocess.call([rmlmapper_cmd])
-    os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ../data/scan-map.rml.ttl -o  ../data/scanner_data.ttl "')
-    os.system('cmd /c "java -jar C:/Users/judit_k4b0noc/Downloads/rmlmapper.jar  -d -s turtle -m ../data/metric-map.rml.ttl -o  ../data/metrics_data.ttl "')
-    #subprocess.run(["ls -l"])
     
 def run_rmlmapper(map_file,rdf_outfile):
     '''
@@ -51,7 +28,7 @@ def run_rmlmapper(map_file,rdf_outfile):
         map_file:   the RML mapping file containing the mapping rules
         rdf_outfile: the file to write RDF triples output
     
-    EXPECTS code to be running in code/ directory and output to be written to data/       
+    expects code to be running in code/ directory and output to be written to data/       
     '''
     data_sub="../data/"
     map_file=data_sub + map_file
@@ -67,6 +44,7 @@ def main():
     print("\nStarting create_kg_rml.py")
     
     '''
+    # deprecated UoM ontology
     map_file="metric-uom-map.rml.ttl"
     rdf_outfile="metric_uom_data.ttl"
     run_rmlmapper(map_file,rdf_outfile)

@@ -6,18 +6,12 @@ Created on 29 June 2021
 
 INM363 Individual Project
 
-NEEDS TO RETURN :FEMALE/MALE ENUMERATED TYPES W/O FULL URI PATH?
 
-
-This code loads the (inferred ontology) and created triples data and executes
+This code loads the (inferred) ontology and created triples data and executes
 SPARQL queries over the graph.
 
 SPARQL to create output results to mimic the input test data CSV to allow a comparison
 to be made for testing purposes.
-
-ISSUES:
-    metrics should also be metrics for visit (as well as patient) - add multiple patient visits to test data to test this
-    using this triple in query ?visit omet:usesScannerModel  ?scanner  . instead of ?scanner omet:usedInVisit ?visit .
 
 '''
 from rdflib import Graph
@@ -28,40 +22,12 @@ from os.path import dirname, abspath
 from write_sparql_file import write_sparql
 
 
-def debug_query_all(g,outfile):
-    
-    '''
-    Query to return all the CSV columns that were converted to RDF
-    To be used as part of a test plan
-    ''' 
-    # ?fsunit not in original TabularData sheet but included here to show 
-    # that the scanner data is being picked up from a separate KG
-    qres = g.query(
-    """SELECT DISTINCT  ?a ?b ?c ?d ?e ?f ?g WHERE
-                { 
-                 OPTIONAL {?a oscn:isFieldStrengthForScanner ?b .
-                           ?fs oscn:FieldStrengthValue ?fsval .
-                           ?fs oscn:FieldStrengthUnit ?fsunit . 
-                           ?fsunit rdfs:label ?fsunitlabel .  }.
-                 }
-    ORDER BY ASC(?a)  ASC(?b)
-                """) 
-
-    print("Show all Data")   
-    for row in qres:
-        print(row.a,  row.b, row.c,  row.d, row.e, row.f, row.g)
-        
-    '''
-    ?a a owl:NamedIndividual .
-                 ?a omet:hasPatientSex ?c .
-    '''
 
 def query_all(g,outfile):
     
     '''
     Query to return all the CSV columns that were converted to RDF
     To be used as part of a test plan
-    RDFS:LABEL FOR SEX ENUMERATED TYPE NOT WORKING
     ''' 
     # ?fsunit not in original TabularData sheet but included here to show 
     # that the scanner data is being picked up from a separate KG
@@ -164,7 +130,6 @@ def main():
     # run SPARQL queries against the loaded graph
     query_all(g,outFile)   
     
-    #debug_query_all(g,outFile) 
     
     print("\nFinished SPARQLqueries")
           
