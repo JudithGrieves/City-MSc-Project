@@ -1,5 +1,5 @@
 # A knowledge graph to orchestrate a multi-organ quantitative assessment of long Covid
-Code, data and other information.
+Ontologies, code, data and other information.
  
 The results and metrics produced in biomedical imaging clinical studies are an invaluable resource for 
 analysis and future work but only if they are well-structured and easily accessible. This project 
@@ -18,6 +18,7 @@ building a comprehensive and useful tool.
 
 [Overview](https://github.com/JudithGrieves/City-MSc-Project#ontology) 
 - [Ontology](https://github.com/JudithGrieves/City-MSc-Project#ontology) 
+- [Folders](https://github.com/JudithGrieves/City-MSc-Project#Folders) 
 - [Input Data](https://github.com/JudithGrieves/City-MSc-Project#input-data)  
 
 [Running the Code](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
@@ -33,14 +34,35 @@ building a comprehensive and useful tool.
 
 This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
 
+## Folders
+[data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) contains
+- input CSV files for metric and scanner data: metric_data.csv, scanner_data.csv
+- SPARQL query results: metric_data-sparql1/2/3.csv
+- system test query results: metric_data-replicate.csv
+- Test comparison results: metric_data-compare.csv
+- RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl  
+
+[ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver), contains:
+- main knowledge graph transform and load program: create_kg_rml.py
+- business competency queries: SPARQL_examples.py
+- system test queries: SPARQL_test.py
+- queries to show the ontology classes: SPARQL_ontology
+- module to write queries to CSV file: write_sparql_file.py
+
+[code](https://github.com/JudithGrieves/City-MSc-Project/tree/main/code) contains:
+- ontology extract file in 3 formats: .OWL, .XML, .TTL
+- Graph diagram of the ontology: .JPG 
+- Protege diagram format file: .graph
+
 ## Ontology
 - Current version (v0.1, October, 2021): [OWL format](https://raw.githubusercontent.com/JudithGrieves/City-MSc-Project/main/ontology/ont_metric.owl)  
 - Created with [Protégé Desktop](https://protege.stanford.edu/)  
 
 
-The ontology consists of two sub-ontologies:
+The ontology consists of three sub-ontologies:
 - metric : information about patients, visits and biomarkers and other data collected during a visit.
-- scanner : information about MRI scanner models, their features and manufacturers
+- scanner : information about MRI scanner models, their features and manufacturers.
+- liver : context of the liver and health assessment data featured in the metrics ontology - this ontology has no associated knowledge graph.
 
 ## Input data
 The input data required are two CSV files:

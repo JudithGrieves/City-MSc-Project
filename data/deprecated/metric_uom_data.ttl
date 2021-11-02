@@ -1,0 +1,30 @@
+@prefix muom: <http://www.perspectum.com/resources/metricuom/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+muom:URI_Type_BMI a muom:MetricType, owl:NamedIndividual;
+  muom:hasDefaultUnit muom:URI_Unit_KiloGM-PER-M2;
+  rdfs:label "BMI" .
+
+muom:URI_Type_Liver_PDFF a muom:MetricType, owl:NamedIndividual;
+  muom:hasDefaultUnit muom:URI_Unit_PERCENT;
+  rdfs:label "Liver PDFF" .
+
+muom:URI_Type_Liver_T2star a muom:MetricType, owl:NamedIndividual;
+  muom:hasDefaultUnit muom:URI_Unit_MilliSEC;
+  rdfs:label "Liver T2star" .
+
+muom:URI_Type_Liver_cT1 a muom:MetricType, owl:NamedIndividual;
+  muom:hasDefaultUnit muom:URI_Unit_MilliSEC;
+  rdfs:label "Liver cT1" .
+
+muom:URI_Unit_KiloGM-PER-M2 a muom:DefaultUoM, owl:NamedIndividual;
+  rdfs:label "BMI" .
+
+muom:URI_Unit_MilliSEC a muom:DefaultUoM, owl:NamedIndividual;
+  rdfs:label "Liver_T2star", "Liver_cT1" .
+
+muom:URI_Unit_PERCENT a muom:DefaultUoM, owl:NamedIndividual;
+  rdfs:label "Liver_PDFF" .
