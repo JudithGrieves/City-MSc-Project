@@ -28,7 +28,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
 25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.
 20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology
-27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.""" .
+27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.
+5/11/2021 1.7 Add additional sex/gender value 'NA'.""" .
 
 #################################################################
 #    Annotation properties
@@ -331,6 +332,7 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
                                                        owl:equivalentClass [ rdf:type owl:Class ;
                                                                              owl:oneOf ( <http://www.perspectum.com/ontology/metric/Female>
                                                                                          <http://www.perspectum.com/ontology/metric/Male>
+                                                                                         <http://www.perspectum.com/ontology/metric/NA>
                                                                                        )
                                                                            ] ;
                                                        owl:disjointWith <http://www.perspectum.com/ontology/metric/QuantitativeMetric> ,
@@ -401,6 +403,12 @@ CMR-QA:Medical_Imaging_Study rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.perspectum.com/ontology/metric/NA
+<http://www.perspectum.com/ontology/metric/NA> rdf:type owl:NamedIndividual ;
+                                                   rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
+                                                   rdfs:label "Not Applicable" ;
+                                                   skos:altLabel "N/A" .
 
 ###  http://www.perspectum.com/ontology/metric/Female
 <http://www.perspectum.com/ontology/metric/Female> rdf:type owl:NamedIndividual ;
