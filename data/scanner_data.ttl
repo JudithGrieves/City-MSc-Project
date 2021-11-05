@@ -5,6 +5,14 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://www.perspectum.com/resources/scanner/URI_FS_GE_ModelA> a oscn:ScannerFieldStrength,
+    owl:NamedIndividual;
+  oscn:FieldStrengthUnit unit:T;
+  oscn:FieldStrengthValue 1.5E0;
+  oscn:isFieldStrengthForScanner <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_GE_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
+  rdfs:label "1.5" .
+
 <http://www.perspectum.com/resources/scanner/URI_FS_Philips_ModelA> a oscn:ScannerFieldStrength,
     owl:NamedIndividual;
   oscn:FieldStrengthUnit unit:T;
@@ -37,6 +45,11 @@
   rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "3" .
 
+<http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_GE_ModelA> a oscn:MRIScannerModel,
+    owl:NamedIndividual;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
+  rdfs:label "GE_ModelA" .
+
 <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_Philips_ModelA> a
     oscn:MRIScannerModel, owl:NamedIndividual;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
@@ -56,6 +69,12 @@
     oscn:MRIScannerModel, owl:NamedIndividual;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
   rdfs:label "Siemens_ModelB" .
+
+<http://www.perspectum.com/resources/scanner/URI_Manufacturer_GE%20Healthcare> a oscn:ScannerManufacturer,
+    owl:NamedIndividual;
+  oscn:isMakerOfScanner <http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_GE_ModelA>;
+  rdfs:isDefinedBy <http://www.perspectum.com/resources/scanner/>;
+  rdfs:label "GE Healthcare" .
 
 <http://www.perspectum.com/resources/scanner/URI_Manufacturer_Philips> a oscn:ScannerManufacturer,
     owl:NamedIndividual;
