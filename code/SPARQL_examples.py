@@ -155,7 +155,7 @@ def query3(g,outfile):
            
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
-    header='"Visit","Patient","Age","Sex","BMI","livercT1","liverPDFF"'  
+    header='"Patient","Visit","Age","Sex","BMI","livercT1","liverPDFF"'  
     outfile=outfile.replace("x", "3")       
     write_sparql(outfile,header,qres,1,1)   
         
