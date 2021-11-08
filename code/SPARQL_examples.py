@@ -49,7 +49,7 @@ def query1(g,outfile):
                  FILTER( ?livercT1 > 800 )
                  FILTER( ?sex_label = 'Female' )
                  } 
-    ORDER BY ASC(?patient_label)  """)  
+    ORDER BY ASC(?patient_label) ASC(?visit_label)  """)  
 
     print("Query 1 - Females with age above 40 and BMI above 25 that  \
             have liver cT1 above 800 ms:\n")   
@@ -106,7 +106,7 @@ def query2(g,outfile):
                      ?fsunit rdfs:label ?fsunit_label . } 
                  FILTER(?fsval = 1.5 ) 
                  } 
-    ORDER BY ASC(?patient_label)  """)   
+    ORDER BY ASC(?patient_label) ASC(?visit_label)  """)   
 
     print("\nQuery 2 - Siemens 1.5 Tesla visits (patients scans) where PDFF is below 5%:\n")   
        
@@ -151,7 +151,7 @@ def query3(g,outfile):
                  ?metric_cT1 a omet:LivercT1  .} 
                  FILTER(?livercT1 > 800 )
                  } 
-    ORDER BY ASC(?patient_label)  """)    
+    ORDER BY ASC(?patient_label) ASC(?visit_label)  """)    
            
     print("\nQuery3 - cases where cT1 is above 800 ms but PDFF is below 10%")
     
