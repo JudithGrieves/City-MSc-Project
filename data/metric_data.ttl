@@ -20,7 +20,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P106>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P106_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P106/1" .
+  rdfs:label "age P106/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P106_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -29,7 +29,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P106>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P106_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P106/2" .
+  rdfs:label "age P106/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P107_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -38,7 +38,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P107>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P107_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P107/1" .
+  rdfs:label "age P107/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P107_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -47,7 +47,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P107>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P107_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P107/2" .
+  rdfs:label "age P107/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P108_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -56,7 +56,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P108>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P108_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P108/1" .
+  rdfs:label "age P108/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P108_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -65,7 +65,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P108>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P108_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P108/2" .
+  rdfs:label "age P108/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P109_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -74,7 +74,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P109>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P109_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P109/1" .
+  rdfs:label "age P109/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P109_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -83,7 +83,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P109>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P109_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P109/2" .
+  rdfs:label "age P109/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P110_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -92,7 +92,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P110>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P110_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P110/1" .
+  rdfs:label "age P110/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P110_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -101,7 +101,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P110>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P110_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P110/2" .
+  rdfs:label "age P110/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P111_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -110,7 +110,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P111>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P111_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P111/1" .
+  rdfs:label "age P111/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P111_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -119,7 +119,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P111>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P111_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P111/2" .
+  rdfs:label "age P111/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P112_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -128,7 +128,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P112>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P112_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P112/1" .
+  rdfs:label "age P112/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P112_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -137,7 +137,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P112>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P112_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P112/2" .
+  rdfs:label "age P112/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P113_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -146,7 +146,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P113>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P113_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P113/1" .
+  rdfs:label "age P113/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P113_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -155,7 +155,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P113>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P113_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P113/2" .
+  rdfs:label "age P113/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P114_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -164,7 +164,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P114>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P114_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P114/1" .
+  rdfs:label "age P114/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P114_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -173,7 +173,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P114>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P114_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P114/2" .
+  rdfs:label "age P114/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P115_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -182,7 +182,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P115>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P115_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P115/1" .
+  rdfs:label "age P115/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P115_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -191,7 +191,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P115>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P115_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P115/2" .
+  rdfs:label "age P115/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P116_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -200,7 +200,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P116>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P116_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P116/1" .
+  rdfs:label "age P116/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P116_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -209,7 +209,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P116>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P116_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P116/2" .
+  rdfs:label "age P116/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P117_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -218,7 +218,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P117>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P117_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P117/1" .
+  rdfs:label "age P117/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P117_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -227,7 +227,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P117>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P117_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P117/2" .
+  rdfs:label "age P117/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P118_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -236,7 +236,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P118>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P118_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P118/1" .
+  rdfs:label "age P118/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P118_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -245,7 +245,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P118>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P118_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P118/2" .
+  rdfs:label "age P118/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P119_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -254,7 +254,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P119>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P119_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P119/1" .
+  rdfs:label "age P119/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P119_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -263,7 +263,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P119>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P119_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P119/2" .
+  rdfs:label "age P119/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P120_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -272,7 +272,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P120>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P120_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P120/1" .
+  rdfs:label "age P120/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P120_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -281,7 +281,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P120>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P120_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P120/2" .
+  rdfs:label "age P120/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P138_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -290,7 +290,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P138>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P138_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P138/1" .
+  rdfs:label "age P138/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P138_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -299,7 +299,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P138>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P138_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P138/2" .
+  rdfs:label "age P138/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P139_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -308,7 +308,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P139>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P139_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P139/1" .
+  rdfs:label "age P139/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P139_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -317,7 +317,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P139>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P139_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P139/2" .
+  rdfs:label "age P139/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P140_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -326,7 +326,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P140>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P140_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P140/1" .
+  rdfs:label "age P140/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P140_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -335,7 +335,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P140>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P140_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P140/2" .
+  rdfs:label "age P140/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P141_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -344,7 +344,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P141>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P141_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P141/1" .
+  rdfs:label "age P141/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P141_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -353,7 +353,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P141>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P141_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P141/2" .
+  rdfs:label "age P141/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P152_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -362,7 +362,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P152>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P152_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P152/1" .
+  rdfs:label "age P152/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P152_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -371,7 +371,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P152>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P152_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P152/2" .
+  rdfs:label "age P152/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P153_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -380,7 +380,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P153>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P153_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P153/1" .
+  rdfs:label "age P153/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P153_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -389,7 +389,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P153>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P153_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P153/2" .
+  rdfs:label "age P153/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P154_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -398,7 +398,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P154>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P154_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P154/1" .
+  rdfs:label "age P154/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P154_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -407,7 +407,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P154>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P154_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P154/2" .
+  rdfs:label "age P154/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P155_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -416,7 +416,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P155>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P155_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P155/1" .
+  rdfs:label "age P155/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P155_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -425,7 +425,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P155>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P155_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P155/2" .
+  rdfs:label "age P155/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P156_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -434,7 +434,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P156>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P156_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P156/1" .
+  rdfs:label "age P156/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P156_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -443,7 +443,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P156>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P156_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P156/2" .
+  rdfs:label "age P156/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P157_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -452,7 +452,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P157>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P157_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P157/1" .
+  rdfs:label "age P157/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P157_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -461,7 +461,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P157>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P157_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P157/2" .
+  rdfs:label "age P157/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P158_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -470,7 +470,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P158>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P158_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P158/1" .
+  rdfs:label "age P158/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P158_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -479,7 +479,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P158>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P158_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P158/2" .
+  rdfs:label "age P158/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P206_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -488,7 +488,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P206>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P206_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P206/1" .
+  rdfs:label "age P206/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P206_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -497,7 +497,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P206>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P206_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P206/2" .
+  rdfs:label "age P206/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P207_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -506,7 +506,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P207>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P207_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P207/1" .
+  rdfs:label "age P207/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P207_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -515,7 +515,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P207>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P207_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P207/2" .
+  rdfs:label "age P207/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P208_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -524,7 +524,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P208>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P208_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P208/1" .
+  rdfs:label "age P208/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P208_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -533,7 +533,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P208>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P208_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P208/2" .
+  rdfs:label "age P208/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P209_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -542,7 +542,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P209>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P209_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P209/1" .
+  rdfs:label "age P209/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P209_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -551,7 +551,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P209>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P209_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P209/2" .
+  rdfs:label "age P209/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P210_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -560,7 +560,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P210>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P210_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P210/1" .
+  rdfs:label "age P210/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P210_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -569,7 +569,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P210>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P210_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P210/2" .
+  rdfs:label "age P210/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P211_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -578,7 +578,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P211>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P211_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P211/1" .
+  rdfs:label "age P211/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P211_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -587,7 +587,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P211>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P211_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P211/2" .
+  rdfs:label "age P211/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P212_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -596,7 +596,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P212>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P212_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P212/1" .
+  rdfs:label "age P212/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P212_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -605,7 +605,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P212>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P212_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P212/2" .
+  rdfs:label "age P212/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P213_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -614,7 +614,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P213>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P213_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P213/1" .
+  rdfs:label "age P213/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P213_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -623,7 +623,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P213>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P213_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P213/2" .
+  rdfs:label "age P213/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P214_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -632,7 +632,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P214>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P214_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P214/1" .
+  rdfs:label "age P214/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P214_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -641,7 +641,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P214>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P214_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P214/2" .
+  rdfs:label "age P214/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P215_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -650,7 +650,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P215>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P215_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P215/1" .
+  rdfs:label "age P215/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P215_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -659,7 +659,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P215>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P215_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P215/2" .
+  rdfs:label "age P215/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P216_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -668,7 +668,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P216>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P216_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P216/1" .
+  rdfs:label "age P216/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P216_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -677,7 +677,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P216>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P216_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P216/2" .
+  rdfs:label "age P216/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P217_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -686,7 +686,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P217>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P217_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P217/1" .
+  rdfs:label "age P217/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P217_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -695,7 +695,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P217>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P217_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P217/2" .
+  rdfs:label "age P217/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P218_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -704,7 +704,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P218>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P218_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P218/1" .
+  rdfs:label "age P218/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P218_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -713,7 +713,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P218>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P218_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P218/2" .
+  rdfs:label "age P218/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P219_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -722,7 +722,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P219>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P219_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P219/1" .
+  rdfs:label "age P219/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P219_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -731,7 +731,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P219>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P219_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P219/2" .
+  rdfs:label "age P219/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P384_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -740,7 +740,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P384>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P384_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P384/1" .
+  rdfs:label "age P384/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P384_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -749,7 +749,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P384>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P384_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P384/2" .
+  rdfs:label "age P384/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P385_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -758,7 +758,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P385>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P385_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P385/1" .
+  rdfs:label "age P385/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P385_2> a omet:PatientAge,
     owl:NamedIndividual;
@@ -767,7 +767,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P385>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P385_2>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P385/2" .
+  rdfs:label "age P385/2" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P386_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -776,7 +776,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P386>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P386_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P386/1" .
+  rdfs:label "age P386/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P387_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -785,7 +785,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P387>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P387_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P387/1" .
+  rdfs:label "age P387/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P388_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -794,7 +794,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P388>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P388_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P388/1" .
+  rdfs:label "age P388/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P389_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -803,7 +803,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P389>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P389_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P389/1" .
+  rdfs:label "age P389/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P390_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -812,7 +812,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P390>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P390_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P390/1" .
+  rdfs:label "age P390/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P391_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -821,7 +821,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P391>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P391_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P391/1" .
+  rdfs:label "age P391/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P392_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -830,7 +830,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P392>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P392_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P392/1" .
+  rdfs:label "age P392/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P393_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -839,7 +839,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P393>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P393_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P393/1" .
+  rdfs:label "age P393/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P394_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -848,7 +848,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P394>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P394_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P394/1" .
+  rdfs:label "age P394/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P395_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -857,7 +857,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P395>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P395_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P395/1" .
+  rdfs:label "age P395/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P400_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -866,7 +866,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P400>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P400_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P400/1" .
+  rdfs:label "age P400/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P401_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -875,7 +875,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P401>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P401_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P401/1" .
+  rdfs:label "age P401/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P402_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -884,7 +884,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P402>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P402_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P402/1" .
+  rdfs:label "age P402/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P403_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -893,7 +893,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P403>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P403_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P403/1" .
+  rdfs:label "age P403/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P404_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -902,7 +902,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P404>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P404_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P404/1" .
+  rdfs:label "age P404/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientAge_P412_1> a omet:PatientAge,
     owl:NamedIndividual;
@@ -911,7 +911,7 @@
   omet:isMetricForPatient <http://www.perspectum.com/resources/metric/URI_Patient_P412>;
   omet:isMetricForVisit <http://www.perspectum.com/resources/metric/URI_Visit_P412_1>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
-  rdfs:label "Age P412/1" .
+  rdfs:label "age P412/1" .
 
 <http://www.perspectum.com/resources/metric/URI_PatientBMI_P106_1> a omet:PatientBMI,
     owl:NamedIndividual;
@@ -1814,52 +1814,52 @@
   rdfs:label "BMI P412/1" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P106> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P106" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P107> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P107" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P108> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P108" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P109> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P109" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P110> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P110" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P111> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P111" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P112> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P112" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P113> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P113" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P114> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P114" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P115> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P115" .
 
@@ -1869,187 +1869,187 @@
   rdfs:label "P116" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P117> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P117" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P118> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P118" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P119> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P119" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P120> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P120" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P138> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P138" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P139> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P139" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P140> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P140" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P141> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P141" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P152> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P152" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P153> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P153" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P154> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P154" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P155> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P155" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P156> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P156" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P157> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P157" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P158> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P158" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P206> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P206" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P207> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P207" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P208> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P208" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P209> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P209" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P210> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P210" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P211> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P211" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P212> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P212" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P213> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P213" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P214> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P214" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P215> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P215" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P216> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P216" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P217> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P217" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P218> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P218" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P219> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P219" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P384> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P384" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P385> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P385" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P386> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P386" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P387> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P387" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P388> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P388" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P389> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P389" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P390> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P390" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P391> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P391" .
 
@@ -2059,47 +2059,47 @@
   rdfs:label "P392" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P393> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P393" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P394> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P394" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P395> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P395" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P400> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P400" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P401> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P401" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P402> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P402" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P403> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P403" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P404> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Male>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/M>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P404" .
 
 <http://www.perspectum.com/resources/metric/URI_Patient_P412> a omet:Patient, owl:NamedIndividual;
-  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/Female>;
+  omet:hasPatientSex <http://www.perspectum.com/ontology/metric/F>;
   rdfs:isDefinedBy <http://www.perspectum.com/resources/metric/>;
   rdfs:label "P412" .
 

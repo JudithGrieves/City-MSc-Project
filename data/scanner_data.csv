@@ -1,4 +1,4 @@
-Scanner Model,Scanner Manufacturer,Scanner Field Strength,Unit
+scanner_model,scanner_manufacturer,scanner_field_strength,unit
 Siemens_ModelA,Siemens,1.5,Tesla
 Siemens_ModelB,Siemens,3,Tesla
 Philips_ModelA,Philips,1.5,Tesla

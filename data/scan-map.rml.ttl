@@ -36,7 +36,7 @@
 
 :field_strength 
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/scanner/URI_FS_{Scanner Model}";
+    rr:template "http://www.perspectum.com/resources/scanner/URI_FS_{scanner_model}";
     rr:class oscn:ScannerFieldStrength;
     rr:class owl:NamedIndividual 
   ];
@@ -49,7 +49,7 @@
   rr:predicateObjectMap [
     rr:predicate oscn:FieldStrengthValue;
     rr:objectMap [
-      rml:reference "Scanner Field Strength";
+      rml:reference "scanner_field_strength";
       rr:datatype xsd:double
     ]
   ];
@@ -58,15 +58,15 @@
     rr:objectMap [
       rr:parentTriplesMap :scanner;
       rr:joinCondition [
-        rr:child "Scanner Model";
-        rr:parent "Scanner Model"
+        rr:child "scanner_model";
+        rr:parent "scanner_model"
       ]
     ]
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rml:reference "Scanner Field Strength";
+      rml:reference "scanner_field_strength";
       rr:datatype xsd:string
       ]
   ];
@@ -100,14 +100,14 @@
 
 :scanner 
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner Model}";
+    rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{scanner_model}";
     rr:class oscn:MRIScannerModel;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rml:reference "Scanner Model";
+      rml:reference "scanner_model";
       rr:datatype xsd:string
       ]
   ];
@@ -142,14 +142,14 @@
 
 :manufacturer  
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/scanner/URI_Manufacturer_{Scanner Manufacturer}";
+    rr:template "http://www.perspectum.com/resources/scanner/URI_Manufacturer_{scanner_manufacturer}";
     rr:class oscn:ScannerManufacturer;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rml:reference "Scanner Manufacturer";
+      rml:reference "scanner_manufacturer";
       rr:datatype xsd:string
       ]
   ];
@@ -164,8 +164,8 @@
     rr:objectMap [
       rr:parentTriplesMap :scanner;
       rr:joinCondition [
-        rr:child "Scanner Model";
-        rr:parent "Scanner Model"
+        rr:child "scanner_model";
+        rr:parent "scanner_model"
       ]
     ]
   ].

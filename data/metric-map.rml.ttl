@@ -38,14 +38,14 @@
 
 :visit
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_Visit_{Patient_ID}_{Scan visit}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_Visit_{patient_id}_{scan_visit}";
     rr:class omet:Imaging_Scan_Visit;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rr:template "{Patient_ID}/{Scan visit}";
+      rr:template "{patient_id}/{scan_visit}";
       rr:datatype xsd:string
     ]
   ];
@@ -60,15 +60,15 @@
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ];
   rr:predicateObjectMap [
     rr:predicate omet:usesScannerModel;
     rr:objectMap [
-      rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{Scanner}"    ]
+      rr:template "http://www.perspectum.com/resources/scanner/URI_MRIScannerModel_{scanner_model}"    ]
   ].
 
 #################################################################
@@ -94,14 +94,14 @@
 
 :patient
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_Patient_{Patient_ID}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_Patient_{patient_id}";
     rr:class omet:Patient;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rml:reference "Patient_ID";
+      rml:reference "patient_id";
       rr:datatype xsd:string
     ]
   ];
@@ -114,7 +114,7 @@
   rr:predicateObjectMap [
     rr:predicate omet:hasPatientSex;
     rr:objectMap [
-      rr:template "http://www.perspectum.com/ontology/metric/{Sex}"
+      rr:template "http://www.perspectum.com/ontology/metric/{sex}"
     ]
   ].
 
@@ -142,14 +142,14 @@
 
 :age
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_PatientAge_{Patient_ID}_{Scan visit}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_PatientAge_{patient_id}_{scan_visit}";
     rr:class omet:PatientAge;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rr:template "Age {Patient_ID}/{Scan visit}";
+      rr:template "age {patient_id}/{scan_visit}";
       rr:datatype xsd:string
     ]
   ];
@@ -162,7 +162,7 @@
   rr:predicateObjectMap [
     rr:predicate qudt:value;
     rr:objectMap [
-      rml:reference "Age";
+      rml:reference "age";
       rr:datatype xsd:int
     ]
   ];
@@ -177,8 +177,8 @@
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ];
@@ -187,12 +187,12 @@
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
-        rr:child "Scan visit";
-        rr:parent "Scan visit"
+        rr:child "scan_visit";
+        rr:parent "scan_visit"
       ];
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ].
@@ -221,14 +221,14 @@
 
 :bmi
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_PatientBMI_{Patient_ID}_{Scan visit}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_PatientBMI_{patient_id}_{scan_visit}";
     rr:class omet:PatientBMI;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rr:template "BMI {Patient_ID}/{Scan visit}";
+      rr:template "BMI {patient_id}/{scan_visit}";
       rr:datatype xsd:string
     ]
   ];
@@ -256,8 +256,8 @@
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ];
@@ -266,12 +266,12 @@
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
-        rr:child "Scan visit";
-        rr:parent "Scan visit"
+        rr:child "scan_visit";
+        rr:parent "scan_visit"
       ];
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ].
@@ -300,14 +300,14 @@
 
 :liver_PDFF
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_liver_PDFF_{Patient_ID}_{Scan visit}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_liver_PDFF_{patient_id}_{scan_visit}";
     rr:class omet:LiverPDFF;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rr:template "liver PDFF {Patient_ID}/{Scan visit}";
+      rr:template "liver PDFF {patient_id}/{scan_visit}";
       rr:datatype xsd:string
     ]
   ];
@@ -335,8 +335,8 @@
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ];
@@ -345,12 +345,12 @@
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
-        rr:child "Scan visit";
-        rr:parent "Scan visit"
+        rr:child "scan_visit";
+        rr:parent "scan_visit"
       ];
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ].
@@ -379,14 +379,14 @@
 
 :liver_T2Star
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_liver_T2Star_{Patient_ID}_{Scan visit}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_liver_T2Star_{patient_id}_{scan_visit}";
     rr:class omet:LiverT2Star;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rr:template "liver T2Star {Patient_ID}/{Scan visit}";
+      rr:template "liver T2Star {patient_id}/{scan_visit}";
       rr:datatype xsd:string
     ]
   ];
@@ -414,8 +414,8 @@
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ];
@@ -424,12 +424,12 @@
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
-        rr:child "Scan visit";
-        rr:parent "Scan visit"
+        rr:child "scan_visit";
+        rr:parent "scan_visit"
       ];
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID"
+        rr:child "patient_id";
+        rr:parent "patient_id"
       ]
     ]
   ].
@@ -458,14 +458,14 @@
 
 :liver_cT1
   rr:subjectMap [
-    rr:template "http://www.perspectum.com/resources/metric/URI_liver_cT1_{Patient_ID}_{Scan visit}";
+    rr:template "http://www.perspectum.com/resources/metric/URI_liver_cT1_{patient_id}_{scan_visit}";
     rr:class omet:LivercT1;
     rr:class owl:NamedIndividual 
   ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label;
     rr:objectMap [
-      rr:template "liver cT1 {Patient_ID}/{Scan visit}";
+      rr:template "liver cT1 {patient_id}/{scan_visit}";
       rr:datatype xsd:string
     ]
   ];
@@ -493,8 +493,8 @@
     rr:objectMap [
       rr:parentTriplesMap :patient;
       rr:joinCondition [
-        rr:child "Patient_ID" ;
-        rr:parent "Patient_ID" 
+        rr:child "patient_id" ;
+        rr:parent "patient_id" 
       ]
     ]
   ];
@@ -503,12 +503,12 @@
     rr:objectMap [
       rr:parentTriplesMap :visit;
       rr:joinCondition [
-        rr:child "Scan visit";
-        rr:parent "Scan visit";
+        rr:child "scan_visit";
+        rr:parent "scan_visit";
       ];
       rr:joinCondition [
-        rr:child "Patient_ID";
-        rr:parent "Patient_ID";
+        rr:child "patient_id";
+        rr:parent "patient_id";
       ]
     ]
   ].
