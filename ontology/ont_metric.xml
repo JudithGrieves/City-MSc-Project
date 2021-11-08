@@ -29,7 +29,8 @@ Dennis, A. et al. (2020) ‘Multi-organ impairment in low-risk individuals with 
 9/8/2021 1.3  Move patient bmi/age data properties to separate Metric classes PatientSex, PatientBMI.  Correct name of LiverPDFF class.
 25/8/2021 1.4 Add comment annotations, change MRIScannerModel URI to point to scanner ontology.
 20/10/2021 1.5 Add Medical Imaging Study and Imaging Scan Visit from CMR-QA ontology
-27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.</owl:versionInfo>
+27/10/2021 1.6 amend metric/scanner prefixes to end in #; amend male/female additional labels to use skos:altLAbel.
+5/11/2021 1.7 Add additional sex/gender value &apos;NA&apos;.</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -460,8 +461,9 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/Female"/>
-                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/Male"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/F"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/M"/>
+                    <rdf:Description rdf:about="http://www.perspectum.com/ontology/metric/NA"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -558,9 +560,9 @@ This class has been reused from the CMR-QA ontology.</rdfs:comment>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric/Female -->
+    <!-- http://www.perspectum.com/ontology/metric/F -->
 
-    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/Female">
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/F">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>Female</rdfs:label>
         <skos:altLabel>F</skos:altLabel>
@@ -568,12 +570,22 @@ This class has been reused from the CMR-QA ontology.</rdfs:comment>
     
 
 
-    <!-- http://www.perspectum.com/ontology/metric/Male -->
+    <!-- http://www.perspectum.com/ontology/metric/M -->
 
-    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/Male">
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/M">
         <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
         <rdfs:label>Male</rdfs:label>
         <skos:altLabel>M</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.perspectum.com/ontology/metric/NA -->
+
+    <owl:NamedIndividual rdf:about="http://www.perspectum.com/ontology/metric/NA">
+        <rdfs:isDefinedBy rdf:resource="http://www.perspectum.com/ontology/metric"/>
+        <rdfs:label>Not Applicable</rdfs:label>
+        <skos:altLabel>N/A</skos:altLabel>
     </owl:NamedIndividual>
 </rdf:RDF>
 

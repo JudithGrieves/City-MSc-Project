@@ -330,8 +330,8 @@ T1 measurements differ depending on magnetic field strength and MR manufacturer.
 ###  http://www.perspectum.com/ontology/metric/PatientSex
 <http://www.perspectum.com/ontology/metric/PatientSex> rdf:type owl:Class ;
                                                        owl:equivalentClass [ rdf:type owl:Class ;
-                                                                             owl:oneOf ( <http://www.perspectum.com/ontology/metric/Female>
-                                                                                         <http://www.perspectum.com/ontology/metric/Male>
+                                                                             owl:oneOf ( <http://www.perspectum.com/ontology/metric/F>
+                                                                                         <http://www.perspectum.com/ontology/metric/M>
                                                                                          <http://www.perspectum.com/ontology/metric/NA>
                                                                                        )
                                                                            ] ;
@@ -410,15 +410,15 @@ CMR-QA:Medical_Imaging_Study rdf:type owl:Class ;
                                                    rdfs:label "Not Applicable" ;
                                                    skos:altLabel "N/A" .
 
-###  http://www.perspectum.com/ontology/metric/Female
-<http://www.perspectum.com/ontology/metric/Female> rdf:type owl:NamedIndividual ;
+###  http://www.perspectum.com/ontology/metric/F
+<http://www.perspectum.com/ontology/metric/F> rdf:type owl:NamedIndividual ;
                                                    rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                                                    rdfs:label "Female" ;
                                                    skos:altLabel "F" .
 
 
-###  http://www.perspectum.com/ontology/metric/Male
-<http://www.perspectum.com/ontology/metric/Male> rdf:type owl:NamedIndividual ;
+###  http://www.perspectum.com/ontology/metric/M
+<http://www.perspectum.com/ontology/metric/M> rdf:type owl:NamedIndividual ;
                                                  rdfs:isDefinedBy <http://www.perspectum.com/ontology/metric> ;
                                                  rdfs:label "Male" ;
                                                  skos:altLabel "M" .
