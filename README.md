@@ -44,14 +44,14 @@ This software consists of an ontology and code to create a knowledge graph based
 - system test query results: metric_data-replicate.csv
 - Test comparison results: metric_data-compare.csv
 
-[ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver), contains:
+[code](https://github.com/JudithGrieves/City-MSc-Project/tree/main/code) contains:
 - main knowledge graph transform and load program: create_kg_rml.py
 - business competency queries: SPARQL_examples.py
 - system test queries: SPARQL_test.py
 - queries to show the ontology classes: SPARQL_ontology
 - module to write queries to CSV file: write_sparql_file.py
 
-[code](https://github.com/JudithGrieves/City-MSc-Project/tree/main/code) contains:
+[ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver), contains:
 - ontology extract file in 3 formats: .OWL, .XML, .TTL
 - Graph diagram of the ontology: .JPG 
 - Protege diagram format file: .graph
