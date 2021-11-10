@@ -111,5 +111,7 @@ See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/d
 ## Outstanding software issues
 
 - The original metrics were given to 12 decimal places but were returned from knowledge graph as 8 d.p.s - these are defined as an XML double data type - if 12 d.p.s are required another type should be used.
-
+- a failed RML load, due to data anomalies, is not notifying as an error - to be improved to report and stop the process.
+-'Not quantifiable' was successfully loaded into the metric value field but you might want to think in future about what other non-numeric status could be relevant for the value fields and model differently.
+- 
 ## References
