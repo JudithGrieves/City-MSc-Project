@@ -1,6 +1,7 @@
 # A knowledge graph to orchestrate a multi-organ quantitative assessment of long Covid
-Ontologies, code, data and other information.
+Ontologies, code, data and other information to create a knowledge graph of MRI study biomarkers and patient metrics from tabular data.
  
+## Report Abstract 
 The results and metrics produced in biomedical imaging clinical studies are an invaluable resource for 
 analysis and future work but only if they are well-structured and easily accessible. This project 
 investigates whether Semantic Web Technologies are a useful means of achieving these objectives. 
@@ -37,10 +38,11 @@ This software consists of an ontology and code to create a knowledge graph based
 ## Folders
 [data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) contains
 - input CSV files for metric and scanner data: metric_data.csv, scanner_data.csv
+- RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl  
+- knowledge graph files created by RMLmapper : metric_data.ttl, scanner_data.ttl 
 - SPARQL query results: metric_data-sparql1/2/3.csv
 - system test query results: metric_data-replicate.csv
 - Test comparison results: metric_data-compare.csv
-- RML mapping files : metric_map.rml.ttl, scan_map.rml.ttl  
 
 [ontology](https://github.com/JudithGrieves/City-MSc-Project/tree/main/ontology) for each sub-ontology (metric, scanner, liver), contains:
 - main knowledge graph transform and load program: create_kg_rml.py
