@@ -29,7 +29,7 @@ building a comprehensive and useful tool.
 - 
 [FAQS](https://github.com/JudithGrieves/City-MSc-Project#faqs)   
 
-[Outstanding Software Issues](https://github.com/JudithGrieves/City-MSc-Project#Outstanding-Software-Issues) 
+[Outstanding Software Issues](https://github.com/JudithGrieves/City-MSc-Project#outstanding-software-issues) 
 
 
 ## Source dependencies
