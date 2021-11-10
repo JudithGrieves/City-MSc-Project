@@ -96,10 +96,10 @@ See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/d
 
 ## FAQS
 
-### Data
-- Input CSV data must have the columns specified in the RML mapping files; column names must match exactly, including case and spaces.
+### Data Mappings
+- Input CSV data must have the columns specified in the RML mapping files; column names must match exactly, including case and spaces, though they may appear in any order and may contain other non-specified columns (which will be ignored).
+-  Metric and Scanner columns must appear in separate CSV files, as in the examples given here. 
+-  Any Scanner Model specified in Metric CSV must also appear in the Scanner CSV
 -  
-
-- To query the knowledge graph(s)
 
 ## References
