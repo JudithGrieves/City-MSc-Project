@@ -13,6 +13,7 @@ Language and the FAIR data standards. The resulting proof of concept design and 
 given business competency questions and should provide a useful starting point to take forward into 
 building a comprehensive and useful tool.
 
+
 ## User Guide
 [Installation](https://github.com/JudithGrieves/City-MSc-Project#source-dependencies) 
 - [Source Dependencies](https://github.com/JudithGrieves/City-MSc-Project#source-dependencies) 
@@ -25,9 +26,17 @@ building a comprehensive and useful tool.
 [Running the Code](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
 - [Creating the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
 - [Querying the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#input-data) 
+- 
+[FAQS](https://github.com/JudithGrieves/City-MSc-Project#faqs) 
 
-This software consists of an ontology and code to create a knowledge graph based upon tabular input data.
 
+## Source dependencies
+
+- [Python 3](https://www.python.org/)  
+- [Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2  
+- [RDFLib](https://rdflib.readthedocs.io/en/stable/gettingstarted.html): pip install rdflib  
+- [RMLmapper](https://github.com/RMLio/rmlmapper-java/releases/): download latest version of rmlmapper.jar 
+- 
 ## Folders
 [data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/data) contains
 - input CSV files for metric and scanner data: metric_data.csv, scanner_data.csv
@@ -84,11 +93,13 @@ See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/d
     2.  Run code/SPARQL_examples.py.  
     3.  Output is written to data/metric_data-sparql[n].csv for reports where n=1, 2, 3
 
-## Source dependencies
 
-- [Python 3](https://www.python.org/)  
-- [Owlready2](https://pypi.org/project/Owlready2/): pip install Owlready2  
-- [RDFLib](https://rdflib.readthedocs.io/en/stable/gettingstarted.html): pip install rdflib  
-- [RMLmapper](https://github.com/RMLio/rmlmapper-java/releases/): download latest version of rmlmapper.jar 
+## FAQS
+
+### Data
+- Input CSV data must have the columns specified in the RML mapping files; column names must match exactly, including case and spaces.
+-  
+
+- To query the knowledge graph(s)
 
 ## References
