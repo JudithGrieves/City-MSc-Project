@@ -25,8 +25,8 @@ building a comprehensive and useful tool.
 
 [Running the Code](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
 - [Creating the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
-- [Querying the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#input-data) 
-- 
+- [Querying the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#querying-the-knowledge-graph) 
+
 [FAQS](https://github.com/JudithGrieves/City-MSc-Project#faqs)   
 
 [Outstanding Software Issues](https://github.com/JudithGrieves/City-MSc-Project#outstanding-software-issues) 
