@@ -1,7 +1,7 @@
-This directory contains all data 
-- required by the transformation and load process
-- produced by the transformation and load process
-- produced by the test queries
+The data folder contains:
+- CSV files required by the transformation and load process
+- TTL knowledge graph files produced by the transformation and load process
+- CSV result files produced by the test queries
 
 Details:
 
