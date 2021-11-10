@@ -27,7 +27,9 @@ building a comprehensive and useful tool.
 - [Creating the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#creating-the-knowledge-graph) 
 - [Querying the Knowledge Graph](https://github.com/JudithGrieves/City-MSc-Project#input-data) 
 - 
-[FAQS](https://github.com/JudithGrieves/City-MSc-Project#faqs) 
+[FAQS](https://github.com/JudithGrieves/City-MSc-Project#faqs)   
+
+[Outstanding Software Issues](https://github.com/JudithGrieves/City-MSc-Project#Outstanding-Software-Issues) 
 
 
 ## Source dependencies
@@ -100,6 +102,10 @@ See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/d
 - Input CSV data must have the columns specified in the RML mapping files; column names must match exactly, including case and spaces, though they may appear in any order and may contain other non-specified columns (which will be ignored).
 -  Metric and Scanner columns must appear in separate CSV files, as in the examples given here. 
 -  Any Scanner Model specified in Metric CSV must also appear in the Scanner CSV
--  
+-  column 'sex' can only contain valid values 'M', 'F', 'NA'.
+
+## Outstanding software issues
+
+- The original metrics were given to 12 decimal places but were returned from knowledge graph as 8 d.p.s - these are defined as an XML double data type - if 12 d.p.s are required another type should be used.
 
 ## References
