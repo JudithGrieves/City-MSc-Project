@@ -84,7 +84,9 @@ See [example data](https://github.com/JudithGrieves/City-MSc-Project/tree/main/d
 
 -  To create the knowledge graph(s)
     1. Ensure the required input study data is in data/metric_data.csv, data/scanner_data.csv
-    2. Run code/create_kg_rml.py.  This will create knowledge graph files data/metric_data.ttl, data/scanner_data.ttl
+    2. Run code/create_kg_rml.py.  This will create knowledge graph files data/metric_data.ttl, data/scanner_data.ttl  
+
+
 
 ## Querying the knowledge graph
 
