@@ -1,4 +1,4 @@
-The ontology directory contains files for each of the 3 sub-directories in the project: 
+The ontology folder contains files for each of the 3 sub-folders in the project: 
 -  ont_liver
 -   ont_metric
 -   ont_scanner.
@@ -8,6 +8,6 @@ Each sub-ontology is available here in one of 3 formats:
 - XML
 - TTL
 
-The directory also contains:
-- .jpg  A graph diagram of the ontology
-- .graph A Protege file required to show the arrangement of the diagram
+The folder also contains:
+- .jpg  A graph diagram of each ontology
+- .graph A Protege file required to show the arrangement of the diagrams
